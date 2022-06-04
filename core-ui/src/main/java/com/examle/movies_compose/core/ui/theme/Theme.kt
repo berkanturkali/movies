@@ -1,30 +1,26 @@
-package com.examle.movies_compose.core.ui.ui.theme
+package com.examle.movies_compose.core.ui.theme
 
 import android.app.Activity
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
 
 private val DarkColorScheme = darkColorScheme(
-)
-
-private val LightColorScheme = lightColorScheme(
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    primary = Primary,
+    primaryContainer = PrimaryVariant,
+    onPrimary = TextColor,
+    secondary = Secondary,
+    background = Secondary,
+    error = ErrorColor,
+    errorContainer = ErrorColor,
+    onError = TextColor,
+    secondaryContainer = Black,
+    surface = Secondary
 )
 
 @Composable
@@ -34,14 +30,8 @@ fun MoviesComposeTheme(
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
+    val colorScheme = DarkColorScheme
+
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {

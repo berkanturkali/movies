@@ -1,4 +1,4 @@
-package com.examle.movies_compose.core.ui.ui.theme
+package com.examle.movies_compose.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
