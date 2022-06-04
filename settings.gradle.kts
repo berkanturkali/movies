@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Movies-Compose"
 include (":app")
+include(":core-ui")
