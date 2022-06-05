@@ -18,3 +18,4 @@ rootProject.name = "Movies-Compose"
 include (":app")
 include(":core-ui")
 include(":core-navigation")
+include(":feature-home")
