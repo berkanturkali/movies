@@ -28,6 +28,8 @@
             <option value="$PROJECT_DIR$/core-navigation" />
             <option value="$PROJECT_DIR$/core-ui" />
             <option value="$PROJECT_DIR$/feature-home" />
+            <option value="$PROJECT_DIR$/feature-search" />
+            <option value="$PROJECT_DIR$/feature-upcomings" />
           </set>
         </option>
       </GradleProjectSettings>
