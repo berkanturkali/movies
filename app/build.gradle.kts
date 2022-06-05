@@ -48,6 +48,13 @@ dependencies {
     implementation(project(":core-ui"))
     implementation(project(":core-navigation"))
 
+    //features
+    implementation(project(":feature-home"))
+    implementation(project(":feature-search"))
+    implementation(project(":feature-upcomings"))
+    implementation(project(":feature-downloads"))
+    implementation(project(":feature-more"))
+
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)

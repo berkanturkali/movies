@@ -1,5 +1,5 @@
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
-//import com.google.samples.apps.nowinandroid.configureKotlinAndroid
+import com.example.movies_compose.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -13,7 +13,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             }
 
             extensions.configure<BaseAppModuleExtension> {
-//                configureKotlinAndroid(this)
+                configureKotlinAndroid(this)
                 defaultConfig.targetSdk = 32
             }
         }
