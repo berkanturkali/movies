@@ -14,7 +14,7 @@ object DownloadsDestination : MoviesNavigationDestination {
 }
 
 
-fun NavGraphBuilder.addDownloadsGraph() {
+fun NavGraphBuilder.downloadsGraph() {
     composable(
         route = DownloadsDestination.route
     ) {

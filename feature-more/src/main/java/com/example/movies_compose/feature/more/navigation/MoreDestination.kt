@@ -14,7 +14,7 @@ object MoreDestination : MoviesNavigationDestination {
 }
 
 
-fun NavGraphBuilder.addMoreGraph() {
+fun NavGraphBuilder.moreGraph() {
     composable(
         route = MoreDestination.route
     ) {

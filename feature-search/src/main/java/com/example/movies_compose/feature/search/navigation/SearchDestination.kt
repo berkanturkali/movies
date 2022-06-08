@@ -13,7 +13,7 @@ object SearchDestination : MoviesNavigationDestination {
         get() = SEARCH_DESTINATION
 }
 
-fun NavGraphBuilder.addSearchGraph() {
+fun NavGraphBuilder.searchGraph() {
 
     composable(
         route = SearchDestination.route

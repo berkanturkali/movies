@@ -14,7 +14,7 @@ object ComingSoonDestination : MoviesNavigationDestination {
 }
 
 
-fun NavGraphBuilder.addComingSoonGraph() {
+fun NavGraphBuilder.comingSoonGraph() {
     composable(
         route = ComingSoonDestination.route
     ) {
