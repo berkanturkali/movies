@@ -1,9 +1,9 @@
 plugins {
-    id("movies_compose.android.library")
-    id("movies_compose.android.feature")
-    id("movies_compose.android.library.compose")
-    id("movies_compose.android.library.jacoco")
-    id("movies_compose.spotless")
+    id("movies.android.library")
+    id("movies.android.feature")
+    id("movies.android.library.compose")
+    id("movies.android.library.jacoco")
+    id("movies.spotless")
 }
 
 dependencies {}

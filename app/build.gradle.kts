@@ -1,30 +1,29 @@
 plugins {
-    id("movies_compose.android.application")
-    id("movies_compose.android.application.compose")
-    id("movies_compose.android.application.jacoco")
-    kotlin("kapt")
-    id("jacoco")
-    id("movies_compose.spotless")
+    id("movies.android.application")
+    id("movies.android.application.compose")
+    id("movies.android.application.jacoco")
+    id("kotlin-kapt")
+    id("movies.spotless")
 }
 
 android {
     defaultConfig {
-        applicationId  = "com.path.movies_compose"
-        versionCode  = 1
-        versionName  = "1.0"
+        applicationId = Config.Android.APPLICATION_ID
+        versionCode = Config.Version.VERSION_CODE
+        versionName = Config.Version.VERSION_NAME
 
-        testInstrumentationRunner =  "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = Config.Android.TEST_INSTRUMENTATION_RUNNER
         vectorDrawables {
-            useSupportLibrary =  true
+            useSupportLibrary = Config.Android.USE_SUPPORT_LIBRARY
         }
     }
 
     buildTypes {
-        val debug by getting {
-            applicationIdSuffix = ".debug"
+        named(BuildType.Debug.name) {
+            applicationIdSuffix = BuildType.Debug.applicationIdSuffix
         }
-        val release by getting {
-            isMinifyEnabled = true
+       named(BuildType.Release.name){
+            isMinifyEnabled = BuildType.Release.isMinifyEnabled
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -45,15 +44,17 @@ android {
 
 dependencies {
 
-    implementation(project(":core-ui"))
-    implementation(project(":core-navigation"))
-
-    //features
-    implementation(project(":feature-home"))
-    implementation(project(":feature-search"))
-    implementation(project(":feature-upcomings"))
-    implementation(project(":feature-downloads"))
-    implementation(project(":feature-more"))
+    //project libs
+    implementAllProjects(
+        ProjectLibs.CORE_UI,
+        ProjectLibs.CORE_NAVIGATION,
+        ProjectLibs.FEATURE_HOME,
+        ProjectLibs.FEATURE_SEARCH,
+        ProjectLibs.FEATURE_UPCOMING,
+        ProjectLibs.FEATURE_DOWNLOADS,
+        ProjectLibs.FEATURE_MORE,
+        ProjectLibs.FEATURE_HOME,
+    )
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)

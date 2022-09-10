@@ -1,9 +1,9 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("movies_compose.android.library")
-    id("movies_compose.android.library.jacoco")
+    id("movies.android.library")
+    id("movies.android.library.jacoco")
     alias(libs.plugins.ksp)
-    id("movies_compose.spotless")
+    id("movies.spotless")
 }
 dependencies {
     api(libs.androidx.hilt.navigation.compose)
