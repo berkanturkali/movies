@@ -1,5 +1,5 @@
 import com.android.build.gradle.TestExtension
-import com.example.movies_compose.configureKotlinAndroid
+import com.example.movies.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

@@ -14,7 +14,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Movies-Compose"
+rootProject.name = "Movies"
 include (":app")
 include(":core-ui")
 include(":core-navigation")

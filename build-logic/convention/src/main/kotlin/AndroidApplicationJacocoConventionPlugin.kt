@@ -1,5 +1,5 @@
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
-import com.example.movies_compose.configureJacoco
+import com.example.movies.configureJacoco
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType

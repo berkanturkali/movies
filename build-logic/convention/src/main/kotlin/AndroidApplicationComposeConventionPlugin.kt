@@ -1,5 +1,5 @@
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
-import com.example.movies_compose.configureAndroidCompose
+import com.example.movies.configureAndroidCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
