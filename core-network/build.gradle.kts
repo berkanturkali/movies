@@ -8,4 +8,5 @@ plugins {
 
 dependencies {
 
+    implementation(libs.retrofit.core)
 }
