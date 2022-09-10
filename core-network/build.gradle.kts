@@ -8,5 +8,11 @@ plugins {
 
 dependencies {
 
-    implementation(libs.retrofit.core)
+    //network
+    implementAll(
+        libs.retrofit.core,
+        libs.retrofit.moshi.converter,
+        libs.moshi,
+        libs.okhttp.logging,
+    )
 }
