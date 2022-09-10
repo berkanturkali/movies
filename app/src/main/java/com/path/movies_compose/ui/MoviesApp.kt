@@ -11,6 +11,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
@@ -113,6 +114,7 @@ private fun MoviesBottomBar(
 ) {
     Surface(color = MaterialTheme.colorScheme.surface) {
         NavigationBar(
+
             modifier = Modifier.windowInsetsPadding(
                 WindowInsets.safeDrawing.only(
                     WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom
@@ -135,7 +137,6 @@ private fun MoviesBottomBar(
                             contentDescription = null
                         )
                     },
-                    label = { Text(stringResource(destination.iconTextId)) },
                 )
             }
         }
