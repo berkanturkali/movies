@@ -10,5 +10,7 @@ object MoviesIcons {
 
     val PLAY = R.drawable.ic_play
 
-    val INFO  =  Icons.Outlined.Info
+    val INFO = Icons.Outlined.Info
+
+    val NEXT = R.drawable.ic_next
 }
