@@ -3,7 +3,6 @@ package com.example.movies.ui
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
-import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -17,6 +16,7 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.examle.movies.core.ui.components.MoviesBackground
+import com.examle.movies.core.ui.providers.LocalWindowSizeClass
 import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies.navigation.MoviesNavHost
 import com.example.movies.navigation.MoviesTopLevelNavigation
@@ -26,8 +26,9 @@ import com.example.movies.navigation.TopLevelDestination
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun MoviesApp(windowSizeClass: WindowSizeClass) {
+fun MoviesApp() {
 
+    val windowSizeClass = LocalWindowSizeClass.current
     MoviesTheme {
         val navController = rememberNavController()
         val moviesTopLevelNavigation = remember(navController) {
