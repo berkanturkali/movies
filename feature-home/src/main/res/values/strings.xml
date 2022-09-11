@@ -7,4 +7,8 @@
     <string name="my_list_button_text">My List</string>
     <string name="play_button_text">Play</string>
     <string name="info_button_text">Info</string>
+
+    <!-- Section Titles -->
+    <string name="trending_movies_title">Trending Movies</string>
+    <string name="now_playing_movies_title">Now Playing Movies</string>
 </resources>

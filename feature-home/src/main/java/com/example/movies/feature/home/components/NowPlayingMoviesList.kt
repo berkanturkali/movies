@@ -7,24 +7,24 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import com.examle.movies.core.ui.R
 
 @Composable
-fun TrendingMoviesList(
+fun NowPlayingMoviesList(
     modifier: Modifier = Modifier,
     isLoading: Boolean,
-    trendingMovies: List<String>,
+    nowPlayingMovies: List<String>,
 ) {
-
     LazyRow(
         modifier = modifier,
-        horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = com.examle.movies.core.ui.R.dimen.dimen_16)),
+        horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.dimen_16)),
     ) {
-        trendingMovies(trendingMovies = trendingMovies)
+        nowPlayingMovies(nowPlayingMovies = nowPlayingMovies)
     }
 }
 
-private fun LazyListScope.trendingMovies(trendingMovies: List<String>) {
-    items(trendingMovies) { movie ->
+private fun LazyListScope.nowPlayingMovies(nowPlayingMovies: List<String>) {
+    items(nowPlayingMovies) { movie ->
         MoviePoster(image = movie)
     }
 }
