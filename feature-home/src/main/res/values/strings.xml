@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="home">Home</string>
+
+
+    <!-- Button Panel Button Texts -->
+    <string name="my_list_button_text">My List</string>
+    <string name="play_button_text">Play</string>
+    <string name="info_button_text">Info</string>
 </resources>

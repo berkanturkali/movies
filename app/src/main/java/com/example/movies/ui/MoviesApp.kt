@@ -16,8 +16,8 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.examle.movies.core.ui.component.MoviesBackground
-import com.examle.movies.core.ui.theme.MoviesComposeTheme
+import com.examle.movies.core.ui.components.MoviesBackground
+import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies.navigation.MoviesNavHost
 import com.example.movies.navigation.MoviesTopLevelNavigation
 import com.example.movies.navigation.TOP_LEVEL_DESTINATIONS
@@ -28,7 +28,7 @@ import com.example.movies.navigation.TopLevelDestination
 @Composable
 fun MoviesApp(windowSizeClass: WindowSizeClass) {
 
-    MoviesComposeTheme {
+    MoviesTheme {
         val navController = rememberNavController()
         val moviesTopLevelNavigation = remember(navController) {
             MoviesTopLevelNavigation(navController)

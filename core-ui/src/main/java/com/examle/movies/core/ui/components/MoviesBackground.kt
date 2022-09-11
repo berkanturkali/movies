@@ -1,4 +1,4 @@
-package com.examle.movies.core.ui.component
+package com.examle.movies.core.ui.components
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.LocalAbsoluteTonalElevation

@@ -24,7 +24,7 @@ private val DarkColorScheme = darkColorScheme(
 )
 
 @Composable
-fun MoviesComposeTheme(
+fun MoviesTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
