@@ -15,7 +15,6 @@ import com.example.movies.feature.upcomings.navigation.comingSoonGraph
 
 @Composable
 fun MoviesNavHost(
-    windowSizeClass: WindowSizeClass,
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
     startDestination: String = HomeDestination.route

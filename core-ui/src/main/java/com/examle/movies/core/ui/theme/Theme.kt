@@ -5,15 +5,11 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
-import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
-import com.examle.movies.core.ui.providers.LocalActivity
-import com.examle.movies.core.ui.providers.LocalWindowSizeClass
 
 private val DarkColorScheme = darkColorScheme(
     primary = Primary,
@@ -38,8 +34,6 @@ fun MoviesTheme(
 ) {
     val colorScheme = DarkColorScheme
 
-    val activity = LocalActivity.current
-
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
@@ -48,13 +42,11 @@ fun MoviesTheme(
         }
     }
 
-    CompositionLocalProvider(LocalWindowSizeClass provides calculateWindowSizeClass(activity = activity)) {
-        MaterialTheme(
-            colorScheme = colorScheme,
-            typography = Typography,
-            content = content
-        )
-    }
+    MaterialTheme(
+        colorScheme = colorScheme,
+        typography = Typography,
+        content = content
+    )
 }
 
 

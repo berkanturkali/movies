@@ -28,7 +28,7 @@ object RetrofitModule {
     }
 
     @[Provides Singleton]
-    fun provideTrendingFactory(retrofit: Retrofit): TrendingService {
+    fun provideTrendingService(retrofit: Retrofit): TrendingService {
         return TrendingServiceFactory.createService(retrofit)
     }
 

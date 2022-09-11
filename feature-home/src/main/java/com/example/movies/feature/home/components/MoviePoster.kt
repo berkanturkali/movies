@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import coil.imageLoader
 import com.examle.movies.core.ui.components.MoviesSurface
-import com.examle.movies.core.ui.providers.LocalWindowSizeClass
+import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.examle.movies.core.ui.theme.MoviesTheme
 
 @Composable
@@ -26,18 +26,16 @@ fun MoviePoster(
 
     val imageLoader = LocalContext.current.imageLoader
 
-    val windowSizeClass = LocalWindowSizeClass.current
-
-    val widthHeightModifier: Modifier = when (windowSizeClass.widthSizeClass) {
-        WindowWidthSizeClass.Companion.Compact -> Modifier
+    val widthHeightModifier: Modifier = when (LocalWindowWidthSizeClass.current) {
+        WindowWidthSizeClass.Compact -> Modifier
             .width(150.dp)
             .height(220.dp)
         WindowWidthSizeClass.Medium -> Modifier
             .width(220.dp)
             .height(290.dp)
         WindowWidthSizeClass.Compact -> Modifier
-            .width(300.dp)
-            .height(370.dp)
+            .width(290.dp)
+            .height(360.dp)
         else -> Modifier
             .width(150.dp)
             .height(220.dp)
