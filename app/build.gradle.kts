@@ -48,6 +48,9 @@ dependencies {
     implementAllProjects(
         ProjectLibs.CORE_UI,
         ProjectLibs.CORE_NAVIGATION,
+        ProjectLibs.CORE_NETWORK,
+        ProjectLibs.CORE_DATA,
+        ProjectLibs.CORE_COMMON,
         ProjectLibs.FEATURE_HOME,
         ProjectLibs.FEATURE_SEARCH,
         ProjectLibs.FEATURE_UPCOMING,
