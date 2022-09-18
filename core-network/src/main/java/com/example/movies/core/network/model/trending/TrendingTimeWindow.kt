@@ -1,4 +1,4 @@
-package com.example.movies.core.network.trending
+package com.example.movies.core.network.model.trending
 
 /**
  * Represents the time_window param for trending path

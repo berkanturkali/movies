@@ -1,6 +1,6 @@
 package com.example.movies.core.network.factory.service
 
-import com.example.movies.core.network.trending.service.TrendingService
+import com.example.movies.core.network.service.trending.TrendingService
 import retrofit2.Retrofit
 
 object TrendingServiceFactory : RetrofitServiceFactory<TrendingService> {

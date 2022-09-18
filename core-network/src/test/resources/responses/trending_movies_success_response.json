@@ -1,0 +1,419 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg",
+      "id": 616037,
+      "title": "Thor: Love and Thunder",
+      "original_language": "en",
+      "original_title": "Thor: Love and Thunder",
+      "overview": "After his retirement is interrupted by Gorr the God Butcher, a galactic killer who seeks the extinction of the gods, Thor Odinson enlists the help of King Valkyrie, Korg, and ex-girlfriend Jane Foster, who now wields Mjolnir as the Mighty Thor. Together they embark upon a harrowing cosmic adventure to uncover the mystery of the God Butcher’s vengeance and stop him before it’s too late.",
+      "poster_path": "/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        14,
+        28,
+        35
+      ],
+      "popularity": 4156.973,
+      "release_date": "2022-07-06",
+      "video": false,
+      "vote_average": 6.807,
+      "vote_count": 3434
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/aCaqCvYn48b3lfGKGnUdVAE1yeB.jpg",
+      "id": 814800,
+      "title": "Goodnight Mommy",
+      "original_language": "en",
+      "original_title": "Goodnight Mommy",
+      "overview": "When twin brothers arrive home to find their mother’s demeanor altered and face covered in surgical bandages, they begin to suspect the woman beneath the gauze might not be their mother.",
+      "poster_path": "/oHhD5jD4S5ElPNNFCDKXJAzMZ5h.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        27,
+        18,
+        53
+      ],
+      "popularity": 91.776,
+      "release_date": "2022-09-16",
+      "video": false,
+      "vote_average": 5.758,
+      "vote_count": 33
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/yWRvAfZmbzk61REYod4WQACDhRj.jpg",
+      "id": 762968,
+      "title": "Do Revenge",
+      "original_language": "en",
+      "original_title": "Do Revenge",
+      "overview": "A dethroned queen bee at a posh private high school strikes a secret deal with an unassuming new student to enact revenge on one another’s enemies.",
+      "poster_path": "/akIjKJDHcVN4bzifcEarKVPNpoa.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        35
+      ],
+      "popularity": 124.494,
+      "release_date": "2022-09-14",
+      "video": false,
+      "vote_average": 7.298,
+      "vote_count": 57
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/yo0qfH2dQGGMxkfivdkz5zxVatD.jpg",
+      "id": 830788,
+      "title": "The Invitation",
+      "original_language": "en",
+      "original_title": "The Invitation",
+      "overview": "After the death of her mother, Evie is approached by an unknown cousin who invites her to a lavish wedding in the English countryside. Soon, she realizes a gothic conspiracy is afoot and must fight for survival as she uncovers twisted secrets in her family’s history.",
+      "poster_path": "/jcTq6gIskCsHlKDvCKKouEfiU66.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        27,
+        53
+      ],
+      "popularity": 172.754,
+      "release_date": "2022-08-24",
+      "video": false,
+      "vote_average": 6.205,
+      "vote_count": 66
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/dU9pMo94W91RL2Q38KbbVIr6Kxu.jpg",
+      "id": 556694,
+      "title": "Three Thousand Years of Longing",
+      "original_language": "en",
+      "original_title": "Three Thousand Years of Longing",
+      "overview": "A solitary scholar discovers an ancient bottle while on a trip to Istanbul and unleashes a djinn who offers her three wishes. Filled with reluctance, she is unable to come up with one until his stories spark in her a desire to be loved.",
+      "poster_path": "/8q6BrcwGEBGbtwtbCUVKEt2lmEy.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        14,
+        18,
+        10749
+      ],
+      "popularity": 285.871,
+      "release_date": "2022-08-24",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 178
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/svtdY99l55u8q87By6GdKYySmzm.jpg",
+      "id": 1013228,
+      "title": "I Used to Be Famous",
+      "original_language": "en",
+      "original_title": "I Used to Be Famous",
+      "overview": "A former boy band star unexpectedly gets a second shot at success when he forms a bond with a gifted young drummer.",
+      "poster_path": "/hJMnsf6vzgoNx0bv3uh3PTCjmks.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        35,
+        18,
+        10402
+      ],
+      "popularity": 10.837,
+      "release_date": "2022-09-09",
+      "video": false,
+      "vote_average": 7.2,
+      "vote_count": 10
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7id7oE3gqZuO0piWN20Ev7V90wl.jpg",
+      "id": 877957,
+      "title": "Drifting Home",
+      "original_language": "ja",
+      "original_title": "雨を告げる漂流団地",
+      "overview": "Sixth-graders Kosuke and Natsume grew up in the same apartment building as childhood friends. During summer break, while playing in the apartment building that is set to be demolished, they find themselves caught in a strange phenomenon. All they can see around them is a vast sea. Will Kosuke and the others make it back to their world? A journey of farewells in summer has just begun.",
+      "poster_path": "/iNf1wC8cK6e8zgNyuMUqWFT7Din.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        16,
+        18,
+        9648,
+        14,
+        10751
+      ],
+      "popularity": 21.074,
+      "release_date": "2022-09-09",
+      "video": false,
+      "vote_average": 7.2,
+      "vote_count": 15
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/nnUQqlVZeEGuCRx8SaoCU4XVHJN.jpg",
+      "id": 532639,
+      "title": "Pinocchio",
+      "original_language": "en",
+      "original_title": "Pinocchio",
+      "overview": "A wooden puppet embarks on a thrilling adventure to become a real boy.",
+      "poster_path": "/h32gl4a3QxQWNiNaR4Fc1uvLBkV.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        14,
+        12,
+        10751
+      ],
+      "popularity": 7483.014,
+      "release_date": "2022-09-07",
+      "video": false,
+      "vote_average": 6.845,
+      "vote_count": 511
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/odJ4hx6g6vBt4lBWKFD1tI8WS4x.jpg",
+      "id": 361743,
+      "title": "Top Gun: Maverick",
+      "original_language": "en",
+      "original_title": "Top Gun: Maverick",
+      "overview": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
+      "poster_path": "/62HCnUTziyWcpDaBO2i1DX17ljH.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        28,
+        18
+      ],
+      "popularity": 2055.853,
+      "release_date": "2022-05-24",
+      "video": false,
+      "vote_average": 8.365,
+      "vote_count": 3763
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7bck0VVQW3YEMitkacJcxJKveQK.jpg",
+      "id": 862965,
+      "title": "Emily the Criminal",
+      "original_language": "en",
+      "original_title": "Emily the Criminal",
+      "overview": "Emily, who is saddled with student debt and locked out of the job market due to a minor criminal record, gets involved in a credit card scam that pulls her into the criminal underworld of Los Angeles, ultimately leading to deadly consequences.",
+      "poster_path": "/iZvzMpREGiqDQ5eYbx8z70qPgst.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        80,
+        53
+      ],
+      "popularity": 42.787,
+      "release_date": "2022-08-12",
+      "video": false,
+      "vote_average": 7.235,
+      "vote_count": 48
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/3xGfsAYAxVmYj1CbE5vAkmMJbHo.jpg",
+      "id": 724665,
+      "title": "Confess, Fletch",
+      "original_language": "en",
+      "original_title": "Confess, Fletch",
+      "overview": "The roguishly charming and endlessly troublesome Fletch becomes the prime suspect in a murder case while searching for a stolen art collection. The only way to prove his innocence? Find out which of the long list of suspects is the culprit - from the eccentric art dealer and a missing playboy to a crazy neighbor and Fletch’s Italian girlfriend.",
+      "poster_path": "/4dqEk1X8rHSOWWfnVEuzgXj24Mr.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        80,
+        35
+      ],
+      "popularity": 76.371,
+      "release_date": "2022-09-16",
+      "video": false,
+      "vote_average": 5.4,
+      "vote_count": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7Y3LdmsZukXhmwxtO0UF95BFBTt.jpg",
+      "id": 682507,
+      "title": "Where the Crawdads Sing",
+      "original_language": "en",
+      "original_title": "Where the Crawdads Sing",
+      "overview": "Abandoned by her family, Kya raises herself all alone in the marshes outside of her small town. When her former boyfriend is found dead, Kya is instantly branded by the local townspeople and law enforcement as the prime suspect for his murder.",
+      "poster_path": "/n1el846gLDXfhOvrRCsyvaAOQWv.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        18,
+        9648,
+        53
+      ],
+      "popularity": 718.735,
+      "release_date": "2022-07-15",
+      "video": false,
+      "vote_average": 7.637,
+      "vote_count": 281
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4gEz2Vnv7xCzVOQozgZXkeoMRkM.jpg",
+      "id": 833339,
+      "title": "Speak No Evil",
+      "original_language": "da",
+      "original_title": "Gæsterne",
+      "overview": "A Danish family visits a Dutch family they met on a holiday. What was supposed to be an idyllic weekend slowly starts unraveling as the Danes try to stay polite in the face of unpleasantness.",
+      "poster_path": "/vDivpdm4gf2IelTBZWeCG6ctqUd.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        27,
+        9648,
+        18
+      ],
+      "popularity": 20.492,
+      "release_date": "2022-03-17",
+      "video": false,
+      "vote_average": 6.632,
+      "vote_count": 19
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/nmGWzTLMXy9x7mKd8NKPLmHtWGa.jpg",
+      "id": 438148,
+      "title": "Minions: The Rise of Gru",
+      "original_language": "en",
+      "original_title": "Minions: The Rise of Gru",
+      "overview": "A fanboy of a supervillain supergroup known as the Vicious 6, Gru hatches a plan to become evil enough to join them, with the backup of his followers, the Minions.",
+      "poster_path": "/wKiOkZTN9lUUUNZLmtnwubZYONg.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        16,
+        12,
+        35,
+        14
+      ],
+      "popularity": 2090.737,
+      "release_date": "2022-06-29",
+      "video": false,
+      "vote_average": 7.63,
+      "vote_count": 1945
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2k9tBql5GYH328Krj66tDT9LtFZ.jpg",
+      "id": 760741,
+      "title": "Beast",
+      "original_language": "en",
+      "original_title": "Beast",
+      "overview": "A recently widowed man and his two teenage daughters travel to a game reserve in South Africa. However, their journey of healing soon turns into a fight for survival when a bloodthirsty lion starts to stalk them.",
+      "poster_path": "/iRV0IB5xQeOymuGGUBarTecQVAl.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        12,
+        18,
+        27
+      ],
+      "popularity": 7086.027,
+      "release_date": "2022-08-11",
+      "video": false,
+      "vote_average": 7.099,
+      "vote_count": 345
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2RSirqZG949GuRwN38MYCIGG4Od.jpg",
+      "id": 985939,
+      "title": "Fall",
+      "original_language": "en",
+      "original_title": "Fall",
+      "overview": "For best friends Becky and Hunter, life is all about conquering fears and pushing limits. But after they climb 2,000 feet to the top of a remote, abandoned radio tower, they find themselves stranded with no way down. Now Becky and Hunter’s expert climbing skills will be put to the ultimate test as they desperately fight to survive the elements, a lack of supplies, and vertigo-inducing heights.",
+      "poster_path": "/9f5sIJEgvUpFv0ozfA6TurG4j22.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        53
+      ],
+      "popularity": 9320.962,
+      "release_date": "2022-08-11",
+      "video": false,
+      "vote_average": 7.41,
+      "vote_count": 675
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xVbppM1xgbskOKgOuV8fbWBWHtt.jpg",
+      "id": 762504,
+      "title": "Nope",
+      "original_language": "en",
+      "original_title": "Nope",
+      "overview": "Residents in a lonely gulch of inland California bear witness to an uncanny, chilling discovery.",
+      "poster_path": "/AcKVlWaNVVVFQwro3nLXqPljcYA.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        27,
+        9648,
+        878,
+        53
+      ],
+      "popularity": 1587.271,
+      "release_date": "2022-07-20",
+      "video": false,
+      "vote_average": 7.017,
+      "vote_count": 1465
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vW2oUgMX3ZhKMPTwYbGnkYDxdUq.jpg",
+      "id": 999127,
+      "title": "Broad Peak",
+      "original_language": "pl",
+      "original_title": "Broad Peak",
+      "overview": "After climbing Broad Peak mountain, Maciej Berbeka learns his journey to the summit is incomplete. 25 years later, he sets out to finish what he started.",
+      "poster_path": "/n7eiUpUb27Vpd3MBfLro9rkUo0F.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        18
+      ],
+      "popularity": 32.703,
+      "release_date": "2022-09-09",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 6
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/14QbnygCuTO0vl7CAFmPf1fgZfV.jpg",
+      "id": 634649,
+      "title": "Spider-Man: No Way Home",
+      "original_language": "en",
+      "original_title": "Spider-Man: No Way Home",
+      "overview": "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+      "poster_path": "/uJYYizSuA9Y3DCs0qS4qWvHfZg4.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "popularity": 1317.341,
+      "release_date": "2021-12-15",
+      "video": false,
+      "vote_average": 8.04,
+      "vote_count": 15123
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/92ko5XCqziH4NVZia5RX29UXX2d.jpg",
+      "id": 929449,
+      "title": "Mirror, Mirror",
+      "original_language": "es",
+      "original_title": "Espejo, espejo",
+      "overview": "Did Paula want to better the world by rejecting patriarchal beauty norms? Or climb the corporate ladder? Depends on whether you ask her... or her reflection.",
+      "poster_path": "/3FUfdBpl7VjC0ZWAbhLMcave9Ar.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        35
+      ],
+      "popularity": 9.012,
+      "release_date": "2022-05-20",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 9
+    }
+  ],
+  "total_pages": 1000,
+  "total_results": 20000
+}

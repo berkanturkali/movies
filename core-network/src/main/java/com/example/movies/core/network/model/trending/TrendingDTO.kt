@@ -1,4 +1,4 @@
-package com.example.movies.core.network.trending.model
+package com.example.movies.core.network.model.trending
 
 import com.squareup.moshi.Json
 

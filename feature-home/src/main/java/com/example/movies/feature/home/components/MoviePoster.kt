@@ -21,6 +21,7 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 @Composable
 fun MoviePoster(
     modifier: Modifier = Modifier,
+    childModifier: Modifier = Modifier,
     image: String?,
 ) {
 
@@ -42,7 +43,9 @@ fun MoviePoster(
     }
 
     MoviesSurface(
-        modifier = modifier.then(widthHeightModifier),
+        modifier = modifier
+            .then(widthHeightModifier)
+            .then(childModifier),
         color = Color.LightGray,
     ) {
         val painter = rememberAsyncImagePainter(

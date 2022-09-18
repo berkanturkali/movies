@@ -3,7 +3,7 @@ package com.example.movies.core.network.di
 import com.example.movies.core.network.BuildConfig
 import com.example.movies.core.network.factory.retrofit.RetrofitFactory
 import com.example.movies.core.network.factory.service.TrendingServiceFactory
-import com.example.movies.core.network.trending.service.TrendingService
+import com.example.movies.core.network.service.trending.TrendingService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

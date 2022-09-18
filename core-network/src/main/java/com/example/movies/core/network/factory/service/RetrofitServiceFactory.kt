@@ -1,6 +1,6 @@
 package com.example.movies.core.network.factory.service
 
-import com.example.movies.core.network.base.BaseService
+import com.example.movies.core.network.service.base.BaseService
 import retrofit2.Retrofit
 
 /**

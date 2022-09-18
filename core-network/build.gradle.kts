@@ -17,4 +17,10 @@ dependencies {
         libs.moshi,
         libs.okhttp.logging,
     )
+    //unit-test
+    implementAllUnitTests(
+        libs.truth,
+        libs.mockK,
+        libs.mock.web.server
+    )
 }
