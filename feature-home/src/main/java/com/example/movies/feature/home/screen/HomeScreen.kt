@@ -46,11 +46,19 @@ private fun Home(
 
         //highlighted movie
         item {
-            HighlightedMovie(
-                modifier = Modifier
-                    .fillParentMaxWidth()
-                    .fillParentMaxHeight(0.7f)
-            )
+            if (windowWidthSizeClass == WindowWidthSizeClass.Compact || windowWidthSizeClass == WindowWidthSizeClass.Medium) {
+                HighlightedMovie(
+                    modifier = Modifier
+                        .fillParentMaxWidth()
+                        .fillParentMaxHeight(0.7f)
+                )
+            } else {
+                HighlightedMovieExpanded(
+                    modifier = Modifier
+                        .fillParentMaxWidth()
+                        .fillParentMaxHeight(0.7f)
+                )
+            }
         }
 
         //trending movies

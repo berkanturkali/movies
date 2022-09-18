@@ -28,7 +28,7 @@ import com.example.movies.navigation.TopLevelDestination
 @Composable
 fun MoviesApp() {
     MoviesTheme {
-        val windowSizeClass = LocalWindowWidthSizeClass.current
+        val windowWidthSizeClass = LocalWindowWidthSizeClass.current
         val navController = rememberNavController()
         val moviesTopLevelNavigation = remember(navController) {
             MoviesTopLevelNavigation(navController)
@@ -42,7 +42,7 @@ fun MoviesApp() {
                 containerColor = MaterialTheme.colorScheme.background,
                 contentColor = MaterialTheme.colorScheme.onBackground,
                 bottomBar = {
-                    if (windowSizeClass.widthSizeClass == WindowWidthSizeClass.Compact) {
+                    if (windowWidthSizeClass == WindowWidthSizeClass.Compact) {
                         MoviesBottomBar(
                             onNavigateToTopLevelDestination = moviesTopLevelNavigation::navigateTo,
                             currentDestination = currentDestination
@@ -60,7 +60,7 @@ fun MoviesApp() {
                             )
                         )
                 ) {
-                    if (windowSizeClass.widthSizeClass != WindowWidthSizeClass.Compact) {
+                    if (windowWidthSizeClass != WindowWidthSizeClass.Compact) {
                         MoviesNavRail(
                             onNavigateToTopLevelDestination = moviesTopLevelNavigation::navigateTo,
                             currentDestination = currentDestination,

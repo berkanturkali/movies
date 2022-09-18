@@ -30,8 +30,9 @@ fun HighlightedMovie(
     val imageLoader = LocalContext.current.imageLoader
 
     val painter = rememberAsyncImagePainter(model = "", imageLoader = imageLoader)
-    Box(modifier = modifier) {
-        MoviesSurface(color = Color.Transparent){
+
+        MoviesSurface(color = Color.Transparent,modifier = modifier){
+            Box {
             Image(
                 painter = painter,
                 contentDescription = null,
