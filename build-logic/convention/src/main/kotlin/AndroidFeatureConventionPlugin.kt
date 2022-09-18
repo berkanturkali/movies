@@ -45,14 +45,6 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                     )
                 kapt(libs.findLibrary("hilt.compiler").get())
 
-                testImplementation(
-                    libs.findLibrary("junit4").get()
-                )
-
-                implementAllAndroidTests(
-                    libs.findLibrary("androidx.test.ext").get(),
-                    libs.findLibrary("androidx.test.espresso.core").get()
-                )
 
                 // TODO : Remove this dependency once we upgrade to Android Studio Dolphin b/228889042
                 // These dependencies are currently necessary to render Compose previews

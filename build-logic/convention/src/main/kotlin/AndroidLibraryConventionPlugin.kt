@@ -29,6 +29,15 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                         force("org.objenesis:objenesis:2.6")
                     }
                 }
+                testImplementation(
+                    libs.findLibrary("junit4").get()
+                )
+
+                implementAllAndroidTests(
+                    libs.findLibrary("androidx.test.ext").get(),
+                    libs.findLibrary("androidx.test.espresso.core").get()
+                )
+
             }
         }
     }
