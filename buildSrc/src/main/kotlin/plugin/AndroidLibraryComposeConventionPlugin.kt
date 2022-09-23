@@ -1,14 +1,16 @@
-import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
+package plugin
+
+import com.android.build.gradle.LibraryExtension
 import com.example.movies.configureAndroidCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
 
-class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
+class AndroidLibraryComposeConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            pluginManager.apply("com.android.application")
-            val extension = extensions.getByType<BaseAppModuleExtension>()
+            pluginManager.apply("com.android.library")
+            val extension = extensions.getByType<LibraryExtension>()
             configureAndroidCompose(extension)
         }
     }

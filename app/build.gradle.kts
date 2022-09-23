@@ -1,9 +1,7 @@
 plugins {
-    id("movies.android.application")
-    id("movies.android.application.compose")
-    id("movies.android.application.jacoco")
-    id("kotlin-kapt")
-    id("movies.spotless")
+    moviesAndroidApplication
+    moviesAndroidApplicationCompose
+    kotlinKapt
 }
 
 android {
@@ -59,20 +57,8 @@ dependencies {
         ProjectLibs.FEATURE_HOME,
     )
 
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.compose.material3.windowSizeClass)
-    implementation(libs.androidx.window.manager)
-    implementation(libs.material3)
-    implementation(libs.androidx.profileinstaller)
-
-    // androidx.test is forcing JUnit, 4.12. This forces it to use 4.13
-    configurations.configureEach {
-        resolutionStrategy {
-            force(libs.junit4)
-            // Temporary workaround for https://issuetracker.google.com/174733673
-            force("org.objenesis:objenesis:2.6")
-        }
-    }
+    implementation(Dependencies.Compose.COMPOSE_ACTIVITY)
+    implementation(Dependencies.AndroidX.ANDROIDX_APPCOMPAT)
+    implementation(Dependencies.AndroidX.ANDROIDX_CORE_KTX)
+    implementation(Dependencies.Accompanist.ACCOMPANIST_ANIMATION)
 }

@@ -86,22 +86,3 @@ private fun Home(
         }
     }
 }
-
-
-@Preview
-@Composable
-fun HomePrev(
-) {
-    CompositionLocalProvider(LocalWindowWidthSizeClass provides WindowWidthSizeClass.Compact) {
-        MoviesTheme {
-            val list = (0..20).map { it.toString() }
-            Home(
-                trendingMovies = list,
-                nowPlayingMovies = list,
-                upcomingMovies = list,
-                popularMovies = list,
-                topRatedMovies = list
-            )
-        }
-    }
-}

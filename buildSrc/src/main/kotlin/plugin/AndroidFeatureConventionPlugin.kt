@@ -1,10 +1,17 @@
+package plugin
+
+import Config
+import Dependencies
+import ProjectLibs
 import com.android.build.gradle.LibraryExtension
+import debugImplementation
+import implementAllProjects
+import implementation
+import kapt
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.getByType
 
 class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -22,33 +29,24 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 }
             }
 
-            val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
-
             dependencies {
 
                 implementAllProjects(
                     ProjectLibs.CORE_UI,
                     ProjectLibs.CORE_NAVIGATION,
-
                     )
-//                add("implementation", project(":core-model"))
-//                add("implementation", project(":core-data"))
-//                add("implementation", project(":core-common"))
 
-                implementAll(
-                    libs.findLibrary("androidx.hilt.navigation.compose").get(),
-                    libs.findLibrary("androidx.lifecycle.viewModelCompose").get(),
-                    libs.findLibrary("kotlinx.coroutines.android").get(),
-                    libs.findLibrary("hilt.android").get(),
-                    libs.findLibrary("coil.kt.compose").get(),
+                //hilt
+                implementation(Dependencies.DI.HILT_ANDROID)
+                kapt(Dependencies.DI.HILT_COMPILER_KAPT)
 
-                    )
-                kapt(libs.findLibrary("hilt.compiler").get())
+                //accompanist navigation
+                implementation(Dependencies.Accompanist.ACCOMPANIST_ANIMATION)
 
 
                 // TODO : Remove this dependency once we upgrade to Android Studio Dolphin b/228889042
                 // These dependencies are currently necessary to render Compose previews
-                debugImplementation(libs.findLibrary("androidx.customview.poolingcontainer").get())
+                debugImplementation(Dependencies.AndroidX.ANDROIDX_CUSTOM_VIEW_POOL_CONTAINER)
             }
         }
     }

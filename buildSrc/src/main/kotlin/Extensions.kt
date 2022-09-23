@@ -3,6 +3,33 @@ import org.gradle.kotlin.dsl.project
 import org.gradle.plugin.use.PluginDependenciesSpec
 import org.gradle.plugin.use.PluginDependencySpec
 
+val PluginDependenciesSpec.moviesAndroidApplication: PluginDependencySpec
+    get() = id("movies.android.application")
+
+val PluginDependenciesSpec.moviesAndroidApplicationCompose: PluginDependencySpec
+    get() = id("movies.android.application.compose")
+
+val PluginDependenciesSpec.moviesAndroidLibrary: PluginDependencySpec
+    get() = id("movies.android.library")
+
+val PluginDependenciesSpec.moviesAndroidLibraryCompose: PluginDependencySpec
+    get() = id("movies.android.library.compose")
+
+val PluginDependenciesSpec.moviesAndroidFeature: PluginDependencySpec
+    get() = id("movies.android.feature")
+
+val PluginDependenciesSpec.daggerHilt: PluginDependencySpec
+    get() = id("dagger.hilt.android.plugin")
+
+val PluginDependenciesSpec.parcelize: PluginDependencySpec
+    get() = id("kotlin-parcelize")
+
+val PluginDependenciesSpec.kotlinKapt: PluginDependencySpec
+    get() = id("org.jetbrains.kotlin.kapt")
+
+val PluginDependenciesSpec.googleSecrets: PluginDependencySpec
+    get() = id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+
 fun DependencyHandler.kapt(dependency: Any) = add(
     "kapt", dependency
 )

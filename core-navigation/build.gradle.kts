@@ -1,11 +1,8 @@
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("movies.android.library")
-    id("movies.android.library.jacoco")
-    alias(libs.plugins.ksp)
-    id("movies.spotless")
+    moviesAndroidLibrary
+    kotlinKapt
 }
 dependencies {
-    api(libs.androidx.hilt.navigation.compose)
-    api(libs.androidx.navigation.compose)
+    implementation(Dependencies.DI.HILT_ANDROID)
+    kapt(Dependencies.DI.HILT_COMPILER_KAPT)
 }

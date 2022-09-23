@@ -1,15 +1,13 @@
-
 buildscript {
     repositories {
         google()
         mavenCentral()
+        maven("https://plugins.gradle.org/m2/")
     }
-
     dependencies {
-        classpath(libs.android.gradlePlugin)
-        classpath(libs.kotlin.gradlePlugin)
-        classpath(libs.hilt.gradlePlugin)
-        classpath(libs.secrets.gradlePlugin)
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
+        classpath(GradlePlugins.ANDROID_GRADLE_PLUGIN)
+        classpath(GradlePlugins.KOTLIN_GRADLE_PLUGIN)
+        classpath(GradlePlugins.HILT_GRADLE_PLUGIN)
+        classpath(GradlePlugins.SECRETS_GRADLE_PLUGIN)
     }
 }

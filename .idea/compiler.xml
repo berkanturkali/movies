@@ -5,6 +5,9 @@
       <module name="build-logic.convention" target="1.8" />
       <module name="build-logic.convention.main" target="1.8" />
       <module name="build-logic.convention.test" target="1.8" />
+      <module name="Movies.buildSrc" target="1.8" />
+      <module name="Movies.buildSrc.main" target="1.8" />
+      <module name="Movies.buildSrc.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,26 +1,28 @@
 plugins {
-    id("movies.android.library")
-    id("movies.android.feature")
-    id("movies.android.library.compose")
-    id("movies.android.library.jacoco")
-    id("movies.spotless")
-    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    moviesAndroidLibrary
+    moviesAndroidLibraryCompose
+    moviesAndroidFeature
+    googleSecrets
 }
 
 android.defaultConfig.buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
 dependencies {
 
-    //network
+    //platform
+    implementPlatform(Dependencies.Network.OKHTTP_BOM)
+
+//    //network
     implementAll(
-        libs.retrofit.core,
-        libs.retrofit.moshi.converter,
-        libs.moshi,
-        libs.okhttp.logging,
+        Dependencies.Network.RETROFIT,
+        Dependencies.Network.RETROFIT_MOSHI_CONVERTER,
+        Dependencies.Network.MOSHI,
+        Dependencies.Network.OKHTTP_3,
+        Dependencies.Network.OKHTTP_3_LOGGING_INTERCEPTOR
     )
-    //unit-test
+//    //unit-test
     implementAllUnitTests(
-        libs.truth,
-        libs.mockK,
-        libs.mock.web.server
+        Dependencies.Test.UnitTest.TRUTH,
+        Dependencies.Test.UnitTest.MOCKK,
+        Dependencies.Test.UnitTest.MOCK_WEB_SERVER,
     )
 }

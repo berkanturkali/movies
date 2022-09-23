@@ -1,5 +1,4 @@
 pluginManagement {
-    includeBuild("build-logic")
     repositories {
         gradlePluginPortal()
         google()
@@ -7,8 +6,6 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    enableFeaturePreview("VERSION_CATALOGS")
     repositories {
         google()
         mavenCentral()

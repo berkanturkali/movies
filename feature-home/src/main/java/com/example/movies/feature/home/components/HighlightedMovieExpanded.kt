@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -16,14 +15,9 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewParameter
 import coil.compose.rememberAsyncImagePainter
 import coil.imageLoader
 import com.examle.movies.core.ui.icon.MoviesIcons
-import com.examle.movies.core.ui.preview.WindowWidthSizeClassPreview
-import com.examle.movies.core.ui.preview.WindowWidthSizePreviewParameterProvider
-import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.example.movies_compose.feature.home.R
 
 @Composable
@@ -157,26 +151,15 @@ private fun PlayButton(
         shape = RoundedCornerShape(dimensionResource(id = com.examle.movies.core.ui.R.dimen.dimen_8)),
         colors = ButtonDefaults.buttonColors(containerColor = Color.White),
         onClick = {}) {
-            Icon(
-                painter = painterResource(id = MoviesIcons.PLAY),
-                contentDescription = null,
-                tint = Color.Black
-            )
-            Text(
-                text = stringResource(id = R.string.play_button_text),
-                color = Color.Black,
-                style = MaterialTheme.typography.bodyMedium
-            )
-        }
+        Icon(
+            painter = painterResource(id = MoviesIcons.PLAY),
+            contentDescription = null,
+            tint = Color.Black
+        )
+        Text(
+            text = stringResource(id = R.string.play_button_text),
+            color = Color.Black,
+            style = MaterialTheme.typography.bodyMedium
+        )
     }
-
-@Preview
-@Composable
-fun HighlightedMoviesExpandedPrev(
-    @PreviewParameter(WindowWidthSizePreviewParameterProvider::class) windowWidth: WindowWidthSizeClassPreview
-) {
-    CompositionLocalProvider(LocalWindowWidthSizeClass provides windowWidth.value) {
-        HighlightedMovieExpanded()
-    }
-
 }
