@@ -1,6 +1,7 @@
 package com.example.movies.feature.home.screen
 
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -14,7 +15,7 @@ import com.example.movies.feature.home.components.*
 @Composable
 fun HomeScreen() {
 
-    MoviesSurface {
+    Scaffold() {
         val list = (0..20).map { it.toString() }
         Home(
             trendingMovies = list,

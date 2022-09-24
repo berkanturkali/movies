@@ -31,7 +31,8 @@ internal fun Project.configureAndroidCompose(
                             "com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi," +
                             "androidx.compose.material.ExperimentalMaterialApi," +
                             "androidx.compose.animation.ExperimentalAnimationApi," +
-                            "androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi,"
+                            "androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi," +
+                            "androidx.compose.material3.ExperimentalMaterial3Api,"
                     )
 
             // Set JVM target to 1.8

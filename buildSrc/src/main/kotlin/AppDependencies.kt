@@ -7,6 +7,7 @@ import Dependencies.Compose.Version.COMPOSE_ACTIVITY_VERSION
 import Dependencies.Compose.Version.COMPOSE_CONSTRAINT_LAYOUT_VERSION
 import Dependencies.Compose.Version.COMPOSE_HILT_NAVIGATION_VERSION
 import Dependencies.Compose.Version.COMPOSE_MATERIAL_3_VERSION
+import Dependencies.Compose.Version.COMPOSE_MATERIAL_VERSION
 import Dependencies.Compose.Version.COMPOSE_VERSION
 import Dependencies.DI.Version.HILT_VERSION
 import Dependencies.Lottie.Version.LOTTIE_VERSION
@@ -74,6 +75,7 @@ object Dependencies {
             const val COMPOSE_CONSTRAINT_LAYOUT_VERSION = "1.0.1"
             const val COMPOSE_HILT_NAVIGATION_VERSION = "1.0.0"
             const val COMPOSE_MATERIAL_3_VERSION = "1.0.0-beta03"
+            const val COMPOSE_MATERIAL_VERSION = "1.2.1"
         }
 
         const val COMPOSE_FOUNDATION = "androidx.compose.foundation:foundation:$COMPOSE_VERSION"
@@ -81,6 +83,7 @@ object Dependencies {
             "androidx.compose.foundation:foundation-layout:$COMPOSE_VERSION"
         const val COMPOSE_MATERIAL_ICONS_EXTENDED =
             "androidx.compose.material:material-icons-extended:$COMPOSE_VERSION"
+        const val COMPOSE_MATERIAL = "androidx.compose.material:material:$COMPOSE_MATERIAL_VERSION"
         const val COMPOSE_MATERIAL_3 =
             "androidx.compose.material3:material3:$COMPOSE_MATERIAL_3_VERSION"
         const val COMPOSE_MATERIAL_3_WINDOW_SIZE_CLASS =

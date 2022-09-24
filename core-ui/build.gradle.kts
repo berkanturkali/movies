@@ -13,6 +13,7 @@ dependencies {
     api(Dependencies.Compose.COMPOSE_FOUNDATION_LAYOUT)
     api(Dependencies.Compose.COMPOSE_MATERIAL_ICONS_EXTENDED)
     api(Dependencies.Compose.COMPOSE_MATERIAL_3)
+    api(Dependencies.Compose.COMPOSE_MATERIAL)
     debugApi(Dependencies.Compose.COMPOSE_UI_TOOLING)
     api(Dependencies.Compose.COMPOSE_UI_TOOLING_PREVIEW)
     api(Dependencies.Compose.COMPOSE_UI_UTIL)
