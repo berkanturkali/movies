@@ -49,6 +49,7 @@ dependencies {
         ProjectLibs.CORE_NETWORK,
         ProjectLibs.CORE_DATA,
         ProjectLibs.CORE_COMMON,
+        ProjectLibs.CORE_MODEL,
         ProjectLibs.FEATURE_HOME,
         ProjectLibs.FEATURE_SEARCH,
         ProjectLibs.FEATURE_UPCOMING,

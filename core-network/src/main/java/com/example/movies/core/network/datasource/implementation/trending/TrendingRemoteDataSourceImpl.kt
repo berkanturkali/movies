@@ -1,4 +1,4 @@
-package com.example.movies.core.network.datasource.implementation
+package com.example.movies.core.network.datasource.implementation.trending
 
 import com.example.movies.core.network.datasource.abstraction.trending.TrendingRemoteDataSource
 import com.example.movies.core.network.model.trending.TrendingDTO

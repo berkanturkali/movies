@@ -7,7 +7,7 @@ object ProjectLibs {
     const val CORE_UI = ":core-ui"
     const val CORE_DATA = ":core-data"
     const val CORE_COMMON = ":core-common"
-
+    const val CORE_MODEL = ":core-model"
     //endregion
 
 

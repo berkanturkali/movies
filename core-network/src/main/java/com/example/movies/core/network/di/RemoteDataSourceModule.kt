@@ -1,7 +1,7 @@
 package com.example.movies.core.network.di
 
 import com.example.movies.core.network.datasource.abstraction.trending.TrendingRemoteDataSource
-import com.example.movies.core.network.datasource.implementation.TrendingRemoteDataSourceImpl
+import com.example.movies.core.network.datasource.implementation.trending.TrendingRemoteDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

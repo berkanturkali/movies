@@ -1,6 +1,7 @@
 package com.example.movies.core.network.datasource.implementation
 
 import com.example.movies.core.network.datasource.abstraction.trending.TrendingRemoteDataSource
+import com.example.movies.core.network.datasource.implementation.trending.TrendingRemoteDataSourceImpl
 import com.example.movies.core.network.dispatcher.TrendingMoviesRequestDispatcher
 import com.example.movies.core.network.factory.getJson
 import com.example.movies.core.network.factory.makeApiService
