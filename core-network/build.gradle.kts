@@ -6,7 +6,17 @@ plugins {
 }
 
 android.defaultConfig.buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+android.defaultConfig.buildConfigField(
+    "String",
+    "BASE_IMAGE_URL",
+    "\"https://image.tmdb.org/t/p/\""
+)
 dependencies {
+
+    //project libs
+    implementAllProjects(
+        ProjectLibs.CORE_MODEL,
+    )
 
     //platform
     implementPlatform(Dependencies.Network.OKHTTP_BOM)
