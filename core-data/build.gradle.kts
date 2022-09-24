@@ -2,4 +2,9 @@ plugins {
     moviesAndroidLibrary
 }
 
-dependencies {}
+dependencies {
+    //projectlibs
+    implementAllProjects(
+        ProjectLibs.CORE_MODEL,
+    )
+}
