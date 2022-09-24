@@ -13,4 +13,6 @@ object MoviesIcons {
     val INFO = Icons.Outlined.Info
 
     val NEXT = R.drawable.ic_next
+
+    val LOGO = R.drawable.netflix_logo
 }

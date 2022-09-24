@@ -4,6 +4,7 @@ import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.api.plugins.ExtensionAware
+import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
 /**
@@ -24,12 +25,13 @@ internal fun Project.configureAndroidCompose(
             allWarningsAsErrors = properties["warningsAsErrors"] as? Boolean ?: false
 
             freeCompilerArgs = freeCompilerArgs + (
-                    "-Xopt-in=kotlin.Experimental," +
+                    "-opt-in=kotlin.Experimental," +
                             "androidx.compose.ui.ExperimentalComposeUiApi," +
                             "com.google.accompanist.pager.ExperimentalPagerApi," +
                             "com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi," +
                             "androidx.compose.material.ExperimentalMaterialApi," +
-                            "androidx.compose.animation.ExperimentalAnimationApi,"
+                            "androidx.compose.animation.ExperimentalAnimationApi," +
+                            "androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi,"
                     )
 
             // Set JVM target to 1.8

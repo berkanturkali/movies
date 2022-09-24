@@ -5,11 +5,13 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
+import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 
 private val DarkColorScheme = darkColorScheme(
     primary = Primary,
@@ -34,6 +36,11 @@ fun MoviesTheme(
 ) {
     val colorScheme = DarkColorScheme
 
+    val typography = when (LocalWindowWidthSizeClass.current) {
+        WindowWidthSizeClass.Compact -> SmallTypography
+        else -> MediumLargeTypography
+    }
+
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
@@ -44,7 +51,7 @@ fun MoviesTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = typography,
         content = content
     )
 }

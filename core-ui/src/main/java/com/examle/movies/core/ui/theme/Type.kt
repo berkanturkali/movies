@@ -32,8 +32,8 @@ val Poppins = FontFamily(
     Font(R.font.poppins_thin_italic, weight = FontWeight.Thin, style = FontStyle.Italic),
 )
 
-// Set of Material typography styles to start with
-val Typography = Typography(
+//region Small Typography
+val SmallTypography = Typography(
     displayLarge = TextStyle(
         fontWeight = FontWeight.W400,
         fontSize = 57.sp,
@@ -133,3 +133,107 @@ val Typography = Typography(
         fontFamily = Poppins
     )
 )
+//endregion
+
+//region Medium & Large Typography
+val MediumLargeTypography = Typography(
+    displayLarge = TextStyle(
+        fontWeight = FontWeight.W400,
+        fontSize = 90.sp,
+        lineHeight = 64.sp,
+        letterSpacing = (-0.25).sp,
+        fontFamily = Poppins
+    ),
+    displayMedium = TextStyle(
+        fontWeight = FontWeight.W400,
+        fontSize = 80.sp,
+        lineHeight = 52.sp,
+        fontFamily = Poppins
+    ),
+    displaySmall = TextStyle(
+        fontWeight = FontWeight.W400,
+        fontSize = 75.sp,
+        lineHeight = 44.sp,
+        fontFamily = Poppins
+    ),
+    headlineLarge = TextStyle(
+        fontWeight = FontWeight.W400,
+        fontSize = 72.sp,
+        lineHeight = 40.sp,
+        fontFamily = Poppins
+    ),
+    headlineMedium = TextStyle(
+        fontWeight = FontWeight.W400,
+        fontSize = 68.sp,
+        lineHeight = 36.sp,
+        fontFamily = Poppins
+    ),
+    headlineSmall = TextStyle(
+        fontWeight = FontWeight.W400,
+        fontSize = 64.sp,
+        lineHeight = 32.sp,
+        fontFamily = Poppins
+    ),
+    titleLarge = TextStyle(
+        fontWeight = FontWeight.W700,
+        fontSize = 60.sp,
+        lineHeight = 28.sp,
+        fontFamily = Poppins
+    ),
+    titleMedium = TextStyle(
+        fontWeight = FontWeight.W700,
+        fontSize = 56.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.1.sp,
+        fontFamily = Poppins
+    ),
+    titleSmall = TextStyle(
+        fontWeight = FontWeight.W500,
+        fontSize = 52.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.1.sp,
+        fontFamily = Poppins
+    ),
+    bodyLarge = TextStyle(
+        fontWeight = FontWeight.W400,
+        fontSize = 48.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp,
+        fontFamily = Poppins
+    ),
+    bodyMedium = TextStyle(
+        fontWeight = FontWeight.W400,
+        fontSize = 44.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.25.sp,
+        fontFamily = Poppins
+    ),
+    bodySmall = TextStyle(
+        fontWeight = FontWeight.W400,
+        fontSize = 40.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.4.sp,
+        fontFamily = Poppins
+    ),
+    labelLarge = TextStyle(
+        fontWeight = FontWeight.W400,
+        fontSize = 36.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.1.sp,
+        fontFamily = Poppins
+    ),
+    labelMedium = TextStyle(
+        fontWeight = FontWeight.W400,
+        fontSize = 32.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp,
+        fontFamily = Poppins
+    ),
+    labelSmall = TextStyle(
+        fontWeight = FontWeight.W500,
+        fontSize = 28.sp,
+        lineHeight = 16.sp,
+        fontFamily = Poppins
+    )
+)
+//endregion
