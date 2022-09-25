@@ -2,6 +2,7 @@ plugins {
     moviesAndroidApplication
     moviesAndroidApplicationCompose
     kotlinKapt
+    daggerHilt
 }
 
 android {
@@ -20,7 +21,7 @@ android {
         named(BuildType.Debug.name) {
             applicationIdSuffix = BuildType.Debug.applicationIdSuffix
         }
-       named(BuildType.Release.name){
+        named(BuildType.Release.name) {
             isMinifyEnabled = BuildType.Release.isMinifyEnabled
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -38,7 +39,14 @@ android {
             isIncludeAndroidResources = true
         }
     }
+    kapt {
+        correctErrorTypes = true
+    }
 }
+hilt {
+    enableAggregatingTask = true
+}
+
 
 dependencies {
 
@@ -61,5 +69,14 @@ dependencies {
     implementation(Dependencies.Compose.COMPOSE_ACTIVITY)
     implementation(Dependencies.AndroidX.ANDROIDX_APPCOMPAT)
     implementation(Dependencies.AndroidX.ANDROIDX_CORE_KTX)
+
+    //accompanist
     implementation(Dependencies.Accompanist.ACCOMPANIST_ANIMATION)
+
+    //hilt
+    implementation(Dependencies.DI.HILT_ANDROID)
+    kapt(Dependencies.DI.HILT_COMPILER_KAPT)
+
+    //timber
+    implementation(Dependencies.Timber.TIMBER)
 }
