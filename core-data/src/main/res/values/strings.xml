@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Error Messages -->
+    <string name="no_result_error_message">No Result Found</string>
+    <string name="timeout_error_message">Timeout</string>
+    <string name="network_connection_error_message">Please check your network connection</string>
+    <string name="something_went_wrong_error_message">Something went wrong</string>
+
+</resources>
