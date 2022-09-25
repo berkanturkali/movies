@@ -1,13 +1,12 @@
-package com.example.movies.core.network.utils
+package com.example.movies.core.data.utils
 
-import com.example.movies.core.network.model.error.ErrorResponse
 import com.example.movies.core.network.model.trending.TrendingDTO
 import com.example.movies.core.network.model.trending.TrendingResponseDTO
 
 object DummyData {
 
     //region network models
-    val trendingDto = TrendingDTO(
+    private val trendingDto = TrendingDTO(
         id = 1,
         title = "Lou",
         posterPath = "/djM2s4wSaATn4jVB33cV05PEbV7.jpg",

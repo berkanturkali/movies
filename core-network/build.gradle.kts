@@ -21,7 +21,7 @@ dependencies {
     //platform
     implementPlatform(Dependencies.Network.OKHTTP_BOM)
 
-//    //network
+    //network
     implementAll(
         Dependencies.Network.RETROFIT,
         Dependencies.Network.RETROFIT_MOSHI_CONVERTER,
@@ -29,7 +29,7 @@ dependencies {
         Dependencies.Network.OKHTTP_3,
         Dependencies.Network.OKHTTP_3_LOGGING_INTERCEPTOR
     )
-//    //unit-test
+    //unit-test
     implementAllUnitTests(
         Dependencies.Test.UnitTest.TRUTH,
         Dependencies.Test.UnitTest.MOCKK,

@@ -20,6 +20,7 @@ import retrofit2.Response
 import timber.log.Timber
 import java.io.IOException
 import java.lang.reflect.ParameterizedType
+import java.util.concurrent.TimeoutException
 
 /**
  * Utility function to fetch and return the response that the MovieDb API sends.
@@ -56,7 +57,7 @@ suspend fun <ResponseType, MappedResponseType> safeApiCall(
             }
         } catch (exception: Exception) {
             when (exception) {
-                is TimeoutCancellationException -> {
+                is TimeoutException -> {
                     emit(Resource.Error(text = UiText.StringResource(R.string.timeout_error_message)))
                 }
                 is IOException -> {
