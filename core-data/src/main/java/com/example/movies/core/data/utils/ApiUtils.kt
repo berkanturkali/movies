@@ -1,4 +1,4 @@
-package com.example.movies.core.data.repository.utils
+package com.example.movies.core.data.utils
 
 import com.example.movies.core.common.Resource
 import com.example.movies.core.common.UiText
@@ -10,7 +10,6 @@ import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext

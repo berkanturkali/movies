@@ -3,7 +3,7 @@ package com.example.movies.core.data.repository.trending.implementation
 import com.example.movies.core.common.Resource
 import com.example.movies.core.common.executor.abstraction.ExecutorThread
 import com.example.movies.core.data.repository.trending.abstraction.TrendingRepository
-import com.example.movies.core.data.repository.utils.safeApiCall
+import com.example.movies.core.data.utils.safeApiCall
 import com.example.movies.core.model.home.TrendingMovie
 import com.example.movies.core.network.datasource.abstraction.trending.TrendingRemoteDataSource
 import com.example.movies.core.network.mapper.trending.TopTrendingMoviesResponseMapper

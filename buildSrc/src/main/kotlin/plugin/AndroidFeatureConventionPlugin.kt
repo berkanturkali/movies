@@ -34,6 +34,9 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 implementAllProjects(
                     ProjectLibs.CORE_UI,
                     ProjectLibs.CORE_NAVIGATION,
+                    ProjectLibs.CORE_DATA,
+                    ProjectLibs.CORE_MODEL,
+                    ProjectLibs.CORE_COMMON,
                     )
 
                 //hilt
