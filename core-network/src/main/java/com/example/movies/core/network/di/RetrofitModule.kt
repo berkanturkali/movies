@@ -2,7 +2,9 @@ package com.example.movies.core.network.di
 
 import com.example.movies.core.network.BuildConfig
 import com.example.movies.core.network.factory.retrofit.RetrofitFactory
+import com.example.movies.core.network.factory.service.NowPlayingServiceFactory
 import com.example.movies.core.network.factory.service.TrendingServiceFactory
+import com.example.movies.core.network.service.nowplaying.NowPlayingService
 import com.example.movies.core.network.service.trending.TrendingService
 import dagger.Module
 import dagger.Provides
@@ -31,5 +33,11 @@ object RetrofitModule {
     fun provideTrendingService(retrofit: Retrofit): TrendingService {
         return TrendingServiceFactory.createService(retrofit)
     }
+
+    @[Provides Singleton]
+    fun provideNowPlayingService(retrofit: Retrofit): NowPlayingService {
+        return NowPlayingServiceFactory.createService(retrofit)
+    }
+
 
 }
