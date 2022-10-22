@@ -16,10 +16,10 @@ class TrendingRepositoryImpl @Inject constructor(
     private val trendingMoviesResponseMapper: TopTrendingMoviesResponseMapper,
     private val executorThread: ExecutorThread,
 ) : TrendingRepository {
-    override suspend fun fetchTopTrendingMovie(): Flow<Resource<TrendingMovie>> {
-        return safeApiCall<TrendingResponseDTO, TrendingMovie>(
+    override suspend fun fetchTopTrendingMovies(): Flow<Resource<List<TrendingMovie>>> {
+        return safeApiCall<TrendingResponseDTO, List<TrendingMovie>>(
             mapFromModel = { response ->
-                trendingMoviesResponseMapper.mapFromModel(response.trendingMovies[0])
+                trendingMoviesResponseMapper.mapFromModelList(response.trendingMovies)
             },
             executorThread = executorThread.io
         ) {

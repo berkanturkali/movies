@@ -3,5 +3,5 @@ package com.example.movies.feature.home.usecases
 import javax.inject.Inject
 
 data class HomeScreenUseCases @Inject constructor(
-    val fetchTopTrendingMovie: FetchTopTrendingMovieUseCase,
+    val fetchTopTrendingMovies: FetchTopTrendingMoviesUseCase,
 )

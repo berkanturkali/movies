@@ -3,17 +3,17 @@ package com.example.movies.feature.home.state
 import com.example.movies.core.common.UiText
 import com.example.movies.core.model.home.TrendingMovie
 
-sealed class HighlightedMovieState {
+sealed class TrendingMoviesState {
 
-    object Loading : HighlightedMovieState()
+    object Loading : TrendingMoviesState()
 
     data class DataLoaded(
-        val data: TrendingMovie
-    ) : HighlightedMovieState()
+        val data: List<TrendingMovie>
+    ) : TrendingMoviesState()
 
 
     data class Error(
         val errorMessage: UiText,
-    ) : HighlightedMovieState()
+    ) : TrendingMoviesState()
 
 }
