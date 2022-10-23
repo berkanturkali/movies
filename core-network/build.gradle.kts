@@ -1,8 +1,7 @@
 plugins {
     moviesAndroidLibrary
-    moviesAndroidLibraryCompose
-    moviesAndroidFeature
     googleSecrets
+    kotlinKapt
 }
 
 android.defaultConfig.buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
@@ -17,6 +16,10 @@ dependencies {
     implementAllProjects(
         ProjectLibs.CORE_MODEL,
     )
+
+    //hilt
+    implementation(Dependencies.DI.HILT_ANDROID)
+    kapt(Dependencies.DI.HILT_COMPILER_KAPT)
 
     //platform
     implementPlatform(Dependencies.Network.OKHTTP_BOM)

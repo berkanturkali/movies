@@ -39,7 +39,7 @@ class TrendingRemoteDataSourceImplTest {
         val response = dataSource.fetchTopTrendingMovies()
         val expectedResponse =
             responseAdapter<TrendingResponseDTO, String>().fromJson(getJson(UrlConstants.TRENDING_MOVIES_SUCCESS_RESPONSE))
-        Truth.assertThat(expectedResponse).isEqualTo(response)
+        Truth.assertThat(expectedResponse).isEqualTo(response.body())
     }
 
     @After

@@ -16,14 +16,21 @@ object UrlConstants {
     private const val TRENDING_REQUEST_PATH: String =
         "/trending"
 
+    private const val NOW_PLAYING_REQUEST_PATH: String = "/movie/now_playing"
+
 
     //endpoints
     const val TRENDING_MOVIES_ENDPOINT =
         "$TRENDING_REQUEST_PATH/$MEDIA_MOVIE_TYPE_PATH/$DAY_TIME_WINDOW_PATH?api_key=$API_KEY&page=$PAGE"
 
+    const val NOW_PLAYING_MOVES_ENDPOINT = "$NOW_PLAYING_REQUEST_PATH?api_key=$API_KEY&page=$PAGE"
+
 
     //responses
     internal const val TRENDING_MOVIES_SUCCESS_RESPONSE =
         "responses/trending_movies_success_response.json"
+
+    internal const val NOW_PLAYING_MOVIES_SUCCESS_RESPONSE =
+        "responses/now_playing_movies_success_response.json"
 
 }
