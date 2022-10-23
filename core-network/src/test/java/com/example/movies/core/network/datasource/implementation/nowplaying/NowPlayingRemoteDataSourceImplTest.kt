@@ -7,6 +7,7 @@ import com.example.movies.core.network.factory.makeApiService
 import com.example.movies.core.network.factory.responseAdapter
 import com.example.movies.core.network.model.nowplaying.NowPlayingResponseDTO
 import com.example.movies.core.network.model.trending.TrendingResponseDTO
+import com.example.movies.core.network.service.movies.MoviesService
 import com.example.movies.core.network.utils.UrlConstants
 import com.google.common.truth.Truth
 import kotlinx.coroutines.runBlocking
@@ -25,7 +26,7 @@ class NowPlayingRemoteDataSourceImplTest {
         mockWebServer = MockWebServer()
         mockWebServer.dispatcher = NowPlayingMoviesDispatcher()
         mockWebServer.start()
-        dataSource = NowPlayingRemoteDataSourceImpl(makeApiService(mockWebServer))
+        dataSource = NowPlayingRemoteDataSourceImpl(makeApiService<MoviesService>(mockWebServer))
     }
 
     @Test
