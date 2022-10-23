@@ -42,7 +42,7 @@ class TrendingRepositoryImplTest {
 
     @Test
     fun `check that fetchTopTrendingMovie emits loading initially`() = runBlocking {
-        val resourceFlow = repository.fetchTopTrendingMovie()
+        val resourceFlow = repository.fetchTopTrendingMovies()
         val resource = resourceFlow.toList()[0]
         Truth.assertThat(resource).isInstanceOf(Resource.Loading::class.java)
     }
@@ -53,13 +53,13 @@ class TrendingRepositoryImplTest {
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setThrowException(false)
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setReturnError(false)
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setSuccessButNull(false)
-            val resourceFlow = repository.fetchTopTrendingMovie()
+            val resourceFlow = repository.fetchTopTrendingMovies()
             val resource = resourceFlow.toList()[1]
             Truth.assertThat(resource).isNotNull()
             Truth.assertThat(resource).isInstanceOf(Resource.Success::class.java)
             Truth.assertThat(resource.data).isNotNull()
-            Truth.assertThat(resource.data!!.id).isEqualTo(1)
-            Truth.assertThat(resource.data!!.title).isEqualTo("Lou")
+            Truth.assertThat(resource.data!![0].id).isEqualTo(1)
+            Truth.assertThat(resource.data!![0].title).isEqualTo("Lou")
         }
 
     @Test
@@ -68,7 +68,7 @@ class TrendingRepositoryImplTest {
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setThrowException(false)
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setReturnError(false)
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setSuccessButNull(true)
-            val resourceFlow = repository.fetchTopTrendingMovie()
+            val resourceFlow = repository.fetchTopTrendingMovies()
             val resource = resourceFlow.toList()[1]
             Truth.assertThat(resource).isNotNull()
             Truth.assertThat(resource).isInstanceOf(Resource.Error::class.java)
@@ -84,7 +84,7 @@ class TrendingRepositoryImplTest {
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setThrowException(false)
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setReturnError(true)
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setSuccessButNull(false)
-            val resourceFlow = repository.fetchTopTrendingMovie()
+            val resourceFlow = repository.fetchTopTrendingMovies()
             val resource = resourceFlow.toList()[1]
             Truth.assertThat(resource).isNotNull()
             Truth.assertThat(resource).isInstanceOf(Resource.Error::class.java)
@@ -100,7 +100,7 @@ class TrendingRepositoryImplTest {
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setThrowException(true)
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setReturnError(false)
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setSuccessButNull(false)
-            val resourceFlow = repository.fetchTopTrendingMovie()
+            val resourceFlow = repository.fetchTopTrendingMovies()
             val resource = resourceFlow.toList()[1]
             Truth.assertThat(resource).isNotNull()
             Truth.assertThat(resource).isInstanceOf(Resource.Error::class.java)
@@ -119,7 +119,7 @@ class TrendingRepositoryImplTest {
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setThrowException(true)
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setReturnError(false)
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setSuccessButNull(false)
-            val resourceFlow = repository.fetchTopTrendingMovie()
+            val resourceFlow = repository.fetchTopTrendingMovies()
             val resource = resourceFlow.toList()[1]
             Truth.assertThat(resource).isNotNull()
             Truth.assertThat(resource).isInstanceOf(Resource.Error::class.java)
@@ -146,7 +146,7 @@ class TrendingRepositoryImplTest {
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setThrowException(true)
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setReturnError(false)
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setSuccessButNull(false)
-            val resourceFlow = repository.fetchTopTrendingMovie()
+            val resourceFlow = repository.fetchTopTrendingMovies()
             val resource = resourceFlow.toList()[1]
             Truth.assertThat(resource).isNotNull()
             Truth.assertThat(resource).isInstanceOf(Resource.Error::class.java)
@@ -165,7 +165,7 @@ class TrendingRepositoryImplTest {
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setThrowException(true)
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setReturnError(false)
             (trendingRemoteDataSource as FakeTrendingRemoteDataSource).setSuccessButNull(false)
-            val resourceFlow = repository.fetchTopTrendingMovie()
+            val resourceFlow = repository.fetchTopTrendingMovies()
             val resource = resourceFlow.toList()[1]
             Truth.assertThat(resource).isNotNull()
             Truth.assertThat(resource).isInstanceOf(Resource.Error::class.java)
