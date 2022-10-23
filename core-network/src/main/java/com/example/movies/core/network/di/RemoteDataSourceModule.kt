@@ -1,6 +1,8 @@
 package com.example.movies.core.network.di
 
+import com.example.movies.core.network.datasource.abstraction.nowplaying.NowPlayingRemoteDataSource
 import com.example.movies.core.network.datasource.abstraction.trending.TrendingRemoteDataSource
+import com.example.movies.core.network.datasource.implementation.nowplaying.NowPlayingRemoteDataSourceImpl
 import com.example.movies.core.network.datasource.implementation.trending.TrendingRemoteDataSourceImpl
 import dagger.Binds
 import dagger.Module
@@ -12,4 +14,7 @@ interface RemoteDataSourceModule {
 
     @get:Binds
     val TrendingRemoteDataSourceImpl.trendingRemoteDataSource: TrendingRemoteDataSource
+
+    @get:Binds
+    val NowPlayingRemoteDataSourceImpl.nowPlayingRemoteDataSource: NowPlayingRemoteDataSource
 }
