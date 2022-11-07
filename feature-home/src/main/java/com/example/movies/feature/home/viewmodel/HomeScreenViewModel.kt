@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.movies.core.common.executor.abstraction.ExecutorThread
 import com.example.movies.feature.home.state.NowPlayingMoviesState
 import com.example.movies.feature.home.state.TrendingMoviesState
+import com.example.movies.feature.home.state.UpcomingMoviesState
 import com.example.movies.feature.home.usecases.HomeScreenUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -30,9 +31,15 @@ class HomeScreenViewModel @Inject constructor(
 
     val nowPlayingMoviesState: StateFlow<NowPlayingMoviesState> get() = _nowPlayingMoviesState
 
+    private val _upcomingMoviesState =
+        MutableStateFlow<UpcomingMoviesState>(UpcomingMoviesState.Loading)
+
+    val upcomingMoviesState: StateFlow<UpcomingMoviesState> get() = _upcomingMoviesState
+
     init {
         fetchTopTrendingMovies()
         fetchNowPlayingMovies()
+        fetchUpcomingMovies()
     }
 
     fun fetchTopTrendingMovies() {
@@ -51,4 +58,11 @@ class HomeScreenViewModel @Inject constructor(
         }
     }
 
+    fun fetchUpcomingMovies() {
+        viewModelScope.launch(executorThread.main) {
+            homeScreenUseCases.fetchUpcomingMovies().collectLatest { state ->
+                _upcomingMoviesState.update { state }
+            }
+        }
+    }
 }
