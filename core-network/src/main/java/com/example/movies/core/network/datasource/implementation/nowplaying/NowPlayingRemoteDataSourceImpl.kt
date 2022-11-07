@@ -7,9 +7,9 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class NowPlayingRemoteDataSourceImpl @Inject constructor(
-    private val nowPlayingService: MoviesService
+    private val moviesService: MoviesService
 ) : NowPlayingRemoteDataSource {
     override suspend fun fetchNowPlayingMovies(): Response<NowPlayingResponseDTO> {
-        return nowPlayingService.fetchNowPlayingMovies()
+        return moviesService.fetchNowPlayingMovies()
     }
 }
