@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface UpcomingRepository {
 
-    suspend fun fetchUpcomingMovies(): Flow<Resource<UpcomingMovie>>
+    suspend fun fetchUpcomingMovies(): Flow<Resource<List<UpcomingMovie>>>
 }
