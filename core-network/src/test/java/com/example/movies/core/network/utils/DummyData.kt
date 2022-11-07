@@ -3,6 +3,7 @@ package com.example.movies.core.network.utils
 import com.example.movies.core.network.model.nowplaying.NowPlayingMovieDTO
 import com.example.movies.core.network.model.trending.TrendingDTO
 import com.example.movies.core.network.model.trending.TrendingResponseDTO
+import com.example.movies.core.network.model.upcoming.UpcomingMovieDTO
 
 object DummyData {
 
@@ -28,6 +29,13 @@ object DummyData {
         title = "Black Adam",
         overview = "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
         posterPath = "/3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg"
+    )
+
+    val upcomingMovieDTO = UpcomingMovieDTO(
+        id = 366672,
+        overview = "A hard-on-his-luck hound finds himself in a town full of cats in need of a hero to defend them from a ruthless villain's wicked plot to wipe their village off the map. With help from a reluctant mentor, our underdog must assume the role of town samurai and team up with the villagers to save the day.",
+        posterPath = "/wMDUDwAArpfGdtTTZ25SfwngGwt.jpg",
+        title = "The Quintessential Quintuplets Movie",
     )
     //endregion
 }
