@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.movies.core.common.executor.abstraction.ExecutorThread
 import com.example.movies.feature.home.state.NowPlayingMoviesState
+import com.example.movies.feature.home.state.PopularMoviesState
 import com.example.movies.feature.home.state.TrendingMoviesState
 import com.example.movies.feature.home.state.UpcomingMoviesState
 import com.example.movies.feature.home.usecases.HomeScreenUseCases
@@ -36,6 +37,11 @@ class HomeScreenViewModel @Inject constructor(
 
     val upcomingMoviesState: StateFlow<UpcomingMoviesState> get() = _upcomingMoviesState
 
+    private val _popularMoviesState =
+        MutableStateFlow<PopularMoviesState>(PopularMoviesState.Loading)
+
+    val popularMoviesState: StateFlow<PopularMoviesState> get() = _popularMoviesState
+
     init {
         fetchTopTrendingMovies()
         fetchNowPlayingMovies()
@@ -62,6 +68,14 @@ class HomeScreenViewModel @Inject constructor(
         viewModelScope.launch(executorThread.main) {
             homeScreenUseCases.fetchUpcomingMovies().collectLatest { state ->
                 _upcomingMoviesState.update { state }
+            }
+        }
+    }
+
+    fun fetchPopularMovies() {
+        viewModelScope.launch(executorThread.main) {
+            homeScreenUseCases.fetchPopularMovies().collectLatest { state ->
+                _popularMoviesState.update { state }
             }
         }
     }

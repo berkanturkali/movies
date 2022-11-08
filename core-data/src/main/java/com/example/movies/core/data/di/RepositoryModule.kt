@@ -2,6 +2,8 @@ package com.example.movies.core.data.di
 
 import com.example.movies.core.data.repository.nowplaying.abstraction.NowPlayingRepository
 import com.example.movies.core.data.repository.nowplaying.implementation.NowPlayingRepositoryImpl
+import com.example.movies.core.data.repository.popular.abstraction.PopularRepository
+import com.example.movies.core.data.repository.popular.implementation.PopularRepositoryImpl
 import com.example.movies.core.data.repository.trending.abstraction.TrendingRepository
 import com.example.movies.core.data.repository.trending.implementation.TrendingRepositoryImpl
 import com.example.movies.core.data.repository.upcoming.abstraction.UpcomingRepository
@@ -24,4 +26,7 @@ interface RepositoryModule {
 
     @get:Binds
     val UpcomingRepositoryImpl.upcomingRepo: UpcomingRepository
+
+    @get:Binds
+    val PopularRepositoryImpl.popularRepo: PopularRepository
 }
