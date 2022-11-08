@@ -1,6 +1,7 @@
-package com.example.movies.core.network.datasource.implementation.upcoming.implementation
+package com.example.movies.core.network.datasource.implementation.upcoming
 
-import com.example.movies.core.network.datasource.implementation.upcoming.abstraction.UpcomingRemoteDataSource
+import com.example.movies.core.network.datasource.abstraction.upcoming.UpcomingRemoteDataSource
+import com.example.movies.core.network.datasource.implementation.upcoming.UpcomingRemoteDataSourceImpl
 import com.example.movies.core.network.dispatcher.UpcomingMoviesDispatcher
 import com.example.movies.core.network.factory.getJson
 import com.example.movies.core.network.factory.makeApiService

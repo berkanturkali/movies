@@ -5,7 +5,7 @@ import com.example.movies.core.common.executor.abstraction.ExecutorThread
 import com.example.movies.core.data.repository.upcoming.abstraction.UpcomingRepository
 import com.example.movies.core.data.utils.safeApiCall
 import com.example.movies.core.model.home.UpcomingMovie
-import com.example.movies.core.network.datasource.implementation.upcoming.abstraction.UpcomingRemoteDataSource
+import com.example.movies.core.network.datasource.abstraction.upcoming.UpcomingRemoteDataSource
 import com.example.movies.core.network.mapper.upcoming.UpcomingMovieMapper
 import com.example.movies.core.network.model.upcoming.UpcomingMoviesResponseDTO
 import kotlinx.coroutines.flow.Flow

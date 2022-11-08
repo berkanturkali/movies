@@ -1,6 +1,6 @@
-package com.example.movies.core.network.datasource.implementation.upcoming.implementation
+package com.example.movies.core.network.datasource.implementation.upcoming
 
-import com.example.movies.core.network.datasource.implementation.upcoming.abstraction.UpcomingRemoteDataSource
+import com.example.movies.core.network.datasource.abstraction.upcoming.UpcomingRemoteDataSource
 import com.example.movies.core.network.model.upcoming.UpcomingMoviesResponseDTO
 import com.example.movies.core.network.service.movies.MoviesService
 import retrofit2.Response

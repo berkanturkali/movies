@@ -3,6 +3,7 @@ package com.example.movies.core.network.service.movies
 import com.example.movies.core.network.BuildConfig
 import com.example.movies.core.network.endpoints.movies.MoviesEndpoints
 import com.example.movies.core.network.model.nowplaying.NowPlayingResponseDTO
+import com.example.movies.core.network.model.popular.PopularMoviesResponseDTO
 import com.example.movies.core.network.model.upcoming.UpcomingMoviesResponseDTO
 import com.example.movies.core.network.service.base.BaseService
 import retrofit2.Response
@@ -27,6 +28,6 @@ interface MoviesService : BaseService {
     suspend fun fetchPopularMovies(
         @Query("api_key") apiKey: String = BuildConfig.API_KEY,
         @Query("page") page: Int = 1,
-    ):Response<>
+    ): Response<PopularMoviesResponseDTO>
 
 }
