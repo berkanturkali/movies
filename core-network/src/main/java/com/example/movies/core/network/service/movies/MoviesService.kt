@@ -4,6 +4,7 @@ import com.example.movies.core.network.BuildConfig
 import com.example.movies.core.network.endpoints.movies.MoviesEndpoints
 import com.example.movies.core.network.model.nowplaying.NowPlayingResponseDTO
 import com.example.movies.core.network.model.popular.PopularMoviesResponseDTO
+import com.example.movies.core.network.model.top_rated.TopRatedMoviesResponseDTO
 import com.example.movies.core.network.model.upcoming.UpcomingMoviesResponseDTO
 import com.example.movies.core.network.service.base.BaseService
 import retrofit2.Response
@@ -29,5 +30,11 @@ interface MoviesService : BaseService {
         @Query("api_key") apiKey: String = BuildConfig.API_KEY,
         @Query("page") page: Int = 1,
     ): Response<PopularMoviesResponseDTO>
+
+    @GET(MoviesEndpoints.TOP_RATED_MOVIES_ENDPOINT)
+    suspend fun fetchTopRatedMovies(
+        @Query("api_key") apiKey: String = BuildConfig.API_KEY,
+        @Query("page") page: Int = 1,
+    ): Response<TopRatedMoviesResponseDTO>
 
 }

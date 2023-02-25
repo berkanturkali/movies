@@ -22,6 +22,8 @@ object UrlConstants {
 
     private const val POPULAR_REQUEST_PATH: String = "/movie/popular"
 
+    private const val TOP_RATED_REQUEST_PATH: String = "/movie/top_rated"
+
     //endpoints
     const val TRENDING_MOVIES_ENDPOINT =
         "$TRENDING_REQUEST_PATH/$MEDIA_MOVIE_TYPE_PATH/$DAY_TIME_WINDOW_PATH?api_key=$API_KEY&page=$PAGE"
@@ -31,6 +33,8 @@ object UrlConstants {
     const val UPCOMING_MOVIES_ENDPOINT = "$UPCOMING_REQUEST_PATH?api_key=$API_KEY&page=$PAGE"
 
     const val POPULAR_MOVIES_ENDPOINT = "$POPULAR_REQUEST_PATH?api_key=$API_KEY&page=$PAGE"
+
+    const val TOP_RATED_MOVIES_ENDPOINT = "$TOP_RATED_REQUEST_PATH?api_key=$API_KEY&page=$PAGE"
 
 
     //responses
@@ -45,5 +49,8 @@ object UrlConstants {
 
     internal const val POPULAR_MOVIES_SUCCESS_RESPONSE =
         "responses/popular_movies_success_response.json"
+
+    internal const val TOP_RATED_MOVIES_SUCCESS_RESPONSE =
+        "responses/top_rated_movies_success_response.json"
 
 }

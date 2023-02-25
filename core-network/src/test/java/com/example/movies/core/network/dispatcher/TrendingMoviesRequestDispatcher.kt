@@ -8,13 +8,11 @@ import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.RecordedRequest
 import java.net.HttpURLConnection
 
-class TrendingMoviesRequestDispatcher : Dispatcher() {
-    override fun dispatch(request: RecordedRequest): MockResponse {
+class TrendingMoviesRequestDispatcher : BaseDispatcher() {
+    override fun onDispatch(request: RecordedRequest): MockResponse {
         return when (request.path) {
             UrlConstants.TRENDING_MOVIES_ENDPOINT -> {
-                MockResponse()
-                    .setResponseCode(HttpURLConnection.HTTP_OK)
-                    .setBody(getJson(TRENDING_MOVIES_SUCCESS_RESPONSE))
+                returnSuccessResponse(TRENDING_MOVIES_SUCCESS_RESPONSE)
             }
             else -> throw IllegalArgumentException("Unknown Request Path ${request.path}")
         }
