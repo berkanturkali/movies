@@ -1,16 +1,16 @@
-package com.example.movies.core.network.mapper.nowplaying
+package com.example.movies.core.network.mapper.top_rated
 
-import com.example.movies.core.model.home.NowPlayingMovie
+import com.example.movies.core.model.home.TopRatedMovie
 import com.example.movies.core.network.BuildConfig
 import com.example.movies.core.network.mapper.base.RemoteResponseModelMapper
 import com.example.movies.core.network.model.ImageSizes
-import com.example.movies.core.network.model.nowplaying.NowPlayingMovieDTO
+import com.example.movies.core.network.model.top_rated.TopRatedMovieDTO
 import javax.inject.Inject
 
-class NowPlayingMoviesResponseMapper @Inject constructor() :
-    RemoteResponseModelMapper<NowPlayingMovieDTO, NowPlayingMovie> {
-    override fun mapFromModel(model: NowPlayingMovieDTO): NowPlayingMovie {
-        return NowPlayingMovie(
+class TopRatedMovieMapper @Inject constructor() :
+    RemoteResponseModelMapper<TopRatedMovieDTO, TopRatedMovie> {
+    override fun mapFromModel(model: TopRatedMovieDTO): TopRatedMovie {
+        return TopRatedMovie(
             id = model.id,
             title = model.title,
             description = model.overview,

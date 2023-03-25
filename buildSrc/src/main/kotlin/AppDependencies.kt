@@ -35,7 +35,7 @@ object GradlePlugins {
     private object Version {
         const val KOTLIN_VERSION = "1.7.10"
         const val GRADLE_VERSION = "7.2.1"
-        const val HILT_VERSION = "2.44"
+        const val HILT_VERSION = "2.43"
         const val SECRETS_VERSION = "2.0.1"
     }
 
@@ -150,7 +150,7 @@ object Dependencies {
     //region di-dependencies
     object DI {
         private object Version {
-            const val HILT_VERSION = "2.44"
+            const val HILT_VERSION = "2.43"
         }
 
         const val HILT_ANDROID = "com.google.dagger:hilt-android:$HILT_VERSION"
@@ -208,6 +208,15 @@ object Dependencies {
         const val LOTTIE = "com.airbnb.android:lottie-compose:$LOTTIE_VERSION"
     }
     //endregion
+
+    //region Palette
+    object Palette {
+        object Version {
+            const val PALETTE_VERSION = "1.0.0"
+        }
+
+        const val PALETTE = "androidx.palette:palette:${Palette.Version.PALETTE_VERSION}"
+    }
 
     object Test {
         //region unit-test deps

@@ -11,6 +11,8 @@ object SearchDestination : MoviesNavigationDestination {
         get() = SEARCH_ROUTE
     override val destination: String
         get() = SEARCH_DESTINATION
+    override val scrollable: Boolean
+        get() = true
 }
 
 fun NavGraphBuilder.searchGraph() {

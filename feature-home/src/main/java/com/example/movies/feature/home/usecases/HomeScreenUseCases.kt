@@ -6,5 +6,6 @@ data class HomeScreenUseCases @Inject constructor(
     val fetchTopTrendingMovies: FetchTopTrendingMoviesUseCase,
     val fetchNowPlayingMovies: FetchNowPlayingMoviesUseCase,
     val fetchUpcomingMovies: FetchUpcomingMoviesUseCase,
-    val fetchPopularMovies:FetchPopularMoviesUseCase,
+    val fetchPopularMovies: FetchPopularMoviesUseCase,
+    val fetchTopRatedMoviesUseCase: FetchTopRatedMoviesUseCase,
 )

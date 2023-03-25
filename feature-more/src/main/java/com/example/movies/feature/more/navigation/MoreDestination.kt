@@ -11,6 +11,8 @@ object MoreDestination : MoviesNavigationDestination {
         get() = MORE_ROUTE
     override val destination: String
         get() = MORE_DESTINATION
+    override val scrollable: Boolean
+        get() = false
 }
 
 

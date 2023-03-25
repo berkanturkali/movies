@@ -16,6 +16,7 @@ java {
 dependencies {
     implementation(Plugin.KOTLIN_GRADLE_PLUGIN)
     implementation(Plugin.ANDROID_GRADLE_PLUGIN)
+    implementation(Plugin.HILT_GRADLE_PLUGIN)
 }
 
 gradlePlugin {
@@ -47,10 +48,13 @@ object Plugin {
     private object Version {
         const val KOTLIN_VERSION = "1.7.10"
         const val GRADLE_VERSION = "7.2.1"
+        const val HILT_VERSION = "2.43"
     }
 
     const val KOTLIN_GRADLE_PLUGIN: String =
         "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.KOTLIN_VERSION}"
     const val ANDROID_GRADLE_PLUGIN: String = "com.android.tools.build:gradle:${Version.GRADLE_VERSION}"
+    const val HILT_GRADLE_PLUGIN =
+        "com.google.dagger:hilt-android-gradle-plugin:${Version.HILT_VERSION}"
 
 }

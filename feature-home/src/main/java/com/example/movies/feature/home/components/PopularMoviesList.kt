@@ -8,23 +8,27 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import com.examle.movies.core.ui.R
+import com.example.movies.core.model.home.PopularMovie
 
 @Composable
 fun PopularMoviesList(
     modifier: Modifier = Modifier,
-    isLoading: Boolean,
-    popularMovies: List<String>,
+    childModifier: Modifier = Modifier,
+    popularMovies: List<PopularMovie>,
 ) {
     LazyRow(
         modifier = modifier,
         horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.dimen_16)),
     ) {
-        popularMovies(popularMovies = popularMovies)
+        popularMovies(popularMovies = popularMovies, childModifier = childModifier)
     }
 }
 
-private fun LazyListScope.popularMovies(popularMovies: List<String>) {
+private fun LazyListScope.popularMovies(
+    popularMovies: List<PopularMovie>,
+    childModifier: Modifier = Modifier,
+) {
     items(popularMovies) { movie ->
-        MoviePoster(image = movie)
+        MoviePoster(image = movie.image, childModifier = childModifier)
     }
 }

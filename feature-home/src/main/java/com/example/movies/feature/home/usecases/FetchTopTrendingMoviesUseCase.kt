@@ -1,27 +1,32 @@
 package com.example.movies.feature.home.usecases
 
-import com.example.movies.core.common.Resource
+import com.example.movies.core.common.UiText
 import com.example.movies.core.data.repository.trending.abstraction.TrendingRepository
 import com.example.movies.feature.home.state.TrendingMoviesState
+import com.example.movies.feature.home.util.flatMapMergeThenEmit
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class FetchTopTrendingMoviesUseCase @Inject constructor(
     private val trendingRepo: TrendingRepository
 ) {
-
     suspend operator fun invoke(): Flow<TrendingMoviesState> {
-        return flow {
-            trendingRepo.fetchTopTrendingMovies()
-                .collectLatest { resource ->
-                    when (resource) {
-                        is Resource.Error -> emit(TrendingMoviesState.Error(resource.error!!))
-                        is Resource.Loading -> emit(TrendingMoviesState.Loading)
-                        is Resource.Success -> emit(TrendingMoviesState.DataLoaded(resource.data!!))
-                    }
+        val flow = trendingRepo.fetchTopTrendingMovies()
+            .flatMapMergeThenEmit(
+                onSuccessEmission = {
+                    TrendingMoviesState.DataLoaded(it.data!!)
+                },
+                onLoadingEmission = {
+                    TrendingMoviesState.Loading
+                },
+                onErrorEmission = {
+                    TrendingMoviesState.Error(
+                        it.error ?: UiText.StringResource(
+                            com.example.movies.core.data.R.string.something_went_wrong_error_message
+                        )
+                    )
                 }
-        }
+            )
+        return flow
     }
 }

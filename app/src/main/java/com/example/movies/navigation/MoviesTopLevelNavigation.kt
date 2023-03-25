@@ -35,33 +35,40 @@ class MoviesTopLevelNavigation(private val navController: NavHostController) {
 data class TopLevelDestination(
     val route: String,
     @DrawableRes val icon: Int,
-    val iconTextId: Int
+    val iconTextId: Int,
+    val scrollable: Boolean,
 )
 
 val TOP_LEVEL_DESTINATIONS = listOf(
     TopLevelDestination(
         route = HomeDestination.route,
         icon = R.drawable.ic_home,
-        iconTextId = home
+        iconTextId = home,
+        scrollable = HomeDestination.scrollable
+
     ),
     TopLevelDestination(
         route = SearchDestination.route,
         icon = R.drawable.ic_search,
-        iconTextId = search
+        iconTextId = search,
+        scrollable = SearchDestination.scrollable
     ),
     TopLevelDestination(
         route = ComingSoonDestination.route,
         icon = R.drawable.ic_play,
-        iconTextId = coming_soon
+        iconTextId = coming_soon,
+        scrollable = ComingSoonDestination.scrollable
     ),
     TopLevelDestination(
         route = DownloadsDestination.route,
         icon = R.drawable.ic_download,
-        iconTextId = downloads
+        iconTextId = downloads,
+        scrollable = DownloadsDestination.scrollable
     ),
     TopLevelDestination(
         route = MoreDestination.route,
         icon = R.drawable.ic_more,
-        iconTextId = more
+        iconTextId = more,
+        scrollable = MoreDestination.scrollable
     ),
 )

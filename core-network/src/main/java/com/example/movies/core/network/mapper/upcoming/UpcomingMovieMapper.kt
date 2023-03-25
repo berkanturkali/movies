@@ -14,7 +14,7 @@ class UpcomingMovieMapper @Inject constructor() :
             id = model.id,
             title = model.title,
             description = model.overview,
-            image = model.posterPath?.let { "${BuildConfig.BASE_IMAGE_URL}${ImageSizes.ORIGINAL}${model.posterPath}" },
+            image = model.posterPath?.let { "${BuildConfig.BASE_IMAGE_URL}${ImageSizes.W500.size}${model.posterPath}" },
         )
     }
 }

@@ -42,6 +42,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 //hilt
                 implementation(Dependencies.DI.HILT_ANDROID)
                 kapt(Dependencies.DI.HILT_COMPILER_KAPT)
+                implementation(Dependencies.Compose.COMPOSE_HILT_NAVIGATION)
 
                 //accompanist navigation
                 implementation(Dependencies.Accompanist.ACCOMPANIST_ANIMATION)

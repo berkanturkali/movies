@@ -8,23 +8,24 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import com.examle.movies.core.ui.R
+import com.example.movies.core.model.home.NowPlayingMovie
 
 @Composable
 fun NowPlayingMoviesList(
     modifier: Modifier = Modifier,
-    isLoading: Boolean,
-    nowPlayingMovies: List<String>,
+    childModifier: Modifier = Modifier,
+    nowPlayingMovies: List<NowPlayingMovie>,
 ) {
     LazyRow(
         modifier = modifier,
         horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.dimen_16)),
     ) {
-        nowPlayingMovies(nowPlayingMovies = nowPlayingMovies)
+        nowPlayingMovies(nowPlayingMovies = nowPlayingMovies,childModifier = childModifier)
     }
 }
 
-private fun LazyListScope.nowPlayingMovies(nowPlayingMovies: List<String>) {
+private fun LazyListScope.nowPlayingMovies(nowPlayingMovies: List<NowPlayingMovie>,childModifier:Modifier) {
     items(nowPlayingMovies) { movie ->
-        MoviePoster(image = movie)
+        MoviePoster(image = movie.image, childModifier = childModifier)
     }
 }

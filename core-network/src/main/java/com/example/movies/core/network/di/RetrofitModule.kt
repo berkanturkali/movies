@@ -6,6 +6,8 @@ import com.example.movies.core.network.factory.service.MoviesServiceFactory
 import com.example.movies.core.network.factory.service.TrendingServiceFactory
 import com.example.movies.core.network.service.movies.MoviesService
 import com.example.movies.core.network.service.trending.TrendingService
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,6 +20,11 @@ import javax.inject.Singleton
  */
 @[Module InstallIn(SingletonComponent::class)]
 object RetrofitModule {
+
+    @[Provides Singleton]
+    fun provideMoshi(): Moshi = Moshi.Builder()
+        .add(KotlinJsonAdapterFactory())
+        .build()
 
     @[Provides Singleton]
     fun provideRetrofit(

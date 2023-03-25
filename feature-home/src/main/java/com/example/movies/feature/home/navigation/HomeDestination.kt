@@ -12,10 +12,12 @@ object HomeDestination : MoviesNavigationDestination {
         get() = HOME_ROUTE
     override val destination: String
         get() = HOME_DESTINATION
+    override val scrollable: Boolean
+        get() = true
 }
 
 fun NavGraphBuilder.homeGraph() {
-    composable(route = HomeDestination.route) {
+    composable(route = HomeDestination.route) { navBackStackEntry ->
         //home screen
         HomeScreen()
     }

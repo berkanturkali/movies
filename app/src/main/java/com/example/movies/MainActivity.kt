@@ -23,7 +23,9 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             val windowSizeClass = calculateWindowSizeClass(activity = this)
-            CompositionLocalProvider(LocalWindowWidthSizeClass provides windowSizeClass.widthSizeClass) {
+            CompositionLocalProvider(
+                LocalWindowWidthSizeClass provides windowSizeClass.widthSizeClass
+            ) {
                 MoviesApp()
             }
         }

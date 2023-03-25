@@ -5,4 +5,6 @@ interface MoviesNavigationDestination {
     val route: String
 
     val destination: String
+
+    val scrollable:Boolean
 }

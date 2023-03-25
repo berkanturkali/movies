@@ -11,6 +11,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.channelFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext
 import okhttp3.ResponseBody
@@ -35,14 +36,14 @@ suspend fun <ResponseType, MappedResponseType> safeApiCall(
     apiCall: suspend () -> Response<ResponseType>
 ): Flow<Resource<MappedResponseType>> {
 
-    return flow {
+    return channelFlow {
         try {
-            emit(Resource.Loading())
+            send(Resource.Loading())
             val response = withContext(executorThread) { apiCall() }
             if (response.isSuccessful) {
                 response.body()?.let { model ->
-                    emit(Resource.Success(mapFromModel?.invoke(model)))
-                } ?: emit(
+                    send(Resource.Success(mapFromModel?.invoke(model)))
+                } ?: send(
                     Resource.Error(
                         code = response.code(),
                         text = UiText.StringResource(R.string.no_result_error_message)
@@ -52,29 +53,27 @@ suspend fun <ResponseType, MappedResponseType> safeApiCall(
                 val error = response.errorBody()?.parseError()
                 val message = error?.message
                 val code = error?.statusCode
-                emit(Resource.Error(code = code, text = UiText.DynamicString(message)))
+                send(Resource.Error(code = code, text = UiText.DynamicString(message)))
             }
         } catch (exception: Exception) {
             when (exception) {
                 is TimeoutException -> {
-                    emit(Resource.Error(text = UiText.StringResource(R.string.timeout_error_message)))
+                    send(Resource.Error(text = UiText.StringResource(R.string.timeout_error_message)))
                 }
                 is IOException -> {
-                    emit(Resource.Error(text = exception.localizedMessage?.let { message ->
-                        UiText.DynamicString(message)
-                    } ?: UiText.StringResource(R.string.network_connection_error_message)
+                    send(Resource.Error(text =UiText.StringResource(R.string.network_connection_error_message)
                     ))
                 }
                 is HttpException -> {
                     val error = exception.response()?.errorBody()?.parseError()
                     val message = error?.message
                     val code = error?.statusCode
-                    emit(Resource.Error(code = code, text = UiText.DynamicString(message)))
+                    send(Resource.Error(code = code, text = UiText.DynamicString(message)))
                 }
                 else -> {
                     exception.printStackTrace()
                     Timber.e("exception message is: %s", exception.message)
-                    emit(Resource.Error(text = UiText.StringResource(R.string.something_went_wrong_error_message)))
+                    send(Resource.Error(text = UiText.StringResource(R.string.something_went_wrong_error_message)))
                 }
             }
 

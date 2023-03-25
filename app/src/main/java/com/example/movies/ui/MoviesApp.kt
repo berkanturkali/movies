@@ -45,6 +45,9 @@ fun MoviesApp() {
                     if (windowWidthSizeClass == WindowWidthSizeClass.Compact) {
                         MoviesBottomBar(
                             onNavigateToTopLevelDestination = moviesTopLevelNavigation::navigateTo,
+                            scrollToTopForCurrentDestination = {
+
+                            },
                             currentDestination = currentDestination
                         )
                     }
@@ -108,7 +111,8 @@ private fun MoviesNavRail(
 @Composable
 private fun MoviesBottomBar(
     onNavigateToTopLevelDestination: (TopLevelDestination) -> Unit,
-    currentDestination: NavDestination?
+    scrollToTopForCurrentDestination: () -> Unit,
+    currentDestination: NavDestination?,
 ) {
     Surface(color = MaterialTheme.colorScheme.surface) {
         NavigationBar(
@@ -126,7 +130,15 @@ private fun MoviesBottomBar(
                     currentDestination?.hierarchy?.any { it.route == destination.route } == true
                 NavigationBarItem(
                     selected = selected,
-                    onClick = { onNavigateToTopLevelDestination(destination) },
+                    onClick = {
+                        if (selected) {
+                            if (destination.scrollable) {
+                                scrollToTopForCurrentDestination()
+                            }
+                        } else {
+                            onNavigateToTopLevelDestination(destination)
+                        }
+                    },
                     icon = {
                         Icon(
                             painter = painterResource(

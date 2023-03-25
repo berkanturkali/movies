@@ -11,6 +11,8 @@ object DownloadsDestination : MoviesNavigationDestination {
         get() = DOWNLOADS_ROUTE
     override val destination: String
         get() = DOWNLOADS_DESTINATION
+    override val scrollable: Boolean
+        get() = true
 }
 
 

@@ -4,6 +4,8 @@ import com.example.movies.core.data.repository.nowplaying.abstraction.NowPlaying
 import com.example.movies.core.data.repository.nowplaying.implementation.NowPlayingRepositoryImpl
 import com.example.movies.core.data.repository.popular.abstraction.PopularRepository
 import com.example.movies.core.data.repository.popular.implementation.PopularRepositoryImpl
+import com.example.movies.core.data.repository.top_rated.abstraction.TopRatedMoviesRepository
+import com.example.movies.core.data.repository.top_rated.implementation.TopRatedMoviesRepositoryImpl
 import com.example.movies.core.data.repository.trending.abstraction.TrendingRepository
 import com.example.movies.core.data.repository.trending.implementation.TrendingRepositoryImpl
 import com.example.movies.core.data.repository.upcoming.abstraction.UpcomingRepository
@@ -29,4 +31,7 @@ interface RepositoryModule {
 
     @get:Binds
     val PopularRepositoryImpl.popularRepo: PopularRepository
+
+    @get:Binds
+    val TopRatedMoviesRepositoryImpl.topRateRepo: TopRatedMoviesRepository
 }

@@ -11,6 +11,8 @@ object ComingSoonDestination : MoviesNavigationDestination {
         get() = COMING_SOON_ROUTE
     override val destination: String
         get() = COMING_SOON_DESTINATION
+    override val scrollable: Boolean
+        get() = false
 }
 
 
