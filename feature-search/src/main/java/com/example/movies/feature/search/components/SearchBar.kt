@@ -1,18 +1,26 @@
 package com.example.movies.feature.search.components
 
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+
 import androidx.compose.ui.Modifier
-import com.examle.movies.core.ui.components.MoviesSurface
 
 @Composable
 fun SearchBar(modifier: Modifier = Modifier) {
 
-    MoviesSurface(modifier = modifier.fillMaxWidth()) {
-        Row {
-
-        }
+    val query = rememberSaveable {
+        mutableStateOf("")
     }
 
+    SearchInput(
+        query = query.value,
+        modifier = modifier,
+        onValueChange = {
+            query.value = it
+        },
+        onTrailingIconClick = {
+            query.value = ""
+        }
+    )
 }

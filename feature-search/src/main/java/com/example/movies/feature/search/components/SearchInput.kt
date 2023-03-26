@@ -33,6 +33,8 @@ import com.example.movies_compose.feature.search.R
 @Composable
 fun SearchInput(
     query: String,
+    onValueChange: (String) -> Unit,
+    onTrailingIconClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
 
@@ -47,10 +49,8 @@ fun SearchInput(
         .padding(8.dp)
         .focusRequester(focusRequester),
         shape = androidx.compose.foundation.shape.CircleShape,
-        value = query ?: "",
-        onValueChange = {
-            // TODO: on value change
-        },
+        value = query,
+        onValueChange = onValueChange,
         label = {
             Text(
                 text = stringResource(id = R.string.search),
@@ -95,7 +95,7 @@ fun SearchInput(
                     modifier = Modifier
                         .padding(horizontal = 8.dp)
                         .clickable {
-                            // TODO: trailing icon click action clean up the text
+                            onTrailingIconClick()
                             focusManager.clearFocus()
                         }
                 )
@@ -110,7 +110,7 @@ fun SearchInput(
 fun SearchInputPrev() {
     CompositionLocalProvider(LocalWindowWidthSizeClass provides WindowWidthSizeClass.Compact) {
         MoviesTheme {
-            SearchInput(query = "")
+            SearchInput(query = "", onTrailingIconClick = {}, onValueChange = {})
         }
     }
 }
