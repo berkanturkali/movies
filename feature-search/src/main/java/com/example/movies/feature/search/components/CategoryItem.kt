@@ -1,5 +1,6 @@
 package com.example.movies.feature.search.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -11,26 +12,35 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.examle.movies.core.ui.theme.MoviesTheme
+import com.example.movies.core.model.search.SearchCategory
 
 @Composable
-fun CategoryName(name: String, modifier: Modifier = Modifier) {
+fun CategoryItem(
+    category: SearchCategory,
+    onItemClick: (SearchCategory) -> Unit,
+    modifier: Modifier = Modifier
+) {
 
     Text(
-        modifier = modifier.fillMaxWidth(),
-        text = name,
+        modifier = modifier
+            .fillMaxWidth()
+            .clickable {
+                onItemClick(category)
+            },
+        text = category.name,
         color = MaterialTheme.colorScheme.onPrimary,
         style = MaterialTheme.typography.bodyLarge,
         maxLines = 1,
-        textAlign = TextAlign.Center
+        textAlign = TextAlign.Center,
     )
 }
 
 @Preview
 @Composable
-fun CategoryNamePrev() {
+fun CategoryItemPrev() {
     CompositionLocalProvider(LocalWindowWidthSizeClass provides WindowWidthSizeClass.Compact) {
         MoviesTheme {
-            CategoryName(name = "Category")
+            CategoryItem(category = SearchCategory.COLLECTIONS, onItemClick = {})
         }
     }
 }

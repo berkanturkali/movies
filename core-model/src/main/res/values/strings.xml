@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_category_companies">Companies</string>
+    <string name="search_category_collections">Collections</string>
+    <string name="search_category_keyword">Keywords</string>
+    <string name="search_category_movies">Movies</string>
+    <string name="search_category_people">People</string>
+    <string name="search_category_shows">TV Shows</string>
+</resources>

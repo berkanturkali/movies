@@ -19,4 +19,6 @@ object MoviesIcons {
     val SEARCH = R.drawable.ic_search
 
     val CLEAR = R.drawable.ic_clear
+
+    val CLOSE = R.drawable.ic_close
 }

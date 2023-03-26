@@ -22,4 +22,6 @@ fun NavGraphBuilder.searchGraph() {
     ) {
         //search screen
     }
+
+    searchCategories()
 }
