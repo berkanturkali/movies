@@ -16,6 +16,7 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 fun Name(
     modifier: Modifier = Modifier,
     childModifier: Modifier = Modifier,
+    textAlign: TextAlign = TextAlign.Justify,
     name: String
 ) {
 
@@ -25,6 +26,7 @@ fun Name(
         style = MaterialTheme.typography.bodyMedium,
         maxLines = 3,
         overflow = TextOverflow.Ellipsis,
+        textAlign = textAlign
     )
 
 }
