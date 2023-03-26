@@ -15,4 +15,8 @@ object MoviesIcons {
     val NEXT = R.drawable.ic_next
 
     val LOGO = R.drawable.netflix_logo
+
+    val SEARCH = R.drawable.ic_search
+
+    val CLEAR = R.drawable.ic_clear
 }
