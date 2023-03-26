@@ -184,7 +184,7 @@ private fun Home(
                     )
                 }
 
-//            //top rated movies
+               //top rated movies
                 item {
                     TopRatedMovies(
                         topRatedMoviesState = topRatedMoviesState,
