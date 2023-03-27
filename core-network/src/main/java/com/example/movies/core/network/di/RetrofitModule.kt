@@ -3,8 +3,10 @@ package com.example.movies.core.network.di
 import com.example.movies.core.network.BuildConfig
 import com.example.movies.core.network.factory.retrofit.RetrofitFactory
 import com.example.movies.core.network.factory.service.MoviesServiceFactory
+import com.example.movies.core.network.factory.service.SearchServiceFactory
 import com.example.movies.core.network.factory.service.TrendingServiceFactory
 import com.example.movies.core.network.service.movies.MoviesService
+import com.example.movies.core.network.service.search.SearchService
 import com.example.movies.core.network.service.trending.TrendingService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -44,5 +46,10 @@ object RetrofitModule {
     @[Provides Singleton]
     fun provideMoviesService(retrofit: Retrofit): MoviesService {
         return MoviesServiceFactory.createService(retrofit)
+    }
+
+    @[Provides Singleton]
+    fun provideSearchService(retrofit: Retrofit): SearchService {
+        return SearchServiceFactory.createService(retrofit)
     }
 }
