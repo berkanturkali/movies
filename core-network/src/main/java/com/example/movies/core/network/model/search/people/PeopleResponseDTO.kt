@@ -1,13 +1,14 @@
-package com.example.movies.core.network.model.search.movie
+package com.example.movies.core.network.model.search.people
 
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
-data class MoviesResponseDTO(
+data class PeopleResponseDTO(
     @Json(name = "page")
     val page: Int,
     @Json(name = "results")
-    val results: List<MovieDTO>,
+    val results: List<PersonDTO>,
     @Json(name = "total_pages")
     val totalPages: Int,
     @Json(name = "total_results")
