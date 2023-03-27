@@ -1,8 +1,8 @@
 package com.example.movies.core.network.model.search.movie
 
 
+import com.example.movies.core.network.model.base.BaseDTO
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
 
 data class MovieDTO(
     @Json(name = "adult")
@@ -33,4 +33,4 @@ data class MovieDTO(
     val voteAverage: Double? = null,
     @Json(name = "vote_count")
     val voteCount: Int? = null
-)
+) : BaseDTO()

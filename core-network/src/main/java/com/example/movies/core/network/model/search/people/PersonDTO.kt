@@ -1,8 +1,8 @@
 package com.example.movies.core.network.model.search.people
 
 
+import com.example.movies.core.network.model.base.BaseDTO
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
 
 data class PersonDTO(
     @Json(name = "adult")
@@ -17,4 +17,4 @@ data class PersonDTO(
     val popularity: Double? = null,
     @Json(name = "profile_path")
     val profilePath: String? = null
-)
+) : BaseDTO()

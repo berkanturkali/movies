@@ -1,6 +1,7 @@
 package com.example.movies.core.network.model.search.collection
 
 
+import com.example.movies.core.network.model.base.BaseDTO
 import com.squareup.moshi.Json
 
 data class CollectionDTO(
@@ -12,4 +13,4 @@ data class CollectionDTO(
     val name: String? = null,
     @Json(name = "poster_path")
     val posterPath: String? = null
-)
+) : BaseDTO()
