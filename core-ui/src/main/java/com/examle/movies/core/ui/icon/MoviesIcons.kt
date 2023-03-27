@@ -21,4 +21,6 @@ object MoviesIcons {
     val CLEAR = R.drawable.ic_clear
 
     val CLOSE = R.drawable.ic_close
+
+    val CATEGORY = R.drawable.ic_category
 }
