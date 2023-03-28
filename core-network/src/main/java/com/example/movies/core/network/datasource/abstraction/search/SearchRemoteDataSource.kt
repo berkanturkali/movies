@@ -11,31 +11,31 @@ interface SearchRemoteDataSource {
 
     suspend fun fetchCompanies(
         page: Int,
-        query: String,
+        query: String?,
     ): List<CompanyDTO>
 
     suspend fun fetchCollections(
         page: Int,
-        query: String,
+        query: String?,
     ): List<CollectionDTO>
 
     suspend fun fetchKeywords(
         page: Int,
-        query: String,
+        query: String?,
     ): List<KeywordDTO>
 
     suspend fun fetchMovies(
         page: Int,
-        query: String,
+        query: String?,
     ): List<MovieDTO>
 
     suspend fun fetchPeople(
         page: Int,
-        query: String,
+        query: String?,
     ): List<PersonDTO>
 
     suspend fun fetchTvShow(
         page: Int,
-        query: String,
+        query: String?,
     ): List<TvShowDTO>
 }

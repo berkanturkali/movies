@@ -6,5 +6,5 @@ import com.squareup.moshi.Json
 
 data class KeywordsResponseDTO(
     @Json(name = "results")
-    val results: List<KeywordDTO>,
+    val keywords: List<KeywordDTO>,
 ) : BasePagingResponseDTO()

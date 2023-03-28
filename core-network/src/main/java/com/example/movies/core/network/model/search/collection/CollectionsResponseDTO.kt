@@ -6,5 +6,5 @@ import com.squareup.moshi.Json
 
 data class CollectionsResponseDTO(
     @Json(name = "results")
-    val results: List<CollectionDTO>,
+    val collections: List<CollectionDTO>,
 ) : BasePagingResponseDTO()

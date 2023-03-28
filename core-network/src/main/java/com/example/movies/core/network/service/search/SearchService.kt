@@ -16,37 +16,37 @@ interface SearchService : BaseService {
     @GET(SearchEndpoints.COMPANY_ENDPOINT)
     suspend fun fetchCompanies(
         @Query("page") page: Int,
-        @Query("query") query: String,
+        @Query("query") query: String? = null,
     ): CompaniesResponseDTO
 
     @GET(SearchEndpoints.COLLECTION_ENDPOINT)
     suspend fun fetchCollections(
         @Query("page") page: Int,
-        @Query("query") query: String,
+        @Query("query") query: String? = null,
     ): CollectionsResponseDTO
 
     @GET(SearchEndpoints.KEYWORD_ENDPOINT)
     suspend fun fetchKeywords(
         @Query("page") page: Int,
-        @Query("query") query: String,
+        @Query("query") query: String? = null,
     ): KeywordsResponseDTO
 
     @GET(SearchEndpoints.MOVIE_ENDPOINT)
     suspend fun fetchMovies(
         @Query("page") page: Int,
-        @Query("query") query: String,
+        @Query("query") query: String? = null,
     ): MoviesResponseDTO
 
     @GET(SearchEndpoints.PEOPLE_ENDPOINT)
     suspend fun fetchPeople(
         @Query("page") page: Int,
-        @Query("query") query: String,
+        @Query("query") query: String? = null,
     ): PeopleResponseDTO
 
     @GET(SearchEndpoints.TV_ENDPOINT)
     suspend fun fetchTvShow(
         @Query("page") page: Int,
-        @Query("query") query: String,
+        @Query("query") query: String? = null,
     ): TvShowsResponseDTO
 
 }

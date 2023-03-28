@@ -8,7 +8,7 @@ import org.junit.Before
 abstract class BaseDataSourceImplTest<D : Any, T : D> {
 
     protected lateinit var mockWebServer: MockWebServer
-    protected lateinit var dataSource: A
+    protected lateinit var dataSource: D
 
     @Before
     fun setup() {

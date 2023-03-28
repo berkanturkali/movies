@@ -6,5 +6,5 @@ import com.squareup.moshi.Json
 
 data class MoviesResponseDTO(
     @Json(name = "results")
-    val results: List<MovieDTO>,
+    val movies: List<MovieDTO>,
 ) : BasePagingResponseDTO()

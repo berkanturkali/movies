@@ -11,29 +11,29 @@ import com.example.movies.core.network.service.search.SearchService
 import javax.inject.Inject
 
 class SearchRemoteDataSourceImpl @Inject constructor(
-    private val service:SearchService
-): SearchRemoteDataSource {
-    override suspend fun fetchCompanies(page: Int, query: String): List<CompanyDTO> {
-        TODO("Not yet implemented")
+    private val service: SearchService
+) : SearchRemoteDataSource {
+    override suspend fun fetchCompanies(page: Int, query: String?): List<CompanyDTO> {
+        return service.fetchCompanies(page, query).companies
     }
 
-    override suspend fun fetchCollections(page: Int, query: String): List<CollectionDTO> {
-        TODO("Not yet implemented")
+    override suspend fun fetchCollections(page: Int, query: String?): List<CollectionDTO> {
+        return service.fetchCollections(page, query).collections
     }
 
-    override suspend fun fetchKeywords(page: Int, query: String): List<KeywordDTO> {
-        TODO("Not yet implemented")
+    override suspend fun fetchKeywords(page: Int, query: String?): List<KeywordDTO> {
+        return service.fetchKeywords(page, query).keywords
     }
 
-    override suspend fun fetchMovies(page: Int, query: String): List<MovieDTO> {
-        TODO("Not yet implemented")
+    override suspend fun fetchMovies(page: Int, query: String?): List<MovieDTO> {
+        return service.fetchMovies(page, query).movies
     }
 
-    override suspend fun fetchPeople(page: Int, query: String): List<PersonDTO> {
-        TODO("Not yet implemented")
+    override suspend fun fetchPeople(page: Int, query: String?): List<PersonDTO> {
+        return service.fetchPeople(page, query).people
     }
 
-    override suspend fun fetchTvShow(page: Int, query: String): List<TvShowDTO> {
-        TODO("Not yet implemented")
+    override suspend fun fetchTvShow(page: Int, query: String?): List<TvShowDTO> {
+        return service.fetchTvShow(page, query).shows
     }
 }

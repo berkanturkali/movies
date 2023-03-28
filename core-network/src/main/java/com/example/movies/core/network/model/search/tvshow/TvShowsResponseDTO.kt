@@ -6,5 +6,5 @@ import com.squareup.moshi.Json
 
 data class TvShowsResponseDTO(
     @Json(name = "results")
-    val results: List<TvShowDTO>,
+    val shows: List<TvShowDTO>,
 ) : BasePagingResponseDTO()

@@ -24,7 +24,7 @@ object UrlConstants {
 
     private const val TOP_RATED_REQUEST_PATH: String = "/movie/top_rated"
 
-    private const val SEARCH_PATH: String = "search"
+    private const val SEARCH_PATH: String = "/search"
 
     //endpoints
     const val TRENDING_MOVIES_ENDPOINT =
@@ -38,17 +38,17 @@ object UrlConstants {
 
     const val TOP_RATED_MOVIES_ENDPOINT = "$TOP_RATED_REQUEST_PATH?api_key=$API_KEY&page=$PAGE"
 
-    const val COMPANY_ENDPOINT = "${SEARCH_PATH}/company?page=$PAGE&query="
+    const val COMPANIES_ENDPOINT = "${SEARCH_PATH}/company?page=$PAGE&api_key=$API_KEY"
 
-    const val COLLECTION_ENDPOINT = "${SEARCH_PATH}/collection?page=$PAGE&query="
+    const val COLLECTIONS_ENDPOINT = "${SEARCH_PATH}/collection?page=$PAGE&api_key=$API_KEY"
 
-    const val KEYWORD_ENDPOINT = "${SEARCH_PATH}/keyword?page=$PAGE&query="
+    const val KEYWORDS_ENDPOINT = "${SEARCH_PATH}/keyword?page=$PAGE&api_key=$API_KEY"
 
-    const val MOVIE_ENDPOINT = "${SEARCH_PATH}/movie?page=$PAGE&query="
+    const val MOVIES_ENDPOINT = "${SEARCH_PATH}/movie?page=$PAGE&api_key=$API_KEY"
 
-    const val PEOPLE_ENDPOINT = "${SEARCH_PATH}/person?page=$PAGE&query="
+    const val PEOPLE_ENDPOINT = "${SEARCH_PATH}/person?page=$PAGE&api_key=$API_KEY"
 
-    const val TV_ENDPOINT = "${SEARCH_PATH}/tv?page=$PAGE&query="
+    const val TV_ENDPOINT = "${SEARCH_PATH}/tv?page=$PAGE&api_key=$API_KEY"
 
 
     //responses
@@ -66,5 +66,21 @@ object UrlConstants {
 
     internal const val TOP_RATED_MOVIES_SUCCESS_RESPONSE =
         "responses/top_rated_movies_success_response.json"
+
+    internal val COLLECTIONS_SUCCESS_RESPONSE = getSuccessResponsePath("collections")
+
+    internal val COMPANIES_SUCCESS_RESPONSE = getSuccessResponsePath("companies")
+
+    internal val KEYWORDS_SUCCESS_RESPONSE = getSuccessResponsePath("keywords")
+
+    internal val MOVIES_SUCCESS_RESPONSE = getSuccessResponsePath("movies")
+
+    internal val PERSON_SUCCESS_RESPONSE = getSuccessResponsePath("person")
+
+    internal val TV_SHOWS_SUCCESS_RESPONSE = getSuccessResponsePath("tv_shows")
+
+
+    private fun getSuccessResponsePath(name: String): String =
+        "responses/${name}_success_response.json"
 
 }
