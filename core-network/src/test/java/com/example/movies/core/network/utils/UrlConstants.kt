@@ -67,6 +67,10 @@ object UrlConstants {
     internal const val TOP_RATED_MOVIES_SUCCESS_RESPONSE =
         "responses/top_rated_movies_success_response.json"
 
+    internal const val EMPTY_RESPONSE = "responses/empty_response.json"
+
+    internal const val ERROR_RESPONSE = "responses/error_response.json"
+
     internal val COLLECTIONS_SUCCESS_RESPONSE = getSuccessResponsePath("collections")
 
     internal val COMPANIES_SUCCESS_RESPONSE = getSuccessResponsePath("companies")
