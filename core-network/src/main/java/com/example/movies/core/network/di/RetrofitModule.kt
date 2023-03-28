@@ -5,6 +5,7 @@ import com.example.movies.core.network.factory.retrofit.RetrofitFactory
 import com.example.movies.core.network.factory.service.MoviesServiceFactory
 import com.example.movies.core.network.factory.service.SearchServiceFactory
 import com.example.movies.core.network.factory.service.TrendingServiceFactory
+import com.example.movies.core.network.interceptor.ApiKeyInterceptor
 import com.example.movies.core.network.service.movies.MoviesService
 import com.example.movies.core.network.service.search.SearchService
 import com.example.movies.core.network.service.trending.TrendingService
@@ -31,10 +32,12 @@ object RetrofitModule {
     @[Provides Singleton]
     fun provideRetrofit(
         retrofitFactory: RetrofitFactory,
+        apiKeyInterceptor: ApiKeyInterceptor
     ): Retrofit {
         return retrofitFactory.createRetrofit(
             url = BuildConfig.BASE_URL,
-            isDebug = BuildConfig.DEBUG
+            isDebug = BuildConfig.DEBUG,
+            apiKeyInterceptor = apiKeyInterceptor
         )
     }
 

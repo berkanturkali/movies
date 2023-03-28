@@ -1,5 +1,6 @@
 package com.example.movies.core.network.factory.retrofit
 
+import com.example.movies.core.network.interceptor.ApiKeyInterceptor
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -16,9 +17,11 @@ class RetrofitFactory @Inject constructor(private val moshi: Moshi) {
     fun createRetrofit(
         url: String,
         isDebug: Boolean,
+        apiKeyInterceptor: ApiKeyInterceptor
     ): Retrofit {
         val client: OkHttpClient = makeOkHttpClient(
-            httpLoggingInterceptor = makeLoggingInterceptor(isDebug)
+            httpLoggingInterceptor = makeLoggingInterceptor(isDebug),
+            apiKeyInterceptor = apiKeyInterceptor
         )
         return Retrofit
             .Builder()
@@ -41,9 +44,11 @@ class RetrofitFactory @Inject constructor(private val moshi: Moshi) {
 
     private fun makeOkHttpClient(
         httpLoggingInterceptor: HttpLoggingInterceptor,
+        apiKeyInterceptor: ApiKeyInterceptor,
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
+            .addInterceptor(apiKeyInterceptor)
             .connectTimeout(10, TimeUnit.SECONDS)
             .readTimeout(10, TimeUnit.SECONDS)
             .writeTimeout(10, TimeUnit.SECONDS)

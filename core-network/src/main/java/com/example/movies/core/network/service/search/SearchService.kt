@@ -9,25 +9,44 @@ import com.example.movies.core.network.model.search.people.PeopleResponseDTO
 import com.example.movies.core.network.model.search.tvshow.TvShowsResponseDTO
 import com.example.movies.core.network.service.base.BaseService
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface SearchService : BaseService {
 
     @GET(SearchEndpoints.COMPANY_ENDPOINT)
-    suspend fun fetchCompanies(): CompaniesResponseDTO
+    suspend fun fetchCompanies(
+        @Query("page") page: Int,
+        @Query("query") query: String,
+    ): CompaniesResponseDTO
 
     @GET(SearchEndpoints.COLLECTION_ENDPOINT)
-    suspend fun fetchCollections(): CollectionsResponseDTO
+    suspend fun fetchCollections(
+        @Query("page") page: Int,
+        @Query("query") query: String,
+    ): CollectionsResponseDTO
 
     @GET(SearchEndpoints.KEYWORD_ENDPOINT)
-    suspend fun fetchKeywords(): KeywordsResponseDTO
+    suspend fun fetchKeywords(
+        @Query("page") page: Int,
+        @Query("query") query: String,
+    ): KeywordsResponseDTO
 
     @GET(SearchEndpoints.MOVIE_ENDPOINT)
-    suspend fun fetchMovies(): MoviesResponseDTO
+    suspend fun fetchMovies(
+        @Query("page") page: Int,
+        @Query("query") query: String,
+    ): MoviesResponseDTO
 
     @GET(SearchEndpoints.PEOPLE_ENDPOINT)
-    suspend fun fetchPeople(): PeopleResponseDTO
+    suspend fun fetchPeople(
+        @Query("page") page: Int,
+        @Query("query") query: String,
+    ): PeopleResponseDTO
 
     @GET(SearchEndpoints.TV_ENDPOINT)
-    suspend fun fetchTvShow(): TvShowsResponseDTO
+    suspend fun fetchTvShow(
+        @Query("page") page: Int,
+        @Query("query") query: String,
+    ): TvShowsResponseDTO
 
 }
