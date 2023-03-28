@@ -1,0 +1,395 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/ovM06PdF3M8wvKb06i4sjW3xoww.jpg",
+      "genre_ids": [
+        878,
+        12,
+        28
+      ],
+      "id": 76600,
+      "original_language": "en",
+      "original_title": "Avatar: The Way of Water",
+      "overview": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
+      "popularity": 3464.178,
+      "poster_path": "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+      "release_date": "2022-12-14",
+      "title": "Avatar: The Way of Water",
+      "video": false,
+      "vote_average": 7.732,
+      "vote_count": 5998
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/wD2kUCX1Bb6oeIb2uz7kbdfLP6k.jpg",
+      "genre_ids": [
+        27,
+        53
+      ],
+      "id": 980078,
+      "original_language": "en",
+      "original_title": "Winnie the Pooh: Blood and Honey",
+      "overview": "Christopher Robin is headed off to college and he has abandoned his old friends, Pooh and Piglet, which then leads to the duo embracing their inner monsters.",
+      "popularity": 3800.257,
+      "poster_path": "/zCdzPK6fJgQL0FeKeYkciZzjyOL.jpg",
+      "release_date": "2023-01-27",
+      "title": "Winnie the Pooh: Blood and Honey",
+      "video": false,
+      "vote_average": 5.873,
+      "vote_count": 212
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xnAi4BRoO3ZQ3wwxGn6UNoxQzDq.jpg",
+      "genre_ids": [
+        80,
+        28
+      ],
+      "id": 823999,
+      "original_language": "it",
+      "original_title": "Diabolik - Ginko all'attacco!",
+      "overview": "Diabolik nearly gets caught in Inspector Ginko's latest trap, leaving his partner in crime Eva Kant behind in the escape. Furious, Eva offers Ginko her help in capturing the King of Terror, but the former has to face the return of an old flame of his.",
+      "popularity": 544.278,
+      "poster_path": "/8QVbWBv94BAT9u1q9uJccwOxMzt.jpg",
+      "release_date": "2022-11-17",
+      "title": "Diabolik - Ginko Attacks",
+      "video": false,
+      "vote_average": 5.71,
+      "vote_count": 112
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/22z44LPkMyf5nyyXvv8qQLsbom.jpg",
+      "genre_ids": [
+        27,
+        9648,
+        53
+      ],
+      "id": 631842,
+      "original_language": "en",
+      "original_title": "Knock at the Cabin",
+      "overview": "While vacationing at a remote cabin, a young girl and her two fathers are taken hostage by four armed strangers who demand that the family make an unthinkable choice to avert the apocalypse. With limited access to the outside world, the family must decide what they believe before all is lost.",
+      "popularity": 1392.352,
+      "poster_path": "/dm06L9pxDOL9jNSK4Cb6y139rrG.jpg",
+      "release_date": "2023-02-01",
+      "title": "Knock at the Cabin",
+      "video": false,
+      "vote_average": 6.427,
+      "vote_count": 1130
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/w8wP1X3c7fNdt7otvCxCpWypD89.jpg",
+      "genre_ids": [
+        35,
+        18
+      ],
+      "id": 1078862,
+      "original_language": "es",
+      "original_title": "A Todas Partes",
+      "overview": "Two siblings who haven't seen each other in 15 years mend their relationship while fulfilling a childhood dream: a motorcycle road trip through Mexico.",
+      "popularity": 87.972,
+      "poster_path": "/1mdYZDqYcRjD4yF8MCh8OPtXApI.jpg",
+      "release_date": "2023-02-14",
+      "title": "All the Places",
+      "video": false,
+      "vote_average": 6.703,
+      "vote_count": 37
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cL0cdccOMzM508ODsWPfHVMMAzo.jpg",
+      "genre_ids": [
+        28
+      ],
+      "id": 267805,
+      "original_language": "en",
+      "original_title": "There Are No Saints",
+      "overview": "A man is imprisoned for a crime he didn't commit. When his wife is murdered and his son kidnapped and taken to Mexico, he devises an elaborate and dangerous plan to rescue his son and avenge the murder.",
+      "popularity": 395.69,
+      "poster_path": "/fcOTYArjKuAgufwHoTvx8w9UKCv.jpg",
+      "release_date": "2022-05-27",
+      "title": "There Are No Saints",
+      "video": false,
+      "vote_average": 5.25,
+      "vote_count": 88
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878,
+        14
+      ],
+      "id": 436270,
+      "original_language": "en",
+      "original_title": "Black Adam",
+      "overview": "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
+      "popularity": 808.059,
+      "poster_path": "/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
+      "release_date": "2022-10-19",
+      "title": "Black Adam",
+      "video": false,
+      "vote_average": 7.12,
+      "vote_count": 4565
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/gslT8t964rYXyqRcqrxFh77ikyb.jpg",
+      "genre_ids": [
+        12,
+        878,
+        35
+      ],
+      "id": 640146,
+      "original_language": "en",
+      "original_title": "Ant-Man and the Wasp: Quantumania",
+      "overview": "Super-Hero partners Scott Lang and Hope van Dyne, along with with Hope's parents Janet van Dyne and Hank Pym, and Scott's daughter Cassie Lang, find themselves exploring the Quantum Realm, interacting with strange new creatures and embarking on an adventure that will push them beyond the limits of what they thought possible.",
+      "popularity": 731.037,
+      "poster_path": "/ngl2FKBlU4fhbdsrtdom9LVLBXw.jpg",
+      "release_date": "2023-02-15",
+      "title": "Ant-Man and the Wasp: Quantumania",
+      "video": false,
+      "vote_average": 6.36,
+      "vote_count": 1104
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/v2LilmCylr3bL9TCZSj6syjowZh.jpg",
+      "genre_ids": [
+        35,
+        18
+      ],
+      "id": 937278,
+      "original_language": "en",
+      "original_title": "A Man Called Otto",
+      "overview": "When a lively young family moves in next door, grumpy widower Otto Anderson meets his match in a quick-witted, pregnant woman named Marisol, leading to an unlikely friendship that turns his world upside down.",
+      "popularity": 589.343,
+      "poster_path": "/130H1gap9lFfiTF9iDrqNIkFvC9.jpg",
+      "release_date": "2022-12-28",
+      "title": "A Man Called Otto",
+      "video": false,
+      "vote_average": 7.899,
+      "vote_count": 884
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/uEwGFGtao9YG2JolmdvtHLLVbA9.jpg",
+      "genre_ids": [
+        99
+      ],
+      "id": 111332,
+      "original_language": "en",
+      "original_title": "Avatar: Creating the World of Pandora",
+      "overview": "The Making-of James Cameron's Avatar. It shows interesting parts of the work on the set.",
+      "popularity": 174.216,
+      "poster_path": "/d9oqcfeCyc3zmMal6eJbfj3gatc.jpg",
+      "release_date": "2010-02-07",
+      "title": "Avatar: Creating the World of Pandora",
+      "video": false,
+      "vote_average": 7.019,
+      "vote_count": 81
+    },
+    {
+      "adult": false,
+      "backdrop_path": null,
+      "genre_ids": [
+        18,
+        10402
+      ],
+      "id": 461191,
+      "original_language": "en",
+      "original_title": "A",
+      "overview": "A young alcoholic ambient musician locks himself in his apartment on a dangerous seven day bender as he attempts to finish his upcoming album.",
+      "popularity": 2.092,
+      "poster_path": "/4uOKZzRB615cIxcVi31pcsdFtSS.jpg",
+      "release_date": "2017-09-13",
+      "title": "A",
+      "video": false,
+      "vote_average": 6.833,
+      "vote_count": 3
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vL5LR6WdxWPjLPFRLe133jXWsh5.jpg",
+      "genre_ids": [
+        28,
+        12,
+        14,
+        878
+      ],
+      "id": 19995,
+      "original_language": "en",
+      "original_title": "Avatar",
+      "overview": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
+      "popularity": 483.055,
+      "poster_path": "/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg",
+      "release_date": "2009-12-15",
+      "title": "Avatar",
+      "video": false,
+      "vote_average": 7.568,
+      "vote_count": 28724
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xw383myGoydmJyL2yzFj0tVljll.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "id": 545611,
+      "original_language": "en",
+      "original_title": "Everything Everywhere All at Once",
+      "overview": "An aging Chinese immigrant is swept up in an insane adventure, where she alone can save what's important to her by connecting with the lives she could have led in other universes.",
+      "popularity": 360.06,
+      "poster_path": "/w3LxiVYdWWRvEVdn5RYq6jIqkb1.jpg",
+      "release_date": "2022-03-24",
+      "title": "Everything Everywhere All at Once",
+      "video": false,
+      "vote_average": 7.892,
+      "vote_count": 4150
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/tsjXBo4LmzV0Bb9hdrz25tzX5GD.jpg",
+      "genre_ids": [
+        10402
+      ],
+      "id": 1041513,
+      "original_language": "en",
+      "original_title": "Encanto at the Hollywood Bowl",
+      "overview": "A taped performance of the Encanto Live-to-Film Concert Experience at the Hollywood Bowl. The original cast puts on a miracle of a concert as they sing the favorite songs, accompanied by a full orchestra and 50 person ensemble, and the Hollywood Bowl transforms into Casita!",
+      "popularity": 352.27,
+      "poster_path": "/sa3Ku5yNVjp8NloWxJoI9dQjvOi.jpg",
+      "release_date": "2022-12-28",
+      "title": "Encanto at the Hollywood Bowl",
+      "video": false,
+      "vote_average": 7.304,
+      "vote_count": 107
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/a2K8ak4pGCHR3O0hMualcokXXpa.jpg",
+      "genre_ids": [
+        10749,
+        53
+      ],
+      "id": 210763,
+      "original_language": "kn",
+      "original_title": "A",
+      "overview": "A film director fades away from the industry after the failed love with the heroine of his movie. After being rehabilitated, he learns that some people conspired his fall and decides to take revenge.",
+      "popularity": 1.604,
+      "poster_path": "/y3DH68oWOGMZ637tqYHfTGU4Bif.jpg",
+      "release_date": "1998-02-12",
+      "title": "A",
+      "video": false,
+      "vote_average": 6.75,
+      "vote_count": 12
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fHWUxzEgCqIfToLjlY9UrR6uQtz.jpg",
+      "genre_ids": [
+        10751,
+        14
+      ],
+      "id": 1047431,
+      "original_language": "en",
+      "original_title": "Prancer: A Christmas Tale",
+      "overview": "Ten-year-old Gloria and her recently widowed grandfather Bud befriend a mysterious reindeer when the family gather for Christmas. Bud comes to believe that Prancer may actually be magical, but Gloria fears his theory will send him straight to a retirement home.",
+      "popularity": 287.794,
+      "poster_path": "/tJgCmwkf2ytEHYHv8vH3QtRGVPW.jpg",
+      "release_date": "2022-11-22",
+      "title": "Prancer: A Christmas Tale",
+      "video": false,
+      "vote_average": 5.875,
+      "vote_count": 8
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ltpW5exyTdqL5twV8zRMajf1VgU.jpg",
+      "genre_ids": [
+        99
+      ],
+      "id": 24791,
+      "original_language": "ja",
+      "original_title": "A",
+      "overview": "Roughly chronological, from 3/96 to 11/96, with a coda in spring of 1997: inside compounds of Aum Shinrikyo, a Buddhist sect led by Shoko Asahara. (Members confessed to a murderous sarin attack in the Tokyo subway in 1995.) We see what they eat, where they sleep, and how they respond to media scrutiny, on-going trials, the shrinking of their fortunes, and the criticism of society. Central focus is placed on Hiroshi Araki, a young man who finds himself elevated to chief spokesman for Aum after its leaders are arrested. Araki faces extreme hostility from the Japanese public, who find it hard to believe that most followers of the cult had no idea of the attacks and even harder to understand why these followers remain devoted to the religion, if not the violence.",
+      "popularity": 1.261,
+      "poster_path": "/dBLzrfh5DtxJey1hOYZaN2drPe3.jpg",
+      "release_date": "1998-09-09",
+      "title": "A",
+      "video": false,
+      "vote_average": 5.45,
+      "vote_count": 10
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/mqsPyyeDCBAghXyjbw4TfEYwljw.jpg",
+      "genre_ids": [
+        18,
+        10752,
+        36
+      ],
+      "id": 49046,
+      "original_language": "de",
+      "original_title": "Im Westen nichts Neues",
+      "overview": "Paul Baumer and his friends Albert and Muller, egged on by romantic dreams of heroism, voluntarily enlist in the German army. Full of excitement and patriotic fervour, the boys enthusiastically march into a war they believe in. But once on the Western Front, they discover the soul-destroying horror of World War I.",
+      "popularity": 425.889,
+      "poster_path": "/2IRjbi9cADuDMKmHdLK7LaqQDKA.jpg",
+      "release_date": "2022-10-07",
+      "title": "All Quiet on the Western Front",
+      "video": false,
+      "vote_average": 7.773,
+      "vote_count": 2377
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/bnuBhHLzsRapDWheh9kwNn6qZnp.jpg",
+      "genre_ids": [
+        27,
+        878,
+        28,
+        14
+      ],
+      "id": 340382,
+      "original_language": "ja",
+      "original_title": "進撃の巨人 ATTACK ON TITAN エンド オブ ザ ワールド",
+      "overview": "Eren Yeager leaves to restore a break in the wall destroyed by a Titan. He comes under attack by the Titans and is cornered. Shikishima comes to his aid. The titans never stops attacking.  Eren is now injured and tries to protect Armin, but is swallowed by a titan. A Titan with black hair appears and begins to expel the other titans.",
+      "popularity": 75.387,
+      "poster_path": "/dwsoUEJvDpN00rJJ1bR6DrJ5JjF.jpg",
+      "release_date": "2015-09-01",
+      "title": "Attack on Titan II: End of the World",
+      "video": false,
+      "vote_average": 6.028,
+      "vote_count": 264
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9iRRfMZbnpgHDdKi2lczGGYZXDo.jpg",
+      "genre_ids": [
+        12,
+        10751,
+        14
+      ],
+      "id": 411,
+      "original_language": "en",
+      "original_title": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+      "overview": "Siblings Lucy, Edmund, Susan and Peter step through a magical wardrobe and find the land of Narnia. There, they discover a charming, once peaceful kingdom that has been plunged into eternal winter by the evil White Witch, Jadis. Aided by the wise and magnificent lion, Aslan, the children lead Narnia into a spectacular, climactic battle to be free of the Witch's glacial powers forever.",
+      "popularity": 313.148,
+      "poster_path": "/iREd0rNCjYdf5Ar0vfaW32yrkm.jpg",
+      "release_date": "2005-12-07",
+      "title": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+      "video": false,
+      "vote_average": 7.12,
+      "vote_count": 9426
+    }
+  ],
+  "total_pages": 500,
+  "total_results": 10000
+}

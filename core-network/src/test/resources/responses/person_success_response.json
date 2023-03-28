@@ -1,0 +1,1467 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "gender": 0,
+      "id": 2744166,
+      "known_for_department": "Acting",
+      "name": "A",
+      "original_name": "A",
+      "popularity": 0.6,
+      "profile_path": null,
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": null,
+          "id": 733697,
+          "title": "Fragments",
+          "original_language": "en",
+          "original_title": "Fragments",
+          "overview": "Bruneian Director Atikah Zainidi shines a light on four different queer womxn in an aim to abolish the common and horrifically overused stereotypes often associated with them.",
+          "poster_path": "/8qYk2j5CLOMp3uB5xPmpiXpt6dq.jpg",
+          "media_type": "movie",
+          "genre_ids": [],
+          "popularity": 0.84,
+          "release_date": "2019-12-11",
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 3194176,
+      "known_for_department": "Acting",
+      "name": "Angeli Khang",
+      "original_name": "Angeli Khang",
+      "popularity": 290.024,
+      "profile_path": "/7vrTWF8PxQogF6o9ORZprYQoDOr.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/ru5zAV1Ij6bQGedBkczqhiBmjzn.jpg",
+          "id": 1029446,
+          "title": "Selina's Gold",
+          "original_language": "tl",
+          "original_title": "Selina's Gold",
+          "overview": "Selina's father sells her to Tiago who makes her a sex slave. With the help of Domeng, Tiago's blind slave, she plans their way out of this living hell.",
+          "poster_path": "/4a0X2GKDmhhp1U2FUKtKY6uNQHL.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            18
+          ],
+          "popularity": 76.437,
+          "release_date": "2022-10-28",
+          "video": false,
+          "vote_average": 6.87,
+          "vote_count": 23
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/27bkw4o1zhjQAM4WIFQPohiph1X.jpg",
+          "id": 931599,
+          "title": "Silip Sa Apoy",
+          "original_language": "tl",
+          "original_title": "Silip Sa Apoy",
+          "overview": "Take a peek at the life of an unhappy housewife who finds passionate love from her neighbor and how their affair brings them closer to fire.",
+          "poster_path": "/9grG4PVppBWqKs2hrKMEr6j3RWS.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            18,
+            53
+          ],
+          "popularity": 40.777,
+          "release_date": "2022-01-28",
+          "video": false,
+          "vote_average": 6.14,
+          "vote_count": 25
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dhIaASxMrBrAPftInFITelGvgzz.jpg",
+          "id": 893694,
+          "title": "Eva",
+          "original_language": "tl",
+          "original_title": "Eva",
+          "overview": "When Eva gets involved in a steamy threesome with a houseboy and her lady boss, she realizes she has to choose only one between them.",
+          "poster_path": "/bXZ3j3kQgCRZj7KD4Q5F9m5ABaQ.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            18,
+            10749
+          ],
+          "popularity": 68.696,
+          "release_date": "2021-12-24",
+          "video": false,
+          "vote_average": 5.222,
+          "vote_count": 9
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 224513,
+      "known_for_department": "Acting",
+      "name": "Ana de Armas",
+      "original_name": "Ana de Armas",
+      "popularity": 157.512,
+      "profile_path": "/vkoSSVrGxFYvtr2uUdz99ENXF1v.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/sAtoMqDVhNDQBc3QJL3RF6hlhGq.jpg",
+          "id": 335984,
+          "title": "Blade Runner 2049",
+          "original_language": "en",
+          "original_title": "Blade Runner 2049",
+          "overview": "Thirty years after the events of the first film, a new blade runner, LAPD Officer K, unearths a long-buried secret that has the potential to plunge what's left of society into chaos. K's discovery leads him on a quest to find Rick Deckard, a former LAPD blade runner who has been missing for 30 years.",
+          "poster_path": "/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            878,
+            18
+          ],
+          "popularity": 99.889,
+          "release_date": "2017-10-04",
+          "video": false,
+          "vote_average": 7.5,
+          "vote_count": 11689
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4HWAQu28e2yaWrtupFPGFkdNU7V.jpg",
+          "id": 546554,
+          "title": "Knives Out",
+          "original_language": "en",
+          "original_title": "Knives Out",
+          "overview": "When renowned crime novelist Harlan Thrombey is found dead at his estate just after his 85th birthday, the inquisitive and debonair Detective Benoit Blanc is mysteriously enlisted to investigate. From Harlan's dysfunctional family to his devoted staff, Blanc sifts through a web of red herrings and self-serving lies to uncover the truth behind Harlan's untimely death.",
+          "poster_path": "/pThyQovXQrw2m0s9x82twj48Jq4.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            35,
+            80,
+            9648
+          ],
+          "popularity": 56.623,
+          "release_date": "2019-11-27",
+          "video": false,
+          "vote_average": 7.853,
+          "vote_count": 10503
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oNoprEND25zXR6Fns8cIZUkuoMc.jpg",
+          "id": 308266,
+          "title": "War Dogs",
+          "original_language": "en",
+          "original_title": "War Dogs",
+          "overview": "Based on the true story of two young men, David Packouz and Efraim Diveroli, who won a $300 million contract from the Pentagon to arm America's allies in Afghanistan.",
+          "poster_path": "/uH9qGH5XS1iZXCSb3tgu40dxQoh.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            35,
+            80,
+            18
+          ],
+          "popularity": 32.77,
+          "release_date": "2016-08-17",
+          "video": false,
+          "vote_average": 6.892,
+          "vote_count": 4290
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 78110,
+      "known_for_department": "Acting",
+      "name": "Scott Adkins",
+      "original_name": "Scott Adkins",
+      "popularity": 93.562,
+      "profile_path": "/9NRr2a1riIn5CWn5McZLJlk4vxR.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/qUv51IFUvVRAP2379ThmA3eLJx6.jpg",
+          "id": 284052,
+          "title": "Doctor Strange",
+          "original_language": "en",
+          "original_title": "Doctor Strange",
+          "overview": "After his career is destroyed, a brilliant but arrogant surgeon gets a new lease on life when a sorcerer takes him under her wing and trains him to defend the world against evil.",
+          "poster_path": "/uGBVj3bEbCoZbDjjl9wTxcygko1.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            28,
+            12,
+            14
+          ],
+          "popularity": 110.063,
+          "release_date": "2016-10-25",
+          "video": false,
+          "vote_average": 7.426,
+          "vote_count": 20301
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gqN5Z1yMhZQ9qW4YnYpeL8epwlM.jpg",
+          "id": 348893,
+          "title": "Boyka: Undisputed IV",
+          "original_language": "en",
+          "original_title": "Boyka: Undisputed IV",
+          "overview": "In the fourth installment of the fighting franchise, Boyka is shooting for the big leagues when an accidental death in the ring makes him question everything he stands for. When he finds out the wife of the man he accidentally killed is in trouble, Boyka offers to fight in a series of impossible battles to free her from a life of servitude.",
+          "poster_path": "/7QGdIJWWTkPhVjpQ0zA6z69khod.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            28,
+            18
+          ],
+          "popularity": 108.898,
+          "release_date": "2016-08-01",
+          "video": false,
+          "vote_average": 7.1,
+          "vote_count": 1113
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/srJ7haOhfykoPOYPQrstOaFem08.jpg",
+          "id": 811592,
+          "title": "One Shot",
+          "original_language": "en",
+          "original_title": "One Shot",
+          "overview": "An elite squad of Navy SEALs, on a covert mission to transport a prisoner off a CIA black site island prison, are trapped when insurgents attack while trying to rescue the same prisoner.",
+          "poster_path": "/3OXiTjU30gWtqxmx4BU9RVp2OTv.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            28
+          ],
+          "popularity": 45.056,
+          "release_date": "2021-11-05",
+          "video": false,
+          "vote_average": 6.815,
+          "vote_count": 780
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 1795607,
+      "known_for_department": "Acting",
+      "name": "Jahi Di'Allo Winston",
+      "original_name": "Jahi Di'Allo Winston",
+      "popularity": 39.628,
+      "profile_path": "/x13w2XYkCdjllsbrzyb1aKno27o.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/tmS9oXeMVs6njcxndDKsjJSF02H.jpg",
+          "id": 552532,
+          "title": "Charm City Kings",
+          "original_language": "en",
+          "original_title": "Charm City Kings",
+          "overview": "Mouse desperately wants to join The Midnight Clique, the infamous Baltimore dirt bike riders who rule the summertime streets. When Midnight’s leader, Blax, takes 14-year-old Mouse under his wing, Mouse soon finds himself torn between the straight-and-narrow and a road filled with fast money and violence.",
+          "poster_path": "/8oiMFMarbRpcusASIX4cjVXoZKI.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            18
+          ],
+          "popularity": 29.44,
+          "release_date": "2020-01-27",
+          "video": false,
+          "vote_average": 7.913,
+          "vote_count": 362
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5uy6IRYlowTeyi1uH35gVcZi1Oy.jpg",
+          "id": 442064,
+          "title": "Proud Mary",
+          "original_language": "en",
+          "original_title": "Proud Mary",
+          "overview": "Mary is a hit woman working for an organized crime family in Boston, whose life is completely turned around when she meets a young boy whose path she crosses when a professional hit goes bad.",
+          "poster_path": "/5luceoVMU2FzWuyty7mZFcSY5ZW.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            53,
+            28,
+            80
+          ],
+          "popularity": 15.221,
+          "release_date": "2018-01-12",
+          "video": false,
+          "vote_average": 5.432,
+          "vote_count": 449
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4lQQVRLc7OCEFH6OUaMztwiFPbQ.jpg",
+          "id": 440472,
+          "title": "The Upside",
+          "original_language": "en",
+          "original_title": "The Upside",
+          "overview": "Phillip is a wealthy quadriplegic who needs a caretaker to help him with his day-to-day routine in his New York penthouse. He decides to hire Dell, a struggling parolee who's trying to reconnect with his ex and his young son. Despite coming from two different worlds, an unlikely friendship starts to blossom.",
+          "poster_path": "/hPZ2caow1PCND6qnerfgn6RTXdm.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            35,
+            18
+          ],
+          "popularity": 48.249,
+          "release_date": "2019-01-10",
+          "video": false,
+          "vote_average": 7.125,
+          "vote_count": 1069
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 34486,
+      "known_for_department": "Acting",
+      "name": "Ashley Johnson",
+      "original_name": "Ashley Johnson",
+      "popularity": 77.007,
+      "profile_path": "/8s36QwB7Zq3PrbY1W6a6ctTFFoe.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/9BBTo63ANSmhC4e6r62OJFuK2GL.jpg",
+          "id": 24428,
+          "title": "The Avengers",
+          "original_language": "en",
+          "original_title": "The Avengers",
+          "overview": "When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!",
+          "poster_path": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            878,
+            28,
+            12
+          ],
+          "popularity": 175.313,
+          "release_date": "2012-04-25",
+          "video": false,
+          "vote_average": 7.707,
+          "vote_count": 28369
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xXHtSqFx8mLjzNGX9oCKQEx2yTa.jpg",
+          "id": 3981,
+          "title": "What Women Want",
+          "original_language": "en",
+          "original_title": "What Women Want",
+          "overview": "Advertising executive Nick Marshall is as cocky as they come, but what happens to a chauvinistic guy when he can suddenly hear what women are thinking? Nick gets passed over for a promotion, but after an accident enables him to hear women's thoughts, he puts his newfound talent to work against Darcy, his new boss, who seems to be infatuated with him.",
+          "poster_path": "/n5NOxrcgeiCxvEn47FG9bvlHNsV.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            35,
+            10749
+          ],
+          "popularity": 37.741,
+          "release_date": "2000-12-15",
+          "video": false,
+          "vote_average": 6.424,
+          "vote_count": 3466
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dYJrfkQeqGXeGMMTvYaM43XHce5.jpg",
+          "id": 62710,
+          "name": "Blindspot",
+          "original_language": "en",
+          "original_name": "Blindspot",
+          "overview": "A vast international plot explodes when a beautiful Jane Doe is discovered naked in Times Square, completely covered in mysterious, intricate tattoos with no memory of who she is or how she got there. But there's one tattoo that is impossible to miss: the name of FBI agent Kurt Weller, emblazoned across her back. \"Jane,\" Agent Weller and the rest of the FBI quickly realize that each mark on her body is a crime to solve, leading them closer to the truth about her identity and the mysteries to be revealed.",
+          "poster_path": "/4AeYzamQmd9Fa6hawDmYKbdvBSe.jpg",
+          "media_type": "tv",
+          "genre_ids": [
+            80,
+            18,
+            10759
+          ],
+          "popularity": 125.586,
+          "first_air_date": "2015-09-21",
+          "vote_average": 7.358,
+          "vote_count": 2237,
+          "origin_country": [
+            "US"
+          ]
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 119592,
+      "known_for_department": "Acting",
+      "name": "Aubrey Plaza",
+      "original_name": "Aubrey Plaza",
+      "popularity": 67.198,
+      "profile_path": "/2arI3oBAJhV1PX6X6MeaBtBcdHI.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/vHse4QK31Vc3X7BKKU5GOQhYxv6.jpg",
+          "id": 533642,
+          "title": "Child's Play",
+          "original_language": "en",
+          "original_title": "Child's Play",
+          "overview": "Karen, a single mother, gifts her son Andy a Buddi doll for his birthday, unaware of its more sinister nature. A contemporary re-imagining of the 1988 horror classic.",
+          "poster_path": "/rpS7ROczWulqfaXG2klYapULXKm.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            18,
+            27,
+            878
+          ],
+          "popularity": 26.385,
+          "release_date": "2019-06-19",
+          "video": false,
+          "vote_average": 6.013,
+          "vote_count": 1682
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yUjc0QIKJe0kyzjQ7Ky6dKRasv1.jpg",
+          "id": 291870,
+          "title": "Dirty Grandpa",
+          "original_language": "en",
+          "original_title": "Dirty Grandpa",
+          "overview": "Jason Kelly is one week away from marrying his boss's uber-controlling daughter, putting him on the fast track for a partnership at the law firm. However, when the straight-laced Jason is tricked into driving his foul-mouthed grandfather, Dick, to Daytona for spring break, his pending nuptials are suddenly in jeopardy. Between riotous frat parties, bar fights, and an epic night of karaoke, Dick is on a quest to live his life to the fullest and bring Jason along for the ride.",
+          "poster_path": "/qSJE2KloazcGrpGCCUVVX8ZKlsW.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            35
+          ],
+          "popularity": 43.092,
+          "release_date": "2016-01-20",
+          "video": false,
+          "vote_average": 5.897,
+          "vote_count": 4000
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5ogKYCBZMzbCVmbEtjKyNRN6WWe.jpg",
+          "id": 84332,
+          "title": "Safety Not Guaranteed",
+          "original_language": "en",
+          "original_title": "Safety Not Guaranteed",
+          "overview": "Three magazine employees head out on an assignment to interview a guy who placed a classified ad seeking a companion for time travel.",
+          "poster_path": "/bYiQAWmxRfzBie866SqOEEgtBXk.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            35,
+            10749,
+            878,
+            18
+          ],
+          "popularity": 15.594,
+          "release_date": "2012-06-08",
+          "video": false,
+          "vote_average": 6.801,
+          "vote_count": 1248
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 9273,
+      "known_for_department": "Acting",
+      "name": "Amy Adams",
+      "original_name": "Amy Adams",
+      "popularity": 45.65,
+      "profile_path": "/ify7UiQkVMQ0uCUX0F0AuzLK1vS.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/5B14ls1dftgOyTSRdzV9EPCa5pR.jpg",
+          "id": 329865,
+          "title": "Arrival",
+          "original_language": "en",
+          "original_title": "Arrival",
+          "overview": "Taking place after alien crafts land around the world, an expert linguist is recruited by the military to determine whether they come in peace or are a threat.",
+          "poster_path": "/x2FJsf1ElAgr63Y3PNPtJrcmpoe.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            18,
+            878,
+            9648
+          ],
+          "popularity": 48.029,
+          "release_date": "2016-11-10",
+          "video": false,
+          "vote_average": 7.58,
+          "vote_count": 16010
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/yAKyBp3tNFt432VU0qUE7wbXggH.jpg",
+          "id": 340666,
+          "title": "Nocturnal Animals",
+          "original_language": "en",
+          "original_title": "Nocturnal Animals",
+          "overview": "Susan Morrow receives a book manuscript from her ex-husband – a man she left 20 years earlier – asking for her opinion of his writing. As she reads, she is drawn into the fictional life of Tony Hastings, a mathematics professor whose family vacation turns violent.",
+          "poster_path": "/mdLDgQBD0va09npSQX5Zgo2evXM.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            18,
+            53
+          ],
+          "popularity": 25.453,
+          "release_date": "2016-11-04",
+          "video": false,
+          "vote_average": 7.452,
+          "vote_count": 6954
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/69EFgWWPFWbRNHmQgYdSnyJ94Ge.jpg",
+          "id": 49521,
+          "title": "Man of Steel",
+          "original_language": "en",
+          "original_title": "Man of Steel",
+          "overview": "A young boy learns that he has extraordinary powers and is not of this earth. As a young man, he journeys to discover where he came from and what he was sent here to do. But the hero in him must emerge if he is to save the world from annihilation and become the symbol of hope for all mankind.",
+          "poster_path": "/dksTL9NXc3GqPBRHYHcy1aIwjS.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 78.877,
+          "release_date": "2013-06-12",
+          "video": false,
+          "vote_average": 6.603,
+          "vote_count": 13883
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 30084,
+      "known_for_department": "Acting",
+      "name": "Anna Torv",
+      "original_name": "Anna Torv",
+      "popularity": 53.833,
+      "profile_path": "/muZIxj33R2EEJhm28c9hBd0AiRk.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/2yZXtM2Kky1Sy0kachbDlwybl3y.jpg",
+          "id": 1705,
+          "name": "Fringe",
+          "original_language": "en",
+          "original_name": "Fringe",
+          "overview": "FBI Special Agent Olivia Dunham, brilliant but formerly institutionalized scientist Walter Bishop and his scheming, reluctant son Peter uncover a deadly mystery involving a series of unbelievable events and realize they may be a part of a larger, more disturbing pattern that blurs the line between science fiction and technology.",
+          "poster_path": "/sY9hg5dLJ93RJOyKEiu1nAtBRND.jpg",
+          "media_type": "tv",
+          "genre_ids": [
+            10765,
+            18,
+            9648
+          ],
+          "popularity": 164.472,
+          "first_air_date": "2008-09-09",
+          "vote_average": 8.1,
+          "vote_count": 2029,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/a906PH7CDmSOdS7kmnAgdWk5mhv.jpg",
+          "id": 67744,
+          "name": "Mindhunter",
+          "original_language": "en",
+          "original_name": "Mindhunter",
+          "overview": "An agent in the FBI's Elite Serial Crime Unit develops profiling techniques as he pursues notorious serial killers and rapists.",
+          "poster_path": "/fbKE87mojpIETWepSbD5Qt741fp.jpg",
+          "media_type": "tv",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "popularity": 45.842,
+          "first_air_date": "2017-10-13",
+          "vote_average": 8.069,
+          "vote_count": 1935,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/nWfpVLgioDXQsAbfL6UJxYz6d3d.jpg",
+          "id": 16997,
+          "name": "The Pacific",
+          "original_language": "en",
+          "original_name": "The Pacific",
+          "overview": "Track the intertwined real-life stories of three U.S. Marines – Robert Leckie, John Basilone, and Eugene Sledge – across the vast canvas of the Pacific Theater during World War II. A companion piece to the 2001 miniseries Band of Brothers.",
+          "poster_path": "/x9Y1IMFdY8Ma222KcQadFEau0EB.jpg",
+          "media_type": "tv",
+          "genre_ids": [
+            18,
+            10759,
+            10768
+          ],
+          "popularity": 45.133,
+          "first_air_date": "2010-03-14",
+          "vote_average": 7.723,
+          "vote_count": 2048,
+          "origin_country": [
+            "US"
+          ]
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 133113,
+      "known_for_department": "Acting",
+      "name": "Amber Goldfarb",
+      "original_name": "Amber Goldfarb",
+      "popularity": 26.16,
+      "profile_path": "/kcYH4UFeviNcgX28ER5TnQCpZLz.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/nTMjLaP61U7M9y6uM4d7peKwN6e.jpg",
+          "id": 728054,
+          "title": "Vicious Fun",
+          "original_language": "en",
+          "original_title": "Vicious Fun",
+          "overview": "Joel, a caustic 1980s film critic for a national horror magazine, finds himself unwittingly trapped in a self-help group for serial killers. With no other choice, Joel attempts to blend in with his homicidal surroundings or risk becoming the next victim.",
+          "poster_path": "/jCz4Pv0rilnkBgqwbe5Y3JT5899.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            35,
+            27
+          ],
+          "popularity": 9.288,
+          "release_date": "2021-11-04",
+          "video": false,
+          "vote_average": 6.672,
+          "vote_count": 64
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/q9wnyYMAyKhOvfycUERFNKTHEaL.jpg",
+          "id": 157841,
+          "title": "The Young and Prodigious T.S. Spivet",
+          "original_language": "en",
+          "original_title": "The Young and Prodigious T.S. Spivet",
+          "overview": "A 10-year-old child prodigy cartographer secretly leaves his family's ranch in Montana where he lives with his cowboy father and scientist mother and travels across the country on board a freight train to receive an award at the Smithsonian Institute.",
+          "poster_path": "/xnEP86BDCQnzwWjnMwZLyyoziDV.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            12,
+            18,
+            10751
+          ],
+          "popularity": 13.63,
+          "release_date": "2013-10-16",
+          "video": false,
+          "vote_average": 6.774,
+          "vote_count": 645
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bdhFPMYxuG769gaOA7awyYpcGP.jpg",
+          "id": 58811,
+          "name": "Helix",
+          "original_language": "en",
+          "original_name": "Helix",
+          "overview": "Helix is an intense thriller about a team of scientists from the Centers for Disease Control who travel to a high-tech research facility in the Arctic to investigate a possible disease outbreak, only to find themselves pulled into a terrifying life-and-death struggle that holds the key to mankind's salvation...or total annihilation.",
+          "poster_path": "/7goT0IcsXjRo9fdMlWKr6ZRmaNP.jpg",
+          "media_type": "tv",
+          "genre_ids": [
+            18,
+            10765
+          ],
+          "popularity": 27.448,
+          "first_air_date": "2014-01-10",
+          "vote_average": 6.711,
+          "vote_count": 356,
+          "origin_country": [
+            "CA",
+            "US"
+          ]
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 9780,
+      "known_for_department": "Acting",
+      "name": "Angela Bassett",
+      "original_name": "Angela Bassett",
+      "popularity": 59.058,
+      "profile_path": "/7Oz53NKdglRzAzI2MKjM3eQXwn.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/b6ZJZHUdMEFECvGiDpJjlfUWela.jpg",
+          "id": 284054,
+          "title": "Black Panther",
+          "original_language": "en",
+          "original_title": "Black Panther",
+          "overview": "King T'Challa returns home to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without. Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantle to join with ex-girlfriend Nakia, the queen-mother, his princess-kid sister, members of the Dora Milaje (the Wakandan 'special forces') and an American secret agent, to prevent Wakanda from being dragged into a world war.",
+          "poster_path": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 79.401,
+          "release_date": "2018-02-13",
+          "video": false,
+          "vote_average": 7.4,
+          "vote_count": 20473
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gYQ30Jer6qMZSKxeDmcibueeq0T.jpg",
+          "id": 267860,
+          "title": "London Has Fallen",
+          "original_language": "en",
+          "original_title": "London Has Fallen",
+          "overview": "In London for the Prime Minister's funeral, Mike Banning discovers a plot to assassinate all the attending world leaders.",
+          "poster_path": "/korY0GInEJThWEm23MRmErQ3GqT.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "popularity": 46.606,
+          "release_date": "2016-03-02",
+          "video": false,
+          "vote_average": 6.166,
+          "vote_count": 4237
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/58r049aVTO1KjAYVuWJr0KgG5nY.jpg",
+          "id": 44912,
+          "title": "Green Lantern",
+          "original_language": "en",
+          "original_title": "Green Lantern",
+          "overview": "For centuries, a small but powerful force of warriors called the Green Lantern Corps has sworn to keep intergalactic order. Each Green Lantern wears a ring that grants him superpowers. But when a new enemy called Parallax threatens to destroy the balance of power in the Universe, their fate and the fate of Earth lie in the hands of the first human ever recruited.",
+          "poster_path": "/fj21HwUprqjjwTdkKC1XZurRSpV.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            12,
+            28,
+            53,
+            878
+          ],
+          "popularity": 51.25,
+          "release_date": "2011-06-16",
+          "video": false,
+          "vote_average": 5.163,
+          "vote_count": 6591
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 1992160,
+      "known_for_department": "Acting",
+      "name": "Adam Demos",
+      "original_name": "Adam Demos",
+      "popularity": 47.261,
+      "profile_path": "/wbBOnt8uvizAaxfvf7qzrROpic4.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/lVJdFZc8hBJRVnOIay60tl04Qjv.jpg",
+          "id": 623195,
+          "title": "Falling Inn Love",
+          "original_language": "en",
+          "original_title": "Falling Inn Love",
+          "overview": "When a San Francisco exec wins a New Zealand inn, she ditches city life to remodel and flip the rustic property with help from a handsome contractor.",
+          "poster_path": "/4bzu5k5vwLKgwap6pHXlCY8nlh3.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            10749,
+            35
+          ],
+          "popularity": 17.348,
+          "release_date": "2019-08-29",
+          "video": false,
+          "vote_average": 6.535,
+          "vote_count": 1059
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9nBVkNBe4x9HKDAzxjxlIqecxCW.jpg",
+          "id": 126280,
+          "name": "Sex/Life",
+          "original_language": "en",
+          "original_name": "Sex/Life",
+          "overview": "A woman's daring sexual past collides with her married-with-kids present when the bad-boy ex she can't stop fantasizing about crashes back into her life.",
+          "poster_path": "/kfcJl5e8CRWDU7e4vX6uNABPRbS.jpg",
+          "media_type": "tv",
+          "genre_ids": [
+            35,
+            18
+          ],
+          "popularity": 250.648,
+          "first_air_date": "2021-06-25",
+          "vote_average": 7.142,
+          "vote_count": 1126,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6fRVz7ZIZIGFEOq4THY2pdBBhfS.jpg",
+          "id": 934761,
+          "title": "A Perfect Pairing",
+          "original_language": "en",
+          "original_title": "A Perfect Pairing",
+          "overview": "To land a major client, an LA wine exec travels to an Australian sheep station, where she signs on as a ranch hand and hits it off with a rugged local.",
+          "poster_path": "/h65lLhYEfRGOWVZzwX9n7vYOixf.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            35,
+            10749
+          ],
+          "popularity": 19.905,
+          "release_date": "2022-05-19",
+          "video": false,
+          "vote_average": 6.855,
+          "vote_count": 420
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 109513,
+      "known_for_department": "Acting",
+      "name": "Alexandra Daddario",
+      "original_name": "Alexandra Daddario",
+      "popularity": 90.378,
+      "profile_path": "/lh5zibQXYH1MNqkuX8TmxyNYHhK.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/ipjZVitWMjrVd2hoWKU2waVdxGy.jpg",
+          "id": 254128,
+          "title": "San Andreas",
+          "original_language": "en",
+          "original_title": "San Andreas",
+          "overview": "In the aftermath of a massive earthquake in California, a rescue-chopper pilot makes a dangerous journey across the state in order to rescue his estranged daughter.",
+          "poster_path": "/2Gfjn962aaFSD6eST6QU3oLDZTo.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            28,
+            18,
+            53
+          ],
+          "popularity": 107.556,
+          "release_date": "2015-05-27",
+          "video": false,
+          "vote_average": 6.208,
+          "vote_count": 7571
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sEyNWq9985lyUrwayWnvicT4FHA.jpg",
+          "id": 32657,
+          "title": "Percy Jackson & the Olympians: The Lightning Thief",
+          "original_language": "en",
+          "original_title": "Percy Jackson & the Olympians: The Lightning Thief",
+          "overview": "Accident prone teenager, Percy discovers he's actually a demi-God, the son of Poseidon, and he is needed when Zeus' lightning is stolen. Percy must master his new found skills in order to prevent a war between the Gods that could devastate the entire world.",
+          "poster_path": "/vayx5t1cYCpBGV9ylTGn0Sr9rA2.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            12,
+            14,
+            10751
+          ],
+          "popularity": 95.458,
+          "release_date": "2010-02-01",
+          "video": false,
+          "vote_average": 6.2,
+          "vote_count": 6752
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/t6TL7V9IsT4Ktx6YO8b1UYj3agd.jpg",
+          "id": 339846,
+          "title": "Baywatch",
+          "original_language": "en",
+          "original_title": "Baywatch",
+          "overview": "Devoted lifeguard Mitch Buchannon butts heads with a brash new recruit. Together, they uncover a local criminal plot that threatens the future of the Bay.",
+          "poster_path": "/6HE4xd8zloDqmjMZuhUCCw2UcY1.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            35,
+            28,
+            80
+          ],
+          "popularity": 56.076,
+          "release_date": "2017-05-25",
+          "video": false,
+          "vote_average": 6.098,
+          "vote_count": 7323
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 86654,
+      "known_for_department": "Acting",
+      "name": "Austin Butler",
+      "original_name": "Austin Butler",
+      "popularity": 46.689,
+      "profile_path": "/zyizc36OayhIn3STXR8HXP0nnVm.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/kaoTwHrJDmCPDLriN68pjlgx4R.jpg",
+          "id": 614934,
+          "title": "Elvis",
+          "original_language": "en",
+          "original_title": "Elvis",
+          "overview": "The life story of Elvis Presley as seen through the complicated relationship with his enigmatic manager, Colonel Tom Parker.",
+          "poster_path": "/qBOKWqAFbveZ4ryjJJwbie6tXkQ.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            18,
+            10402,
+            36
+          ],
+          "popularity": 83.995,
+          "release_date": "2022-06-22",
+          "video": false,
+          "vote_average": 7.653,
+          "vote_count": 2449
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xwgBHC2FgoIrQitl8jZwXXdsR9u.jpg",
+          "id": 466272,
+          "title": "Once Upon a Time… in Hollywood",
+          "original_language": "en",
+          "original_title": "Once Upon a Time… in Hollywood",
+          "overview": "Los Angeles, 1969. TV star Rick Dalton, a struggling actor specializing in westerns, and stuntman Cliff Booth, his best friend, try to survive in a constantly changing movie industry. Dalton is the neighbor of the young and promising actress and model Sharon Tate, who has just married the prestigious Polish director Roman Polanski…",
+          "poster_path": "/wQKeS2JrsRF8XSfd9zqflrc5gad.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            35,
+            18,
+            53
+          ],
+          "popularity": 47.944,
+          "release_date": "2019-07-24",
+          "video": false,
+          "vote_average": 7.436,
+          "vote_count": 11632
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8RNoJJn2S8DlA331OyIqTh3zr68.jpg",
+          "id": 64122,
+          "name": "The Shannara Chronicles",
+          "original_language": "en",
+          "original_name": "The Shannara Chronicles",
+          "overview": "A young Healer armed with an unpredictable magic guides a runaway Elf in her perilous quest to save the peoples of the Four Lands from an age-old Demon scourge.",
+          "poster_path": "/bYq2R7V9r69pWGOqXOnaJtmmtQ8.jpg",
+          "media_type": "tv",
+          "genre_ids": [
+            10759,
+            10765
+          ],
+          "popularity": 38.417,
+          "first_air_date": "2016-01-05",
+          "vote_average": 7.03,
+          "vote_count": 807,
+          "origin_country": [
+            "US"
+          ]
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 11701,
+      "known_for_department": "Acting",
+      "name": "Angelina Jolie",
+      "original_name": "Angelina Jolie",
+      "popularity": 53.275,
+      "profile_path": "/k3W1XXddDOH2zibPkNotIh5amHo.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/xjotE7aFdZ0D8aGriYjFOtDayct.jpg",
+          "id": 102651,
+          "title": "Maleficent",
+          "original_language": "en",
+          "original_title": "Maleficent",
+          "overview": "A beautiful, pure-hearted young woman, Maleficent has an idyllic life growing up in a peaceable forest kingdom, until one day when an invading army threatens the harmony of the land.  Maleficent rises to be the land's fiercest protector, but she ultimately suffers a ruthless betrayal – an act that begins to turn her heart into stone. Bent on revenge, Maleficent faces an epic battle with the invading King's successor and, as a result, places a curse upon his newborn infant Aurora. As the child grows, Maleficent realizes that Aurora holds the key to peace in the kingdom – and to Maleficent's true happiness as well.",
+          "poster_path": "/ik8PugpL41s137RAWEGTAWu0dPo.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            14,
+            12,
+            28,
+            10751,
+            10749
+          ],
+          "popularity": 109.023,
+          "release_date": "2014-05-28",
+          "video": false,
+          "vote_average": 7.09,
+          "vote_count": 12176
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ic50CVnRJY3yE9M8xzwlS7ikPga.jpg",
+          "id": 1995,
+          "title": "Lara Croft: Tomb Raider",
+          "original_language": "en",
+          "original_title": "Lara Croft: Tomb Raider",
+          "overview": "English aristocrat Lara Croft is skilled in hand-to-hand combat and in the middle of a battle with a secret society. The shapely archaeologist moonlights as a tomb raider to recover lost antiquities and meets her match in the evil Powell, who's in search of a powerful relic.",
+          "poster_path": "/7WyMvoqPYJe5g1ENsbLTv40pUrX.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            12,
+            14,
+            28,
+            53
+          ],
+          "popularity": 34.585,
+          "release_date": "2001-06-11",
+          "video": false,
+          "vote_average": 5.869,
+          "vote_count": 5529
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/skvI4rYFrKXS73BJxWGH54Omlvv.jpg",
+          "id": 420809,
+          "title": "Maleficent: Mistress of Evil",
+          "original_language": "en",
+          "original_title": "Maleficent: Mistress of Evil",
+          "overview": "Maleficent and her goddaughter Aurora begin to question the complex family ties that bind them as they are pulled in different directions by impending nuptials, unexpected allies, and dark new forces at play.",
+          "poster_path": "/vloNTScJ3w7jwNwtNGoG8DbTThv.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            10751,
+            14,
+            12,
+            28
+          ],
+          "popularity": 116.082,
+          "release_date": "2019-10-16",
+          "video": false,
+          "vote_average": 7.345,
+          "vote_count": 5443
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 37625,
+      "known_for_department": "Acting",
+      "name": "Andrew Garfield",
+      "original_name": "Andrew Garfield",
+      "popularity": 53.423,
+      "profile_path": "/9hJ59ogLxgcZDkvfGcjLHqbB5Pl.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/sLWUtbrpiLp23a0XDSiUiltdFPJ.jpg",
+          "id": 1930,
+          "title": "The Amazing Spider-Man",
+          "original_language": "en",
+          "original_title": "The Amazing Spider-Man",
+          "overview": "Peter Parker is an outcast high schooler abandoned by his parents as a boy, leaving him to be raised by his Uncle Ben and Aunt May. Like most teenagers, Peter is trying to figure out who he is and how he got to be the person he is today. As Peter discovers a mysterious briefcase that belonged to his father, he begins a quest to understand his parents' disappearance – leading him directly to Oscorp and the lab of Dr. Curt Connors, his father's former partner. As Spider-Man is set on a collision course with Connors' alter ego, The Lizard, Peter will make life-altering choices to use his powers and shape his destiny to become a hero.",
+          "poster_path": "/jIfkQNARYyERqRAq1p1c8xgePp4.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            28,
+            12,
+            14
+          ],
+          "popularity": 88.239,
+          "release_date": "2012-06-23",
+          "video": false,
+          "vote_average": 6.684,
+          "vote_count": 15841
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rshlQ6LfPRSWFhpGL4s5ZkIPR51.jpg",
+          "id": 324786,
+          "title": "Hacksaw Ridge",
+          "original_language": "en",
+          "original_title": "Hacksaw Ridge",
+          "overview": "WWII American Army Medic Desmond T. Doss, who served during the Battle of Okinawa, refuses to kill people and becomes the first Conscientious Objector in American history to receive the Congressional Medal of Honor.",
+          "poster_path": "/jhWbYeUNOA5zAb6ufK6pXQFXqTX.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            18,
+            36,
+            10752
+          ],
+          "popularity": 236.363,
+          "release_date": "2016-10-07",
+          "video": false,
+          "vote_average": 8.19,
+          "vote_count": 12076
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mPyiNWS0upEG1mGKOKyCQSoZpnp.jpg",
+          "id": 102382,
+          "title": "The Amazing Spider-Man 2",
+          "original_language": "en",
+          "original_title": "The Amazing Spider-Man 2",
+          "overview": "For Peter Parker, life is busy. Between taking out the bad guys as Spider-Man and spending time with the person he loves, Gwen Stacy, high school graduation cannot come quickly enough. Peter has not forgotten about the promise he made to Gwen’s father to protect her by staying away, but that is a promise he cannot keep. Things will change for Peter when a new villain, Electro, emerges, an old friend, Harry Osborn, returns, and Peter uncovers new clues about his past.",
+          "poster_path": "/c3e9e18SSlvFd1cQaGmUj5tqL5P.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            28,
+            12,
+            14
+          ],
+          "popularity": 99.396,
+          "release_date": "2014-04-16",
+          "video": false,
+          "vote_average": 6.49,
+          "vote_count": 11854
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 64295,
+      "known_for_department": "Acting",
+      "name": "Alan Ritchson",
+      "original_name": "Alan Ritchson",
+      "popularity": 49.758,
+      "profile_path": "/iV4XpUEsvnncbRv1SJKasRY05cK.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/gWuiOPAz3WImzFZUzHTT6c4omrD.jpg",
+          "id": 98566,
+          "title": "Teenage Mutant Ninja Turtles",
+          "original_language": "en",
+          "original_title": "Teenage Mutant Ninja Turtles",
+          "overview": "When a kingpin threatens New York City, a group of mutated turtle warriors must emerge from the shadows to protect their home.",
+          "poster_path": "/azL2ThbJMIkts3ZMt3j1YgBUeDB.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            878,
+            28,
+            12,
+            35
+          ],
+          "popularity": 91.886,
+          "release_date": "2014-08-07",
+          "video": false,
+          "vote_average": 5.894,
+          "vote_count": 6191
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/voKEhzb4ExOmR0WSvQgLTTqRUEu.jpg",
+          "id": 108978,
+          "name": "Reacher",
+          "original_language": "en",
+          "original_name": "Reacher",
+          "overview": "Jack Reacher was arrested for murder and now the police need his help. Based on the books by Lee Child.",
+          "poster_path": "/bQnnKBe3VsvXKMoNCaYmRzs1Dup.jpg",
+          "media_type": "tv",
+          "genre_ids": [
+            10759,
+            80,
+            18
+          ],
+          "popularity": 110.486,
+          "first_air_date": "2022-02-03",
+          "vote_average": 8.059,
+          "vote_count": 615,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/41objfan7PDTBG5MFXQl4ownQzJ.jpg",
+          "id": 308531,
+          "title": "Teenage Mutant Ninja Turtles: Out of the Shadows",
+          "original_language": "en",
+          "original_title": "Teenage Mutant Ninja Turtles: Out of the Shadows",
+          "overview": "After supervillain Shredder escapes custody, he joins forces with mad scientist Baxter Stockman and two dimwitted henchmen, Bebop and Rocksteady, to unleash a diabolical plan to take over the world. As the Turtles prepare to take on Shredder and his new crew, they find themselves facing an even greater evil with similar intentions: the notorious Krang.",
+          "poster_path": "/euVaCiCWz3AALcQXHT6aUqdGUo6.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            28,
+            12,
+            35,
+            10751,
+            878
+          ],
+          "popularity": 48.146,
+          "release_date": "2016-06-01",
+          "video": false,
+          "vote_average": 5.995,
+          "vote_count": 3106
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 220448,
+      "known_for_department": "Acting",
+      "name": "Paul Anderson",
+      "original_name": "Paul Anderson",
+      "popularity": 42.032,
+      "profile_path": "/nds5rTBZvJ4rEsP4N6OaoEgQDkW.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/wiE9doxiLwq3WCGamDIOb2PqBqc.jpg",
+          "id": 60574,
+          "name": "Peaky Blinders",
+          "original_language": "en",
+          "original_name": "Peaky Blinders",
+          "overview": "A gangster family epic set in 1919 Birmingham, England and centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby, who means to move up in the world.",
+          "poster_path": "/vUUqzWa2LnHIVqkaKVlVGkVcZIW.jpg",
+          "media_type": "tv",
+          "genre_ids": [
+            18,
+            80
+          ],
+          "popularity": 512.091,
+          "first_air_date": "2013-09-12",
+          "vote_average": 8.548,
+          "vote_count": 8232,
+          "origin_country": [
+            "GB"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3uM41OT0RfBkE6Gb6U89LEskJBr.jpg",
+          "id": 281957,
+          "title": "The Revenant",
+          "original_language": "en",
+          "original_title": "The Revenant",
+          "overview": "In the 1820s, a frontiersman, Hugh Glass, sets out on a path of vengeance against those who left him for dead after a bear mauling.",
+          "poster_path": "/ji3ecJphATlVgWNY0B0RVXZizdf.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            37,
+            18,
+            12
+          ],
+          "popularity": 52.337,
+          "release_date": "2015-12-25",
+          "video": false,
+          "vote_average": 7.52,
+          "vote_count": 16646
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lWNASscWXn32Asr9vkB1wq6cKvD.jpg",
+          "id": 58574,
+          "title": "Sherlock Holmes: A Game of Shadows",
+          "original_language": "en",
+          "original_title": "Sherlock Holmes: A Game of Shadows",
+          "overview": "There is a new criminal mastermind at large (Professor Moriarty) and not only is he Holmes’ intellectual equal, but his capacity for evil and lack of conscience may give him an advantage over the  detective.",
+          "poster_path": "/y1MYZkwhZK6L0Jy4YMuPktzDOfn.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            12,
+            28,
+            80,
+            9648
+          ],
+          "popularity": 39.404,
+          "release_date": "2011-11-22",
+          "video": false,
+          "vote_average": 7.126,
+          "vote_count": 9498
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 53650,
+      "known_for_department": "Acting",
+      "name": "Anthony Mackie",
+      "original_name": "Anthony Mackie",
+      "popularity": 41.27,
+      "profile_path": "/kfTwOYr3iUucmYz8kPjhYy07G2Z.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/aTjbqMONy77fHJrIYu14g1F0d5h.jpg",
+          "id": 88396,
+          "name": "The Falcon and the Winter Soldier",
+          "original_language": "en",
+          "original_name": "The Falcon and the Winter Soldier",
+          "overview": "Following the events of “Avengers: Endgame”, the Falcon, Sam Wilson and the Winter Soldier, Bucky Barnes team up in a global adventure that tests their abilities, and their patience.",
+          "poster_path": "/6kbAMLteGO8yyewYau6bJ683sw7.jpg",
+          "media_type": "tv",
+          "genre_ids": [
+            10759,
+            18
+          ],
+          "popularity": 69.115,
+          "first_air_date": "2021-03-19",
+          "vote_average": 7.719,
+          "vote_count": 7737,
+          "origin_country": [
+            "US"
+          ]
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1RWLMyC9KcFfcaoViMiJGSSZzzr.jpg",
+          "id": 100402,
+          "title": "Captain America: The Winter Soldier",
+          "original_language": "en",
+          "original_title": "Captain America: The Winter Soldier",
+          "overview": "After the cataclysmic events in New York with The Avengers, Steve Rogers, aka Captain America is living quietly in Washington, D.C. and trying to adjust to the modern world. But when a S.H.I.E.L.D. colleague comes under attack, Steve becomes embroiled in a web of intrigue that threatens to put the world at risk. Joining forces with the Black Widow, Captain America struggles to expose the ever-widening conspiracy while fighting off professional assassins sent to silence him at every turn. When the full scope of the villainous plot is revealed, Captain America and the Black Widow enlist the help of a new ally, the Falcon. However, they soon find themselves up against an unexpected and formidable enemy—the Winter Soldier.",
+          "poster_path": "/tVFRpFw3xTedgPGqxW0AOI8Qhh0.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "popularity": 50.59,
+          "release_date": "2014-03-20",
+          "video": false,
+          "vote_average": 7.677,
+          "vote_count": 17140
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/wdwcOBMkt3zmPQuEMxB3FUtMio2.jpg",
+          "id": 271110,
+          "title": "Captain America: Civil War",
+          "original_language": "en",
+          "original_title": "Captain America: Civil War",
+          "overview": "Following the events of Age of Ultron, the collective governments of the world pass an act designed to regulate all superhuman activity. This polarizes opinion amongst the Avengers, causing two factions to side with Iron Man or Captain America, which causes an epic battle between former allies.",
+          "poster_path": "/rAGiXaUfPzY7CDEyNKUofk3Kw2e.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            12,
+            28,
+            878
+          ],
+          "popularity": 121.527,
+          "release_date": "2016-04-27",
+          "video": false,
+          "vote_average": 7.44,
+          "vote_count": 20933
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 1813,
+      "known_for_department": "Acting",
+      "name": "Anne Hathaway",
+      "original_name": "Anne Hathaway",
+      "popularity": 55.671,
+      "profile_path": "/tLelKoPNiyJCSEtQTz1FGv4TLGc.jpg",
+      "known_for": [
+        {
+          "adult": false,
+          "backdrop_path": "/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
+          "id": 157336,
+          "title": "Interstellar",
+          "original_language": "en",
+          "original_title": "Interstellar",
+          "overview": "The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.",
+          "poster_path": "/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            12,
+            18,
+            878
+          ],
+          "popularity": 161.7,
+          "release_date": "2014-11-05",
+          "video": false,
+          "vote_average": 8.393,
+          "vote_count": 30910
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/CpLAfXgSNeNRRbRzPrTuzKmIHO.jpg",
+          "id": 350,
+          "title": "The Devil Wears Prada",
+          "original_language": "en",
+          "original_title": "The Devil Wears Prada",
+          "overview": "Andy moves to New York to work in the fashion industry. Her boss is extremely demanding, cruel and won't let her succeed if she doesn't fit into the high class elegant look of their magazine.",
+          "poster_path": "/8912AsVuS7Sj915apArUFbv6F9L.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            35,
+            18,
+            10749
+          ],
+          "popularity": 70.958,
+          "release_date": "2006-06-29",
+          "video": false,
+          "vote_average": 7.382,
+          "vote_count": 10693
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/A6d09KtZKdVGSg0gzsldjDwwvhD.jpg",
+          "id": 241259,
+          "title": "Alice Through the Looking Glass",
+          "original_language": "en",
+          "original_title": "Alice Through the Looking Glass",
+          "overview": "Alice Kingsleigh returns to Underland and faces a new adventure in saving the Mad Hatter.",
+          "poster_path": "/4g043PWVXkjHkxEEsEfwuAxlM8i.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+            12,
+            10751,
+            14
+          ],
+          "popularity": 50.576,
+          "release_date": "2016-05-25",
+          "video": false,
+          "vote_average": 6.552,
+          "vote_count": 5843
+        }
+      ]
+    }
+  ],
+  "total_pages": 500,
+  "total_results": 10000
+}

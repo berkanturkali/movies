@@ -1,0 +1,424 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/caGVr9Il2gj8bN4ow6qsLm60TxM.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 1416,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Grey's Anatomy",
+      "overview": "Follows the personal and professional lives of a group of doctors at Seattle’s Grey Sloan Memorial Hospital.",
+      "popularity": 1208.843,
+      "poster_path": "/daSFbrt8QCXV2hSwB0hqYjbj681.jpg",
+      "first_air_date": "2005-03-27",
+      "name": "Grey's Anatomy",
+      "vote_average": 8.257,
+      "vote_count": 9005
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vMX7hAai5mTViBF5P075X21zBjY.jpg",
+      "genre_ids": [
+        10766
+      ],
+      "id": 213852,
+      "origin_country": [
+        "MX"
+      ],
+      "original_language": "es",
+      "original_name": "Mi Camino es Amarte",
+      "overview": "",
+      "popularity": 11.029,
+      "poster_path": "/1Fp0IVmjRdTUD2FyXAzn07H4Dvt.jpg",
+      "first_air_date": "2022-11-07",
+      "name": "Mi Camino es Amarte",
+      "vote_average": 7.323,
+      "vote_count": 31
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/eT92Kj5vvFr9EomAwaWo9gzP7ry.jpg",
+      "genre_ids": [
+        10766
+      ],
+      "id": 13027,
+      "origin_country": [
+        "MX"
+      ],
+      "original_language": "es",
+      "original_name": "Amor Real",
+      "overview": "True love threatens to tear a family apart in this epic Mexican serial set in the 1800s. Rich and beautiful Matilde falls in love with Adolfo, but her mother, Augusta, disapproves of the relationship when she learns Adolfo is poor. Augusta forces her daughter to marry rich and handsome Manuel Fuentes Guerra, but Matilde plays with fire by continuing to be with Adolfo. Adela Noriega, Fernando Colunga, Helena Rojo and Chantal Andere star.",
+      "popularity": 38.412,
+      "poster_path": "/leUsrci2EpuIj2PZQt3nZgbZHae.jpg",
+      "first_air_date": "2003-06-09",
+      "name": "Amor Real",
+      "vote_average": 7.716,
+      "vote_count": 1056
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/3r6rV0tGI2BtVgqc4e65Gh4hVXO.jpg",
+      "genre_ids": [
+        10766
+      ],
+      "id": 220992,
+      "origin_country": [
+        "MX"
+      ],
+      "original_language": "es",
+      "original_name": "El amor invencible",
+      "overview": "After losing all her loved ones fifteen years ago and believing her babies were killed at the hands of the father of her first love, Leona Bravo (Angelique Boyer) embarks on a journey of justice against all those who hurt her. In this process, Leona discovers that her children are actually alive and is reunited with an old friend with whom she finds true love. As a result, she will be torn between her desire for justice and rebuilding her bond with her two children, as well as regaining her faith in love.",
+      "popularity": 696.422,
+      "poster_path": "/5ea9hJqaImtakNpeet9DI2yhy4g.jpg",
+      "first_air_date": "2023-02-20",
+      "name": "Impossible Love",
+      "vote_average": 6.0,
+      "vote_count": 2
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/uGy4DCmM33I7l86W7iCskNkvmLD.jpg",
+      "genre_ids": [
+        16,
+        35,
+        10765,
+        10759
+      ],
+      "id": 60625,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Rick and Morty",
+      "overview": "Rick is a mentally-unbalanced but scientifically gifted old man who has recently reconnected with his family. He spends most of his time involving his young grandson Morty in dangerous, outlandish adventures throughout space and alternate universes. Compounded with Morty's already unstable family life, these events cause Morty much distress at home and school.",
+      "popularity": 551.852,
+      "poster_path": "/cvhNj9eoRBe5SxjCbQTkh05UP5K.jpg",
+      "first_air_date": "2013-12-02",
+      "name": "Rick and Morty",
+      "vote_average": 8.724,
+      "vote_count": 8039
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/dRV1lMIxQBlIgngufjrQeRX1JJm.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 211782,
+      "origin_country": [
+        "LB"
+      ],
+      "original_language": "ar",
+      "original_name": "الثمن",
+      "overview": "As a last resort to afford her son’s cancer treatment, a widowed mother asks her manager for money, but the latter poses one condition: she must spend the night with him.",
+      "popularity": 54.902,
+      "poster_path": "/uFEV0Tsns33zKyuc12l4XCBoba7.jpg",
+      "first_air_date": "2023-01-08",
+      "name": "Al Thaman",
+      "vote_average": 5.4,
+      "vote_count": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ogMd4e3A0uSNwZADzgC23zCByoi.jpg",
+      "genre_ids": [
+        10759,
+        16,
+        10762
+      ],
+      "id": 65334,
+      "origin_country": [
+        "FR"
+      ],
+      "original_language": "fr",
+      "original_name": "Miraculous, les aventures de Ladybug et Chat Noir",
+      "overview": "Normal high school kids by day, protectors of Paris by night! Miraculous follows the heroic adventures of Marinette and Adrien as they transform into Ladybug and Cat Noir and set out to capture akumas, creatures responsible for turning the people of Paris into villains. But neither hero knows the other’s true identity – or that they’re classmates!",
+      "popularity": 481.968,
+      "poster_path": "/psDcRgUX38cIeGeADwLRPyO7SYC.jpg",
+      "first_air_date": "2015-10-19",
+      "name": "Miraculous: Tales of Ladybug & Cat Noir",
+      "vote_average": 8.022,
+      "vote_count": 3992
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ogk00dzWSBK57rfwJjqBilvTfbe.jpg",
+      "genre_ids": [
+        18,
+        9648,
+        10766,
+        80
+      ],
+      "id": 45815,
+      "origin_country": [
+        "BR"
+      ],
+      "original_language": "pt",
+      "original_name": "Avenida Brasil",
+      "overview": "Brazil Avenue is a dynamic, lifelike, and modern telenovela that reveals how unrelenting ambition and inflicted cruelty can change a young girl’s destiny and lead her to seek revenge.\n\n",
+      "popularity": 99.277,
+      "poster_path": "/3wH4kZ0hdoizAcgqCgp3gUD1fFq.jpg",
+      "first_air_date": "2012-03-26",
+      "name": "Brazil Avenue",
+      "vote_average": 8.061,
+      "vote_count": 1138
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/1rVq1Qe8x5YoO3rB6mRWVEiCJRW.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 103416,
+      "origin_country": [
+        "IT"
+      ],
+      "original_language": "it",
+      "original_name": "La vita bugiarda degli adulti",
+      "overview": "Young Giovanna navigates her passage from childhood into adolescence as she experiences the different sides of Naples during the 1990s. A girl in search of her true reflection in a divided Naples: the Naples of the heights, which assumes a mask of refinement, and the Naples of the depths, a place of excess and vulgarity.",
+      "popularity": 119.998,
+      "poster_path": "/cDy24NY2QIXYUxRzelvhkWGbkPH.jpg",
+      "first_air_date": "2023-01-04",
+      "name": "The Lying Life of Adults",
+      "vote_average": 7.5,
+      "vote_count": 66
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xR2d4zxSgyGncieayJJFlFHUPDV.jpg",
+      "genre_ids": [
+        35
+      ],
+      "id": 215092,
+      "origin_country": [
+        "ES"
+      ],
+      "original_language": "es",
+      "original_name": "Machos alfa",
+      "overview": "Pedro, Luis, Raúl and Santi are four friends who feel a little lost in the new world of empowered women, each trying to adapt in their own haphazard way.",
+      "popularity": 52.368,
+      "poster_path": "/jk8YHUJ59YylnMwTnMYTFOKkz1r.jpg",
+      "first_air_date": "2022-12-30",
+      "name": "Alpha Males",
+      "vote_average": 7.805,
+      "vote_count": 41
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ic7YfRS52N3m4oalxoOIT665C33.jpg",
+      "genre_ids": [
+        18,
+        35
+      ],
+      "id": 104877,
+      "origin_country": [
+        "TR"
+      ],
+      "original_language": "tr",
+      "original_name": "Sen Çal Kapımı",
+      "overview": "Eda, who ties all her hopes to her education, confronts Serkan Bolat, who cuts off her international education scholarship and leaves her with high school diploma. Serkan Bolat offers Eda to give her scholarship back if she pretends to be his fiance for two months. Although Eda rejects the offer of this man as she hates him, she has to accept it when the conditions change. While pretending to be engaged, Serkan and Eda begin to experience a passionate, challenging relationship that will make them forget all they know right. Because love is difficult. And that's why it's amazing.",
+      "popularity": 452.251,
+      "poster_path": "/bE71f9A3eztjcd5JT3MmHB8MbzA.jpg",
+      "first_air_date": "2020-07-08",
+      "name": "Love Is In The Air",
+      "vote_average": 8.192,
+      "vote_count": 2816
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5SQaNc5loVTrx1cDBnB72ewXLPp.jpg",
+      "genre_ids": [
+        35,
+        18
+      ],
+      "id": 2691,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Two and a Half Men",
+      "overview": "A hedonistic jingle writer's free-wheeling life comes to an abrupt halt when his brother and 10-year-old nephew move into his beach-front house.",
+      "popularity": 327.703,
+      "poster_path": "/A9QDK4OWpv41W27kCv0LXe30k9S.jpg",
+      "first_air_date": "2003-09-22",
+      "name": "Two and a Half Men",
+      "vote_average": 7.443,
+      "vote_count": 2626
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/26uCzg0yigXqjcM9dCGCDihoXLM.jpg",
+      "genre_ids": [
+        18,
+        9648
+      ],
+      "id": 129552,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Night Agent",
+      "overview": "While monitoring an emergency line, a vigilant FBI agent answers a call that plunges him into a deadly conspiracy involving a mole at the White House.",
+      "popularity": 345.636,
+      "poster_path": "/xjsx6rGEgHl2tUqkimo6Bz2KzVo.jpg",
+      "first_air_date": "2023-03-23",
+      "name": "The Night Agent",
+      "vote_average": 7.616,
+      "vote_count": 56
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2UG177tWHy7xRmMKWJHB7nAUmKd.jpg",
+      "genre_ids": [
+        10759,
+        16,
+        10765
+      ],
+      "id": 31911,
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "original_name": "鋼の錬金術師 FULLMETAL ALCHEMIST",
+      "overview": "Edward and Alphonse Elric's reckless disregard for alchemy's fun­damental laws ripped half of Ed's limbs from his body and left Al's soul clinging to a cold suit of armor. To restore what was lost, the brothers scour a war-torn land for the Philosopher's Sto­ne, a fabled relic which grants the ability to perform alchemy in impossible ways.\n\nThe Elrics are not alone in their search; the corrupt State Military is also eager to harness the artifact's power. So too are the strange Homunculi and their shadowy creator. The mythical gem lures exotic alchemists from distant kingdoms, scarring some deeply enough to inspire murder. As the Elrics find their course altered by these enemies and allies, their purpose remains unchanged – and their bond unbreakable.",
+      "popularity": 112.474,
+      "poster_path": "/5ZFUEOULaVml7pQuXxhpR2SmVUw.jpg",
+      "first_air_date": "2009-04-05",
+      "name": "Fullmetal Alchemist: Brotherhood",
+      "vote_average": 8.702,
+      "vote_count": 1595
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/69Jblm3seQgiPuPQMrJqg9Nxhaz.jpg",
+      "genre_ids": [
+        10763,
+        10767
+      ],
+      "id": 101463,
+      "origin_country": [
+        "ES"
+      ],
+      "original_language": "es",
+      "original_name": "Al rojo vivo",
+      "overview": "",
+      "popularity": 527.205,
+      "poster_path": "/ag6PmoBxkF2s1uY3An618NCEt3g.jpg",
+      "first_air_date": "2011-01-10",
+      "name": "Al rojo vivo",
+      "vote_average": 2.0,
+      "vote_count": 1
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/3SfKp1aTkXdxl1jSsURjHycAHAO.jpg",
+      "genre_ids": [
+        10764
+      ],
+      "id": 156077,
+      "origin_country": [
+        "ES"
+      ],
+      "original_language": "es",
+      "original_name": "Soy Georgina",
+      "overview": "Join Georgina Rodríguez — mom, influencer, businesswoman and Cristiano Ronaldo's partner — in this emotional and in-depth portrait of her daily life.",
+      "popularity": 400.511,
+      "poster_path": "/70e3SQBIAcjKSibWoyCA7lBMZA8.jpg",
+      "first_air_date": "2022-01-27",
+      "name": "I Am Georgina",
+      "vote_average": 7.2,
+      "vote_count": 270
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/97PcwaUv9ngk2PvvbWL2vaY0RjQ.jpg",
+      "genre_ids": [
+        35
+      ],
+      "id": 7821,
+      "origin_country": [
+        "MX"
+      ],
+      "original_language": "es",
+      "original_name": "El Chavo Animado",
+      "overview": "El Chavo Animado is a Mexican animated series based on a live-action TV series of the same name, created by Roberto Gómez Bolaños.",
+      "popularity": 96.32,
+      "poster_path": "/98rkR62d1SeEi18p5Z46kqlNGzM.jpg",
+      "first_air_date": "2006-10-21",
+      "name": "El Chavo: The Animated Series",
+      "vote_average": 7.473,
+      "vote_count": 391
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/a1qSKt1MkYx16oFra0aSWfmn4Aq.jpg",
+      "genre_ids": [
+        80
+      ],
+      "id": 219833,
+      "origin_country": [
+        "CN"
+      ],
+      "original_language": "zh",
+      "original_name": "风雨送春归",
+      "overview": "",
+      "popularity": 20.593,
+      "poster_path": "/8hhE1F9g1q7Xm8oJXyHUI5ru6p3.jpg",
+      "first_air_date": "2023-02-16",
+      "name": "Anti Corruption Storm",
+      "vote_average": 6.8,
+      "vote_count": 4
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/kFmE6GfMYSA08mUKhImWdvHqN6S.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 220173,
+      "origin_country": [
+        "EG"
+      ],
+      "original_language": "ar",
+      "original_name": "الأصلي",
+      "overview": "Staring Riham Abdulghafour",
+      "popularity": 110.884,
+      "poster_path": "/3ciMsOhhleWvk55EWU77FCeiYfw.jpg",
+      "first_air_date": "2023-02-12",
+      "name": "Al-Asli",
+      "vote_average": 5.5,
+      "vote_count": 2
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vNnLAKmoczRlNarxyGrrw0KSOeX.jpg",
+      "genre_ids": [
+        80,
+        18,
+        9648,
+        10759
+      ],
+      "id": 1412,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Arrow",
+      "overview": "Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.",
+      "popularity": 283.198,
+      "poster_path": "/gKG5QGz5Ngf8fgWpBsWtlg5L2SF.jpg",
+      "first_air_date": "2012-10-10",
+      "name": "Arrow",
+      "vote_average": 6.771,
+      "vote_count": 5385
+    }
+  ],
+  "total_pages": 500,
+  "total_results": 10000
+}

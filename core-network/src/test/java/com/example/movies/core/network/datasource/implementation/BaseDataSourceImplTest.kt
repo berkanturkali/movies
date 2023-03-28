@@ -5,7 +5,7 @@ import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
 import org.junit.Before
 
-abstract class BaseDataSourceImplTest<A : Any, C : A> {
+abstract class BaseDataSourceImplTest<D : Any, T : D> {
 
     protected lateinit var mockWebServer: MockWebServer
     protected lateinit var dataSource: A
@@ -24,7 +24,7 @@ abstract class BaseDataSourceImplTest<A : Any, C : A> {
     }
 
 
-    abstract fun initializeDataSource(): C
+    abstract fun initializeDataSource(): T
 
     abstract fun setDispatcher(): BaseDispatcher
 }

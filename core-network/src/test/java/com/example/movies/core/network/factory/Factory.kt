@@ -1,5 +1,6 @@
 package com.example.movies.core.network.factory
 
+import com.example.movies.core.network.interceptor.ApiKeyInterceptor
 import com.example.movies.core.network.service.base.BaseService
 import com.google.common.io.Resources
 import com.squareup.moshi.JsonAdapter
@@ -16,7 +17,8 @@ import java.net.URL
 
 internal val moshi: Moshi
     get() = Moshi.Builder()
-        .add(KotlinJsonAdapterFactory()).build()
+        .add(KotlinJsonAdapterFactory())
+        .build()
 
 internal inline fun <reified T, reified M> responseAdapter(): JsonAdapter<T> {
     val type: ParameterizedType = Types.newParameterizedType(
@@ -33,7 +35,9 @@ internal fun getJson(path: String): String {
 }
 
 private val okHttpClient: OkHttpClient
-    get() = OkHttpClient.Builder().build()
+    get() = OkHttpClient.Builder()
+        .addInterceptor(ApiKeyInterceptor())
+        .build()
 
 internal inline fun <reified T : BaseService> makeApiService(mockWebServer: MockWebServer): T =
     Retrofit.Builder()

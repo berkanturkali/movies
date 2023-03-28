@@ -1,0 +1,127 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "id": 163870,
+      "logo_path": null,
+      "name": "a",
+      "origin_country": ""
+    },
+    {
+      "id": 173275,
+      "logo_path": null,
+      "name": "A",
+      "origin_country": ""
+    },
+    {
+      "id": 102505,
+      "logo_path": null,
+      "name": "Amici Films",
+      "origin_country": ""
+    },
+    {
+      "id": 102527,
+      "logo_path": null,
+      "name": "Adonis Production",
+      "origin_country": ""
+    },
+    {
+      "id": 102528,
+      "logo_path": null,
+      "name": "Producciones Cinematográficas Ufesa S.A.",
+      "origin_country": ""
+    },
+    {
+      "id": 102529,
+      "logo_path": null,
+      "name": "Valencia Films S.A.",
+      "origin_country": ""
+    },
+    {
+      "id": 102535,
+      "logo_path": null,
+      "name": "Windstar Produções Artísticas S/C Ltda.",
+      "origin_country": "BR"
+    },
+    {
+      "id": 102542,
+      "logo_path": null,
+      "name": "Adventus Films",
+      "origin_country": ""
+    },
+    {
+      "id": 102543,
+      "logo_path": null,
+      "name": "Renil Amba Films",
+      "origin_country": ""
+    },
+    {
+      "id": 102545,
+      "logo_path": null,
+      "name": "PT. Rana Artha Mulia",
+      "origin_country": ""
+    },
+    {
+      "id": 102554,
+      "logo_path": null,
+      "name": "EMSE, S.A.",
+      "origin_country": ""
+    },
+    {
+      "id": 102558,
+      "logo_path": null,
+      "name": "Acción Sur",
+      "origin_country": ""
+    },
+    {
+      "id": 102561,
+      "logo_path": null,
+      "name": "An Independent Production",
+      "origin_country": ""
+    },
+    {
+      "id": 102574,
+      "logo_path": null,
+      "name": "Australia Council for the Arts",
+      "origin_country": ""
+    },
+    {
+      "id": 102576,
+      "logo_path": "/gF5TYo681zsnO2hshaUvWFDwA3O.png",
+      "name": "Yapiko Animation",
+      "origin_country": "JP"
+    },
+    {
+      "id": 102581,
+      "logo_path": null,
+      "name": "Live Networks AB",
+      "origin_country": ""
+    },
+    {
+      "id": 102582,
+      "logo_path": null,
+      "name": "Politruk Film AB",
+      "origin_country": ""
+    },
+    {
+      "id": 102586,
+      "logo_path": null,
+      "name": "Akenu Producciones",
+      "origin_country": ""
+    },
+    {
+      "id": 102589,
+      "logo_path": null,
+      "name": "Royal College of Art, School of Film & Television",
+      "origin_country": ""
+    },
+    {
+      "id": 102593,
+      "logo_path": null,
+      "name": "A la Güelta Producciones",
+      "origin_country": ""
+    }
+  ],
+  "total_pages": 500,
+  "total_results": 10000
+}
