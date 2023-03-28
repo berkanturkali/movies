@@ -10,6 +10,7 @@ import com.example.movies.core.network.model.search.tvshow.TvShowsResponseDTO
 import com.example.movies.core.network.service.base.BaseService
 import retrofit2.http.GET
 import retrofit2.http.Query
+import retrofit2.http.QueryMap
 
 interface SearchService : BaseService {
 

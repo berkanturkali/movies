@@ -32,6 +32,11 @@ dependencies {
         Dependencies.Network.OKHTTP_3,
         Dependencies.Network.OKHTTP_3_LOGGING_INTERCEPTOR
     )
+
+    //paging-3
+    implementation(
+        Dependencies.Paging.PAGING
+    )
     //unit-test
     implementAllUnitTests(
         Dependencies.Test.UnitTest.TRUTH,

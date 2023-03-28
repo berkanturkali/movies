@@ -172,7 +172,7 @@ object Dependencies {
     //region paging dependencies
     object Paging {
         private object Version {
-            const val PAGING_3_VERSION = "1.0.0-alpha16"
+            const val PAGING_3_VERSION = "1.0.0-alpha18"
         }
 
         const val PAGING = "androidx.paging:paging-compose:$PAGING_3_VERSION"
