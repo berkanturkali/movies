@@ -1,6 +1,7 @@
 package com.example.movies.core.network.utils
 
 import com.example.movies.core.network.model.nowplaying.NowPlayingMovieDTO
+import com.example.movies.core.network.model.search.collection.CollectionDTO
 import com.example.movies.core.network.model.search.company.CompanyDTO
 import com.example.movies.core.network.model.trending.TrendingDTO
 import com.example.movies.core.network.model.trending.TrendingResponseDTO
@@ -43,6 +44,13 @@ object DummyData {
         id = 34,
         logoPath = "/GagSvqWlyPdkFHMfQ3pNq6ix9P.png",
         name = "Sony Pictures"
+    )
+
+    val collectionDTO = CollectionDTO(
+        id = 9485,
+        backdropPath = "/z5A5W3WYJc3UVEWljSGwdjDgQ0j.jpg",
+        name = "The Fast and the Furious Collection",
+        posterPath = "/uv63yAGg1zETAs1XQsOQpava87l.jpg"
     )
     //endregion
 }
