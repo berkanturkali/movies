@@ -1,6 +1,7 @@
 package com.example.movies.core.network.utils
 
 import com.example.movies.core.network.model.nowplaying.NowPlayingMovieDTO
+import com.example.movies.core.network.model.search.company.CompanyDTO
 import com.example.movies.core.network.model.trending.TrendingDTO
 import com.example.movies.core.network.model.trending.TrendingResponseDTO
 import com.example.movies.core.network.model.upcoming.UpcomingMovieDTO
@@ -36,6 +37,12 @@ object DummyData {
         overview = "A hard-on-his-luck hound finds himself in a town full of cats in need of a hero to defend them from a ruthless villain's wicked plot to wipe their village off the map. With help from a reluctant mentor, our underdog must assume the role of town samurai and team up with the villagers to save the day.",
         posterPath = "/wMDUDwAArpfGdtTTZ25SfwngGwt.jpg",
         title = "The Quintessential Quintuplets Movie",
+    )
+
+    val companyDTO = CompanyDTO(
+        id = 34,
+        logoPath = "/GagSvqWlyPdkFHMfQ3pNq6ix9P.png",
+        name = "Sony Pictures"
     )
     //endregion
 }

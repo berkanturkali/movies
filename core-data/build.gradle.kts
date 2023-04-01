@@ -30,6 +30,9 @@ dependencies {
     implementation(Dependencies.DI.HILT_ANDROID)
     kapt(Dependencies.DI.HILT_COMPILER_KAPT)
 
+    //paging-3
+    implementation(Dependencies.Paging.PAGING)
+
 
     testImplementation(Dependencies.Test.UnitTest.TRUTH)
 }
