@@ -4,9 +4,8 @@ import androidx.paging.PagingData
 import com.example.movies.core.model.search.collection.Collection
 import com.example.movies.core.model.search.company.Company
 import com.example.movies.core.model.search.movie.Movie
+import com.example.movies.core.model.search.person.Person
 import com.example.movies.core.network.model.search.keyword.KeywordDTO
-import com.example.movies.core.network.model.search.movie.MovieDTO
-import com.example.movies.core.network.model.search.people.PersonDTO
 import com.example.movies.core.network.model.search.tvshow.TvShowDTO
 import kotlinx.coroutines.flow.Flow
 
@@ -35,7 +34,7 @@ interface SearchRepository {
     suspend fun fetchPeople(
         page: Int,
         query: String?,
-    ): Flow<PagingData<PersonDTO>>
+    ): Flow<PagingData<Person>>
 
     suspend fun fetchTvShow(
         page: Int,
