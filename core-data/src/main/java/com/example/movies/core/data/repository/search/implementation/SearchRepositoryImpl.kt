@@ -9,18 +9,19 @@ import com.example.movies.core.model.search.collection.Collection
 import com.example.movies.core.model.search.company.Company
 import com.example.movies.core.model.search.movie.Movie
 import com.example.movies.core.model.search.person.Person
+import com.example.movies.core.model.search.tv_show.TvShow
 import com.example.movies.core.network.datasource.abstraction.search.SearchRemoteDataSource
 import com.example.movies.core.network.mapper.search.collection.CollectionMapper
 import com.example.movies.core.network.mapper.search.company.CompanyMapper
 import com.example.movies.core.network.mapper.search.movie.MovieMapper
 import com.example.movies.core.network.mapper.search.person.PersonMapper
+import com.example.movies.core.network.mapper.search.tv_show.TvShowMapper
 import com.example.movies.core.network.model.search.keyword.KeywordDTO
-import com.example.movies.core.network.model.search.people.PersonDTO
-import com.example.movies.core.network.model.search.tvshow.TvShowDTO
 import com.example.movies.core.network.pagination.search.collections.CollectionsPagingSource
 import com.example.movies.core.network.pagination.search.companies.CompaniesPagingSource
 import com.example.movies.core.network.pagination.search.movies.MoviesPagingSource
 import com.example.movies.core.network.pagination.search.people.PeoplePagingSource
+import com.example.movies.core.network.pagination.search.tv_shows.TvShowsPagingSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
@@ -31,6 +32,7 @@ class SearchRepositoryImpl @Inject constructor(
     private val collectionMapper: CollectionMapper,
     private val movieMapper: MovieMapper,
     private val personMapper: PersonMapper,
+    private val tvShowMapper: TvShowMapper,
 ) : SearchRepository {
     override suspend fun fetchCompanies(page: Int, query: String?): Flow<PagingData<Company>> {
         return Pager(
@@ -70,7 +72,9 @@ class SearchRepositoryImpl @Inject constructor(
     }
 
     override suspend fun fetchKeywords(page: Int, query: String?): Flow<PagingData<KeywordDTO>> {
-        TODO("Not yet implemented")
+        TODO(
+            "I still dont know should I include this feature as well hence this block is still empty"
+        )
     }
 
     override suspend fun fetchMovies(page: Int, query: String?): Flow<PagingData<Movie>> {
@@ -107,8 +111,21 @@ class SearchRepositoryImpl @Inject constructor(
             }
     }
 
-    override suspend fun fetchTvShow(page: Int, query: String?): Flow<PagingData<TvShowDTO>> {
-        TODO("Not yet implemented")
+    override suspend fun fetchTvShows(page: Int, query: String?): Flow<PagingData<TvShow>> {
+        return Pager(
+            config = PagingConfig(pageSize = 20, enablePlaceholders = false),
+            pagingSourceFactory = {
+                TvShowsPagingSource(
+                    searchRemoteDataSource = searchRemoteDataSource,
+                    query = query
+                )
+            }
+        ).flow
+            .map { pagingData ->
+                pagingData.map { dto ->
+                    tvShowMapper.mapFromModel(dto)
+                }
+            }
     }
 
 }
