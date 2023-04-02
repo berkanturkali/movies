@@ -4,6 +4,7 @@ import com.example.movies.core.network.model.nowplaying.NowPlayingMovieDTO
 import com.example.movies.core.network.model.search.collection.CollectionDTO
 import com.example.movies.core.network.model.search.company.CompanyDTO
 import com.example.movies.core.network.model.search.movie.MovieDTO
+import com.example.movies.core.network.model.search.people.PersonDTO
 import com.example.movies.core.network.model.trending.TrendingDTO
 import com.example.movies.core.network.model.trending.TrendingResponseDTO
 import com.example.movies.core.network.model.upcoming.UpcomingMovieDTO
@@ -69,6 +70,15 @@ object DummyData {
         voteCount = 8503,
         video = false,
         voteAverage = 7.33
+    )
+
+    val personDTO = PersonDTO(
+        profilePath = "/2daC5DeXqwkFND0xxutbnSVKN6c.jpg",
+        adult = false,
+        id = 51329,
+        knownFor = emptyList(),
+        name = "Brandley Cooper",
+        popularity = 6.431053
     )
     //endregion
 }
