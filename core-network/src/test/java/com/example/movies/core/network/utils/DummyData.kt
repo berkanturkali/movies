@@ -3,6 +3,7 @@ package com.example.movies.core.network.utils
 import com.example.movies.core.network.model.nowplaying.NowPlayingMovieDTO
 import com.example.movies.core.network.model.search.collection.CollectionDTO
 import com.example.movies.core.network.model.search.company.CompanyDTO
+import com.example.movies.core.network.model.search.movie.MovieDTO
 import com.example.movies.core.network.model.trending.TrendingDTO
 import com.example.movies.core.network.model.trending.TrendingResponseDTO
 import com.example.movies.core.network.model.upcoming.UpcomingMovieDTO
@@ -51,6 +52,23 @@ object DummyData {
         backdropPath = "/z5A5W3WYJc3UVEWljSGwdjDgQ0j.jpg",
         name = "The Fast and the Furious Collection",
         posterPath = "/uv63yAGg1zETAs1XQsOQpava87l.jpg"
+    )
+
+    val movieDTO = MovieDTO(
+        id = 24428,
+        posterPath = "/cezWGskPY5x7GaglTTRN4Fugfb8.jpg",
+        adult = false,
+        overview = "When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!",
+        releaseDate = "2012-04-25",
+        genreIds = listOf(878, 28, 12),
+        originalLanguage = "en",
+        originalTitle = "The Avengers",
+        title = "The Avengers",
+        backdropPath = "/hbn46fQaRmlpBuUrEiFqv0GDL6Y.jpg",
+        popularity = 7.35321,
+        voteCount = 8503,
+        video = false,
+        voteAverage = 7.33
     )
     //endregion
 }

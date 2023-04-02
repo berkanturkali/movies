@@ -1,8 +1,9 @@
 package com.example.movies.core.data.repository.search.abstraction
 
 import androidx.paging.PagingData
+import com.example.movies.core.model.search.collection.Collection
 import com.example.movies.core.model.search.company.Company
-import com.example.movies.core.network.model.search.collection.CollectionDTO
+import com.example.movies.core.model.search.movie.Movie
 import com.example.movies.core.network.model.search.keyword.KeywordDTO
 import com.example.movies.core.network.model.search.movie.MovieDTO
 import com.example.movies.core.network.model.search.people.PersonDTO
@@ -19,7 +20,7 @@ interface SearchRepository {
     suspend fun fetchCollections(
         page: Int,
         query: String?,
-    ): Flow<PagingData<CollectionDTO>>
+    ): Flow<PagingData<Collection>>
 
     suspend fun fetchKeywords(
         page: Int,
@@ -29,7 +30,7 @@ interface SearchRepository {
     suspend fun fetchMovies(
         page: Int,
         query: String?,
-    ): Flow<PagingData<MovieDTO>>
+    ): Flow<PagingData<Movie>>
 
     suspend fun fetchPeople(
         page: Int,
