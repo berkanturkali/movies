@@ -5,6 +5,7 @@ import com.example.movies.core.network.model.search.collection.CollectionDTO
 import com.example.movies.core.network.model.search.company.CompanyDTO
 import com.example.movies.core.network.model.search.movie.MovieDTO
 import com.example.movies.core.network.model.search.people.PersonDTO
+import com.example.movies.core.network.model.search.tvshow.TvShowDTO
 import com.example.movies.core.network.model.trending.TrendingDTO
 import com.example.movies.core.network.model.trending.TrendingResponseDTO
 import com.example.movies.core.network.model.upcoming.UpcomingMovieDTO
@@ -79,6 +80,22 @@ object DummyData {
         knownFor = emptyList(),
         name = "Brandley Cooper",
         popularity = 6.431053
+    )
+
+    val tvShowDTO = TvShowDTO(
+        id = 1399,
+        posterPath = "/cezWGskPY5x7GaglTTRN4Fugfb8.jpg",
+        overview = "When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!",
+        genreIds = listOf(10765, 10759, 18),
+        originalLanguage = "en",
+        backdropPath = "/hbn46fQaRmlpBuUrEiFqv0GDL6Y.jpg",
+        popularity = 7.35321,
+        voteCount = 8503,
+        originCountry = listOf("US"),
+        voteAverage = 7.91,
+        firstAirDate = "2011-04-17",
+        name = "Game of Thrones",
+        originalName = "Game of Thrones"
     )
     //endregion
 }
