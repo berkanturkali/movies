@@ -8,9 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
-import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
@@ -26,7 +24,6 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.examle.movies.core.ui.icon.MoviesIcons
-import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies_compose.feature.search.R
 
@@ -108,9 +105,7 @@ fun SearchInput(
 @Preview
 @Composable
 fun SearchInputPrev() {
-    CompositionLocalProvider(LocalWindowWidthSizeClass provides WindowWidthSizeClass.Compact) {
-        MoviesTheme {
-            SearchInput(query = "", onTrailingIconClick = {}, onValueChange = {})
-        }
+    MoviesTheme {
+        SearchInput(query = "", onTrailingIconClick = {}, onValueChange = {})
     }
 }

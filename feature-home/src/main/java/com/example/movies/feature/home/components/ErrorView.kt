@@ -1,12 +1,13 @@
 package com.example.movies.feature.home.components
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
-import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
@@ -14,7 +15,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.examle.movies.core.ui.R
-import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.examle.movies.core.ui.theme.MoviesTheme
 
 @Composable
@@ -57,9 +57,7 @@ fun ErrorView(
 @Preview
 @Composable
 fun ErrorViewPrev() {
-    CompositionLocalProvider(LocalWindowWidthSizeClass provides WindowWidthSizeClass.Compact) {
-        MoviesTheme {
-            ErrorView(message = "Something went wrong", onRetryClick = { })
-        }
+    MoviesTheme {
+        ErrorView(message = "Something went wrong", onRetryClick = { })
     }
 }

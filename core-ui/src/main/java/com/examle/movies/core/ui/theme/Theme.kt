@@ -31,13 +31,14 @@ private val DarkColorScheme = darkColorScheme(
 @Composable
 fun MoviesTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
+    windowWidthSizeClass: WindowWidthSizeClass = WindowWidthSizeClass.Compact,
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
     val colorScheme = DarkColorScheme
 
-    val typography = when (LocalWindowWidthSizeClass.current) {
+    val typography = when (windowWidthSizeClass) {
         WindowWidthSizeClass.Compact -> SmallTypography
         else -> MediumLargeTypography
     }

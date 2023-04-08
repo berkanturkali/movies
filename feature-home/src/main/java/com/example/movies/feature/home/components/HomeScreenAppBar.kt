@@ -1,7 +1,6 @@
 package com.example.movies.feature.home.components
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -9,12 +8,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.blur
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -94,29 +89,23 @@ private fun MenuItem(
 @Preview(device = Devices.PHONE)
 @Composable
 fun HomeScreenAppBarSmallPrev() {
-    CompositionLocalProvider(LocalWindowWidthSizeClass provides WindowWidthSizeClass.Compact) {
-        MoviesTheme {
-            HomeScreenAppBar()
-        }
+    MoviesTheme {
+        HomeScreenAppBar()
     }
 }
 
 @Preview(device = Devices.AUTOMOTIVE_1024p)
 @Composable
 fun HomeScreenAppBarMediumPrev() {
-    CompositionLocalProvider(LocalWindowWidthSizeClass provides WindowWidthSizeClass.Medium) {
-        MoviesTheme {
-            HomeScreenAppBar()
-        }
+    MoviesTheme(windowWidthSizeClass = WindowWidthSizeClass.Medium) {
+        HomeScreenAppBar()
     }
 }
 
 @Preview(device = Devices.NEXUS_10)
 @Composable
 fun HomeScreenAppBarExpandedPrev() {
-    CompositionLocalProvider(LocalWindowWidthSizeClass provides WindowWidthSizeClass.Expanded) {
-        MoviesTheme {
-            HomeScreenAppBar()
-        }
+    MoviesTheme(windowWidthSizeClass = WindowWidthSizeClass.Expanded) {
+        HomeScreenAppBar()
     }
 }

@@ -5,9 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
-import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -22,7 +20,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.rememberAsyncImagePainter
 import coil.imageLoader
 import com.examle.movies.core.ui.icon.MoviesIcons
-import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies_compose.feature.home.R
 
@@ -50,9 +47,7 @@ fun HighlightedMovie(
             modifier = Modifier.weight(0.8f)
         ) {
             Image(
-                painter = painter,
-                contentDescription = null,
-                modifier = Modifier.fillMaxSize(),
+                painter = painter, contentDescription = null, modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.FillHeight
             )
         }
@@ -60,8 +55,7 @@ fun HighlightedMovie(
         Box {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier
-                    .padding(
+                modifier = Modifier.padding(
                         bottom = dimensionResource(
                             id = com.examle.movies.core.ui.R.dimen.dimen_32
                         )
@@ -86,8 +80,7 @@ private fun MyListButton(
     ) {
         Icon(
             painter = painterResource(id = MoviesIcons.ADD),
-            tint = MaterialTheme.colorScheme.onPrimary,
-            contentDescription = null
+            tint = MaterialTheme.colorScheme.onPrimary, contentDescription = null
         )
         Spacer(
             modifier = Modifier.height(
@@ -96,8 +89,7 @@ private fun MyListButton(
         )
         Text(
             text = stringResource(id = R.string.my_list_button_text),
-            color = MaterialTheme.colorScheme.onPrimary,
-            style = MaterialTheme.typography.bodyMedium
+            color = MaterialTheme.colorScheme.onPrimary, style = MaterialTheme.typography.bodyMedium
         )
     }
 }
@@ -106,13 +98,9 @@ private fun MyListButton(
 private fun PlayButton(
     modifier: Modifier = Modifier
 ) {
-    Button(
-        modifier = modifier,
-        shape = RoundedCornerShape(
-            dimensionResource(id = com.examle.movies.core.ui.R.dimen.dimen_8)
-        ),
-        colors = ButtonDefaults.buttonColors(containerColor = Color.White),
-        onClick = {}) {
+    Button(modifier = modifier, shape = RoundedCornerShape(
+        dimensionResource(id = com.examle.movies.core.ui.R.dimen.dimen_8)
+    ), colors = ButtonDefaults.buttonColors(containerColor = Color.White), onClick = {}) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(
@@ -121,13 +109,11 @@ private fun PlayButton(
             ),
         ) {
             Icon(
-                painter = painterResource(id = MoviesIcons.PLAY),
-                contentDescription = null,
+                painter = painterResource(id = MoviesIcons.PLAY), contentDescription = null,
                 tint = Color.Black
             )
             Text(
-                text = stringResource(id = R.string.play_button_text),
-                color = Color.Black,
+                text = stringResource(id = R.string.play_button_text), color = Color.Black,
                 style = MaterialTheme.typography.bodyMedium
             )
         }
@@ -155,8 +141,7 @@ private fun InfoButton(
         )
         Text(
             text = stringResource(id = R.string.info_button_text),
-            color = MaterialTheme.colorScheme.onPrimary,
-            style = MaterialTheme.typography.bodyMedium
+            color = MaterialTheme.colorScheme.onPrimary, style = MaterialTheme.typography.bodyMedium
         )
     }
 }
@@ -164,9 +149,7 @@ private fun InfoButton(
 @Preview
 @Composable
 private fun HighlightedMoviePrev() {
-    CompositionLocalProvider(LocalWindowWidthSizeClass provides WindowWidthSizeClass.Compact) {
-        MoviesTheme {
-            HighlightedMovie("", Color.Red)
-        }
+    MoviesTheme {
+        HighlightedMovie("", Color.Red)
     }
 }

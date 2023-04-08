@@ -6,14 +6,11 @@ import androidx.compose.material3.TabPosition
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
-import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.examle.movies.core.ui.components.MoviesScaffold
-import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies.core.model.search.SearchCategory
 import com.example.movies.feature.search.components.SearchCategoryTabIndicator
@@ -21,8 +18,7 @@ import com.example.movies.feature.search.components.SearchCategoryTabIndicator
 
 @Composable
 fun SearchCategoriesScreen(
-    onItemClick: (SearchCategory) -> Unit,
-    modifier: Modifier = Modifier
+    onItemClick: (SearchCategory) -> Unit, modifier: Modifier = Modifier
 ) {
 
     MoviesScaffold(modifier = modifier) {
@@ -40,9 +36,7 @@ private fun SearchCategoriesContent(
         .toList()
 
     SearchCategoryTabs(
-        modifier = modifier,
-        categories = categories,
-        onCategorySelected = onItemClick,
+        modifier = modifier, categories = categories, onCategorySelected = onItemClick,
         selectedCategory = selectedCategory
 
     )
@@ -64,21 +58,16 @@ fun SearchCategoryTabs(
         )
     }
     TabRow(
-        selectedTabIndex = selectedIndex,
-        indicator = indicator,
-        modifier = modifier
+        selectedTabIndex = selectedIndex, indicator = indicator, modifier = modifier
     ) {
         categories.forEachIndexed { index, searchCategory ->
-            Tab(
-                selected = index == selectedIndex,
-                onClick = { onCategorySelected(searchCategory) },
+            Tab(selected = index == selectedIndex, onClick = { onCategorySelected(searchCategory) },
                 text = {
                     Text(
                         text = stringResource(id = searchCategory.categoryResId),
                         style = MaterialTheme.typography.bodyMedium
                     )
-                }
-            )
+                })
         }
     }
 }
@@ -86,10 +75,8 @@ fun SearchCategoryTabs(
 @Preview
 @Composable
 fun SearchCategoriesContentPrev() {
-    CompositionLocalProvider(LocalWindowWidthSizeClass provides WindowWidthSizeClass.Compact) {
-        MoviesTheme {
-            SearchCategoriesContent(onItemClick = {}, selectedCategory = SearchCategory.COLLECTIONS)
-        }
+    MoviesTheme {
+        SearchCategoriesContent(onItemClick = {}, selectedCategory = SearchCategory.COLLECTIONS)
     }
 }
 

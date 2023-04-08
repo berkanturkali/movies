@@ -27,8 +27,8 @@ import com.example.movies.navigation.TopLevelDestination
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun MoviesApp() {
-    MoviesTheme {
-        val windowWidthSizeClass = LocalWindowWidthSizeClass.current
+    val windowWidthSizeClass = LocalWindowWidthSizeClass.current
+    MoviesTheme(windowWidthSizeClass = windowWidthSizeClass) {
         val navController = rememberNavController()
         val moviesTopLevelNavigation = remember(navController) {
             MoviesTopLevelNavigation(navController)
