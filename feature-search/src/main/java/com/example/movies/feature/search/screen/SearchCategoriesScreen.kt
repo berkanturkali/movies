@@ -1,27 +1,22 @@
 package com.example.movies.feature.search.screen
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Icon
+import androidx.compose.material.Tab
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.TabPosition
+import androidx.compose.material3.TabRow
+import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
+import androidx.compose.material3.Text
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.examle.movies.core.ui.components.MoviesScaffold
-import com.examle.movies.core.ui.icon.MoviesIcons
 import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies.core.model.search.SearchCategory
-import com.example.movies.feature.search.components.CategoryItem
+import com.example.movies.feature.search.components.SearchCategoryTabIndicator
 
 
 @Composable
@@ -30,33 +25,60 @@ fun SearchCategoriesScreen(
     modifier: Modifier = Modifier
 ) {
 
-    MoviesScaffold(modifier = modifier, bottomBar = {
-        Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
-            Icon(
-                painter = painterResource(id = MoviesIcons.CLOSE),
-                contentDescription = null,
-                tint = MaterialTheme.colorScheme.onPrimary,
-            )
-        }
-    }) {
-        SearchCategoriesContent(onItemClick = onItemClick)
+    MoviesScaffold(modifier = modifier) {
+
     }
 }
 
 @Composable
 private fun SearchCategoriesContent(
     onItemClick: (SearchCategory) -> Unit,
+    selectedCategory: SearchCategory,
+    modifier: Modifier = Modifier
+) {
+    val categories = SearchCategory.values()
+        .toList()
+
+    SearchCategoryTabs(
+        modifier = modifier,
+        categories = categories,
+        onCategorySelected = onItemClick,
+        selectedCategory = selectedCategory
+
+    )
+
+}
+
+@Composable
+fun SearchCategoryTabs(
+    categories: List<SearchCategory>,
+    selectedCategory: SearchCategory,
+    onCategorySelected: (SearchCategory) -> Unit,
     modifier: Modifier = Modifier
 ) {
 
-    val categories = SearchCategory.values()
-        .toList()
-    LazyColumn(
-        modifier = modifier, verticalArrangement = Arrangement.spacedBy(40.dp),
-        contentPadding = PaddingValues(vertical = 16.dp)
+    val selectedIndex = categories.indexOfFirst { it == selectedCategory }
+    val indicator = @Composable { tabPositions: List<TabPosition> ->
+        SearchCategoryTabIndicator(
+            modifier = Modifier.tabIndicatorOffset(tabPositions[selectedIndex])
+        )
+    }
+    TabRow(
+        selectedTabIndex = selectedIndex,
+        indicator = indicator,
+        modifier = modifier
     ) {
-        items(categories) { searchCategory ->
-            CategoryItem(category = searchCategory, onItemClick = onItemClick)
+        categories.forEachIndexed { index, searchCategory ->
+            Tab(
+                selected = index == selectedIndex,
+                onClick = { onCategorySelected(searchCategory) },
+                text = {
+                    Text(
+                        text = stringResource(id = searchCategory.categoryResId),
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                }
+            )
         }
     }
 }
@@ -66,7 +88,7 @@ private fun SearchCategoriesContent(
 fun SearchCategoriesContentPrev() {
     CompositionLocalProvider(LocalWindowWidthSizeClass provides WindowWidthSizeClass.Compact) {
         MoviesTheme {
-            SearchCategoriesContent(onItemClick = {})
+            SearchCategoriesContent(onItemClick = {}, selectedCategory = SearchCategory.COLLECTIONS)
         }
     }
 }
