@@ -24,28 +24,6 @@ import Dependencies.Test.UnitTest.Version.MOCKK_VERSION
 import Dependencies.Test.UnitTest.Version.MOCK_WEB_SERVER_VERSION
 import Dependencies.Test.UnitTest.Version.TRUTH_VERSION
 import Dependencies.Timber.Version.TIMBER_VERSION
-import GradlePlugins.Version.GRADLE_VERSION
-import GradlePlugins.Version.KOTLIN_VERSION
-import GradlePlugins.Version.SECRETS_VERSION
-
-/**
- * Classpaths for project-level build.gradle
- */
-object GradlePlugins {
-    private object Version {
-        const val KOTLIN_VERSION = "1.8.0"
-        const val GRADLE_VERSION = "7.4.2"
-        const val HILT_VERSION = "2.44"
-        const val SECRETS_VERSION = "2.0.1"
-    }
-
-    const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
-    const val ANDROID_GRADLE_PLUGIN = "com.android.tools.build:gradle:$GRADLE_VERSION"
-    const val HILT_GRADLE_PLUGIN =
-        "com.google.dagger:hilt-android-gradle-plugin:${Version.HILT_VERSION}"
-    const val SECRETS_GRADLE_PLUGIN =
-        "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:$SECRETS_VERSION"
-}
 
 /**
  * App dependencies and dependency-related stuff
