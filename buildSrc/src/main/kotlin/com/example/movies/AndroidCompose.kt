@@ -4,7 +4,6 @@ import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.api.plugins.ExtensionAware
-import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
 /**
@@ -17,7 +16,7 @@ internal fun Project.configureAndroidCompose(
         buildFeatures.compose = true
 
         composeOptions {
-            kotlinCompilerExtensionVersion = "1.3.1"
+            kotlinCompilerExtensionVersion = "1.4.1"
         }
 
         kotlinOptions {
@@ -35,8 +34,8 @@ internal fun Project.configureAndroidCompose(
                             "androidx.compose.material3.ExperimentalMaterial3Api,"
                     )
 
-            // Set JVM target to 1.8
-            jvmTarget = JavaVersion.VERSION_1_8.toString()
+            // Set JVM target to 11
+            jvmTarget = JavaVersion.VERSION_11.toString()
         }
     }
 }

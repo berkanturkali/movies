@@ -58,14 +58,9 @@ dependencies {
         ProjectLibs.CORE_DATA,
         ProjectLibs.CORE_COMMON,
         ProjectLibs.CORE_MODEL,
-        ProjectLibs.FEATURE_HOME,
         ProjectLibs.FEATURE_SEARCH,
-        ProjectLibs.FEATURE_UPCOMING,
-        ProjectLibs.FEATURE_DOWNLOADS,
-        ProjectLibs.FEATURE_MORE,
         ProjectLibs.FEATURE_HOME,
     )
-
     implementation(Dependencies.Compose.COMPOSE_ACTIVITY)
     implementation(Dependencies.AndroidX.ANDROIDX_APPCOMPAT)
     implementation(Dependencies.AndroidX.ANDROIDX_CORE_KTX)

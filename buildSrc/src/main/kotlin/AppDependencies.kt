@@ -33,9 +33,9 @@ import GradlePlugins.Version.SECRETS_VERSION
  */
 object GradlePlugins {
     private object Version {
-        const val KOTLIN_VERSION = "1.7.10"
-        const val GRADLE_VERSION = "7.2.1"
-        const val HILT_VERSION = "2.43"
+        const val KOTLIN_VERSION = "1.8.0"
+        const val GRADLE_VERSION = "7.4.2"
+        const val HILT_VERSION = "2.44"
         const val SECRETS_VERSION = "2.0.1"
     }
 
@@ -70,7 +70,7 @@ object Dependencies {
     //region compose-dependencies
     object Compose {
         internal object Version {
-            const val COMPOSE_VERSION = "1.2.1"
+            const val COMPOSE_VERSION = "1.4.0"
             const val COMPOSE_ACTIVITY_VERSION = "1.6.0"
             const val COMPOSE_CONSTRAINT_LAYOUT_VERSION = "1.0.1"
             const val COMPOSE_HILT_NAVIGATION_VERSION = "1.0.0"
@@ -150,11 +150,11 @@ object Dependencies {
     //region di-dependencies
     object DI {
         private object Version {
-            const val HILT_VERSION = "2.43"
+            const val HILT_VERSION = "2.44"
         }
 
         const val HILT_ANDROID = "com.google.dagger:hilt-android:$HILT_VERSION"
-        const val HILT_COMPILER_KAPT = "com.google.dagger:hilt-compiler:$HILT_VERSION"
+        const val HILT_COMPILER_KAPT = "com.google.dagger:hilt-android-compiler:$HILT_VERSION"
     }
     //endregion
 

@@ -1,5 +1,6 @@
 plugins {
     `kotlin-dsl`
+//    `kotlin-dsl-precompiled-script-plugins`
 }
 
 repositories{
@@ -9,15 +10,11 @@ repositories{
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
 
-dependencies {
-    implementation(Plugin.KOTLIN_GRADLE_PLUGIN)
-    implementation(Plugin.ANDROID_GRADLE_PLUGIN)
-    implementation(Plugin.HILT_GRADLE_PLUGIN)
-}
+
 
 gradlePlugin {
     plugins {
@@ -46,9 +43,9 @@ gradlePlugin {
 
 object Plugin {
     private object Version {
-        const val KOTLIN_VERSION = "1.7.10"
-        const val GRADLE_VERSION = "7.2.1"
-        const val HILT_VERSION = "2.43"
+        const val KOTLIN_VERSION = "1.8.0"
+        const val GRADLE_VERSION = "7.4.2"
+        const val HILT_VERSION = "2.44"
     }
 
     const val KOTLIN_GRADLE_PLUGIN: String =
@@ -57,4 +54,9 @@ object Plugin {
     const val HILT_GRADLE_PLUGIN =
         "com.google.dagger:hilt-android-gradle-plugin:${Version.HILT_VERSION}"
 
+}
+dependencies {
+    implementation(Plugin.KOTLIN_GRADLE_PLUGIN)
+    implementation(Plugin.ANDROID_GRADLE_PLUGIN)
+    implementation(Plugin.HILT_GRADLE_PLUGIN)
 }

@@ -19,7 +19,7 @@ val PluginDependenciesSpec.moviesAndroidFeature: PluginDependencySpec
     get() = id("movies.android.feature")
 
 val PluginDependenciesSpec.daggerHilt: PluginDependencySpec
-    get() = id("dagger.hilt.android.plugin")
+    get() = id("com.google.dagger.hilt.android")
 
 val PluginDependenciesSpec.parcelize: PluginDependencySpec
     get() = id("kotlin-parcelize")
