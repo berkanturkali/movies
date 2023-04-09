@@ -1,0 +1,8 @@
+plugins {
+    moviesAndroidLibrary
+}
+
+
+dependencies {
+
+}

@@ -8,6 +8,7 @@ object ProjectLibs {
     const val CORE_DATA = ":core-data"
     const val CORE_COMMON = ":core-common"
     const val CORE_MODEL = ":core-model"
+    const val CORE_CACHE = ":core-cache"
     //endregion
 
 

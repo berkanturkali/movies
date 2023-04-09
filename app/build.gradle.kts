@@ -22,6 +22,7 @@ dependencies {
         ProjectLibs.CORE_DATA,
         ProjectLibs.CORE_COMMON,
         ProjectLibs.CORE_MODEL,
+        ProjectLibs.CORE_CACHE,
         ProjectLibs.FEATURE_SEARCH,
         ProjectLibs.FEATURE_HOME,
     )
