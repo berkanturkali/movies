@@ -4,4 +4,5 @@
     <string name="selected_category">Category: %1$s</string>
     <string name="search_input_cancel_text">Cancel</string>
     <string name="recent_searches_title_text">Recent Searches</string>
+    <string name="recent_searches_clear_text_button_text">Clear</string>
 </resources>
