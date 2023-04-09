@@ -16,6 +16,7 @@ import Dependencies.Network.Version.MOSHI_VERSION
 import Dependencies.Network.Version.OKHTTP3_VERSION
 import Dependencies.Network.Version.RETROFIT_VERSION
 import Dependencies.Paging.Version.PAGING_3_VERSION
+import Dependencies.Room.Version.ROOM_VERSION
 import Dependencies.Test.AndroidTest.Version.ANDROIDX_TEST_EXT_VERSION
 import Dependencies.Test.AndroidTest.Version.ESPRESSO_CORE_VERSION
 import Dependencies.Test.AndroidTest.Version.JUNIT_EXT_VERSION
@@ -195,6 +196,23 @@ object Dependencies {
 
         const val PALETTE = "androidx.palette:palette:${Palette.Version.PALETTE_VERSION}"
     }
+
+    //region Room
+    object Room {
+        object Version {
+            const val ROOM_VERSION = "2.5.1"
+        }
+
+        const val ROOM_RUNTIME = "androidx.room:room-runtime:$ROOM_VERSION"
+        const val ROOM_KAPT = "androidx.room:room-compiler:$ROOM_VERSION"
+
+        /* Kotlin Extensions and Coroutines support for Room */
+        const val ROOM_KTX = "androidx.room:room-ktx:$ROOM_VERSION"
+
+        /* Paging 3 Integration */
+        const val ROOM_PAGING = "androidx.room:room-paging:$ROOM_VERSION"
+    }
+    //endregion
 
     object Test {
         //region unit-test deps
