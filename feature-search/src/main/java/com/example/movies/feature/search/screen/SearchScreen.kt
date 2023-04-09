@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import com.examle.movies.core.ui.components.MoviesScaffold
 import com.example.movies.feature.search.components.RecentSearchesClearButton
 import com.example.movies.feature.search.components.RecentSearchesTitle
+import com.example.movies.feature.search.components.RecentSearchesTitleAndClearButton
 import com.example.movies.feature.search.components.SearchBar
 
 @Composable
@@ -40,6 +41,9 @@ private fun SearchScreenContent(modifier: Modifier = Modifier) {
 
         if (focused) {
             //RecentSearches
+            RecentSearches()
+
+            //Keywords
 
         }
 
@@ -54,8 +58,9 @@ fun RecentSearches(modifier: Modifier = Modifier) {
     LazyColumn(modifier = modifier) {
 
         item {
-
+            RecentSearchesTitleAndClearButton()
         }
+
     }
 }
 
