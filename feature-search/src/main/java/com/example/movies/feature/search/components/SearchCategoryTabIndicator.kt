@@ -15,8 +15,8 @@ import androidx.compose.ui.unit.dp
 fun SearchCategoryTabIndicator(modifier: Modifier = Modifier) {
     Spacer(
         modifier = modifier
-            .padding(horizontal = 24.dp)
-            .height(2.dp)
+            .padding(horizontal = 12.dp)
+            .height(4.dp)
             .background(
                 color = MaterialTheme.colorScheme.primary,
                 shape = RoundedCornerShape(topStartPercent = 100, topEndPercent = 100)

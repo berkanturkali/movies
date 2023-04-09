@@ -5,6 +5,7 @@ import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
@@ -13,6 +14,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
@@ -32,6 +34,7 @@ fun SearchInput(
     query: String,
     onValueChange: (String) -> Unit,
     onTrailingIconClick: () -> Unit,
+    onFocusChanged: (Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
 
@@ -44,7 +47,10 @@ fun SearchInput(
 
     OutlinedTextField(modifier = modifier
         .padding(8.dp)
-        .focusRequester(focusRequester),
+        .focusRequester(focusRequester)
+        .onFocusChanged { focusState ->
+            onFocusChanged(focusState.isFocused)
+        },
         shape = androidx.compose.foundation.shape.CircleShape,
         value = query,
         onValueChange = onValueChange,
@@ -86,10 +92,11 @@ fun SearchInput(
                 visible = query.isNotEmpty() || query.isNotBlank()
             ) {
                 Icon(
-                    tint = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.8f),
+                    tint = MaterialTheme.colorScheme.primaryContainer,
                     painter = painterResource(id = MoviesIcons.CLEAR),
                     contentDescription = null,
                     modifier = Modifier
+                        .size(16.dp)
                         .padding(horizontal = 8.dp)
                         .clickable {
                             onTrailingIconClick()
@@ -106,6 +113,6 @@ fun SearchInput(
 @Composable
 fun SearchInputPrev() {
     MoviesTheme {
-        SearchInput(query = "", onTrailingIconClick = {}, onValueChange = {})
+        SearchInput(query = "", onTrailingIconClick = {}, onValueChange = {}, onFocusChanged = {})
     }
 }

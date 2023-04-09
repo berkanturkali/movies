@@ -19,6 +19,6 @@ object SearchCategoriesDestination : MoviesNavigationDestination {
 fun NavGraphBuilder.searchCategories() {
 
     composable(route = SearchCategoriesDestination.route) {
-        SearchCategoriesScreen(onItemClick = {})
+        SearchCategoriesScreen()
     }
 }
