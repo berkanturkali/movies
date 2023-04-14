@@ -18,6 +18,7 @@ dependencies {
         ProjectLibs.CORE_MODEL,
         ProjectLibs.CORE_COMMON,
         ProjectLibs.CORE_NETWORK,
+        ProjectLibs.CORE_CACHE
     )
 
     //network

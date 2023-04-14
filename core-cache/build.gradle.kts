@@ -1,8 +1,20 @@
 plugins {
     moviesAndroidLibrary
     kotlinKapt
+    daggerHilt
 }
 
+android {
+    defaultConfig {
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += Pair("room.incremental", "true")
+            }
+        }
+        buildConfigField("int", "keywordsDatabaseVersion", 1.toString())
+        buildConfigField("String", "keywordsDatabaseName", "\"movies_keywords_db\"")
+    }
+}
 
 dependencies {
 
@@ -14,4 +26,7 @@ dependencies {
     )
 
     kapt(Dependencies.Room.ROOM_KAPT)
+
+    implementation(Dependencies.DI.HILT_ANDROID)
+    kapt(Dependencies.DI.HILT_COMPILER_KAPT)
 }
