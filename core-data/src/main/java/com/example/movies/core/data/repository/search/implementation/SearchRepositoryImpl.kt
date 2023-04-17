@@ -80,7 +80,7 @@ class SearchRepositoryImpl @Inject constructor(
     }
 
     @OptIn(ExperimentalPagingApi::class)
-    override suspend fun fetchKeywords(page: Int, query: String?): Flow<PagingData<Keyword>> {
+    override suspend fun fetchKeywords(query: String?): Flow<PagingData<Keyword>> {
         return Pager(
             config = PagingConfig(
                 pageSize = 20,

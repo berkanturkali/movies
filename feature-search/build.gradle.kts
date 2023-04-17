@@ -16,4 +16,7 @@ dependencies {
 
     //palette
     implementation(Dependencies.Palette.PALETTE)
+
+    //paging3
+    implementation(Dependencies.Paging.PAGING)
 }

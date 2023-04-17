@@ -1,31 +1,55 @@
 package com.example.movies.feature.search.screen
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.foundation.lazy.LazyListScope
+import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.paging.compose.LazyPagingItems
+import androidx.paging.compose.collectAsLazyPagingItems
+import androidx.paging.compose.items
 import com.examle.movies.core.ui.components.MoviesScaffold
-import com.example.movies.feature.search.components.RecentSearchesClearButton
-import com.example.movies.feature.search.components.RecentSearchesTitle
+import com.example.movies.core.model.search.keyword.Keyword
+import com.example.movies.feature.search.components.KeywordItem
 import com.example.movies.feature.search.components.RecentSearchesTitleAndClearButton
 import com.example.movies.feature.search.components.SearchBar
+import com.example.movies.feature.search.viewmodel.SearchScreenViewModel
 
 @Composable
 fun SearchScreen(modifier: Modifier = Modifier) {
 
+    val viewModel = hiltViewModel<SearchScreenViewModel>()
+
+    val query by viewModel.query.collectAsState(initial = null)
+
+    val keywords = viewModel.keywords.collectAsLazyPagingItems()
+
     MoviesScaffold(modifier = modifier) {
-        SearchScreenContent()
+        SearchScreenContent(
+            query = query,
+            keywords = keywords,
+            onTrailingIconClick = {
+                viewModel.setQuery("")
+            },
+            onQueryChanged = viewModel::setQuery,
+            onKeywordItemClick = { keyword ->
+                viewModel.setQuery(keyword.name!!)
+            }
+        )
     }
 }
 
 @Composable
-private fun SearchScreenContent(modifier: Modifier = Modifier) {
+private fun SearchScreenContent(
+    query: String?,
+    keywords: LazyPagingItems<Keyword>,
+    onTrailingIconClick: () -> Unit,
+    onQueryChanged: (String) -> Unit,
+    onKeywordItemClick: (Keyword) -> Unit,
+    modifier: Modifier = Modifier
+) {
 
     var focused by rememberSaveable {
         mutableStateOf(false)
@@ -36,31 +60,41 @@ private fun SearchScreenContent(modifier: Modifier = Modifier) {
             focused = focused,
             onFocusChanged = { isFocused ->
                 focused = isFocused
-            }
+            },
+            onTrailingIconClick = onTrailingIconClick,
+            onQueryChanged = onQueryChanged,
+            query = query
         )
 
         if (focused) {
-            //RecentSearches
-            RecentSearches()
+            LazyColumn(modifier = modifier) {
 
-            //Keywords
+                recentSearches()
+
+                keywords(keywords = keywords, onKeywordItemClick = onKeywordItemClick)
+
+            }
+
+        } else {
 
         }
-
-
     }
 }
 
+fun LazyListScope.recentSearches() {
+    item {
+        RecentSearchesTitleAndClearButton()
+    }
+}
 
-@Composable
-fun RecentSearches(modifier: Modifier = Modifier) {
-
-    LazyColumn(modifier = modifier) {
-
-        item {
-            RecentSearchesTitleAndClearButton()
+fun LazyListScope.keywords(
+    keywords: LazyPagingItems<Keyword>,
+    onKeywordItemClick: (Keyword) -> Unit
+) {
+    items(keywords) { keyword ->
+        keyword?.let {
+            KeywordItem(keyword = keyword, onKeywordItemClick = onKeywordItemClick)
         }
-
     }
 }
 

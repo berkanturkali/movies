@@ -24,7 +24,6 @@ interface SearchRepository {
     ): Flow<PagingData<Collection>>
 
     suspend fun fetchKeywords(
-        page: Int,
         query: String?,
     ): Flow<PagingData<Keyword>>
 

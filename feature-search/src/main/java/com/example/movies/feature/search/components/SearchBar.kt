@@ -9,9 +9,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -21,11 +18,14 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies_compose.feature.search.R
 
 @Composable
-fun SearchBar(focused: Boolean, onFocusChanged: (Boolean) -> Unit, modifier: Modifier = Modifier) {
-
-    var query by rememberSaveable {
-        mutableStateOf("")
-    }
+fun SearchBar(
+    query: String?,
+    focused: Boolean,
+    onFocusChanged: (Boolean) -> Unit,
+    onQueryChanged: (String) -> Unit,
+    onTrailingIconClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
 
     val inputFraction by animateFloatAsState(targetValue = if (focused) 0.9f else 1.0f)
 
@@ -34,12 +34,8 @@ fun SearchBar(focused: Boolean, onFocusChanged: (Boolean) -> Unit, modifier: Mod
         SearchInput(
             query = query,
             modifier = Modifier.fillMaxWidth(inputFraction),
-            onValueChange = {
-                query = it
-            },
-            onTrailingIconClick = {
-                query = ""
-            },
+            onValueChange = onQueryChanged,
+            onTrailingIconClick = onTrailingIconClick,
             onFocusChanged = onFocusChanged
         )
         TextButton(
@@ -61,6 +57,12 @@ fun SearchBar(focused: Boolean, onFocusChanged: (Boolean) -> Unit, modifier: Mod
 @Composable
 fun SearchBarPrev() {
     MoviesTheme {
-        SearchBar(focused = false, onFocusChanged = {})
+        SearchBar(
+            focused = false,
+            onFocusChanged = {},
+            onTrailingIconClick = {},
+            onQueryChanged = {},
+            query = ""
+        )
     }
 }

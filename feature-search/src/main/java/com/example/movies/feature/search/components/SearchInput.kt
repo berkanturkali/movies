@@ -31,7 +31,7 @@ import com.example.movies_compose.feature.search.R
 
 @Composable
 fun SearchInput(
-    query: String,
+    query: String?,
     onValueChange: (String) -> Unit,
     onTrailingIconClick: () -> Unit,
     onFocusChanged: (Boolean) -> Unit,
@@ -52,7 +52,7 @@ fun SearchInput(
             onFocusChanged(focusState.isFocused)
         },
         shape = androidx.compose.foundation.shape.CircleShape,
-        value = query,
+        value = query ?: "",
         onValueChange = onValueChange,
         label = {
             Text(
@@ -89,7 +89,7 @@ fun SearchInput(
             AnimatedVisibility(
                 enter = scaleIn(),
                 exit = scaleOut(),
-                visible = query.isNotEmpty() || query.isNotBlank()
+                visible = !query.isNullOrEmpty() && !query.isNullOrBlank()
             ) {
                 Icon(
                     tint = MaterialTheme.colorScheme.primaryContainer,
