@@ -18,6 +18,11 @@ android {
 
 dependencies {
 
+    //libs
+    implementAllProjects(
+        ProjectLibs.CORE_MODEL
+    )
+
     //room
     implementAll(
         Dependencies.Room.ROOM_KTX,
@@ -27,6 +32,7 @@ dependencies {
 
     kapt(Dependencies.Room.ROOM_KAPT)
 
+    //hilt
     implementation(Dependencies.DI.HILT_ANDROID)
     kapt(Dependencies.DI.HILT_COMPILER_KAPT)
 }

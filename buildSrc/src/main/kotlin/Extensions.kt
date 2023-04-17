@@ -73,3 +73,11 @@ fun DependencyHandler.implementAllAndroidTests(vararg dependencies: Any) {
 fun DependencyHandler.debugImplementation(dependency: Any) = add(
     "debugImplementation", dependency
 )
+
+fun DependencyHandler.api(dependency: Any) = add(
+    "api", dependency
+)
+
+fun DependencyHandler.apiAllDeps(vararg dependencies: Any) {
+    dependencies.forEach(::api)
+}

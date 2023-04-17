@@ -14,7 +14,7 @@ interface KeywordsDao {
     suspend fun insertAll(keywords: List<KeywordEntity>)
 
     @Query("SELECT * FROM keywords WHERE name LIKE :query")
-    fun pagingSource(query: String): PagingSource<Int, KeywordEntity>
+    fun getKeywords(query: String?): PagingSource<Int, KeywordEntity>
 
     @Query("DELETE  from keywords")
     suspend fun clearAll()
