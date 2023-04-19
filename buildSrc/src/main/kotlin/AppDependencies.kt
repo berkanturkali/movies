@@ -20,6 +20,8 @@ import Dependencies.Room.Version.ROOM_VERSION
 import Dependencies.Test.AndroidTest.Version.ANDROIDX_TEST_EXT_VERSION
 import Dependencies.Test.AndroidTest.Version.ESPRESSO_CORE_VERSION
 import Dependencies.Test.AndroidTest.Version.JUNIT_EXT_VERSION
+import Dependencies.Test.AndroidTest.Version.JUNIT_VERSION
+import Dependencies.Test.AndroidTest.Version.TRUTH_VERSION
 import Dependencies.Test.UnitTest.Version.JUNIT_VERSION
 import Dependencies.Test.UnitTest.Version.MOCKK_VERSION
 import Dependencies.Test.UnitTest.Version.MOCK_WEB_SERVER_VERSION
@@ -239,6 +241,8 @@ object Dependencies {
                 const val JUNIT_EXT_VERSION = "1.1.3"
                 const val ANDROIDX_TEST_EXT_VERSION = "1.1.3"
                 const val COMPOSE_VERSION = "1.2.1"
+                const val TRUTH_VERSION = "1.1.3"
+                const val JUNIT_VERSION = "4.12"
             }
 
             const val COMPOSE_UI_TEST =
@@ -248,6 +252,8 @@ object Dependencies {
             const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:$ESPRESSO_CORE_VERSION"
             const val ANDROIDX_TEST_EXT_RUNNER =
                 "androidx.test.ext:junit-ktx:$ANDROIDX_TEST_EXT_VERSION"
+            const val TRUTH = "com.google.truth:truth:$TRUTH_VERSION"
+            const val JUNIT = "junit:junit:$JUNIT_VERSION"
 
         }
         //endregion

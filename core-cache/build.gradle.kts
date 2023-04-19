@@ -13,6 +13,9 @@ android {
         }
         buildConfigField("int", "keywordsDatabaseVersion", 1.toString())
         buildConfigField("String", "keywordsDatabaseName", "\"movies_keywords_db\"")
+
+        buildConfigField("int", "recentSearchesDatabaseVersion", 1.toString())
+        buildConfigField("String", "recentSearchesDatabaseName", "\"recent_searches_db\"")
     }
 }
 
@@ -27,7 +30,7 @@ dependencies {
     implementAll(
         Dependencies.Room.ROOM_KTX,
         Dependencies.Room.ROOM_RUNTIME,
-        Dependencies.Room.ROOM_PAGING
+        Dependencies.Room.ROOM_PAGING,
     )
 
     kapt(Dependencies.Room.ROOM_KAPT)
@@ -35,4 +38,7 @@ dependencies {
     //hilt
     implementation(Dependencies.DI.HILT_ANDROID)
     kapt(Dependencies.DI.HILT_COMPILER_KAPT)
+
+
+    androidTestImplementation(Dependencies.Test.AndroidTest.TRUTH)
 }
