@@ -1,14 +1,14 @@
 package com.example.movies.core.data.repository.search.abstraction
 
 import androidx.paging.PagingData
+import com.example.movies.core.cache.model.RecentSearchEntity
 import com.example.movies.core.model.search.collection.Collection
 import com.example.movies.core.model.search.company.Company
 import com.example.movies.core.model.search.keyword.Keyword
 import com.example.movies.core.model.search.movie.Movie
 import com.example.movies.core.model.search.person.Person
+import com.example.movies.core.model.search.recent_search.RecentSearch
 import com.example.movies.core.model.search.tv_show.TvShow
-import com.example.movies.core.network.model.search.keyword.KeywordDTO
-import com.example.movies.core.network.model.search.tvshow.TvShowDTO
 import kotlinx.coroutines.flow.Flow
 
 interface SearchRepository {
@@ -41,4 +41,13 @@ interface SearchRepository {
         page: Int,
         query: String?,
     ): Flow<PagingData<TvShow>>
+
+    suspend fun insertRecentSearch(recentSearch: RecentSearchEntity): Long
+
+    fun getRecentSearches(query: String): Flow<List<RecentSearch>>
+
+    suspend fun deleteRecentSearch(recentSearch: RecentSearchEntity)
+
+    suspend fun clearAllRecentSearches()
+
 }

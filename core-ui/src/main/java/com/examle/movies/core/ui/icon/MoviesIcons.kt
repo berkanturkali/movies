@@ -23,4 +23,6 @@ object MoviesIcons {
     val CLOSE = R.drawable.ic_close
 
     val CATEGORY = R.drawable.ic_category
+
+    val ARROW_INWARD = R.drawable.ic_arrow_inward
 }

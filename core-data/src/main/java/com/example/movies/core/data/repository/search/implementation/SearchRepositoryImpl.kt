@@ -3,8 +3,11 @@ package com.example.movies.core.data.repository.search.implementation
 import androidx.paging.*
 import com.example.movies.core.cache.dao.KeywordsDao
 import com.example.movies.core.cache.dao.RemoteKeyDao
+import com.example.movies.core.cache.datasource.abstraction.RecentSearchesCacheDataSource
 import com.example.movies.core.cache.db.keywords.KeywordsDatabase
 import com.example.movies.core.cache.mapper.keywords.KeywordEntityMapper
+import com.example.movies.core.cache.mapper.recent_searches.RecentSearchEntityMapper
+import com.example.movies.core.cache.model.RecentSearchEntity
 import com.example.movies.core.data.mapper.KeywordRemoteToEntityMapper
 import com.example.movies.core.data.mediator.KeywordsRemoteMediator
 import com.example.movies.core.data.repository.search.abstraction.SearchRepository
@@ -13,6 +16,7 @@ import com.example.movies.core.model.search.company.Company
 import com.example.movies.core.model.search.keyword.Keyword
 import com.example.movies.core.model.search.movie.Movie
 import com.example.movies.core.model.search.person.Person
+import com.example.movies.core.model.search.recent_search.RecentSearch
 import com.example.movies.core.model.search.tv_show.TvShow
 import com.example.movies.core.network.datasource.abstraction.search.SearchRemoteDataSource
 import com.example.movies.core.network.mapper.search.collection.CollectionMapper
@@ -31,6 +35,7 @@ import javax.inject.Inject
 
 class SearchRepositoryImpl @Inject constructor(
     private val searchRemoteDataSource: SearchRemoteDataSource,
+    private val recentSearchesCacheDataSource: RecentSearchesCacheDataSource,
     private val keywordsDatabase: KeywordsDatabase,
     private val keywordsDao: KeywordsDao,
     private val remoteKeyDao: RemoteKeyDao,
@@ -41,6 +46,7 @@ class SearchRepositoryImpl @Inject constructor(
     private val tvShowMapper: TvShowMapper,
     private val keywordRemoteToEntityMapper: KeywordRemoteToEntityMapper,
     private val keywordEntityMapper: KeywordEntityMapper,
+    private val recentSearchEntityMapper: RecentSearchEntityMapper,
 ) : SearchRepository {
     override suspend fun fetchCompanies(page: Int, query: String?): Flow<PagingData<Company>> {
         return Pager(
@@ -156,6 +162,25 @@ class SearchRepositoryImpl @Inject constructor(
                     tvShowMapper.mapFromModel(dto)
                 }
             }
+    }
+
+    override suspend fun insertRecentSearch(recentSearch: RecentSearchEntity): Long {
+        return recentSearchesCacheDataSource.insertRecentSearch(recentSearch)
+    }
+
+    override fun getRecentSearches(query: String): Flow<List<RecentSearch>> {
+        return recentSearchesCacheDataSource.getRecentSearches(query)
+            .map { recentSearchesEntities ->
+                recentSearchEntityMapper.mapFromEntityList(recentSearchesEntities)
+            }
+    }
+
+    override suspend fun deleteRecentSearch(recentSearch: RecentSearchEntity) {
+        recentSearchesCacheDataSource.deleteRecentSearch(recentSearch)
+    }
+
+    override suspend fun clearAllRecentSearches() {
+        recentSearchesCacheDataSource.clearAllRecentSearches()
     }
 
 }

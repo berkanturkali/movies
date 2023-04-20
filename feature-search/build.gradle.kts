@@ -19,4 +19,7 @@ dependencies {
 
     //paging3
     implementation(Dependencies.Paging.PAGING)
+
+    //lifecycle
+    implementation(Dependencies.Lifecycle.LIFECYCLE_LIVEDATA_KTX)
 }

@@ -216,6 +216,17 @@ object Dependencies {
     }
     //endregion
 
+    //region Lifecycle
+    object Lifecycle {
+        object Version {
+            internal const val LIFECYCLE_VERSION = "2.6.1"
+        }
+
+        const val LIFECYCLE_LIVEDATA_KTX = "androidx.lifecycle:lifecycle-livedata-ktx:${Version.LIFECYCLE_VERSION}"
+    }
+
+    //endregion
+
     object Test {
         //region unit-test deps
         object UnitTest {

@@ -13,7 +13,7 @@ class RecentSearchesCacheDataSourceImpl @Inject constructor(
         return recentSearchesDao.insertRecentSearch(recentSearch)
     }
 
-    override suspend fun getRecentSearches(query: String): Flow<List<RecentSearchEntity>> {
+    override fun getRecentSearches(query: String): Flow<List<RecentSearchEntity>> {
         return recentSearchesDao.getRecentSearches(query)
     }
 

@@ -7,7 +7,7 @@ interface RecentSearchesCacheDataSource {
 
     suspend fun insertRecentSearch(recentSearch: RecentSearchEntity): Long
 
-    suspend fun getRecentSearches(query: String): Flow<List<RecentSearchEntity>>
+    fun getRecentSearches(query: String): Flow<List<RecentSearchEntity>>
 
     suspend fun deleteRecentSearch(recentSearch: RecentSearchEntity)
 

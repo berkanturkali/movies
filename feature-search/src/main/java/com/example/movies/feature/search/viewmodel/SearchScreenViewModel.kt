@@ -1,6 +1,7 @@
 package com.example.movies.feature.search.viewmodel
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import com.example.movies.core.data.repository.search.abstraction.SearchRepository
@@ -29,6 +30,11 @@ class SearchScreenViewModel @Inject constructor(
         searchRepository.fetchKeywords(query = query)
     }
         .cachedIn(viewModelScope)
+
+    val recentSearches = query.flatMapLatest {
+        searchRepository.getRecentSearches(it ?: "")
+    }
+        .asLiveData()
 
     fun setQuery(query: String) {
         _query.value = query
