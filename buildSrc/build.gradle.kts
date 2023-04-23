@@ -45,7 +45,7 @@ gradlePlugin {
 
 object Plugin {
     private object Version {
-        const val KOTLIN_VERSION = "1.8.0"
+        const val KOTLIN_VERSION = "1.8.20"
         const val GRADLE_VERSION = "7.4.2"
         const val HILT_VERSION = "2.44"
         const val SECRETS_VERSION = "2.0.1"

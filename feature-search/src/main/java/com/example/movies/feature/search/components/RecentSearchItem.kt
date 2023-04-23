@@ -1,10 +1,13 @@
 package com.example.movies.feature.search.components
 
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -18,13 +21,23 @@ import com.example.movies.core.model.search.recent_search.RecentSearch
 @Composable
 fun RecentSearchItem(
     recentSearch: RecentSearch,
+    onRecentSearchItemClick: (RecentSearch) -> Unit,
+    onRecentSearchInwardArrowIconClick: (RecentSearch) -> Unit,
     modifier: Modifier = Modifier
 ) {
+
+    val interactionSource = remember { MutableInteractionSource() }
 
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .padding(16.dp),
+            .padding(16.dp)
+            .clickable(
+                interactionSource = interactionSource,
+                indication = null
+            ) {
+                onRecentSearchItemClick(recentSearch)
+            },
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
     ) {
@@ -37,7 +50,14 @@ fun RecentSearchItem(
         )
 
         Icon(
-            modifier = Modifier.size(24.dp),
+            modifier = Modifier
+                .size(12.dp)
+                .clickable(
+                    interactionSource = interactionSource,
+                    indication = null
+                ) {
+                    onRecentSearchInwardArrowIconClick(recentSearch)
+                },
             painter = painterResource(id = MoviesIcons.ARROW_INWARD),
             contentDescription = null,
             tint = MaterialTheme.colorScheme.primary
@@ -49,6 +69,9 @@ fun RecentSearchItem(
 @Composable
 fun RecentSearchItemPrev() {
     MoviesTheme {
-        RecentSearchItem(recentSearch = RecentSearch("Recent Search"))
+        RecentSearchItem(
+            recentSearch = RecentSearch("Recent Search"),
+            onRecentSearchItemClick = {},
+            onRecentSearchInwardArrowIconClick = {})
     }
 }

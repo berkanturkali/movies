@@ -16,6 +16,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.examle.movies.core.ui.components.MoviesErrorView
 import com.examle.movies.core.ui.components.MoviesScaffold
 import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.example.movies.core.common.UiText
@@ -105,7 +106,7 @@ private fun Home(
                 error.asString(context)
                     ?.let { message ->
                         item {
-                            ErrorView(
+                            MoviesErrorView(
                                 modifier = Modifier
                                     .fillParentMaxWidth()
                                     .wrapContentHeight(),

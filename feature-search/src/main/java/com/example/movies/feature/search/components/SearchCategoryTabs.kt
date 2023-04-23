@@ -9,6 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import com.example.movies.core.model.search.SearchCategory
 
 @Composable
@@ -26,7 +27,10 @@ fun SearchCategoryTabs(
         )
     }
     ScrollableTabRow(
-        selectedTabIndex = selectedIndex, indicator = indicator, modifier = modifier
+        edgePadding = 0.dp,
+        selectedTabIndex = selectedIndex,
+        indicator = indicator,
+        modifier = modifier
     ) {
         categories.forEachIndexed { index, searchCategory ->
             Tab(

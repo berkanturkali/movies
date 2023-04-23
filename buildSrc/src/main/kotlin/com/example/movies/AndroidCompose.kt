@@ -16,7 +16,7 @@ internal fun Project.configureAndroidCompose(
         buildFeatures.compose = true
 
         composeOptions {
-            kotlinCompilerExtensionVersion = "1.4.1"
+            kotlinCompilerExtensionVersion = "1.4.6"
         }
 
         kotlinOptions {

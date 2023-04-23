@@ -21,3 +21,5 @@ val DarkGray = Color(0XFF657786)
 val LightGray = Color(0XFFAAB8C2)
 val XLightGray = Color(0XFFE1E8ED)
 val XXLightGray = Color(0XFFF5F8FA)
+
+val Divider = Color(0XFFE1E3E5)

@@ -51,7 +51,7 @@ object Dependencies {
     //region compose-dependencies
     object Compose {
         internal object Version {
-            const val COMPOSE_VERSION = "1.4.0"
+            const val COMPOSE_VERSION = "1.4.2"
             const val COMPOSE_ACTIVITY_VERSION = "1.6.0"
             const val COMPOSE_CONSTRAINT_LAYOUT_VERSION = "1.0.1"
             const val COMPOSE_HILT_NAVIGATION_VERSION = "1.0.0"

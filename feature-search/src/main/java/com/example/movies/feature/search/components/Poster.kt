@@ -19,7 +19,8 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 fun Poster(
     image: String?,
     modifier: Modifier = Modifier,
-    childModifier: Modifier = Modifier
+    childModifier: Modifier = Modifier,
+    shape: RoundedCornerShape = RoundedCornerShape(4.dp),
 ) {
 
     val imageLoader = LocalContext.current.imageLoader
@@ -28,7 +29,7 @@ fun Poster(
         modifier = modifier
             .aspectRatio(1f)
             .then(childModifier),
-        shape = RoundedCornerShape(4.dp),
+        shape = shape,
         elevation = 4.dp,
     ) {
         val painter = rememberAsyncImagePainter(model = image, imageLoader = imageLoader)

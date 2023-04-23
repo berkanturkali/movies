@@ -14,39 +14,34 @@ import kotlinx.coroutines.flow.Flow
 interface SearchRepository {
 
     suspend fun fetchCompanies(
-        page: Int,
-        query: String?,
+        query: String,
     ): Flow<PagingData<Company>>
 
     suspend fun fetchCollections(
-        page: Int,
-        query: String?,
+        query: String,
     ): Flow<PagingData<Collection>>
 
     suspend fun fetchKeywords(
-        query: String?,
+        query: String,
     ): Flow<PagingData<Keyword>>
 
     suspend fun fetchMovies(
-        page: Int,
-        query: String?,
+        query: String,
     ): Flow<PagingData<Movie>>
 
     suspend fun fetchPeople(
-        page: Int,
-        query: String?,
+        query: String,
     ): Flow<PagingData<Person>>
 
     suspend fun fetchTvShows(
-        page: Int,
-        query: String?,
+        query: String,
     ): Flow<PagingData<TvShow>>
 
-    suspend fun insertRecentSearch(recentSearch: RecentSearchEntity): Long
+    suspend fun insertRecentSearch(recentSearch:String): Long
 
     fun getRecentSearches(query: String): Flow<List<RecentSearch>>
 
-    suspend fun deleteRecentSearch(recentSearch: RecentSearchEntity)
+    suspend fun deleteRecentSearch(recentSearch:String)
 
     suspend fun clearAllRecentSearches()
 

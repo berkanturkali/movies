@@ -12,7 +12,10 @@ import androidx.compose.ui.unit.dp
 import com.examle.movies.core.ui.theme.MoviesTheme
 
 @Composable
-fun RecentSearchesTitleAndClearButton(modifier: Modifier = Modifier) {
+fun RecentSearchesTitleAndClearButton(
+    onClearButtonClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
 
     Row(
         modifier = modifier
@@ -23,9 +26,7 @@ fun RecentSearchesTitleAndClearButton(modifier: Modifier = Modifier) {
     ) {
 
         RecentSearchesTitle()
-
-        RecentSearchesClearButton(onClearButtonClick = { /*TODO*/ })
-
+        RecentSearchesClearButton(onClearButtonClick = onClearButtonClick)
     }
 }
 
@@ -34,6 +35,6 @@ fun RecentSearchesTitleAndClearButton(modifier: Modifier = Modifier) {
 @Composable
 fun RecentSearchesTitleAndClearButtonPrev() {
     MoviesTheme {
-        RecentSearchesTitleAndClearButton()
+        RecentSearchesTitleAndClearButton(onClearButtonClick = {})
     }
 }

@@ -18,7 +18,8 @@ fun Name(
 ) {
 
     Text(
-        text = name, modifier = modifier.then(childModifier),
+        text = name,
+        modifier = modifier.then(childModifier),
         color = MaterialTheme.colorScheme.onPrimary,
         style = MaterialTheme.typography.bodyMedium,
         maxLines = 3,

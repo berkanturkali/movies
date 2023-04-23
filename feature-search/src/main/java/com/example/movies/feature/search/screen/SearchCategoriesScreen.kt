@@ -1,74 +1,53 @@
 package com.example.movies.feature.search.screen
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.examle.movies.core.ui.components.MoviesScaffold
-import com.examle.movies.core.ui.theme.MoviesTheme
+import com.examle.movies.core.ui.providers.LocalSearchQuery
 import com.example.movies.core.model.search.SearchCategory
-import com.example.movies.feature.search.components.SearchCategoryTabs
+import com.example.movies.feature.search.components.SearchCategoriesTopBar
 
 
 @Composable
 fun SearchCategoriesScreen(
+    query: String,
     modifier: Modifier = Modifier
 ) {
+
     val selectedCategory = rememberSaveable {
         mutableStateOf(SearchCategory.COMPANIES)
     }
 
-    MoviesScaffold(modifier = modifier) {
-        SearchCategoriesContent(
+    MoviesScaffold(modifier = modifier, topBar = {
+        SearchCategoriesTopBar(
             onItemClick = { searchCategory ->
                 selectedCategory.value = searchCategory
             },
             selectedCategory = selectedCategory.value
         )
-
-        when (selectedCategory.value) {
-            SearchCategory.COMPANIES -> {
-
-            }
-            SearchCategory.COLLECTIONS -> {
-
-            }
-            SearchCategory.MOVIES -> {
-
-            }
-            SearchCategory.PEOPLE -> {
-
-            }
-            SearchCategory.SHOWS -> {
-
+    }) {
+        CompositionLocalProvider(LocalSearchQuery provides query) {
+            when (selectedCategory.value) {
+                SearchCategory.COMPANIES -> {
+                    Companies()
+                }
+                SearchCategory.COLLECTIONS -> {
+                    Collections()
+                }
+                SearchCategory.MOVIES -> {
+                    Movies()
+                }
+                SearchCategory.PEOPLE -> {
+                    People()
+                }
+                SearchCategory.SHOWS -> {
+                    TvShows()
+                }
             }
         }
-    }
-}
-
-@Composable
-private fun SearchCategoriesContent(
-    onItemClick: (SearchCategory) -> Unit,
-    selectedCategory: SearchCategory,
-    modifier: Modifier = Modifier
-) {
-    val categories = SearchCategory.values()
-        .toList()
-
-    SearchCategoryTabs(
-        modifier = modifier,
-        categories = categories,
-        onCategorySelected = onItemClick,
-        selectedCategory = selectedCategory
-    )
-}
-
-@Preview
-@Composable
-fun SearchCategoriesContentPrev() {
-    MoviesTheme {
-        SearchCategoriesContent(onItemClick = {}, selectedCategory = SearchCategory.COMPANIES)
     }
 }
 

@@ -11,9 +11,7 @@ android {
                 arguments += Pair("room.incremental", "true")
             }
         }
-        buildConfigField("int", "keywordsDatabaseVersion", 1.toString())
-        buildConfigField("String", "keywordsDatabaseName", "\"movies_keywords_db\"")
-
+        
         buildConfigField("int", "recentSearchesDatabaseVersion", 1.toString())
         buildConfigField("String", "recentSearchesDatabaseName", "\"recent_searches_db\"")
     }

@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import com.examle.movies.core.ui.components.MoviesErrorView
 import com.examle.movies.core.ui.components.fadeModifier
 import com.example.movies.core.model.home.TopRatedMovie
 import com.example.movies.feature.home.state.TopRatedMoviesState
@@ -21,7 +22,7 @@ fun TopRatedMovies(
     MovieSection(title = title, modifier = modifier) {
         when (topRatedMoviesState) {
             is TopRatedMoviesState.Error -> {
-                ErrorView(
+                MoviesErrorView(
                     message = topRatedMoviesState.errorMessage.asString(context)!!,
                     onRetryClick = onRetryClick
                 )

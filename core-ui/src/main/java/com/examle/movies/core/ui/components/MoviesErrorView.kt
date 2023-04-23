@@ -1,4 +1,4 @@
-package com.example.movies.feature.home.components
+package com.examle.movies.core.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,7 +18,7 @@ import com.examle.movies.core.ui.R
 import com.examle.movies.core.ui.theme.MoviesTheme
 
 @Composable
-fun ErrorView(
+fun MoviesErrorView(
     message: String,
     onRetryClick: () -> Unit,
     modifier: Modifier = Modifier
@@ -47,7 +47,7 @@ fun ErrorView(
         ) {
             Text(
                 text = stringResource(
-                    id = com.example.movies_compose.feature.home.R.string.try_again
+                    id = R.string.try_again
                 )
             )
         }
@@ -58,6 +58,6 @@ fun ErrorView(
 @Composable
 fun ErrorViewPrev() {
     MoviesTheme {
-        ErrorView(message = "Something went wrong", onRetryClick = { })
+        MoviesErrorView(message = "Something went wrong", onRetryClick = { })
     }
 }

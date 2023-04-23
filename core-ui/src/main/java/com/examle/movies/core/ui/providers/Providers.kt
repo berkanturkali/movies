@@ -1,6 +1,5 @@
 package com.examle.movies.core.ui.providers
 
-import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -12,6 +11,10 @@ val LocalActivity = staticCompositionLocalOf<ComponentActivity> {
 
 val LocalWindowWidthSizeClass = compositionLocalOf<WindowWidthSizeClass> {
     noLocalProvidedFor("WindowWidthSizeClass")
+}
+
+val LocalSearchQuery = compositionLocalOf<String> {
+    noLocalProvidedFor("SearchQuery")
 }
 
 private fun noLocalProvidedFor(name: String): Nothing {

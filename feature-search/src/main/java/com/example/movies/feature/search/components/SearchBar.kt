@@ -1,17 +1,20 @@
 package com.example.movies.feature.search.components
 
-import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.size
-import androidx.compose.material.TextButton
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusManager
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.examle.movies.core.ui.theme.MoviesTheme
@@ -19,34 +22,53 @@ import com.example.movies_compose.feature.search.R
 
 @Composable
 fun SearchBar(
-    query: String?,
+    query: TextFieldValue,
     focused: Boolean,
-    onFocusChanged: (Boolean) -> Unit,
-    onQueryChanged: (String) -> Unit,
+    onCancelButtonClick:() -> Unit,
+    onQueryChanged: (TextFieldValue) -> Unit,
     onTrailingIconClick: () -> Unit,
+    onFocusChanged: (Boolean) -> Unit,
+    onSearchButtonClick: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
 
-    val inputFraction by animateFloatAsState(targetValue = if (focused) 0.9f else 1.0f)
-
-    Row(modifier = modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .height(IntrinsicSize.Min),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceAround,
+    ) {
 
         SearchInput(
             query = query,
-            modifier = Modifier.fillMaxWidth(inputFraction),
+            focused = focused,
+            modifier = Modifier
+                .then(if (focused) Modifier.fillMaxWidth(0.8f) else Modifier.fillMaxWidth())
+                .padding(8.dp),
             onValueChange = onQueryChanged,
             onTrailingIconClick = onTrailingIconClick,
-            onFocusChanged = onFocusChanged
-        )
-        TextButton(
-            onClick = {
-                onFocusChanged(false)
+            onFocusChanged = {
+                onFocusChanged(it)
             },
-            modifier = Modifier.size(30.dp)
+            onSearchButtonClick = onSearchButtonClick
+        )
+        AnimatedVisibility(
+            visible = focused, enter = slideInHorizontally(
+                initialOffsetX = { it / 2 },
+                animationSpec = tween(200)
+            ), exit = slideOutHorizontally(
+                tween(200)
+            )
         ) {
             Text(
+                modifier = Modifier
+                    .clickable {
+                        onCancelButtonClick()
+                    }
+                    .padding(8.dp),
                 text = stringResource(id = R.string.search_input_cancel_text),
-                style = MaterialTheme.typography.bodySmall,
+                style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onPrimary,
             )
         }
@@ -58,11 +80,13 @@ fun SearchBar(
 fun SearchBarPrev() {
     MoviesTheme {
         SearchBar(
-            focused = false,
-            onFocusChanged = {},
             onTrailingIconClick = {},
             onQueryChanged = {},
-            query = ""
+            query = TextFieldValue(),
+            focused = false,
+            onFocusChanged = {},
+            onSearchButtonClick = {},
+            onCancelButtonClick = {},
         )
     }
 }

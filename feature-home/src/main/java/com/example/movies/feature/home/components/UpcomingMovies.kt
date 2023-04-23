@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import com.examle.movies.core.ui.components.MoviesErrorView
 import com.examle.movies.core.ui.components.fadeModifier
 import com.example.movies.core.model.home.UpcomingMovie
 import com.example.movies.feature.home.state.UpcomingMoviesState
@@ -26,7 +27,7 @@ fun UpcomingMovies(
                 )
             }
             is UpcomingMoviesState.Error -> {
-                ErrorView(
+                MoviesErrorView(
                     message = upcomingMoviesState.errorMessage.asString(context)!!,
                     onRetryClick = onRetryClick
                 )
