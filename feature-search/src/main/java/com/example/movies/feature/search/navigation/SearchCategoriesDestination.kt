@@ -1,10 +1,17 @@
 package com.example.movies.feature.search.navigation
 
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInHorizontally
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
+import androidx.navigation.NavType
+
+
+import androidx.navigation.navArgument
 import com.example.movies.core.navigation.MoviesNavigationDestination
 import com.example.movies.feature.search.screen.SearchCategoriesScreen
 import com.example.movies.feature.search.util.Constants
+import com.google.accompanist.navigation.animation.composable
 
 object SearchCategoriesDestination : MoviesNavigationDestination {
     override val route: String
@@ -16,8 +23,14 @@ object SearchCategoriesDestination : MoviesNavigationDestination {
 
 }
 
-fun NavGraphBuilder.searchCategories() {
-    composable(route = SearchCategoriesDestination.route) {
-//        SearchCategoriesScreen()
+fun NavGraphBuilder.searchCategories(
+    onBackButtonClick: () -> Unit,
+) {
+    composable(
+        route = "${SearchCategoriesDestination.route}/{query}",
+        arguments = listOf(navArgument("query") { type = NavType.StringType }),
+        enterTransition = { slideInHorizontally(tween(200)) + fadeIn(tween(300)) }
+    ) { navBackStackEntry ->
+        SearchCategoriesScreen(onBackButtonClick = onBackButtonClick)
     }
 }

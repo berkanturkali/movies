@@ -71,9 +71,7 @@ fun SearchInput(
         keyboardActions = KeyboardActions(
             onSearch = {
                 keyboardController?.hide()
-                query?.let {
-                    onSearchButtonClick(query.text)
-                }
+                onSearchButtonClick(query.text)
             }),
         leadingIcon = {
             Icon(

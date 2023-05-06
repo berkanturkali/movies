@@ -11,7 +11,7 @@ class CompanyMapper @Inject constructor() : RemoteResponseModelMapper<CompanyDTO
     override fun mapFromModel(model: CompanyDTO): Company {
         return Company(
             id = model.id,
-            logo = model.logoPath?.let { "${BuildConfig.BASE_IMAGE_URL}/${ImageSizes.ORIGINAL}${model.logoPath}" },
+            logo = model.logoPath?.let { "${BuildConfig.BASE_IMAGE_URL}/${ImageSizes.ORIGINAL.size}${model.logoPath}" },
             name = model.name
         )
     }

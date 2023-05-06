@@ -9,6 +9,7 @@ dependencies {
     //accompanist
     implementAll(
         Dependencies.Accompanist.ACCOMPANIST_SWIPE_REFRESH,
+        Dependencies.Accompanist.ACCOMPANIST_PAGER
     )
 
     //coil
@@ -22,4 +23,9 @@ dependencies {
 
     //lifecycle
     implementation(Dependencies.Lifecycle.LIFECYCLE_LIVEDATA_KTX)
+
+    //unit tests
+    implementAllUnitTests(
+        Dependencies.Test.UnitTest.TRUTH
+    )
 }

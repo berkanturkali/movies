@@ -7,7 +7,6 @@ abstract class SearchCategoryViewModel : ViewModel() {
 
     protected val _query = MutableStateFlow("")
 
-
     fun setQuery(query: String) {
         _query.value = query
     }

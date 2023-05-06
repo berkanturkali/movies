@@ -6,4 +6,6 @@
     <string name="recent_searches_title_text">Recent Searches</string>
     <string name="recent_searches_clear_text_button_text">Clear</string>
     <string name="keywords_title_text">Keywords</string>
+    <string name="search_categories_empty_list_primary_message">Oh darn. We don\'t have that.</string>
+    <string name="search_categories_empty_list_secondary_message">Try searching for other categories.</string>
 </resources>

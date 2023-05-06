@@ -1,35 +1,60 @@
 package com.example.movies.feature.search.screen
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.examle.movies.core.ui.providers.LocalSearchQuery
+import com.example.movies.feature.search.components.SearchCategoriesScreenEmptyView
 import com.example.movies.feature.search.components.SearchGridItem
 import com.example.movies.feature.search.components.searchCategoriesGrid
 import com.example.movies.feature.search.viewmodel.PeopleViewModel
 
-@Composable
-fun People(modifier: Modifier = Modifier) {
+private const val CELL_COUNT = 3
 
+@Composable
+fun People(
+    setQuery: Boolean,
+    modifier: Modifier = Modifier
+) {
+
+    val state = rememberLazyGridState()
 
     val viewModel = hiltViewModel<PeopleViewModel>()
 
     val query = LocalSearchQuery.current
-
-    viewModel.setQuery(query)
-
+    if (setQuery) {
+        viewModel.setQuery(query)
+    }
     val people = viewModel.people.collectAsLazyPagingItems()
-
-    LazyVerticalGrid(columns = GridCells.Fixed(2), modifier = modifier) {
-        searchCategoriesGrid(categoryItems = people, onRetryClick = {}) { person ->
-            person?.name?.let {
+    if (people.itemCount > 0) {
+        LazyVerticalGrid(
+            modifier = modifier,
+            state = state,
+            columns = GridCells.Fixed(CELL_COUNT),
+            contentPadding = PaddingValues(16.dp),
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+        ) {
+            searchCategoriesGrid(
+                categoryItems = people,
+                onRetryClick = {},
+                cellCount = CELL_COUNT,
+                shape = CircleShape
+            ) { person ->
                 SearchGridItem(
-                    image = person.path,
-                    name = person.name!!,
+                    image = person?.path,
+                    name = person?.name!!,
                     shape = CircleShape,
                     onItemClick = {
 
@@ -37,6 +62,9 @@ fun People(modifier: Modifier = Modifier) {
                 )
             }
         }
+    } else {
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            SearchCategoriesScreenEmptyView()
+        }
     }
-
 }

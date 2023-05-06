@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.example.movies.core.data.repository.search.abstraction.SearchRepository
-import com.example.movies.core.model.search.SearchScreenContent
 import com.example.movies.core.model.search.keyword.Keyword
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -23,8 +22,6 @@ class SearchScreenViewModel @Inject constructor(
     companion object {
         const val DEBOUNCE_TIMEOUT_MILLIS: Long = 300
     }
-
-    val content = MutableStateFlow<SearchScreenContent>(SearchScreenContent.SearchScreen(null))
 
     private val _textFieldValue = MutableStateFlow<TextFieldValue>(TextFieldValue(text = ""))
 
@@ -64,9 +61,5 @@ class SearchScreenViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             searchRepository.clearAllRecentSearches()
         }
-    }
-
-    fun setSearchScreenContent(content: SearchScreenContent) {
-        this.content.value = content
     }
 }

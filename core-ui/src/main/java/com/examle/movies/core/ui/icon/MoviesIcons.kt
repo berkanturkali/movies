@@ -25,4 +25,10 @@ object MoviesIcons {
     val CATEGORY = R.drawable.ic_category
 
     val ARROW_INWARD = R.drawable.ic_arrow_inward
+
+    val BACK = R.drawable.ic_back
+
+    val MALE_PERSON = R.drawable.ic_male_person
+
+    val FEMALE_PERSON = R.drawable.ic_female_person
 }

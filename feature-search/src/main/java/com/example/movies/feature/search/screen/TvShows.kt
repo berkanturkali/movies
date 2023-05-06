@@ -1,5 +1,6 @@
 package com.example.movies.feature.search.screen
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -11,27 +12,30 @@ import com.example.movies.feature.search.components.searchCategoriesList
 import com.example.movies.feature.search.viewmodel.TvShowsViewModel
 
 @Composable
-fun TvShows(modifier: Modifier = Modifier) {
+fun TvShows(
+    setQuery: Boolean, modifier: Modifier = Modifier
+) {
 
     val viewModel = hiltViewModel<TvShowsViewModel>()
 
     val query = LocalSearchQuery.current
-
-    viewModel.setQuery(query)
+    if (setQuery) {
+        viewModel.setQuery(query)
+    }
 
     val tvShows = viewModel.tvShows.collectAsLazyPagingItems()
 
     LazyColumn(modifier = modifier) {
-        searchCategoriesList(categoryItems = tvShows, onRetryClick = {}) { show ->
-            show?.name?.let {
-                SearchItem(
-                    image = show.poster,
-                    name = show.name!!,
-                    onItemClick = {
+        searchCategoriesList(
+            categoryItems = tvShows,
+            onRetryClick = {},
+        ) { show ->
+            SearchItem(
+                image = show?.poster,
+                name = show?.name!!,
+                onItemClick = {
 
-                    })
-            }
+                })
         }
     }
-
 }

@@ -22,6 +22,7 @@ import com.example.movies.navigation.MoviesNavHost
 import com.example.movies.navigation.MoviesTopLevelNavigation
 import com.example.movies.navigation.TOP_LEVEL_DESTINATIONS
 import com.example.movies.navigation.TopLevelDestination
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -29,7 +30,7 @@ import com.example.movies.navigation.TopLevelDestination
 fun MoviesApp() {
     val windowWidthSizeClass = LocalWindowWidthSizeClass.current
     MoviesTheme(windowWidthSizeClass = windowWidthSizeClass) {
-        val navController = rememberNavController()
+        val navController = rememberAnimatedNavController()
         val moviesTopLevelNavigation = remember(navController) {
             MoviesTopLevelNavigation(navController)
         }

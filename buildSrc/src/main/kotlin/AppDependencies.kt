@@ -89,7 +89,7 @@ object Dependencies {
     //region accompanist-dependencies
     object Accompanist {
         private object Version {
-            const val ACCOMPANIST_VERSION = "0.25.1"
+            const val ACCOMPANIST_VERSION = "0.30.1"
         }
 
         const val ACCOMPANIST_ANIMATION =

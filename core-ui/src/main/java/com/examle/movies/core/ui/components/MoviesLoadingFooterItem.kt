@@ -26,7 +26,7 @@ fun MoviesLoadingFooterItem(modifier: Modifier = Modifier) {
     ) {
         CircularProgressIndicator(
             color = MaterialTheme.colorScheme.primary,
-            modifier = Modifier.size(130.dp).padding(32.dp)
+            modifier = Modifier.size(80.dp).padding(16.dp)
         )
     }
 }

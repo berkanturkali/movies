@@ -12,26 +12,30 @@ import com.example.movies.feature.search.viewmodel.CompaniesViewModel
 
 @Composable
 fun Companies(
+    setQuery: Boolean,
     modifier: Modifier = Modifier
 ) {
     val viewModel = hiltViewModel<CompaniesViewModel>()
 
     val query = LocalSearchQuery.current
 
-    viewModel.setQuery(query)
+    if (setQuery) {
+        viewModel.setQuery(query)
+    }
 
     val companies = viewModel.companies.collectAsLazyPagingItems()
 
-    LazyColumn(modifier = modifier) {
-        searchCategoriesList(categoryItems = companies, onRetryClick = {}) { company ->
-            company?.name?.let {
-                SearchItem(
-                    image = company.logo,
-                    name = company.name!!,
-                    onItemClick = {
+    LazyColumn(
+        modifier = modifier,
+    ) {
+        searchCategoriesList(
+            categoryItems = companies, onRetryClick = {}) { company ->
+            SearchItem(
+                image = company?.logo,
+                name = company?.name!!,
+                onItemClick = {
 
-                    })
-            }
+                })
         }
     }
 }

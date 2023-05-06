@@ -1,9 +1,7 @@
 package com.example.movies.feature.search.screen
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
@@ -22,7 +20,6 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.items
 import com.examle.movies.core.ui.components.MoviesDivider
 import com.examle.movies.core.ui.components.MoviesScaffold
-import com.example.movies.core.model.search.SearchScreenContent
 import com.example.movies.core.model.search.keyword.Keyword
 import com.example.movies.core.model.search.recent_search.RecentSearch
 import com.example.movies.feature.search.components.KeywordItem
@@ -33,6 +30,7 @@ import com.example.movies.feature.search.viewmodel.SearchScreenViewModel
 
 @Composable
 fun SearchScreen(
+    navigateToSearchCategoriesScreen: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
 
@@ -43,8 +41,6 @@ fun SearchScreen(
     val keywords = viewModel.keywords.collectAsLazyPagingItems()
 
     val recentSearches by viewModel.recentSearches.observeAsState()
-
-    val content by viewModel.content.collectAsState()
 
     var focused by rememberSaveable {
         mutableStateOf(false)
@@ -61,90 +57,47 @@ fun SearchScreen(
                 onQueryChanged = viewModel::setSearchTextFieldValue,
                 onTrailingIconClick = {
                     viewModel.setSearchTextFieldValue(TextFieldValue(""))
-                    viewModel.setSearchScreenContent(SearchScreenContent.SearchScreen(""))
                 },
                 onFocusChanged = {
                     focused = it
-                    if(focused){
-                        viewModel.setSearchScreenContent(SearchScreenContent.SearchScreen(searchInputTextFieldValue.text))
-                    }
                 },
-                onSearchButtonClick = {
-                    viewModel.setSearchScreenContent(SearchScreenContent.SearchCategoriesScreen(it))
-                    focusManager.clearFocus()
+                onSearchButtonClick = { query ->
+                    viewModel.insertRecentSearch(query)
+                    navigateToSearchCategoriesScreen(query)
                 },
                 onCancelButtonClick = {
                     focused = false
                     focusManager.clearFocus()
-                    if(searchInputTextFieldValue.text.isNotEmpty()){
-                        viewModel.setSearchScreenContent(SearchScreenContent.SearchCategoriesScreen(searchInputTextFieldValue.text))
-                    }
                 }
             )
         }) {
-        when (content) {
-            is SearchScreenContent.SearchScreen -> {
-                AnimatedVisibility(
-                    visible = focused,
-                    enter = slideInVertically(),
-                    exit = fadeOut()
-                ) {
-                    SearchScreenContent(
-                        keywords = keywords,
-                        recentSearches = recentSearches ?: emptyList(),
-                        onKeywordItemClick = { keyword ->
-                            viewModel.setSearchTextFieldValue(
-                                TextFieldValue(
-                                    text = keyword.name!!,
-                                    selection = TextRange(keyword.name!!.lastIndex + 1)
-                                )
-                            )
-                            searchInputTextFieldValue.copy(
-                                selection = TextRange(keyword.name!!.lastIndex + 1)
-                            )
-                            viewModel.insertRecentSearch(keyword.name!!)
-                            viewModel.setSearchScreenContent(
-                                SearchScreenContent.SearchCategoriesScreen(keyword.name!!)
-                            )
-                            focusManager.clearFocus()
-                        },
-                        onRecentSearchClearButtonClick = viewModel::clearRecentSearches,
-                        onRecentSearchItemClick = { recentSearch ->
-                            viewModel.setSearchTextFieldValue(
-                                TextFieldValue(
-                                    text = recentSearch.text,
-                                    selection = TextRange(recentSearch.text.lastIndex + 1)
-                                )
-                            )
-                            viewModel.setSearchScreenContent(
-                                SearchScreenContent.SearchCategoriesScreen(recentSearch.text)
-                            )
-                        },
-                        onRecentSearchInwardArrowIconClick = { recentSearch ->
-                            viewModel.setSearchTextFieldValue(
-                                TextFieldValue(
-                                    recentSearch.text,
-                                    selection = TextRange(recentSearch.text.lastIndex + 1)
-                                )
-                            )
-                        }
+        AnimatedVisibility(
+            visible = focused,
+            enter = slideInVertically(),
+            exit = fadeOut()
+        ) {
+            SearchScreenContent(
+                keywords = keywords,
+                recentSearches = recentSearches ?: emptyList(),
+                onKeywordItemClick = { keyword ->
+                    viewModel.insertRecentSearch(keyword.name!!)
+                    navigateToSearchCategoriesScreen(keyword.name!!)
+                    focusManager.clearFocus()
+                },
+                onRecentSearchClearButtonClick = viewModel::clearRecentSearches,
+                onRecentSearchItemClick = { recentSearch ->
+                    navigateToSearchCategoriesScreen(recentSearch.text)
+                },
+                onRecentSearchInwardArrowIconClick = { recentSearch ->
+                    viewModel.setSearchTextFieldValue(
+                        TextFieldValue(
+                            recentSearch.text,
+                            selection = TextRange(recentSearch.text.lastIndex + 1)
+                        )
                     )
                 }
-            }
-            is SearchScreenContent.SearchCategoriesScreen -> {
-                focusManager.clearFocus()
-                AnimatedVisibility(
-                    visible = true,
-                    enter = slideInHorizontally(
-                        initialOffsetX = { -1000 },
-                        animationSpec = tween(300)
-                    )
-                ) {
-                    SearchCategoriesScreen(content.query!!)
-                }
-            }
+            )
         }
-
     }
 }
 

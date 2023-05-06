@@ -1,11 +1,13 @@
 package com.example.movies.feature.search.navigation
 
+import androidx.compose.animation.fadeIn
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
+
 import com.example.movies.core.navigation.MoviesNavigationDestination
 import com.example.movies.feature.search.screen.SearchScreen
 import com.example.movies.feature.search.util.Constants.SEARCH_DESTINATION
 import com.example.movies.feature.search.util.Constants.SEARCH_ROUTE
+import com.google.accompanist.navigation.animation.composable
 
 object SearchDestination : MoviesNavigationDestination {
     override val route: String
@@ -16,14 +18,19 @@ object SearchDestination : MoviesNavigationDestination {
         get() = true
 }
 
-fun NavGraphBuilder.searchGraph() {
+fun NavGraphBuilder.searchGraph(
+    onBackButtonClick:() -> Unit,
+    navigateToSearchCategoriesScreen: (String) -> Unit,
+) {
 
     composable(
-        route = SearchDestination.route
+        route = SearchDestination.route,
+        popEnterTransition = { fadeIn() }
+
     ) {
         //search screen
-        SearchScreen()
+        SearchScreen(navigateToSearchCategoriesScreen = navigateToSearchCategoriesScreen)
     }
 
-    searchCategories()
+    searchCategories(onBackButtonClick = onBackButtonClick)
 }

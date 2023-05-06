@@ -14,13 +14,11 @@ import com.example.movies.core.model.search.SearchCategory
 
 @Composable
 fun SearchCategoryTabs(
+    selectedIndex:Int,
     categories: List<SearchCategory>,
-    selectedCategory: SearchCategory,
-    onCategorySelected: (SearchCategory) -> Unit,
+    onCategorySelected: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
-
-    val selectedIndex = categories.indexOfFirst { it == selectedCategory }
     val indicator = @Composable { tabPositions: List<TabPosition> ->
         SearchCategoryTabIndicator(
             modifier = Modifier.tabIndicatorOffset(tabPositions[selectedIndex])
@@ -35,7 +33,7 @@ fun SearchCategoryTabs(
         categories.forEachIndexed { index, searchCategory ->
             Tab(
                 selected = index == selectedIndex,
-                onClick = { onCategorySelected(searchCategory) },
+                onClick = { onCategorySelected(index) },
                 text = {
                     Text(
                         text = stringResource(id = searchCategory.categoryResId),

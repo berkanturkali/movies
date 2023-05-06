@@ -8,7 +8,7 @@ class ImagePathMapper @Inject constructor() {
 
     fun mapPath(path: String?): String? {
         return path?.let {
-            "${BuildConfig.BASE_IMAGE_URL}/${ImageSizes.ORIGINAL}${path}"
+            "${BuildConfig.BASE_IMAGE_URL}/${ImageSizes.ORIGINAL.size}${path}"
         }
     }
 }

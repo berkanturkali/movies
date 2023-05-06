@@ -24,17 +24,21 @@ fun MoviesErrorView(
     modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         Text(
             text = message,
-            maxLines = 2,
-            style = androidx.compose.material3.MaterialTheme.typography.titleLarge,
+            maxLines = 3,
+            style = androidx.compose.material3.MaterialTheme.typography.titleMedium,
             color = androidx.compose.material3.MaterialTheme.colorScheme.onPrimary,
-            modifier = Modifier.padding(dimensionResource(id = R.dimen.dimen_16)),
-            textAlign = TextAlign.Center
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(
+                    dimensionResource(id = R.dimen.dimen_16),
+                ),
+            textAlign = TextAlign.Center,
         )
         Button(
             onClick = {
@@ -43,7 +47,7 @@ fun MoviesErrorView(
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = androidx.compose.material3.MaterialTheme.colorScheme.onPrimary,
                 contentColor = androidx.compose.material3.MaterialTheme.colorScheme.secondary
-            )
+            ),
         ) {
             Text(
                 text = stringResource(

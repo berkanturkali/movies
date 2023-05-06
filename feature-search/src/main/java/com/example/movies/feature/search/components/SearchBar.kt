@@ -4,6 +4,7 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
@@ -38,6 +39,7 @@ fun SearchBar(
             .height(IntrinsicSize.Min),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceAround,
+
     ) {
 
         SearchInput(
@@ -54,7 +56,8 @@ fun SearchBar(
             onSearchButtonClick = onSearchButtonClick
         )
         AnimatedVisibility(
-            visible = focused, enter = slideInHorizontally(
+            visible = focused,
+            enter = slideInHorizontally(
                 initialOffsetX = { it / 2 },
                 animationSpec = tween(200)
             ), exit = slideOutHorizontally(
