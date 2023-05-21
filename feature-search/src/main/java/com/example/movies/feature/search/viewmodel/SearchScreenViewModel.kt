@@ -8,6 +8,7 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.example.movies.core.data.repository.search.abstraction.SearchRepository
 import com.example.movies.core.model.search.keyword.Keyword
+import com.example.movies.feature.search.SearchInputState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
@@ -28,18 +29,25 @@ class SearchScreenViewModel @Inject constructor(
     val textFieldValue: StateFlow<TextFieldValue>
         get() = _textFieldValue
 
+    private val _searchInputState = MutableStateFlow<SearchInputState>(SearchInputState.UNFOCUSED)
 
-    val keywords = textFieldValue.debounce(DEBOUNCE_TIMEOUT_MILLIS)
+    val searchInputState: StateFlow<SearchInputState> = _searchInputState.asStateFlow()
+
+    val keywords = textFieldValue
+        .distinctUntilChangedBy { it.text }
+        .debounce(DEBOUNCE_TIMEOUT_MILLIS)
         .flatMapLatest { value ->
             if (value.text.isNotEmpty()) {
                 searchRepository.fetchKeywords(query = value.text)
-                    .cachedIn(viewModelScope)
+
             } else {
                 flowOf(PagingData.empty<Keyword>())
             }
         }
+        .cachedIn(viewModelScope)
 
     val recentSearches = textFieldValue.debounce(DEBOUNCE_TIMEOUT_MILLIS)
+        .distinctUntilChangedBy { it.text }
         .flatMapLatest {
             searchRepository.getRecentSearches(it.text)
         }
@@ -49,6 +57,9 @@ class SearchScreenViewModel @Inject constructor(
         _textFieldValue.update {
             textFieldValue
         }
+    }
+    fun clearQuery() {
+        setSearchTextFieldValue(TextFieldValue(""))
     }
 
     fun insertRecentSearch(text: String) {
@@ -61,5 +72,9 @@ class SearchScreenViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             searchRepository.clearAllRecentSearches()
         }
+    }
+
+    fun setSearchInputState(searchInputState: SearchInputState) {
+        _searchInputState.value = searchInputState
     }
 }

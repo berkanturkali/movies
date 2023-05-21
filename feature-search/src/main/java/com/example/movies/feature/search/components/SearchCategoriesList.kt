@@ -23,18 +23,19 @@ fun <T : Any> LazyListScope.searchCategoriesList(
         items(categoryItems) {
             content(it)
         }
-    } else {
-        item {
-            Box(modifier = Modifier.fillParentMaxSize(), contentAlignment = Alignment.Center) {
-                SearchCategoriesScreenEmptyView()
-            }
-        }
     }
     categoryItems.apply {
         when {
             loadState.refresh is LoadState.Loading -> {
                 items(10) {
                     SearchShimmerItem()
+                }
+            }
+            loadState.refresh is LoadState.NotLoading && categoryItems.itemCount == 0 -> {
+                item {
+                    Box(modifier = Modifier.fillParentMaxSize(), contentAlignment = Alignment.Center) {
+                        SearchCategoriesScreenEmptyView()
+                    }
                 }
             }
             loadState.append is LoadState.Loading -> {

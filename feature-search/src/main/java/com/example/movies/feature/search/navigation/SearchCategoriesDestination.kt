@@ -29,7 +29,7 @@ fun NavGraphBuilder.searchCategories(
     composable(
         route = "${SearchCategoriesDestination.route}/{query}",
         arguments = listOf(navArgument("query") { type = NavType.StringType }),
-        enterTransition = { slideInHorizontally(tween(200)) + fadeIn(tween(300)) }
+        enterTransition = { slideInHorizontally(tween(400)) + fadeIn(tween(400)) }
     ) { navBackStackEntry ->
         SearchCategoriesScreen(onBackButtonClick = onBackButtonClick)
     }

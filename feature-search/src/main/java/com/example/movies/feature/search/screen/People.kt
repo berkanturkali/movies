@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.examle.movies.core.ui.providers.LocalSearchQuery
 import com.example.movies.feature.search.components.SearchCategoriesScreenEmptyView
@@ -63,8 +64,10 @@ fun People(
             }
         }
     } else {
-        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            SearchCategoriesScreenEmptyView()
+        if (people.loadState.refresh is LoadState.NotLoading && people.itemCount == 0) {
+            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                SearchCategoriesScreenEmptyView()
+            }
         }
     }
 }

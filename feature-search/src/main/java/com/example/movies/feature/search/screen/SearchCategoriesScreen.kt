@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.examle.movies.core.ui.components.MoviesScaffold
@@ -29,6 +30,7 @@ import com.example.movies.feature.search.components.SearchView
 import com.example.movies.feature.search.viewmodel.SearchCategoriesScreenViewModel
 import com.example.movies.feature.search.viewmodel.SearchScreenViewModel
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -86,8 +88,7 @@ fun SearchCategoriesScreen(
                 onFocusChanged = {
                     viewModel.focused = it
                 },
-                onCancelButtonClick = {
-                    focusManager.clearFocus()
+                resetTheQuery = {
                     viewModel.resetTheQuery()
                 }
             )
@@ -106,6 +107,7 @@ fun SearchCategoriesScreen(
                     state = pagerState,
                     pageCount = categories.size,
                     userScrollEnabled = true,
+                    beyondBoundsPageCount = 3,
                 ) { index ->
                     CompositionLocalProvider(LocalSearchQuery provides query.text) {
                         when (index) {

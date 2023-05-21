@@ -4,7 +4,6 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
@@ -12,8 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.FocusManager
-import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,10 +23,11 @@ import com.example.movies_compose.feature.search.R
 fun SearchBar(
     query: TextFieldValue,
     focused: Boolean,
-    onCancelButtonClick:() -> Unit,
+    focusRequester: FocusRequester,
     onQueryChanged: (TextFieldValue) -> Unit,
     onTrailingIconClick: () -> Unit,
     onFocusChanged: (Boolean) -> Unit,
+    resetTheQuery: () -> Unit,
     onSearchButtonClick: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -39,12 +38,12 @@ fun SearchBar(
             .height(IntrinsicSize.Min),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceAround,
-
     ) {
 
         SearchInput(
             query = query,
             focused = focused,
+            focusRequester = focusRequester,
             modifier = Modifier
                 .then(if (focused) Modifier.fillMaxWidth(0.8f) else Modifier.fillMaxWidth())
                 .padding(8.dp),
@@ -53,7 +52,7 @@ fun SearchBar(
             onFocusChanged = {
                 onFocusChanged(it)
             },
-            onSearchButtonClick = onSearchButtonClick
+            onSearchButtonClick = onSearchButtonClick,
         )
         AnimatedVisibility(
             visible = focused,
@@ -67,7 +66,8 @@ fun SearchBar(
             Text(
                 modifier = Modifier
                     .clickable {
-                        onCancelButtonClick()
+                        onFocusChanged(false)
+                        resetTheQuery()
                     }
                     .padding(8.dp),
                 text = stringResource(id = R.string.search_input_cancel_text),
@@ -84,12 +84,13 @@ fun SearchBarPrev() {
     MoviesTheme {
         SearchBar(
             onTrailingIconClick = {},
+            focusRequester = FocusRequester(),
             onQueryChanged = {},
             query = TextFieldValue(),
             focused = false,
             onFocusChanged = {},
             onSearchButtonClick = {},
-            onCancelButtonClick = {},
+            resetTheQuery = {},
         )
     }
 }

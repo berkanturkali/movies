@@ -2,17 +2,20 @@ package com.example.movies.feature.search.components
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
-import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -25,32 +28,38 @@ import androidx.compose.ui.unit.dp
 import com.examle.movies.core.ui.icon.MoviesIcons
 import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies_compose.feature.search.R
+import kotlinx.coroutines.flow.distinctUntilChangedBy
+import timber.log.Timber
 
 @Composable
 fun SearchInput(
     query: TextFieldValue,
     focused: Boolean,
+    focusRequester: FocusRequester,
     onValueChange: (TextFieldValue) -> Unit,
     onTrailingIconClick: () -> Unit,
     onFocusChanged: (Boolean) -> Unit,
     onSearchButtonClick: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val focusRequester = remember {
-        FocusRequester()
-    }
 
     val keyboardController = LocalSoftwareKeyboardController.current
 
     OutlinedTextField(
-        modifier = modifier
-            .focusRequester(focusRequester)
-            .onFocusChanged { focusState ->
-                onFocusChanged(focusState.isFocused)
-            },
+        modifier = modifier.focusRequester(focusRequester),
         shape = androidx.compose.foundation.shape.CircleShape,
         value = query,
         onValueChange = onValueChange,
+        interactionSource = remember {
+            MutableInteractionSource()
+        }.also { interactionSource ->
+            LaunchedEffect(key1 = interactionSource) {
+                interactionSource.interactions.distinctUntilChangedBy { it is PressInteraction.Release }
+                    .collect {
+                        onFocusChanged(true)
+                    }
+            }
+        },
         placeholder = {
             AnimatedVisibility(
                 visible = !focused,
@@ -112,9 +121,14 @@ fun SearchInput(
 @Composable
 fun SearchInputPrev() {
     MoviesTheme {
-        SearchInput(query = TextFieldValue(text = ""), focused = false, onTrailingIconClick = {},
+        SearchInput(
+            query = TextFieldValue(text = ""),
+            focusRequester = FocusRequester(),
+            focused = false,
+            onTrailingIconClick = {},
             onValueChange = {},
-            onFocusChanged = {}, onSearchButtonClick = {}
+            onFocusChanged = {},
+            onSearchButtonClick = {},
         )
     }
 }

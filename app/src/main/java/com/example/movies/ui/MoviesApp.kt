@@ -14,7 +14,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.compose.currentBackStackEntryAsState
-import androidx.navigation.compose.rememberNavController
 import com.examle.movies.core.ui.components.MoviesBackground
 import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.examle.movies.core.ui.theme.MoviesTheme
@@ -37,6 +36,10 @@ fun MoviesApp() {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentDestination = navBackStackEntry?.destination
 
+        val topLevelDestinationRoutes = TOP_LEVEL_DESTINATIONS.map { it.route }
+
+        val isNavbarVisible = navBackStackEntry?.destination?.route in topLevelDestinationRoutes
+
         MoviesBackground {
             Scaffold(
                 modifier = Modifier,
@@ -44,13 +47,15 @@ fun MoviesApp() {
                 contentColor = MaterialTheme.colorScheme.onBackground,
                 bottomBar = {
                     if (windowWidthSizeClass == WindowWidthSizeClass.Compact) {
-                        MoviesBottomBar(
-                            onNavigateToTopLevelDestination = moviesTopLevelNavigation::navigateTo,
-                            scrollToTopForCurrentDestination = {
+                        if (isNavbarVisible) {
+                            MoviesBottomBar(
+                                onNavigateToTopLevelDestination = moviesTopLevelNavigation::navigateTo,
+                                scrollToTopForCurrentDestination = {
 
-                            },
-                            currentDestination = currentDestination
-                        )
+                                },
+                                currentDestination = currentDestination
+                            )
+                        }
                     }
                 }
 

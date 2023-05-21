@@ -10,7 +10,9 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
@@ -22,17 +24,21 @@ import com.examle.movies.core.ui.components.MoviesDivider
 import com.examle.movies.core.ui.components.MoviesScaffold
 import com.example.movies.core.model.search.keyword.Keyword
 import com.example.movies.core.model.search.recent_search.RecentSearch
+import com.example.movies.feature.search.SearchInputState
 import com.example.movies.feature.search.components.KeywordItem
 import com.example.movies.feature.search.components.RecentSearchItem
 import com.example.movies.feature.search.components.RecentSearchesTitleAndClearButton
 import com.example.movies.feature.search.components.SearchBar
 import com.example.movies.feature.search.viewmodel.SearchScreenViewModel
+import timber.log.Timber
 
 @Composable
 fun SearchScreen(
     navigateToSearchCategoriesScreen: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
+
+    val keyboardController = LocalSoftwareKeyboardController.current
 
     val viewModel = hiltViewModel<SearchScreenViewModel>()
 
@@ -42,11 +48,15 @@ fun SearchScreen(
 
     val recentSearches by viewModel.recentSearches.observeAsState()
 
+    val searchInputState by viewModel.searchInputState.collectAsState()
+
     var focused by rememberSaveable {
         mutableStateOf(false)
     }
 
-    val focusManager = LocalFocusManager.current
+    val focusRequester = remember {
+        FocusRequester()
+    }
 
     MoviesScaffold(
         modifier = modifier,
@@ -56,23 +66,31 @@ fun SearchScreen(
                 focused = focused,
                 onQueryChanged = viewModel::setSearchTextFieldValue,
                 onTrailingIconClick = {
-                    viewModel.setSearchTextFieldValue(TextFieldValue(""))
+                    viewModel.clearQuery()
                 },
                 onFocusChanged = {
+                    val state = if (it) SearchInputState.FOCUSED else SearchInputState.UNFOCUSED
+                    if (!it) {
+                        keyboardController?.hide()
+                    }
+                    viewModel.setSearchInputState(state)
                     focused = it
                 },
                 onSearchButtonClick = { query ->
+                    viewModel.setSearchInputState(SearchInputState.UNFOCUSED)
+                    focused = false
                     viewModel.insertRecentSearch(query)
                     navigateToSearchCategoriesScreen(query)
+                    viewModel.clearQuery()
                 },
-                onCancelButtonClick = {
-                    focused = false
-                    focusManager.clearFocus()
-                }
+                resetTheQuery = {
+                    viewModel.clearQuery()
+                },
+                focusRequester = focusRequester
             )
         }) {
         AnimatedVisibility(
-            visible = focused,
+            visible = searchInputState == SearchInputState.FOCUSED,
             enter = slideInVertically(),
             exit = fadeOut()
         ) {
@@ -80,12 +98,17 @@ fun SearchScreen(
                 keywords = keywords,
                 recentSearches = recentSearches ?: emptyList(),
                 onKeywordItemClick = { keyword ->
+                    viewModel.setSearchInputState(SearchInputState.UNFOCUSED)
+                    focused = false
                     viewModel.insertRecentSearch(keyword.name!!)
                     navigateToSearchCategoriesScreen(keyword.name!!)
-                    focusManager.clearFocus()
+                    viewModel.clearQuery()
                 },
                 onRecentSearchClearButtonClick = viewModel::clearRecentSearches,
                 onRecentSearchItemClick = { recentSearch ->
+                    viewModel.setSearchInputState(SearchInputState.UNFOCUSED)
+                    focused = false
+                    keyboardController?.hide()
                     navigateToSearchCategoriesScreen(recentSearch.text)
                 },
                 onRecentSearchInwardArrowIconClick = { recentSearch ->
