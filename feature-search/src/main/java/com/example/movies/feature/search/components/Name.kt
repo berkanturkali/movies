@@ -14,7 +14,7 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 fun Name(
     modifier: Modifier = Modifier,
     childModifier: Modifier = Modifier,
-    textAlign: TextAlign = TextAlign.Justify,
+    textAlign: TextAlign = TextAlign.Start,
     name: String
 ) {
 

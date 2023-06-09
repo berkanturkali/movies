@@ -41,6 +41,7 @@ fun SearchItem(
         ) {
         Row(
             modifier = Modifier
+                .fillMaxWidth()
                 .height(180.dp)
                 .padding(16.dp)
                 .clickable(
@@ -81,6 +82,6 @@ fun SearchItem(
 @Composable
 fun SearchItemPrev() {
     MoviesTheme {
-        SearchItem(image = null, name = "Name", onItemClick = {})
+        SearchItem(image = null, name = "Sonnenfeld Josephson Worldwide Entertainment ", onItemClick = {})
     }
 }

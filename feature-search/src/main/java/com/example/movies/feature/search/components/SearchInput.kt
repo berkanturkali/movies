@@ -29,7 +29,6 @@ import com.examle.movies.core.ui.icon.MoviesIcons
 import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies_compose.feature.search.R
 import kotlinx.coroutines.flow.distinctUntilChangedBy
-import timber.log.Timber
 
 @Composable
 fun SearchInput(
@@ -44,6 +43,10 @@ fun SearchInput(
 ) {
 
     val keyboardController = LocalSoftwareKeyboardController.current
+
+    if (!focused) {
+        keyboardController?.hide()
+    }
 
     OutlinedTextField(
         modifier = modifier.focusRequester(focusRequester),
