@@ -5,4 +5,7 @@ plugins {
 }
 
 dependencies {
+
+    //coil
+    implementation(Dependencies.Coil.COIL)
 }
