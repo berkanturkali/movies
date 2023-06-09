@@ -25,5 +25,6 @@ dependencies {
         ProjectLibs.CORE_CACHE,
         ProjectLibs.FEATURE_SEARCH,
         ProjectLibs.FEATURE_HOME,
+        ProjectLibs.FEATURE_DETAILS,
     )
 }
