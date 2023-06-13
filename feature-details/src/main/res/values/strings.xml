@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="status_title">Status</string>
+    <string name="original_language_title">Original Language</string>
+    <string name="budget_title">Budget</string>
+    <string name="revenue_title">Revenue</string>
+</resources>
