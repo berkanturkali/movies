@@ -18,7 +18,10 @@ import com.examle.movies.core.ui.components.MoviesSurface
 import com.examle.movies.core.ui.theme.MoviesTheme
 
 @Composable
-fun MoviePoster(imageUrl: String?, modifier: Modifier = Modifier) {
+fun MoviePoster(
+    imageUrl: String?,
+    modifier: Modifier = Modifier
+) {
 
     val imageLoader = LocalContext.current.imageLoader
 
