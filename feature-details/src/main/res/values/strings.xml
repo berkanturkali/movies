@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Section Titles -->
+    <string name="user_score_title">User Score</string>
+    <string name="cast_title">Cast</string>
     <string name="status_title">Status</string>
     <string name="original_language_title">Original Language</string>
     <string name="budget_title">Budget</string>
     <string name="revenue_title">Revenue</string>
+    <string name="overview_title">Overview</string>
+    <string name="release_date_title">Release Date</string>
+    <string name="genres_title">Genres</string>
+    <string name="tagline_title">Tagline</string>
+    <string name="languages_title">Languages</string>
+    <string name="keywords_title">Keywords</string>
+
+    <string name="see_all_button_text">See All</string>
+    <string name="reviews_title">Reviews</string>
 </resources>

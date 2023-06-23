@@ -6,6 +6,8 @@ plugins {
 
 dependencies {
 
+    implementation(Dependencies.Compose.COMPOSE_CONSTRAINT_LAYOUT)
+
     //coil
     implementation(Dependencies.Coil.COIL)
 }

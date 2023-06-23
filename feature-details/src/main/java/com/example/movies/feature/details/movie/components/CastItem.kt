@@ -2,10 +2,10 @@ package com.example.movies.feature.details.movie.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -43,11 +43,14 @@ fun CastItem(
     val state = painter.state
 
     Column(
-        modifier = modifier,
-        verticalArrangement = Arrangement.spacedBy(4.dp)
+        modifier = modifier.padding(horizontal = 8.dp),
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Surface(
-            modifier = Modifier.aspectRatio(1f), shape = CircleShape, color = Color.Black
+        Box(
+            modifier = Modifier
+                .size(100.dp)
+                .background(color = Color.Black, shape = CircleShape),
         ) {
             if (state is AsyncImagePainter.State.Error) {
                 Image(
@@ -58,7 +61,7 @@ fun CastItem(
                         color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.5f)
                     )
                 )
-                return@Surface
+                return@Box
             }
 
             Image(
@@ -71,21 +74,19 @@ fun CastItem(
         }
         name?.let {
             Text(
-                modifier = Modifier.fillMaxWidth(),
                 text = name,
-                style = MaterialTheme.typography.titleLarge,
+                style = MaterialTheme.typography.titleSmall,
                 color = MaterialTheme.colorScheme.onSurface,
                 textAlign = TextAlign.Center
             )
         }
         character?.let {
-
             Text(
-                modifier = Modifier.fillMaxWidth(),
                 text = character,
-                style = MaterialTheme.typography.titleMedium,
+                style = MaterialTheme.typography.titleSmall,
                 color = MaterialTheme.colorScheme.onSurface,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(horizontal = 4.dp)
             )
 
         }

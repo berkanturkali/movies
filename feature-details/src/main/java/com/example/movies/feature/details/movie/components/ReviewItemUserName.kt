@@ -10,17 +10,19 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 
 @Composable
 fun ReviewItemUserName(
-    name: String,
+    name: String?,
     modifier: Modifier = Modifier
 ) {
-    Text(
-        modifier = modifier,
-        text = name,
-        style = MaterialTheme.typography.titleLarge,
-        color = MaterialTheme.colorScheme.onSurface,
-        maxLines = 2,
-        overflow = TextOverflow.Ellipsis,
-    )
+    name?.let {
+        Text(
+            modifier = modifier,
+            text = name,
+            style = MaterialTheme.typography.titleMedium,
+            color = MaterialTheme.colorScheme.onSurface,
+            maxLines = 2,
+            overflow = TextOverflow.Ellipsis,
+        )
+    }
 }
 
 @Preview

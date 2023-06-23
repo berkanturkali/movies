@@ -6,14 +6,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun Revenue(
-    revenue: String,
+fun ReleaseDate(
+    date: String?,
     modifier: Modifier = Modifier
 ) {
-    Text(
-        modifier = modifier,
-        text = revenue,
-        color = MaterialTheme.colorScheme.onSurface,
-        style = MaterialTheme.typography.bodySmall
-    )
+    date?.let {
+        Text(
+            text = date,
+            modifier = modifier,
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurface
+        )
+    }
+
 }

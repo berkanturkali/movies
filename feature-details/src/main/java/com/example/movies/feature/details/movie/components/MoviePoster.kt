@@ -31,7 +31,7 @@ fun MoviePoster(
     )
 
     MoviesSurface(
-        modifier = modifier.aspectRatio(1.5f / 2f, true),
+        modifier = modifier.aspectRatio(1f, true),
         color = Color.LightGray,
         shape = RoundedCornerShape(4.dp)
     ) {
@@ -39,7 +39,6 @@ fun MoviePoster(
             alignment = Alignment.Center,
             contentScale = ContentScale.FillBounds,
             painter = painter,
-            modifier = Modifier.fillMaxWidth(),
             contentDescription = null,
         )
     }

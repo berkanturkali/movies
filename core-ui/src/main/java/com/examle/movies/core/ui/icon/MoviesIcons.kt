@@ -31,4 +31,6 @@ object MoviesIcons {
     val MALE_PERSON = R.drawable.ic_male_person
 
     val FEMALE_PERSON = R.drawable.ic_female_person
+
+    val STAR = R.drawable.ic_star
 }

@@ -31,7 +31,9 @@ internal fun Project.configureAndroidCompose(
                             "androidx.compose.material.ExperimentalMaterialApi," +
                             "androidx.compose.animation.ExperimentalAnimationApi," +
                             "androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi," +
-                            "androidx.compose.material3.ExperimentalMaterial3Api,"
+                            "androidx.compose.material3.ExperimentalMaterial3Api," +
+                            "androidx.compose.foundation.layout.ExperimentalLayoutApi," +
+                            "androidx.compose.foundation.ExperimentalFoundationApi,"
                     )
 
             // Set JVM target to 11

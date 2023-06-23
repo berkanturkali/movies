@@ -1,4 +1,4 @@
-package com.example.movies.feature.search.screen
+package com.example.movies.feature.details.movie.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
@@ -46,7 +46,7 @@ fun ReviewItemUserImage(
 
     Box(
         modifier = modifier
-            .aspectRatio(1f)
+            .size(100.dp)
             .background(Color.Black, CircleShape),
         contentAlignment = Alignment.Center
     ) {

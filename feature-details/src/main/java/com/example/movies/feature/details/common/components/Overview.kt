@@ -12,16 +12,18 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 
 @Composable
 fun Overview(
-    overview: String,
+    overview: String?,
     modifier: Modifier = Modifier
 ) {
-    Text(
-        modifier = modifier.padding(8.dp),
-        text = overview,
-        style = MaterialTheme.typography.titleMedium,
-        color = MaterialTheme.colorScheme.onSurface,
-        textAlign = TextAlign.Center,
-    )
+    overview?.let {
+        Text(
+            modifier = modifier.padding(8.dp),
+            text = overview,
+            style = MaterialTheme.typography.titleSmall,
+            color = MaterialTheme.colorScheme.onSurface,
+            textAlign = TextAlign.Center,
+        )
+    }
 }
 
 @Preview

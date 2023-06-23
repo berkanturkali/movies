@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.examle.movies.core.ui.theme.MoviesTheme
@@ -16,7 +17,6 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 @Composable
 fun Title(
     title: String?,
-    year: String?,
     modifier: Modifier = Modifier
 ) {
     Row(
@@ -27,21 +27,11 @@ fun Title(
         title?.let {
             Text(
                 text = title,
-                style = MaterialTheme.typography.headlineSmall.copy(
+                style = MaterialTheme.typography.titleLarge.copy(
                     fontWeight = FontWeight.SemiBold
                 ),
                 color = MaterialTheme.colorScheme.onSurface,
-                modifier = Modifier.weight(3f)
-            )
-        }
-        year?.let {
-            Text(
-                text = "($year)",
-                style = MaterialTheme.typography.headlineSmall.copy(
-                    fontWeight = FontWeight.SemiBold
-                ),
-                color = MaterialTheme.colorScheme.onSurface,
-                modifier = Modifier.weight(1f)
+                textAlign = TextAlign.Center
             )
         }
     }
@@ -51,6 +41,6 @@ fun Title(
 @Composable
 fun TitlePrev() {
     MoviesTheme {
-        Title(title = "Spider-Man: Across the Spider-Verse", year = "2023")
+        Title(title = "Spider-Man: Across the Spider-Verse")
     }
 }

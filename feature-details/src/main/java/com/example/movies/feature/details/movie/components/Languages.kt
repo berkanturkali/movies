@@ -11,6 +11,7 @@ import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -21,7 +22,7 @@ import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 
 @Composable
 fun Languages(
-    languages: List<String>,
+    languages: List<String>?,
     modifier: Modifier = Modifier
 ) {
 
@@ -29,22 +30,22 @@ fun Languages(
 
     val widthHeightModifier: Modifier = when (LocalWindowWidthSizeClass.current) {
         WindowWidthSizeClass.Compact -> Modifier
-            .width(150.dp)
-            .height(220.dp)
+            .width(40.dp)
+            .height(30.dp)
         WindowWidthSizeClass.Medium -> Modifier
-            .width(220.dp)
-            .height(290.dp)
+            .width(60.dp)
+            .height(50.dp)
         WindowWidthSizeClass.Compact -> Modifier
-            .width(290.dp)
-            .height(360.dp)
+            .width(80.dp)
+            .height(70.dp)
         else -> Modifier
-            .width(150.dp)
-            .height(220.dp)
+            .width(40.dp)
+            .height(30.dp)
     }
 
-    languages.forEach { language ->
+    languages?.forEach { language ->
         Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
-            MoviesSurface(modifier = Modifier.then(widthHeightModifier)) {
+            MoviesSurface(modifier = Modifier.then(widthHeightModifier), color = Color.Transparent) {
                 val painter = rememberAsyncImagePainter(
                     model = "https://flagsapi.com/${language.uppercase()}/flat/64.png",
                     imageLoader = imageLoader
@@ -59,7 +60,8 @@ fun Languages(
             }
 
             Text(
-                text = language, style = MaterialTheme.typography.displaySmall,
+                text = language.uppercase(),
+                style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurface
             )
         }

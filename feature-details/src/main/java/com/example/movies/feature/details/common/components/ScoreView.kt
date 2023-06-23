@@ -35,8 +35,8 @@ fun ScoreView(
     @FloatRange(0.0, 1.0)
     score: Float,
     modifier: Modifier = Modifier,
-    fontSize: TextUnit = 32.sp,
     radius: Dp = 50.dp,
+    fontSize: TextUnit = (radius / 2).value.sp,
     backgroundIndicatorColor: Color = MaterialTheme.colorScheme.surface.copy(
         alpha = ContentAlpha.disabled
     ),
@@ -63,7 +63,7 @@ fun ScoreView(
             .size(radius * 2)
             .background(color = Color.Black, shape = CircleShape)
             .padding(1.dp),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
 
         Box(
@@ -142,6 +142,6 @@ private fun DrawScope.foregroundIndicator(
 @Composable
 fun ScoreViewPrev() {
     MoviesTheme {
-        ScoreView(score = 0.5f)
+        ScoreView(score = 0.5f, radius = 25.dp)
     }
 }
