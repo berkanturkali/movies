@@ -1,5 +1,8 @@
 package com.example.movies.core.network.utils
 
+import com.example.movies.core.network.model.movie_details.GenreDTO
+import com.example.movies.core.network.model.movie_details.MovieDetailsResponseDTO
+import com.example.movies.core.network.model.movie_details.SpokenLanguageDTO
 import com.example.movies.core.network.model.nowplaying.NowPlayingMovieDTO
 import com.example.movies.core.network.model.search.collection.CollectionDTO
 import com.example.movies.core.network.model.search.company.CompanyDTO
@@ -96,6 +99,31 @@ object DummyData {
         firstAirDate = "2011-04-17",
         name = "Game of Thrones",
         originalName = "Game of Thrones"
+    )
+    val movieDetailsResponseDTO = MovieDetailsResponseDTO(
+        title = "Spider-Man: Across the Spider-Verse",
+        posterPath = "/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
+        releaseDate = "2023-05-31",
+        spokenLanguages = listOf(
+            SpokenLanguageDTO(
+                englishName = "English",
+                iso6391 = "en",
+                name = "English"
+            )
+        ),
+        tagline = "It's how you wear the mask that matters",
+        genres = listOf(
+            GenreDTO(
+                id = 28,
+                name = "Action",
+            ),
+            GenreDTO(
+                id = 12,
+                name = "Adventure"
+            )
+        ),
+        voteAverage = 8.656,
+        status = "Released"
     )
     //endregion
 }
