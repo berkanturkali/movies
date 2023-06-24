@@ -17,4 +17,6 @@ object MoviesEndpoints {
     const val POPULAR_MOVIES_ENDPOINT = POPULAR_PATH
 
     const val TOP_RATED_MOVIES_ENDPOINT = "$MOVIE_PATH/top_rated"
+
+    const val MOVIE_DETAILS_ENDPOINT = "$MOVIE_PATH/{movie_id}"
 }

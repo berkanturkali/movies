@@ -12,17 +12,21 @@ object UrlConstants {
 
     private const val PAGE = 1
 
+    const val MOVIE_ID = 1
+
     //paths
     private const val TRENDING_REQUEST_PATH: String =
         "/trending"
+    private const val MOVIE_PATH: String = "/movie"
 
-    private const val NOW_PLAYING_REQUEST_PATH: String = "/movie/now_playing"
+    private const
+    val NOW_PLAYING_REQUEST_PATH: String = "$MOVIE_PATH/now_playing"
 
-    private const val UPCOMING_REQUEST_PATH: String = "/movie/upcoming"
+    private const val UPCOMING_REQUEST_PATH: String = "$MOVIE_PATH/upcoming"
 
-    private const val POPULAR_REQUEST_PATH: String = "/movie/popular"
+    private const val POPULAR_REQUEST_PATH: String = "$MOVIE_PATH/popular"
 
-    private const val TOP_RATED_REQUEST_PATH: String = "/movie/top_rated"
+    private const val TOP_RATED_REQUEST_PATH: String = "$MOVIE_PATH/top_rated"
 
     private const val SEARCH_PATH: String = "/search"
 
@@ -30,13 +34,13 @@ object UrlConstants {
     const val TRENDING_MOVIES_ENDPOINT =
         "$TRENDING_REQUEST_PATH/$MEDIA_MOVIE_TYPE_PATH/$DAY_TIME_WINDOW_PATH?api_key=$API_KEY&page=$PAGE"
 
-    const val NOW_PLAYING_MOVES_ENDPOINT = "$NOW_PLAYING_REQUEST_PATH?api_key=$API_KEY&page=$PAGE"
+    const val NOW_PLAYING_MOVES_ENDPOINT = "$NOW_PLAYING_REQUEST_PATH?page=$PAGE&api_key=$API_KEY"
 
-    const val UPCOMING_MOVIES_ENDPOINT = "$UPCOMING_REQUEST_PATH?api_key=$API_KEY&page=$PAGE"
+    const val UPCOMING_MOVIES_ENDPOINT = "$UPCOMING_REQUEST_PATH?page=$PAGE&api_key=$API_KEY"
 
-    const val POPULAR_MOVIES_ENDPOINT = "$POPULAR_REQUEST_PATH?api_key=$API_KEY&page=$PAGE"
+    const val POPULAR_MOVIES_ENDPOINT = "$POPULAR_REQUEST_PATH?page=$PAGE&api_key=$API_KEY"
 
-    const val TOP_RATED_MOVIES_ENDPOINT = "$TOP_RATED_REQUEST_PATH?api_key=$API_KEY&page=$PAGE"
+    const val TOP_RATED_MOVIES_ENDPOINT = "$TOP_RATED_REQUEST_PATH?page=$PAGE&api_key=$API_KEY"
 
     const val COMPANIES_ENDPOINT = "${SEARCH_PATH}/company?page=$PAGE&api_key=$API_KEY"
 
@@ -49,6 +53,8 @@ object UrlConstants {
     const val PEOPLE_ENDPOINT = "${SEARCH_PATH}/person?page=$PAGE&api_key=$API_KEY"
 
     const val TV_ENDPOINT = "${SEARCH_PATH}/tv?page=$PAGE&api_key=$API_KEY"
+
+    const val MOVIE_DETAILS_ENDPOINT = "$MOVIE_PATH/$MOVIE_ID?api_key=$API_KEY"
 
 
     //responses
@@ -82,6 +88,8 @@ object UrlConstants {
     internal val PERSON_SUCCESS_RESPONSE = getSuccessResponsePath("person")
 
     internal val TV_SHOWS_SUCCESS_RESPONSE = getSuccessResponsePath("tv_shows")
+
+    internal val MOVIE_DETAILS_SUCCESS_RESPONSE = getSuccessResponsePath("movie_details")
 
 
     private fun getSuccessResponsePath(name: String): String =

@@ -2,10 +2,12 @@ package com.example.movies.core.network.di
 
 import com.example.movies.core.network.BuildConfig
 import com.example.movies.core.network.factory.retrofit.RetrofitFactory
+import com.example.movies.core.network.factory.service.MovieListServiceFactory
 import com.example.movies.core.network.factory.service.MoviesServiceFactory
 import com.example.movies.core.network.factory.service.SearchServiceFactory
 import com.example.movies.core.network.factory.service.TrendingServiceFactory
 import com.example.movies.core.network.interceptor.ApiKeyInterceptor
+import com.example.movies.core.network.service.movie_list.MovieListService
 import com.example.movies.core.network.service.movies.MoviesService
 import com.example.movies.core.network.service.search.SearchService
 import com.example.movies.core.network.service.trending.TrendingService
@@ -54,5 +56,10 @@ object RetrofitModule {
     @[Provides Singleton]
     fun provideSearchService(retrofit: Retrofit): SearchService {
         return SearchServiceFactory.createService(retrofit)
+    }
+
+    @[Provides Singleton]
+    fun provideMovieListService(retrofit: Retrofit): MovieListService {
+        return MovieListServiceFactory.createService(retrofit)
     }
 }
