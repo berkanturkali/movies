@@ -34,5 +34,7 @@ class MovieDetailsResponseMapperTest {
             .isEqualTo(listOf("EN"))
         Truth.assertThat(model.status)
             .isEqualTo("R")
+        Truth.assertThat(model.overview).isEqualTo(dto.overview)
+        Truth.assertThat(model.revenue).isEqualTo("\$512,609,552.00")
     }
 }

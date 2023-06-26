@@ -34,7 +34,7 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 @Suppress("MagicNumber")
 fun ScoreView(
     @FloatRange(0.0, 1.0)
-    score: Float,
+    score: Float?,
     modifier: Modifier = Modifier,
     radius: Dp = 50.dp,
     fontSize: TextUnit = (radius / 2).value.sp,
@@ -46,63 +46,65 @@ fun ScoreView(
     animDuration: Int = 1000,
     animDelay: Int = 0,
 ) {
-    var animationPlayed by remember {
-        mutableStateOf(true)
-    }
+    score?.let {
+        var animationPlayed by remember {
+            mutableStateOf(true)
+        }
 
-    val curPercentage = animateFloatAsState(
-        targetValue = if (animationPlayed) score else 0f,
-        animationSpec = tween(durationMillis = animDuration, delayMillis = animDelay)
-    )
+        val curPercentage = animateFloatAsState(
+            targetValue = if (animationPlayed) score else 0f,
+            animationSpec = tween(durationMillis = animDuration, delayMillis = animDelay)
+        )
 
-    LaunchedEffect(key1 = true) {
-        animationPlayed = true
-    }
-
-    Box(
-        modifier = modifier
-            .size(radius * 2)
-            .background(color = Color.Black, shape = CircleShape)
-            .padding(1.dp),
-        contentAlignment = Alignment.Center,
-    ) {
+        LaunchedEffect(key1 = true) {
+            animationPlayed = true
+        }
 
         Box(
-            modifier = Modifier
+            modifier = modifier
                 .size(radius * 2)
-                .padding(6.dp)
-                .drawBehind {
-                    backgroundIndicator(
-                        indicatorColor = backgroundIndicatorColor,
-                        indicatorStrokeWidth = strokeWidth,
-                    )
+                .background(color = Color.Black, shape = CircleShape)
+                .padding(1.dp),
+            contentAlignment = Alignment.Center,
+        ) {
 
-                    foregroundIndicator(
-                        sweepAngle = 360 * curPercentage.value,
-                        indicatorColor = foregroundIndicatorColor,
-                        indicatorStrokeWidth = strokeWidth,
+            Box(
+                modifier = Modifier
+                    .size(radius * 2)
+                    .padding(6.dp)
+                    .drawBehind {
+                        backgroundIndicator(
+                            indicatorColor = backgroundIndicatorColor,
+                            indicatorStrokeWidth = strokeWidth,
+                        )
+
+                        foregroundIndicator(
+                            sweepAngle = 360 * curPercentage.value,
+                            indicatorColor = foregroundIndicatorColor,
+                            indicatorStrokeWidth = strokeWidth,
+                        )
+                    },
+            )
+
+            val superScript = SpanStyle(
+                baselineShift = BaselineShift.Superscript,
+                fontSize = 8.sp,
+            )
+            Text(
+                text = buildAnnotatedString {
+                    append(
+                        (score * 100).toInt()
+                            .toString()
                     )
+                    withStyle(superScript) {
+                        append("%")
+                    }
                 },
-        )
+                style = MaterialTheme.typography.titleSmall.copy(fontSize = fontSize),
+                color = Color.White
+            )
 
-        val superScript = SpanStyle(
-            baselineShift = BaselineShift.Superscript,
-            fontSize = 8.sp,
-        )
-        Text(
-            text = buildAnnotatedString {
-                append(
-                    (score * 100).toInt()
-                        .toString()
-                )
-                withStyle(superScript) {
-                    append("%")
-                }
-            },
-            style = MaterialTheme.typography.titleSmall.copy(fontSize = fontSize),
-            color = Color.White
-        )
-
+        }
     }
 }
 

@@ -25,7 +25,7 @@ import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 
 @Composable
 fun Languages(
-    languages: List<String>?,
+    languages: List<String?>?,
     modifier: Modifier = Modifier
 ) {
 
@@ -47,26 +47,30 @@ fun Languages(
     }
 
     languages?.forEach { language ->
-        Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
-            MoviesSurface(modifier = Modifier.then(widthHeightModifier), color = Color.Transparent) {
-                val painter = rememberAsyncImagePainter(
-                    model = "https://flagsapi.com/${language.uppercase()}/flat/64.png",
-                    imageLoader = imageLoader
-                )
-                Image(
-                    alignment = Alignment.Center,
-                    contentScale = ContentScale.FillBounds,
-                    painter = painter,
-                    modifier = Modifier.fillMaxWidth(),
-                    contentDescription = null,
+        if(!language.isNullOrEmpty()) {
+            Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+                MoviesSurface(
+                    modifier = Modifier.then(widthHeightModifier), color = Color.Transparent
+                ) {
+                    val painter = rememberAsyncImagePainter(
+                        model = "https://flagsapi.com/${language.uppercase()}/flat/64.png",
+                        imageLoader = imageLoader
+                    )
+                    Image(
+                        alignment = Alignment.Center,
+                        contentScale = ContentScale.FillBounds,
+                        painter = painter,
+                        modifier = Modifier.fillMaxWidth(),
+                        contentDescription = null,
+                    )
+                }
+
+                Text(
+                    text = language.uppercase(),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurface
                 )
             }
-
-            Text(
-                text = language.uppercase(),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurface
-            )
         }
     }
 }

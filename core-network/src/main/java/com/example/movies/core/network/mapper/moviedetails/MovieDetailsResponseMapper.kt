@@ -7,6 +7,7 @@ import com.example.movies.core.network.model.moviedetails.MovieDetailsResponseDT
 import timber.log.Timber
 import java.math.RoundingMode
 import java.text.DecimalFormat
+import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
@@ -36,8 +37,20 @@ class MovieDetailsResponseMapper @Inject constructor(
                 it?.iso6391?.uppercase()
             },
             status = model.status?.first()
-                .toString()
+                .toString(),
+            overview = model.overview,
+            revenue = model.revenue?.let(::formatRevenueToUSMoney)
         )
+    }
+
+    private fun formatRevenueToUSMoney(revenue: Int): String? {
+        val numberFormat = NumberFormat.getCurrencyInstance(Locale.US)
+        return try {
+            numberFormat.format(revenue.toLong())
+        } catch (e: Exception) {
+            Timber.e(e)
+            null
+        }
     }
 
     private fun mapMovieTitle(title: String, date: String?): String {

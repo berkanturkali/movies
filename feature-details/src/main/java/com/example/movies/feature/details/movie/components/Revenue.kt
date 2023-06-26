@@ -7,13 +7,15 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun Revenue(
-    revenue: String,
+    revenue: String?,
     modifier: Modifier = Modifier
 ) {
-    Text(
-        modifier = modifier,
-        text = revenue,
-        color = MaterialTheme.colorScheme.onSurface,
-        style = MaterialTheme.typography.bodySmall
-    )
+    revenue?.let {
+        Text(
+            modifier = modifier,
+            text = revenue,
+            color = MaterialTheme.colorScheme.onSurface,
+            style = MaterialTheme.typography.bodySmall
+        )
+    }
 }

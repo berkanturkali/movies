@@ -9,4 +9,6 @@ data class Movie(
     val score: Float? = null,
     val languages: List<String?>? = null,
     val status: String? = null,
+    val revenue:String? = null,
+    val overview:String? = null,
 )

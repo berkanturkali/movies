@@ -10,7 +10,7 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 
 @Composable
 fun Genres(
-    genres: List<String>?,
+    genres: List<String?>?,
     modifier: Modifier = Modifier
 ) {
 
