@@ -7,6 +7,7 @@ import com.example.movies.core.network.dispatcher.MoviesDispatcher
 import com.example.movies.core.network.factory.getJson
 import com.example.movies.core.network.factory.makeApiService
 import com.example.movies.core.network.factory.responseAdapter
+import com.example.movies.core.network.model.credit.CreditsResponseDTO
 import com.example.movies.core.network.model.moviedetails.MovieDetailsResponseDTO
 import com.example.movies.core.network.utils.UrlConstants
 import com.example.movies.core.network.utils.UrlConstants.MOVIE_ID
@@ -25,7 +26,7 @@ class MoviesRemoteDataSourceImplTest :
     }
 
     @Test
-    fun `check that fetchNowPlayingMovies returns correct data`() = runBlocking {
+    fun `check that fetchMovie returns correct data`() = runBlocking {
         val response = dataSource.fetchMovie(MOVIE_ID)
         val expectedResponse =
             responseAdapter<MovieDetailsResponseDTO, String>().fromJson(
@@ -33,6 +34,24 @@ class MoviesRemoteDataSourceImplTest :
             )
         Truth.assertThat(expectedResponse)
             .isEqualTo(response.body())
+    }
+
+    @Test
+    fun `check that calling fetchCredits makes a GET request`() = runBlocking {
+        dataSource.fetchCredits(id = MOVIE_ID)
+        Truth.assertThat(mockWebServer.takeRequest().method)
+            .isEqualTo("GET")
+    }
+
+    @Test
+    fun `check that fetchCredits returns correct data`() = runBlocking {
+        val response = dataSource.fetchCredits(MOVIE_ID)
+        val expectedResponse =
+            responseAdapter<CreditsResponseDTO, String>().fromJson(
+                getJson(UrlConstants.CREDITS_SUCCESS_RESPONSE)
+            )
+        Truth.assertThat(expectedResponse?.cast)
+            .isEqualTo(response.body()?.cast)
     }
 
     override fun initializeDataSource(): MoviesRemoteDataSourceImpl {

@@ -32,7 +32,7 @@ fun MovieDetailsScreen(
     MoviesSurface(modifier = modifier.fillMaxSize()) {
 
         resource?.let {
-            when (resource) {
+            when (it) {
                 is Resource.Error -> {
                     MoviesErrorView(
                         modifier = Modifier.fillMaxSize(),
@@ -71,9 +71,6 @@ fun MovieDetailsScreen(
                         }
                     }
                 }
-                null -> throw Exception(
-                    "This block never reachable, since I surrounded resource with the let block"
-                )
             }
         }
 

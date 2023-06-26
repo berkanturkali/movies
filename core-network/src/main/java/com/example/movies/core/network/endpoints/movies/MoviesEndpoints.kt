@@ -19,4 +19,6 @@ object MoviesEndpoints {
     const val TOP_RATED_MOVIES_ENDPOINT = "$MOVIE_PATH/top_rated"
 
     const val MOVIE_DETAILS_ENDPOINT = "$MOVIE_PATH/{movie_id}"
+
+    const val CREDITS_ENDPOINT = "$MOVIE_DETAILS_ENDPOINT/credits"
 }
