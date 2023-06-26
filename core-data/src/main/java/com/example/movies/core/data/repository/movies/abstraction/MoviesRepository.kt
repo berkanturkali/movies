@@ -9,5 +9,5 @@ interface MoviesRepository {
 
     suspend fun fetchMovie(id: Int): Flow<Resource<Movie>>
 
-    suspend fun fetchCast(id: Int): Flow<Resource<List<Cast>>>
+    suspend fun fetchCast(id: Int): Flow<Resource<List<Cast?>>>
 }

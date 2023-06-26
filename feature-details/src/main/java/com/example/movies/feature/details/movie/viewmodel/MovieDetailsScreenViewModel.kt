@@ -2,6 +2,7 @@ package com.example.movies.feature.details.movie.viewmodel
 
 import androidx.lifecycle.*
 import com.example.movies.core.common.Resource
+import com.example.movies.core.model.moviedetails.Cast
 import com.example.movies.core.model.moviedetails.Movie
 import com.example.movies.core.navigation.args.moviedetails.MovieDetailsScreenArgs
 import com.example.movies.feature.details.movie.usecases.MovieDetailsScreenUseCases
@@ -21,6 +22,10 @@ class MovieDetailsScreenViewModel @Inject constructor(
 
     val movie: LiveData<Resource<Movie>> get() = _movie
 
+    private val _cast = MutableLiveData<Resource<List<Cast?>>>()
+
+    val cast: LiveData<Resource<List<Cast?>>> get() = _cast
+
     private var id: Int? = null
 
     init {
@@ -37,6 +42,15 @@ class MovieDetailsScreenViewModel @Inject constructor(
             movieDetailsScreenUseCases.fetchMovie(id)
                 .onEach {
                     _movie.value = it
+                }
+        }
+    }
+
+    fun fetchCast(id: Int) {
+        viewModelScope.launch(Dispatchers.Main) {
+            movieDetailsScreenUseCases.fetchCast(id)
+                .onEach {
+                    _cast.value = it
                 }
         }
     }
