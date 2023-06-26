@@ -12,9 +12,9 @@ import com.example.movies.core.model.home.PopularMovie
 
 @Composable
 fun PopularMoviesList(
+    popularMovies: List<PopularMovie>,
     modifier: Modifier = Modifier,
     childModifier: Modifier = Modifier,
-    popularMovies: List<PopularMovie>,
 ) {
     LazyRow(
         modifier = modifier,

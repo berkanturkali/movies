@@ -10,16 +10,16 @@ import androidx.compose.ui.graphics.Color
 @Composable
 fun MoviesScaffold(
     modifier: Modifier = Modifier,
+    backgroundColor: Color = MaterialTheme.colorScheme.background,
+    contentColor: Color = MaterialTheme.colorScheme.background,
+    fabPosition: FabPosition = FabPosition.End,
+    isFloatingActionButtonDocked: Boolean = false,
     scaffoldState: ScaffoldState = rememberScaffoldState(),
     topBar: @Composable (() -> Unit) = {},
     bottomBar: @Composable (() -> Unit) = {},
     snackBarHost: @Composable (SnackbarHostState) -> Unit = { SnackbarHost(it) },
     fab: @Composable (() -> Unit) = {},
-    fabPosition: FabPosition = FabPosition.End,
-    isFloatingActionButtonDocked: Boolean = false,
-    backgroundColor: Color = MaterialTheme.colorScheme.background,
-    contentColor: Color = MaterialTheme.colorScheme.background,
-    bodyContent: @Composable (PaddingValues) -> Unit,
+    bodyContent: @Composable (PaddingValues) -> Unit = {},
 ) {
     Scaffold(
         modifier = modifier,

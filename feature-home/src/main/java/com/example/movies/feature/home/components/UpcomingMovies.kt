@@ -12,10 +12,10 @@ import com.example.movies_compose.feature.home.R
 
 @Composable
 fun UpcomingMovies(
-    modifier: Modifier = Modifier,
-    onRetryClick: () -> Unit,
-    title: String = stringResource(id = R.string.upcoming_movies_title),
     upcomingMoviesState: UpcomingMoviesState,
+    onRetryClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    title: String = stringResource(id = R.string.upcoming_movies_title),
 ) {
     val context = LocalContext.current
     MovieSection(title = title, modifier = modifier) {

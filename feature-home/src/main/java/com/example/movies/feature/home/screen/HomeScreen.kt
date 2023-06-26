@@ -130,7 +130,8 @@ private fun Home(
                             )
                         }
                         is TopRatedMoviesState.TopRatedMovies -> {
-                            if (windowWidthSizeClass == WindowWidthSizeClass.Compact || windowWidthSizeClass == WindowWidthSizeClass.Medium) {
+                            if (windowWidthSizeClass == WindowWidthSizeClass.Compact ||
+                                windowWidthSizeClass == WindowWidthSizeClass.Medium) {
                                 LaunchedEffect(key1 = true) {
                                     dominantColorState.updateColorsFromImageUrl(
                                         topRatedMoviesState.data[0].image ?: ""

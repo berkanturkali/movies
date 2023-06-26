@@ -14,7 +14,7 @@ class MoviesViewModel @Inject constructor(
     private val searchRepo: SearchRepository
 ) : SearchCategoryViewModel() {
 
-    val movies = _query.flatMapLatest { query ->
+    val movies = query.flatMapLatest { query ->
         if (query.isNotEmpty()) {
             searchRepo.fetchMovies(query)
                 .cachedIn(viewModelScope)

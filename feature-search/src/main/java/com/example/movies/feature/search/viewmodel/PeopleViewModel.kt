@@ -14,7 +14,7 @@ class PeopleViewModel @Inject constructor(
     private val searchRepo: SearchRepository
 ) : SearchCategoryViewModel() {
 
-    val people = _query.flatMapLatest { query ->
+    val people = query.flatMapLatest { query ->
         if (query.isNotEmpty()) {
             searchRepo.fetchPeople(query)
                 .cachedIn(viewModelScope)

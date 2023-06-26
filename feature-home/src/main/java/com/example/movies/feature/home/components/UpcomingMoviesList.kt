@@ -11,9 +11,9 @@ import com.example.movies.core.model.home.UpcomingMovie
 
 @Composable
 fun UpcomingMoviesList(
+    upcomingMovies: List<UpcomingMovie>,
     modifier: Modifier = Modifier,
     childModifier: Modifier = Modifier,
-    upcomingMovies: List<UpcomingMovie>,
 ) {
 
     LazyRow(

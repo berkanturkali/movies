@@ -26,14 +26,12 @@ private const val CELL_COUNT = 3
 @Composable
 fun People(
     setQuery: Boolean,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    viewModel:PeopleViewModel = hiltViewModel(),
+    query:String = LocalSearchQuery.current
 ) {
-
     val state = rememberLazyGridState()
 
-    val viewModel = hiltViewModel<PeopleViewModel>()
-
-    val query = LocalSearchQuery.current
     if (setQuery) {
         viewModel.setQuery(query)
     }

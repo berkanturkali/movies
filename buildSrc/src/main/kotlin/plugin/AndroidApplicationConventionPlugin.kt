@@ -11,6 +11,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
+import detektPlugins
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -20,6 +21,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 apply("org.jetbrains.kotlin.android")
                 apply("org.jetbrains.kotlin.kapt")
                 apply("com.google.dagger.hilt.android")
+                apply("io.gitlab.arturbosch.detekt")
             }
 
             extensions.configure<BaseAppModuleExtension> {
@@ -74,6 +76,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 //hilt
                 implementation(Dependencies.DI.HILT_ANDROID)
                 kapt(Dependencies.DI.HILT_COMPILER_KAPT)
+
+                detektPlugins(Dependencies.TwitterComposeRules.TWITTER_COMPOSE_RULES)
 
             }
         }

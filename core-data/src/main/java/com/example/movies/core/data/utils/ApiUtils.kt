@@ -30,6 +30,7 @@ import java.util.concurrent.TimeoutException
  * @param executorThread is [CoroutineDispatcher] which will execute the [apiCall] in.
  * @param apiCall is a service function that will fetch the data from MovieDb API.
  */
+@Suppress("MaxLineLength")
 suspend fun <ResponseType, MappedResponseType> safeApiCall(
     mapFromModel: ((ResponseType) -> MappedResponseType)? = null,
     executorThread: CoroutineDispatcher = Dispatchers.IO,
@@ -91,7 +92,7 @@ private fun ResponseBody.parseError(): ErrorResponse? {
     return try {
         adapter.fromJson(string())
     } catch (exception: Exception) {
-        exception.printStackTrace()
+        Timber.e(exception)
         null
     }
 }

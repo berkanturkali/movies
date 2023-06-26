@@ -74,6 +74,10 @@ fun DependencyHandler.debugImplementation(dependency: Any) = add(
     "debugImplementation", dependency
 )
 
+fun DependencyHandler.detektPlugins(dependency: Any) = add(
+    "detektPlugins", dependency
+)
+
 fun DependencyHandler.api(dependency: Any) = add(
     "api", dependency
 )

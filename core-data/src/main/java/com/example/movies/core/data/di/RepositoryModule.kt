@@ -1,7 +1,7 @@
 package com.example.movies.core.data.di
 
-import com.example.movies.core.data.repository.movie_list.abstraction.MovieListRepository
-import com.example.movies.core.data.repository.movie_list.implementation.MovieListRepositoryImpl
+import com.example.movies.core.data.repository.movielist.abstraction.MovieListRepository
+import com.example.movies.core.data.repository.movielist.implementation.MovieListRepositoryImpl
 import com.example.movies.core.data.repository.search.abstraction.SearchRepository
 import com.example.movies.core.data.repository.search.implementation.SearchRepositoryImpl
 import com.example.movies.core.data.repository.trending.abstraction.TrendingRepository

@@ -13,12 +13,10 @@ import com.example.movies.feature.search.viewmodel.CollectionsViewModel
 @Composable
 fun Collections(
     setQuery: Boolean,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    viewModel: CollectionsViewModel = hiltViewModel(),
+    query: String = LocalSearchQuery.current
 ) {
-
-    val viewModel = hiltViewModel<CollectionsViewModel>()
-
-    val query = LocalSearchQuery.current
     if (setQuery) {
         viewModel.setQuery(query)
     }

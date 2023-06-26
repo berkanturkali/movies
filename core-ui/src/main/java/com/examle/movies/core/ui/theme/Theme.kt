@@ -28,6 +28,7 @@ private val DarkColorScheme = darkColorScheme(
     surface = Secondary
 )
 
+@Suppress("UnusedParameter")
 @Composable
 fun MoviesTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

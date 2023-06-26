@@ -13,7 +13,9 @@ class CollectionMapper @Inject constructor() :
         return Collection(
             id = model.id,
             name = model.name,
-            poster = model.posterPath?.let { "${BuildConfig.BASE_IMAGE_URL}/${ImageSizes.ORIGINAL.size}${model.posterPath}" }
+            poster = model.posterPath?.let {
+                "${BuildConfig.BASE_IMAGE_URL}/${ImageSizes.ORIGINAL.size}${model.posterPath}"
+            }
         )
     }
 }

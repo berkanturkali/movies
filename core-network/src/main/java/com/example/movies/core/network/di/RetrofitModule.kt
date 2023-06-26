@@ -7,7 +7,7 @@ import com.example.movies.core.network.factory.service.MoviesServiceFactory
 import com.example.movies.core.network.factory.service.SearchServiceFactory
 import com.example.movies.core.network.factory.service.TrendingServiceFactory
 import com.example.movies.core.network.interceptor.ApiKeyInterceptor
-import com.example.movies.core.network.service.movie_list.MovieListService
+import com.example.movies.core.network.service.movielist.MovieListService
 import com.example.movies.core.network.service.movies.MoviesService
 import com.example.movies.core.network.service.search.SearchService
 import com.example.movies.core.network.service.trending.TrendingService

@@ -21,9 +21,9 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 
 @Composable
 fun MoviePoster(
+    image: String?,
     modifier: Modifier = Modifier,
     childModifier: Modifier = Modifier,
-    image: String?,
 ) {
 
     val imageLoader = LocalContext.current.imageLoader

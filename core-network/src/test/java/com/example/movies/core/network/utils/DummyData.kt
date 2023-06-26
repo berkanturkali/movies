@@ -1,8 +1,8 @@
 package com.example.movies.core.network.utils
 
-import com.example.movies.core.network.model.movie_details.GenreDTO
-import com.example.movies.core.network.model.movie_details.MovieDetailsResponseDTO
-import com.example.movies.core.network.model.movie_details.SpokenLanguageDTO
+import com.example.movies.core.network.model.moviedetails.GenreDTO
+import com.example.movies.core.network.model.moviedetails.MovieDetailsResponseDTO
+import com.example.movies.core.network.model.moviedetails.SpokenLanguageDTO
 import com.example.movies.core.network.model.nowplaying.NowPlayingMovieDTO
 import com.example.movies.core.network.model.search.collection.CollectionDTO
 import com.example.movies.core.network.model.search.company.CompanyDTO

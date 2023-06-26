@@ -12,10 +12,10 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 
 @Composable
 fun Name(
+    name: String,
     modifier: Modifier = Modifier,
     childModifier: Modifier = Modifier,
     textAlign: TextAlign = TextAlign.Start,
-    name: String
 ) {
 
     Text(
@@ -35,7 +35,10 @@ fun Name(
 fun NamePrev() {
     MoviesTheme {
         Name(
-            name = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+            name = "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
+                    " sed do eiusmod tempor incididunt" +
+                    " ut labore et dolore magna aliqua." +
+                    " Ut enim ad minim veniam, quis nostrud exercitation ullamco"
         )
     }
 }

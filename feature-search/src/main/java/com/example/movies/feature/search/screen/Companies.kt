@@ -13,10 +13,9 @@ import com.example.movies.feature.search.viewmodel.CompaniesViewModel
 @Composable
 fun Companies(
     setQuery: Boolean,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    viewModel: CompaniesViewModel = hiltViewModel()
 ) {
-    val viewModel = hiltViewModel<CompaniesViewModel>()
-
     val query = LocalSearchQuery.current
 
     if (setQuery) {

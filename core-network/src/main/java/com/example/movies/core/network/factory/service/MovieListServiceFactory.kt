@@ -1,6 +1,6 @@
 package com.example.movies.core.network.factory.service
 
-import com.example.movies.core.network.service.movie_list.MovieListService
+import com.example.movies.core.network.service.movielist.MovieListService
 import retrofit2.Retrofit
 
 object MovieListServiceFactory : RetrofitServiceFactory<MovieListService> {

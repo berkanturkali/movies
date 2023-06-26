@@ -12,10 +12,10 @@ import com.example.movies_compose.feature.home.R
 
 @Composable
 fun PopularMovies(
-    modifier: Modifier = Modifier,
-    onRetryClick: () -> Unit,
-    title: String = stringResource(id = R.string.popular_movies_title),
     popularMoviesState: PopularMoviesState,
+    onRetryClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    title: String = stringResource(id = R.string.popular_movies_title),
 ) {
 
     val context = LocalContext.current

@@ -66,9 +66,14 @@ fun ReviewItemPrev() {
     MoviesTheme {
         ReviewItem(
             image = "", userName = "MovieGuys", date = "June 22, 2023",
-            review = "Secret Invasion is rather what I have come to expect from US entertainment these days, that is, not a lot.\n" +
+            review = "Secret Invasion is rather what I have come to " +
+                    "expect from US entertainment these days, that is, not a lot.\n" +
                     "\n" +
-                    "Take yet another formulaic story, vaguely reminiscent of Invasion of the Body Snatchers, throw in a dash of \"watch out for those Russian's\" sentiment, lots of special effects, that are admittedly, well done and parachute in a reasonably well known actor or two and hope it all works.\n",
+                    "Take yet another formulaic story, vaguely " +
+                    "reminiscent of Invasion of the Body Snatchers, throw in" +
+                    " a dash of \"watch out for those Russian's\" sentiment, lots of" +
+                    " special effects, that are admittedly, well done and parachute" +
+                    " in a reasonably well known actor or two and hope it all works.\n",
             rating = "5"
         )
     }

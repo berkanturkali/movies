@@ -14,6 +14,12 @@ import javax.inject.Inject
  */
 class RetrofitFactory @Inject constructor(private val moshi: Moshi) {
 
+    companion object {
+        private const val CONNECT_TIMEOUT_DURATION = 10L
+        private const val READ_TIMEOUT_DURATION = 10L
+        private const val WRITE_TIMEOUT_DURATION = 10L
+    }
+
     fun createRetrofit(
         url: String,
         isDebug: Boolean,
@@ -49,9 +55,9 @@ class RetrofitFactory @Inject constructor(private val moshi: Moshi) {
         return OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
             .addInterceptor(apiKeyInterceptor)
-            .connectTimeout(10, TimeUnit.SECONDS)
-            .readTimeout(10, TimeUnit.SECONDS)
-            .writeTimeout(10, TimeUnit.SECONDS)
+            .connectTimeout(CONNECT_TIMEOUT_DURATION, TimeUnit.SECONDS)
+            .readTimeout(READ_TIMEOUT_DURATION, TimeUnit.SECONDS)
+            .writeTimeout(WRITE_TIMEOUT_DURATION, TimeUnit.SECONDS)
             .build()
     }
 }

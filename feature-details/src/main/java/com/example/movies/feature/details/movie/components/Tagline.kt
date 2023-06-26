@@ -10,6 +10,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.examle.movies.core.ui.theme.MoviesTheme
 
+private const val ALPHA = 0.8F
 @Composable
 fun Tagline(
     tagline: String?,
@@ -19,8 +20,8 @@ fun Tagline(
         Text(
             text = tagline,
             style = MaterialTheme.typography.bodySmall.copy(fontStyle = FontStyle.Italic),
-            color = MaterialTheme.colorScheme.onSurface.copy(0.8f),
-            modifier = Modifier.fillMaxWidth(),
+            color = MaterialTheme.colorScheme.onSurface.copy(ALPHA),
+            modifier = modifier.fillMaxWidth(),
             textAlign = TextAlign.End
         )
     }

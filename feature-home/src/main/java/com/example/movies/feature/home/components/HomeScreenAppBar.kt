@@ -36,6 +36,7 @@ fun HomeScreenAppBar(
 
 
 @Composable
+@Suppress("MagicNumber")
 private fun MenuBar() {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Logo(modifier = Modifier.weight(0.1f))
@@ -73,8 +74,8 @@ private fun Menu(
 
 @Composable
 private fun MenuItem(
-    modifier: Modifier = Modifier,
     text: String,
+    modifier: Modifier = Modifier,
 ) {
     Text(
         text = text,

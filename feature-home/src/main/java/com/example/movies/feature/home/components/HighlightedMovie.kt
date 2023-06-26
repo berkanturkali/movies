@@ -24,6 +24,7 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies_compose.feature.home.R
 
 @Composable
+@Suppress("MagicNumber")
 fun HighlightedMovie(
     image: String,
     dominantColor: Color,
@@ -148,7 +149,7 @@ private fun InfoButton(
 
 @Preview
 @Composable
-private fun HighlightedMoviePrev() {
+fun HighlightedMoviePrev() {
     MoviesTheme {
         HighlightedMovie("", Color.Red)
     }

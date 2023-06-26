@@ -1,7 +1,7 @@
 package com.example.movies.core.network.service.movies
 
 import com.example.movies.core.network.endpoints.movies.MoviesEndpoints
-import com.example.movies.core.network.model.movie_details.MovieDetailsResponseDTO
+import com.example.movies.core.network.model.moviedetails.MovieDetailsResponseDTO
 import com.example.movies.core.network.service.base.BaseService
 import retrofit2.Response
 import retrofit2.http.GET

@@ -222,7 +222,8 @@ object Dependencies {
             internal const val LIFECYCLE_VERSION = "2.6.1"
         }
 
-        const val LIFECYCLE_LIVEDATA_KTX = "androidx.lifecycle:lifecycle-livedata-ktx:${Version.LIFECYCLE_VERSION}"
+        const val LIFECYCLE_LIVEDATA_KTX =
+            "androidx.lifecycle:lifecycle-livedata-ktx:${Version.LIFECYCLE_VERSION}"
     }
 
     //endregion
@@ -268,5 +269,14 @@ object Dependencies {
 
         }
         //endregion
+    }
+
+    object TwitterComposeRules {
+        private object Vesion {
+            const val TWITTER_COMPOSE_RULES_VERSION = "0.0.26"
+        }
+
+        const val TWITTER_COMPOSE_RULES =
+            "com.twitter.compose.rules:detekt:${TwitterComposeRules.Vesion.TWITTER_COMPOSE_RULES_VERSION}"
     }
 }

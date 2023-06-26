@@ -11,9 +11,9 @@ import com.example.movies.core.model.home.TopRatedMovie
 
 @Composable
 fun TopRatedMoviesList(
+    topRatedMovies: List<TopRatedMovie>,
     modifier: Modifier = Modifier,
     childModifier: Modifier = Modifier,
-    topRatedMovies: List<TopRatedMovie>,
 ) {
 
     LazyRow(

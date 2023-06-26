@@ -14,7 +14,9 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 
 @Composable
 fun HighlightedMovieShimmer(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    widthFraction: Float = 0.6f,
+    heightFraction: Float = 0.15f,
 ) {
 
     Box(
@@ -25,8 +27,8 @@ fun HighlightedMovieShimmer(
         Box(
             modifier = Modifier
                 .fadeModifier(true)
-                .fillMaxWidth(0.6f)
-                .fillMaxHeight(0.15f)
+                .fillMaxWidth(widthFraction)
+                .fillMaxHeight(heightFraction)
 
         )
 

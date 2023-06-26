@@ -18,6 +18,7 @@ import com.example.movies.feature.details.common.components.ScoreView
 import com.example.movies.feature.details.movie.components.*
 
 @Composable
+@Suppress("MagicNumber","UnusedParameter")
 fun MovieDetailsScreenContent(
     title: String?,
     date: String?,
@@ -191,12 +192,20 @@ fun MovieDetailsScreenContentPrev() {
                 imageUrl = "",
                 tagline = "It's how you wear the mask that matters",
                 revenue = "412839759",
-                overview = "After reuniting with Gwen Stacy, Brooklyn’s full-time, friendly neighborhood Spider-Man is catapulted across the Multiverse, where he encounters the Spider Society, a team of Spider-People charged with protecting the Multiverse’s very existence. But when the heroes clash on how to handle a new threat, Miles finds himself pitted against the other Spiders and must set out on his own to save those he loves most.",
+                overview = "After reuniting with Gwen Stacy," +
+                        " Brooklyn’s full-time, friendly neighborhood" +
+                        " Spider-Man is catapulted across the Multiverse, where" +
+                        " he encounters the Spider Society, a team of Spider-People" +
+                        " charged with protecting the Multiverse’s very existence." +
+                        " But when the heroes clash on how to handle a new threat," +
+                        " Miles finds himself pitted against the other Spiders" +
+                        " and must set out on his own to save those he loves most.",
                 score = 0.8f,
                 genres = listOf("Action", "Adventure", "Animation", "Science Fiction"),
                 languages = listOf("en", "hi", "it", "es"),
                 keywords = listOf(
-                    "sacrifice", "villain", "comic book", "sequel", "superhero", "based on comic",
+                    "sacrifice", "villain", "comic book", "sequel", "superhero",
+                    "based on comic",
                     "alternate dimension", "alternate version", "super power",
                     "brooklyn, new york city",
                     "superhero team", "spider bite", "super villain", "cliffhanger",
@@ -205,7 +214,9 @@ fun MovieDetailsScreenContentPrev() {
                 ),
                 reviewerImage = "",
                 reviewerName = "MovieGuys",
-                review = "Secret Invasion is rather what I have come to expect from US entertainment these days, that is, not a lot.",
+                review = "Secret Invasion is rather what I have come" +
+                        " to expect from US entertainment these days," +
+                        " that is, not a lot.",
                 reviewerRating = "5"
             )
         }

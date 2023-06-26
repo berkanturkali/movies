@@ -26,7 +26,9 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun MoviesApp() {
+fun MoviesApp(
+    modifier: Modifier = Modifier
+) {
     val windowWidthSizeClass = LocalWindowWidthSizeClass.current
     MoviesTheme(windowWidthSizeClass = windowWidthSizeClass) {
         val navController = rememberAnimatedNavController()
@@ -42,7 +44,7 @@ fun MoviesApp() {
 
         MoviesBackground {
             Scaffold(
-                modifier = Modifier,
+                modifier = modifier,
                 containerColor = MaterialTheme.colorScheme.background,
                 contentColor = MaterialTheme.colorScheme.onBackground,
                 bottomBar = {

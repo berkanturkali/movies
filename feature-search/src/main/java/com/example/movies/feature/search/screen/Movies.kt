@@ -23,9 +23,11 @@ import com.example.movies.feature.search.viewmodel.MoviesViewModel
 private const val CELL_COUNT = 2
 
 @Composable
-fun Movies(setQuery: Boolean, modifier: Modifier = Modifier) {
-
-    val viewModel = hiltViewModel<MoviesViewModel>()
+fun Movies(
+    setQuery: Boolean,
+    modifier: Modifier = Modifier,
+    viewModel: MoviesViewModel = hiltViewModel()
+) {
 
     val query = LocalSearchQuery.current
 

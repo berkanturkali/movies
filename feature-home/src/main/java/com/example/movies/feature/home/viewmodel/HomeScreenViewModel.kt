@@ -60,6 +60,7 @@ class HomeScreenViewModel @Inject constructor(
                     it.fifth == TopRatedMoviesState.Loading
         }
 
+    @Suppress("ComplexCondition")
     val error =
         combine(
             _topTrendingMoviesState,

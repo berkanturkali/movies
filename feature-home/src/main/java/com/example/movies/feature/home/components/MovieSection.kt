@@ -8,9 +8,9 @@ import androidx.compose.ui.res.dimensionResource
 
 @Composable
 fun MovieSection(
-    modifier: Modifier = Modifier,
     title: String,
-    content: @Composable () -> Unit,
+    modifier: Modifier = Modifier,
+    content: @Composable () -> Unit = {},
 ) {
     Column(
         modifier = modifier.padding(

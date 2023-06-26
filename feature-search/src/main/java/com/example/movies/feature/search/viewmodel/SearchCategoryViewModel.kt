@@ -5,9 +5,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 
 abstract class SearchCategoryViewModel : ViewModel() {
 
-    protected val _query = MutableStateFlow("")
+    protected val query = MutableStateFlow("")
 
     fun setQuery(query: String) {
-        _query.value = query
+        this.query.value = query
     }
 }

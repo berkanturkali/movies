@@ -11,7 +11,6 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.TextFieldValue
@@ -23,24 +22,22 @@ import androidx.paging.compose.items
 import com.examle.movies.core.ui.components.MoviesDivider
 import com.examle.movies.core.ui.components.MoviesScaffold
 import com.example.movies.core.model.search.keyword.Keyword
-import com.example.movies.core.model.search.recent_search.RecentSearch
+import com.example.movies.core.model.search.recentsearch.RecentSearch
 import com.example.movies.feature.search.SearchInputState
 import com.example.movies.feature.search.components.KeywordItem
 import com.example.movies.feature.search.components.RecentSearchItem
 import com.example.movies.feature.search.components.RecentSearchesTitleAndClearButton
 import com.example.movies.feature.search.components.SearchBar
 import com.example.movies.feature.search.viewmodel.SearchScreenViewModel
-import timber.log.Timber
 
 @Composable
 fun SearchScreen(
     navigateToSearchCategoriesScreen: (String) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    viewModel: SearchScreenViewModel = hiltViewModel()
 ) {
 
     val keyboardController = LocalSoftwareKeyboardController.current
-
-    val viewModel = hiltViewModel<SearchScreenViewModel>()
 
     val searchInputTextFieldValue by viewModel.textFieldValue.collectAsState()
 

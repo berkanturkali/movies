@@ -12,11 +12,10 @@ import com.example.movies.feature.search.viewmodel.TvShowsViewModel
 
 @Composable
 fun TvShows(
-    setQuery: Boolean, modifier: Modifier = Modifier
+    setQuery: Boolean,
+    modifier: Modifier = Modifier,
+    viewModel: TvShowsViewModel = hiltViewModel()
 ) {
-
-    val viewModel = hiltViewModel<TvShowsViewModel>()
-
     val query = LocalSearchQuery.current
     if (setQuery) {
         viewModel.setQuery(query)

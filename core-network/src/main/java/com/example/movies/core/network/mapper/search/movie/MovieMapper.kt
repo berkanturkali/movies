@@ -12,7 +12,9 @@ class MovieMapper @Inject constructor() : RemoteResponseModelMapper<MovieDTO, Mo
         return Movie(
             id = model.id,
             title = model.title,
-            poster = model.posterPath?.let { "${BuildConfig.BASE_IMAGE_URL}/${ImageSizes.ORIGINAL.size}${model.posterPath}" }
+            poster = model.posterPath?.let {
+                "${BuildConfig.BASE_IMAGE_URL}/${ImageSizes.ORIGINAL.size}${model.posterPath}"
+            }
         )
     }
 }

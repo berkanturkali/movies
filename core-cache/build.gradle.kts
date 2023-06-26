@@ -11,7 +11,7 @@ android {
                 arguments += Pair("room.incremental", "true")
             }
         }
-        
+
         buildConfigField("int", "recentSearchesDatabaseVersion", 1.toString())
         buildConfigField("String", "recentSearchesDatabaseName", "\"recent_searches_db\"")
     }
@@ -39,4 +39,5 @@ dependencies {
 
 
     androidTestImplementation(Dependencies.Test.AndroidTest.TRUTH)
+
 }

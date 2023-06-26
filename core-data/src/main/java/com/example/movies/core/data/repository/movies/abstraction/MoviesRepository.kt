@@ -1,7 +1,7 @@
 package com.example.movies.core.data.repository.movies.abstraction
 
 import com.example.movies.core.common.Resource
-import com.example.movies.core.model.movie_details.Movie
+import com.example.movies.core.model.moviedetails.Movie
 import kotlinx.coroutines.flow.Flow
 
 interface MoviesRepository {

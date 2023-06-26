@@ -1,8 +1,8 @@
+import Build_gradle.Plugin.Version.DETEKT_VERSION
 import Build_gradle.Plugin.Version.SECRETS_VERSION
 
 plugins {
     `kotlin-dsl`
-//    `kotlin-dsl-precompiled-script-plugins`
 }
 
 repositories{
@@ -49,6 +49,7 @@ object Plugin {
         const val GRADLE_VERSION = "7.4.2"
         const val HILT_VERSION = "2.44"
         const val SECRETS_VERSION = "2.0.1"
+        const val DETEKT_VERSION = "1.23.0"
     }
 
     const val KOTLIN_GRADLE_PLUGIN: String =
@@ -58,6 +59,7 @@ object Plugin {
         "com.google.dagger:hilt-android-gradle-plugin:${Version.HILT_VERSION}"
     const val SECRETS_GRADLE_PLUGIN =
         "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:$SECRETS_VERSION"
+    const val DETEKT_PLUGIN = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$DETEKT_VERSION"
 
 }
 dependencies {
@@ -65,4 +67,5 @@ dependencies {
     implementation(Plugin.ANDROID_GRADLE_PLUGIN)
     implementation(Plugin.HILT_GRADLE_PLUGIN)
     implementation(Plugin.SECRETS_GRADLE_PLUGIN)
+//    implementation(Plugin.DETEKT_PLUGIN)
 }

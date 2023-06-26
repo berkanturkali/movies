@@ -74,12 +74,14 @@ class DominantColorState(
 
     private suspend fun calculateSwatchesInImage(
         context: Context,
-        imageUrl: String
+        imageUrl: String,
+        size:Int = 128,
+        maximumColorCount:Int = 8,
     ): List<Palette.Swatch> {
 
         val request = ImageRequest.Builder(context)
             .data(imageUrl)
-            .size(128)
+            .size(size)
             .scale(Scale.FILL)
             .allowHardware(false)
             .memoryCacheKey("$imageUrl.palette")
@@ -95,7 +97,7 @@ class DominantColorState(
                 val palette = Palette.Builder(bitmap)
                     .resizeBitmapArea(0)
                     .clearFilters()
-                    .maximumColorCount(8)
+                    .maximumColorCount(maximumColorCount)
                     .generate()
                 palette.swatches
             }

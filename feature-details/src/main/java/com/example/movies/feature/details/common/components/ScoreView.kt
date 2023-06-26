@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.sp
 import com.examle.movies.core.ui.theme.MoviesTheme
 
 @Composable
+@Suppress("MagicNumber")
 fun ScoreView(
     @FloatRange(0.0, 1.0)
     score: Float,

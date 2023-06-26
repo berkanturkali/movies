@@ -9,6 +9,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.Stable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -19,6 +21,7 @@ import coil.compose.rememberAsyncImagePainter
 import coil.imageLoader
 import com.examle.movies.core.ui.components.MoviesSurface
 import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
+
 
 @Composable
 fun Languages(

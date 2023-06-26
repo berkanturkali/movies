@@ -5,7 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.paging.compose.LazyPagingItems
 import com.example.movies.core.model.search.keyword.Keyword
-import com.example.movies.core.model.search.recent_search.RecentSearch
+import com.example.movies.core.model.search.recentsearch.RecentSearch
 import com.example.movies.feature.search.screen.divider
 import com.example.movies.feature.search.screen.keywords
 import com.example.movies.feature.search.screen.recentSearches

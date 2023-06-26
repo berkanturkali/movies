@@ -14,7 +14,7 @@ class TvShowsViewModel @Inject constructor(
     private val searchRepo: SearchRepository
 ) : SearchCategoryViewModel() {
 
-    val tvShows = _query.flatMapLatest { query ->
+    val tvShows = query.flatMapLatest { query ->
         if (query.isNotEmpty()) {
             searchRepo.fetchTvShows(query)
                 .cachedIn(viewModelScope)

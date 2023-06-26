@@ -11,6 +11,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 import testImplementation
+import detektPlugins
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -18,6 +19,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             pluginManager.apply {
                 apply("com.android.library")
                 apply("org.jetbrains.kotlin.android")
+                apply("io.gitlab.arturbosch.detekt")
             }
 
             extensions.configure<LibraryExtension> {
@@ -41,6 +43,8 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                     Dependencies.Test.AndroidTest.JUNIT,
                     Dependencies.Test.AndroidTest.JUNIT_EXT
                 )
+
+                detektPlugins(Dependencies.TwitterComposeRules.TWITTER_COMPOSE_RULES)
 
             }
         }

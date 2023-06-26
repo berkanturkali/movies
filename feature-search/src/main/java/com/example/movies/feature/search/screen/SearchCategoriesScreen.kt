@@ -35,11 +35,10 @@ import kotlinx.coroutines.launch
 @Composable
 fun SearchCategoriesScreen(
     onBackButtonClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    viewModel: SearchCategoriesScreenViewModel = hiltViewModel(),
+    searchScreenViewModel: SearchScreenViewModel = hiltViewModel()
 ) {
-    val viewModel = hiltViewModel<SearchCategoriesScreenViewModel>()
-
-    val searchScreenViewModel = hiltViewModel<SearchScreenViewModel>()
 
     val keywords = viewModel.keywords.collectAsLazyPagingItems()
 
@@ -94,7 +93,6 @@ fun SearchCategoriesScreen(
         Box(modifier = Modifier.fillMaxSize()) {
             Column(modifier = Modifier.fillMaxSize()) {
                 SearchCategoryTabs(
-                    modifier = modifier,
                     categories = categories,
                     onCategorySelected = { searchCategoryIndex ->
                         scope.launch { pagerState.animateScrollToPage(searchCategoryIndex) }

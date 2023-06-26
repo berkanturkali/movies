@@ -5,6 +5,7 @@ import Dependencies
 import ProjectLibs
 import com.android.build.gradle.LibraryExtension
 import debugImplementation
+import detektPlugins
 import implementAllProjects
 import implementation
 import kapt
@@ -21,6 +22,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 apply("org.jetbrains.kotlin.android")
                 apply("org.jetbrains.kotlin.kapt")
                 apply("com.google.dagger.hilt.android")
+                apply("io.gitlab.arturbosch.detekt")
             }
             extensions.configure<LibraryExtension> {
                 defaultConfig {
@@ -37,7 +39,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                     ProjectLibs.CORE_DATA,
                     ProjectLibs.CORE_MODEL,
                     ProjectLibs.CORE_COMMON,
-                    )
+                )
 
                 //hilt
                 implementation(Dependencies.DI.HILT_ANDROID)
@@ -51,6 +53,8 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 // TODO : Remove this dependency once we upgrade to Android Studio Dolphin b/228889042
                 // These dependencies are currently necessary to render Compose previews
                 debugImplementation(Dependencies.AndroidX.ANDROIDX_CUSTOM_VIEW_POOL_CONTAINER)
+
+                detektPlugins(Dependencies.TwitterComposeRules.TWITTER_COMPOSE_RULES)
             }
         }
     }

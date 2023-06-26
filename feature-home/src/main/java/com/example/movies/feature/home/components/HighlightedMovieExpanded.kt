@@ -55,13 +55,20 @@ fun HighlightedMovieExpanded(
                     Alignment.CenterVertically
                 ),
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.padding(horizontal = dimensionResource(id = com.examle.movies.core.ui.R.dimen.dimen_8))
+                modifier = Modifier.padding(
+                    horizontal = dimensionResource(
+                        id = com.examle.movies.core.ui.R.dimen.dimen_8
+                    )
+                )
             ) {
                 MovieTitle(title = "STRANGER THINGS")
                 MovieDescription(
                     description = "Lorem Ipsum is simply dummy text of the printing" +
-                            " and typesetting industry. Lorem Ipsum has been the industry's" +
-                            " standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled"
+                            " and typesetting industry. Lorem Ipsum has " +
+                            "been the industry's" +
+                            " standard dummy text ever since the 1500s," +
+                            " when an unknown printer took a galley of type and" +
+                            " scrambled"
                 )
                 ButtonPanel()
             }
@@ -72,8 +79,8 @@ fun HighlightedMovieExpanded(
 
 @Composable
 private fun MovieTitle(
-    modifier: Modifier = Modifier,
     title: String,
+    modifier: Modifier = Modifier,
 ) {
     Text(
         modifier = modifier,
@@ -87,8 +94,8 @@ private fun MovieTitle(
 
 @Composable
 private fun MovieDescription(
-    modifier: Modifier = Modifier,
     description: String,
+    modifier: Modifier = Modifier,
 ) {
     Text(
         modifier = modifier,
@@ -133,7 +140,11 @@ private fun MyListButton(
             tint = MaterialTheme.colorScheme.onPrimary,
             contentDescription = null
         )
-        Spacer(modifier = Modifier.height(dimensionResource(id = com.examle.movies.core.ui.R.dimen.dimen_4)))
+        Spacer(
+            modifier = Modifier.height(
+                dimensionResource(id = com.examle.movies.core.ui.R.dimen.dimen_4)
+            )
+        )
         Text(
             text = stringResource(id = R.string.my_list_button_text),
             color = MaterialTheme.colorScheme.onPrimary,
@@ -148,7 +159,9 @@ private fun PlayButton(
 ) {
     Button(
         modifier = modifier,
-        shape = RoundedCornerShape(dimensionResource(id = com.examle.movies.core.ui.R.dimen.dimen_8)),
+        shape = RoundedCornerShape(
+            dimensionResource(id = com.examle.movies.core.ui.R.dimen.dimen_8)
+        ),
         colors = ButtonDefaults.buttonColors(containerColor = Color.White),
         onClick = {}) {
         Icon(

@@ -16,8 +16,8 @@ import com.examle.movies.core.ui.icon.MoviesIcons
 
 @Composable
 fun SectionTitle(
+    title: String,
     modifier: Modifier = Modifier,
-    title: String
 ) {
 
     Row(

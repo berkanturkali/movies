@@ -4,6 +4,7 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.movies.core.network.model.base.BaseDTO
 import retrofit2.HttpException
+import timber.log.Timber
 import java.io.IOException
 
 private const val MAX_PAGE = 1000
@@ -37,7 +38,7 @@ abstract class BasePagingSource<T : BaseDTO> : PagingSource<Int, T>() {
             if (e is IOException || e is HttpException) {
                 LoadResult.Error(e)
             } else {
-                e.printStackTrace()
+                Timber.e(e)
                 LoadResult.Error(Error("Something went wrong"))
             }
         }

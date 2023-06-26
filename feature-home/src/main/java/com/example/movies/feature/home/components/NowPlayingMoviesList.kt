@@ -12,9 +12,9 @@ import com.example.movies.core.model.home.NowPlayingMovie
 
 @Composable
 fun NowPlayingMoviesList(
+    nowPlayingMovies: List<NowPlayingMovie>,
     modifier: Modifier = Modifier,
     childModifier: Modifier = Modifier,
-    nowPlayingMovies: List<NowPlayingMovie>,
 ) {
     LazyRow(
         modifier = modifier,

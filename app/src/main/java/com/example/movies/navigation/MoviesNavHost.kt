@@ -11,8 +11,8 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 
 @Composable
 fun MoviesNavHost(
-    modifier: Modifier = Modifier,
     navController: NavHostController,
+    modifier: Modifier = Modifier,
     startDestination: String = HomeDestination.route
 
 ) {
