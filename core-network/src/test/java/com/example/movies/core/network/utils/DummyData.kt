@@ -1,5 +1,6 @@
 package com.example.movies.core.network.utils
 
+import com.example.movies.core.network.model.credit.CastDTO
 import com.example.movies.core.network.model.moviedetails.GenreDTO
 import com.example.movies.core.network.model.moviedetails.MovieDetailsResponseDTO
 import com.example.movies.core.network.model.moviedetails.SpokenLanguageDTO
@@ -132,6 +133,21 @@ object DummyData {
                 " Miles finds himself pitted against the other Spiders and must " +
                 "set out on his own to save those he loves most.",
         revenue = 512609552
+    )
+
+    val castDTO = CastDTO(
+        adult = false,
+        gender = 2,
+        id = 587506,
+        knownForDepartment = "Acting",
+        name = "Shameik Moore",
+        originalName = "Shameik Moore",
+        popularity = 21.558,
+        profilePath = "/uJNaSTsfBOvtFWsPP23zNthknsB.jpg",
+        castId = 705,
+        character = "Miles Morales / Spider-Man (voice)",
+        creditId = "1232131231232131",
+        order = 0
     )
     //endregion
 }

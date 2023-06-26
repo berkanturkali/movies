@@ -51,7 +51,8 @@ fun MovieDetailsScreen(
                     val movie = it.data
                     movie?.let {
                         LazyColumn(
-                            modifier = modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(6.dp),
+                            modifier = modifier.fillMaxWidth(),
+                            verticalArrangement = Arrangement.spacedBy(6.dp),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
                             movieDetailsScreenContent(
@@ -66,8 +67,6 @@ fun MovieDetailsScreen(
                                 genres = movie.genres,
                                 languages = movie.languages,
                             )
-
-
                         }
                     }
                 }
