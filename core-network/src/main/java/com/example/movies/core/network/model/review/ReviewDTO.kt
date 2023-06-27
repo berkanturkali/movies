@@ -1,6 +1,7 @@
 package com.example.movies.core.network.model.review
 
 
+import com.example.movies.core.network.model.base.BaseDTO
 import com.squareup.moshi.Json
 
 data class ReviewDTO(
@@ -18,4 +19,4 @@ data class ReviewDTO(
     val updatedAt: String? = null,
     @Json(name = "url")
     val url: String? = null
-)
+) : BaseDTO()

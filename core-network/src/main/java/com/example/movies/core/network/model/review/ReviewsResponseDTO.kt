@@ -9,7 +9,7 @@ data class ReviewsResponseDTO(
     @Json(name = "page")
     val page: Int? = null,
     @Json(name = "results")
-    val results: List<ReviewDTO?>? = null,
+    val results: List<ReviewDTO>,
     @Json(name = "total_pages")
     val totalPages: Int? = null,
     @Json(name = "total_results")

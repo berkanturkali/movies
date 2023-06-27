@@ -10,16 +10,16 @@ import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.RecordedRequest
 
 class MoviesDispatcher : BaseDispatcher() {
-    override fun onDispatch(request: RecordedRequest): MockResponse {
+    override fun onDispatch(request: RecordedRequest): String {
         return when (request.path) {
             MOVIE_DETAILS_ENDPOINT -> {
-                returnSuccessResponse(MOVIE_DETAILS_SUCCESS_RESPONSE)
+                MOVIE_DETAILS_SUCCESS_RESPONSE
             }
             CREDITS_ENDPOINT -> {
-                returnSuccessResponse(CREDITS_SUCCESS_RESPONSE)
+                CREDITS_SUCCESS_RESPONSE
             }
             REVIEWS_ENDPOINT -> {
-                returnSuccessResponse(REVIEWS_SUCCESS_RESPONSE)
+                REVIEWS_SUCCESS_RESPONSE
             }
             else -> throw Exception("Invalid request path ${request.path}")
         }

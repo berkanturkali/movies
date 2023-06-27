@@ -69,7 +69,7 @@ class MoviesRemoteDataSourceImplTest :
             responseAdapter<ReviewsResponseDTO, String>().fromJson(
                 getJson(UrlConstants.REVIEWS_SUCCESS_RESPONSE)
             )
-        Truth.assertThat(expectedResponse)
+        Truth.assertThat(expectedResponse?.results)
             .isEqualTo(response)
     }
 
