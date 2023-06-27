@@ -41,6 +41,9 @@ class MovieDetailsScreenViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.Main) {
             movieDetailsScreenUseCases.fetchMovie(id)
                 .onEach {
+                    if (it is Resource.Success && it.data != null) {
+
+                    }
                     _movie.value = it
                 }
         }
@@ -54,5 +57,7 @@ class MovieDetailsScreenViewModel @Inject constructor(
                 }
         }
     }
+
+
 
 }
