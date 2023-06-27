@@ -9,6 +9,7 @@ import com.example.movies.core.network.factory.makeApiService
 import com.example.movies.core.network.factory.responseAdapter
 import com.example.movies.core.network.model.credit.CreditsResponseDTO
 import com.example.movies.core.network.model.moviedetails.MovieDetailsResponseDTO
+import com.example.movies.core.network.model.review.ReviewsResponseDTO
 import com.example.movies.core.network.utils.UrlConstants
 import com.example.movies.core.network.utils.UrlConstants.MOVIE_ID
 import com.google.common.truth.Truth
@@ -52,6 +53,24 @@ class MoviesRemoteDataSourceImplTest :
             )
         Truth.assertThat(expectedResponse?.cast)
             .isEqualTo(response.body()?.cast)
+    }
+
+    @Test
+    fun `check that calling fetchReviews makes a GET request`() = runBlocking {
+        dataSource.fetchReviews(id = MOVIE_ID, page = 1)
+        Truth.assertThat(mockWebServer.takeRequest().method)
+            .isEqualTo("GET")
+    }
+
+    @Test
+    fun `check that fetchReviews returns correct data`() = runBlocking {
+        val response = dataSource.fetchReviews(id = MOVIE_ID, page = 1)
+        val expectedResponse =
+            responseAdapter<ReviewsResponseDTO, String>().fromJson(
+                getJson(UrlConstants.REVIEWS_SUCCESS_RESPONSE)
+            )
+        Truth.assertThat(expectedResponse)
+            .isEqualTo(response)
     }
 
     override fun initializeDataSource(): MoviesRemoteDataSourceImpl {

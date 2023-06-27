@@ -23,7 +23,4 @@ interface MoviesService : BaseService {
         @Query("page") page: Int,
     ): ReviewsResponseDTO
 
-
-
-
 }

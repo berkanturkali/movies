@@ -4,6 +4,8 @@ import com.example.movies.core.network.utils.UrlConstants.CREDITS_ENDPOINT
 import com.example.movies.core.network.utils.UrlConstants.CREDITS_SUCCESS_RESPONSE
 import com.example.movies.core.network.utils.UrlConstants.MOVIE_DETAILS_ENDPOINT
 import com.example.movies.core.network.utils.UrlConstants.MOVIE_DETAILS_SUCCESS_RESPONSE
+import com.example.movies.core.network.utils.UrlConstants.REVIEWS_ENDPOINT
+import com.example.movies.core.network.utils.UrlConstants.REVIEWS_SUCCESS_RESPONSE
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.RecordedRequest
 
@@ -15,6 +17,9 @@ class MoviesDispatcher : BaseDispatcher() {
             }
             CREDITS_ENDPOINT -> {
                 returnSuccessResponse(CREDITS_SUCCESS_RESPONSE)
+            }
+            REVIEWS_ENDPOINT -> {
+                returnSuccessResponse(REVIEWS_SUCCESS_RESPONSE)
             }
             else -> throw Exception("Invalid request path ${request.path}")
         }
