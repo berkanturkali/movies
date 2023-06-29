@@ -4,6 +4,7 @@ import com.example.movies.core.network.model.credit.CastDTO
 import com.example.movies.core.network.model.moviedetails.GenreDTO
 import com.example.movies.core.network.model.moviedetails.MovieDetailsResponseDTO
 import com.example.movies.core.network.model.moviedetails.SpokenLanguageDTO
+import com.example.movies.core.network.model.moviedetails.VideoDTO
 import com.example.movies.core.network.model.nowplaying.NowPlayingMovieDTO
 import com.example.movies.core.network.model.review.AuthorDetailsDTO
 import com.example.movies.core.network.model.review.ReviewDTO
@@ -191,6 +192,11 @@ object DummyData {
         id = "647760aad3719700f9cad266",
         updatedAt = "2023-05-31T14:58:50.267Z",
         url = "https://www.themoviedb.org/review/647760aad3719700f9cad266"
+    )
+
+    val videoDTO = VideoDTO(
+        site = "Youtube",
+        key = "BbXJ3_AQE_o"
     )
     //endregion
 }

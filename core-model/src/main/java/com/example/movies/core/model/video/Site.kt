@@ -1,6 +1,6 @@
 package com.example.movies.core.model.video
 
-enum class Platform(platform: String) {
+enum class Site(val site: String) {
 
     YOUTUBE("Youtube"),
     VIMEO("Vimeo")
