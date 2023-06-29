@@ -3,6 +3,7 @@ package com.example.movies.feature.details.movie.viewmodel
 import androidx.lifecycle.*
 import com.example.movies.core.common.Resource
 import com.example.movies.core.model.moviedetails.Cast
+import com.example.movies.core.model.moviedetails.Keyword
 import com.example.movies.core.model.moviedetails.Movie
 import com.example.movies.core.model.moviedetails.Reviews
 import com.example.movies.core.navigation.args.moviedetails.MovieDetailsScreenArgs
@@ -30,6 +31,10 @@ class MovieDetailsScreenViewModel @Inject constructor(
     private val _reviews = MutableLiveData<Resource<Reviews>>()
 
     val reviews: LiveData<Resource<Reviews>> get() = _reviews
+
+    private val _keywords = MutableLiveData<Resource<List<Keyword>>>()
+
+    val keywords: LiveData<Resource<List<Keyword>>> get() = _keywords
 
     private var id: Int? = null
 
@@ -70,6 +75,15 @@ class MovieDetailsScreenViewModel @Inject constructor(
                     _reviews.value = it
                 }
 
+        }
+    }
+
+    fun fetchKeywords(id: Int) {
+        viewModelScope.launch(Dispatchers.Main) {
+            movieDetailsScreenUseCases.fetchKeywords(id)
+                .onEach {
+                    _keywords.value = it
+                }
         }
     }
 

@@ -62,6 +62,8 @@ object UrlConstants {
 
     const val KEYWORDS_FOR_DETAILS_ENDPOINT = "$MOVIE_PATH/$MOVIE_ID/keywords?api_key=$API_KEY"
 
+    const val VIDEOS_ENDPOINT = "$MOVIE_PATH/$MOVIE_ID/videos?api_key=$API_KEY"
+
 
     //responses
     internal const val TRENDING_MOVIES_SUCCESS_RESPONSE =
@@ -102,6 +104,8 @@ object UrlConstants {
     internal val REVIEWS_SUCCESS_RESPONSE = getSuccessResponsePath("reviews")
 
     internal val KEYWORDS_FOR_DETAILS_RESPONSE = getSuccessResponsePath("keywords_for_details")
+
+    internal val VIDEOS_SUCCESS_RESPONSE = getSuccessResponsePath("videos")
 
 
     private fun getSuccessResponsePath(name: String): String =

@@ -10,6 +10,7 @@ import com.example.movies.core.network.factory.responseAdapter
 import com.example.movies.core.network.model.credit.CreditsResponseDTO
 import com.example.movies.core.network.model.moviedetails.KeywordsResponseDTO
 import com.example.movies.core.network.model.moviedetails.MovieDetailsResponseDTO
+import com.example.movies.core.network.model.moviedetails.VideosResponseDTO
 import com.example.movies.core.network.model.review.ReviewsResponseDTO
 import com.example.movies.core.network.utils.UrlConstants
 import com.example.movies.core.network.utils.UrlConstants.MOVIE_ID
@@ -92,6 +93,23 @@ class MoviesRemoteDataSourceImplTest :
             .isEqualTo(response.body())
     }
 
+    @Test
+    fun `check that calling fetchVideos makes a GET request`() = runBlocking {
+        dataSource.fetchVideos(id = MOVIE_ID)
+        Truth.assertThat(mockWebServer.takeRequest().method)
+            .isEqualTo("GET")
+    }
+
+    @Test
+    fun `check that fetchVideos returns correct data`() = runBlocking {
+        val response = dataSource.fetchVideos(id = MOVIE_ID)
+        val expectedResponse =
+            responseAdapter<VideosResponseDTO, String>().fromJson(
+                getJson(UrlConstants.VIDEOS_SUCCESS_RESPONSE)
+            )
+        Truth.assertThat(expectedResponse)
+            .isEqualTo(response.body())
+    }
     override fun initializeDataSource(): MoviesRemoteDataSourceImpl {
         return MoviesRemoteDataSourceImpl(makeApiService(mockWebServer))
     }

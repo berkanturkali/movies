@@ -4,6 +4,7 @@ import com.example.movies.core.network.endpoints.movies.MoviesEndpoints
 import com.example.movies.core.network.model.credit.CreditsResponseDTO
 import com.example.movies.core.network.model.moviedetails.KeywordsResponseDTO
 import com.example.movies.core.network.model.moviedetails.MovieDetailsResponseDTO
+import com.example.movies.core.network.model.moviedetails.VideosResponseDTO
 import com.example.movies.core.network.model.review.ReviewsResponseDTO
 import com.example.movies.core.network.service.base.BaseService
 import retrofit2.Response
@@ -26,6 +27,11 @@ interface MoviesService : BaseService {
     suspend fun fetchKeywords(
         @Path("movie_id") id: Int,
     ): Response<KeywordsResponseDTO>
+
+    @GET(MoviesEndpoints.VIDEOS_ENDPOINT)
+    suspend fun fetchVideos(
+        @Path("movie_id") id: Int,
+    ): Response<VideosResponseDTO>
 
 
 }

@@ -4,10 +4,12 @@ import com.example.movies.core.common.Resource
 import com.example.movies.core.data.repository.movies.abstraction.MoviesRepository
 import com.example.movies.core.data.utils.safeApiCall
 import com.example.movies.core.model.moviedetails.Cast
+import com.example.movies.core.model.moviedetails.Keyword
 import com.example.movies.core.model.moviedetails.Movie
 import com.example.movies.core.model.moviedetails.Reviews
 import com.example.movies.core.network.datasource.abstraction.movies.MoviesRemoteDataSource
 import com.example.movies.core.network.mapper.moviedetails.CastResponseMapper
+import com.example.movies.core.network.mapper.moviedetails.KeywordMapper
 import com.example.movies.core.network.mapper.moviedetails.MovieDetailsResponseMapper
 import com.example.movies.core.network.mapper.moviedetails.ReviewsResponseMapper
 import kotlinx.coroutines.flow.Flow
@@ -18,6 +20,7 @@ class MoviesRepositoryImpl @Inject constructor(
     private val movieDetailsResponseMapper: MovieDetailsResponseMapper,
     private val castResponseMapper: CastResponseMapper,
     private val reviewsResponseMapper: ReviewsResponseMapper,
+    private val keywordMapper: KeywordMapper
 ) : MoviesRepository {
 
     override suspend fun fetchMovie(id: Int): Flow<Resource<Movie>> {
@@ -47,6 +50,24 @@ class MoviesRepositoryImpl @Inject constructor(
             mapFromModel = reviewsResponseMapper::mapFromModel
         ) {
             remoteDataSource.fetchReviews(id)
+        }
+    }
+
+    override suspend fun fetchKeywords(id: Int): Flow<Resource<List<Keyword>>> {
+        return safeApiCall(
+            mapFromModel = { response ->
+                if (response.keywords != null) {
+                    val list = response.keywords!!.filterNotNull()
+                        .map {
+                            keywordMapper.mapFromModel(it)
+                        }
+                    list
+                } else {
+                    emptyList()
+                }
+            }
+        ) {
+            remoteDataSource.fetchKeywords(id)
         }
     }
 }
