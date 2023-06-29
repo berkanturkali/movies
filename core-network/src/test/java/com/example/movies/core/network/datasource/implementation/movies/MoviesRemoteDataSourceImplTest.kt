@@ -8,6 +8,7 @@ import com.example.movies.core.network.factory.getJson
 import com.example.movies.core.network.factory.makeApiService
 import com.example.movies.core.network.factory.responseAdapter
 import com.example.movies.core.network.model.credit.CreditsResponseDTO
+import com.example.movies.core.network.model.moviedetails.KeywordsResponseDTO
 import com.example.movies.core.network.model.moviedetails.MovieDetailsResponseDTO
 import com.example.movies.core.network.model.review.ReviewsResponseDTO
 import com.example.movies.core.network.utils.UrlConstants
@@ -57,20 +58,38 @@ class MoviesRemoteDataSourceImplTest :
 
     @Test
     fun `check that calling fetchReviews makes a GET request`() = runBlocking {
-        dataSource.fetchReviews(id = MOVIE_ID, page = 1)
+        dataSource.fetchReviews(id = MOVIE_ID)
         Truth.assertThat(mockWebServer.takeRequest().method)
             .isEqualTo("GET")
     }
 
     @Test
     fun `check that fetchReviews returns correct data`() = runBlocking {
-        val response = dataSource.fetchReviews(id = MOVIE_ID, page = 1)
+        val response = dataSource.fetchReviews(id = MOVIE_ID)
         val expectedResponse =
             responseAdapter<ReviewsResponseDTO, String>().fromJson(
                 getJson(UrlConstants.REVIEWS_SUCCESS_RESPONSE)
             )
-        Truth.assertThat(expectedResponse?.results)
-            .isEqualTo(response)
+        Truth.assertThat(expectedResponse)
+            .isEqualTo(response.body())
+    }
+
+    @Test
+    fun `check that calling fetchKeywords makes a GET request`() = runBlocking {
+        dataSource.fetchKeywords(id = MOVIE_ID)
+        Truth.assertThat(mockWebServer.takeRequest().method)
+            .isEqualTo("GET")
+    }
+
+    @Test
+    fun `check that fetchKeywords returns correct data`() = runBlocking {
+        val response = dataSource.fetchKeywords(id = MOVIE_ID)
+        val expectedResponse =
+            responseAdapter<KeywordsResponseDTO, String>().fromJson(
+                getJson(UrlConstants.KEYWORDS_FOR_DETAILS_RESPONSE)
+            )
+        Truth.assertThat(expectedResponse)
+            .isEqualTo(response.body())
     }
 
     override fun initializeDataSource(): MoviesRemoteDataSourceImpl {

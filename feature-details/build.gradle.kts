@@ -10,4 +10,7 @@ dependencies {
 
     //coil
     implementation(Dependencies.Coil.COIL)
+
+    //paging-3
+    implementation(Dependencies.Paging.PAGING)
 }

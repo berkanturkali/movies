@@ -27,7 +27,7 @@ class ReviewMapper @Inject constructor(
         val outputFormat = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
         return try {
             val parsedDate = inputFormat.parse(date)
-            outputFormat.format(parsedDate)
+            parsedDate?.let { outputFormat.format(parsedDate) }
         } catch (e: Exception) {
             Timber.e(e)
             null

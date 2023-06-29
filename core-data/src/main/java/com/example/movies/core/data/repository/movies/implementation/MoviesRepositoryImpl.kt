@@ -5,9 +5,11 @@ import com.example.movies.core.data.repository.movies.abstraction.MoviesReposito
 import com.example.movies.core.data.utils.safeApiCall
 import com.example.movies.core.model.moviedetails.Cast
 import com.example.movies.core.model.moviedetails.Movie
+import com.example.movies.core.model.moviedetails.Reviews
 import com.example.movies.core.network.datasource.abstraction.movies.MoviesRemoteDataSource
 import com.example.movies.core.network.mapper.moviedetails.CastResponseMapper
 import com.example.movies.core.network.mapper.moviedetails.MovieDetailsResponseMapper
+import com.example.movies.core.network.mapper.moviedetails.ReviewsResponseMapper
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
@@ -15,6 +17,7 @@ class MoviesRepositoryImpl @Inject constructor(
     private val remoteDataSource: MoviesRemoteDataSource,
     private val movieDetailsResponseMapper: MovieDetailsResponseMapper,
     private val castResponseMapper: CastResponseMapper,
+    private val reviewsResponseMapper: ReviewsResponseMapper,
 ) : MoviesRepository {
 
     override suspend fun fetchMovie(id: Int): Flow<Resource<Movie>> {
@@ -22,6 +25,7 @@ class MoviesRepositoryImpl @Inject constructor(
             remoteDataSource.fetchMovie(id)
         }
     }
+
     override suspend fun fetchCast(id: Int): Flow<Resource<List<Cast?>>> {
         return safeApiCall(mapFromModel = { creditResponseDTO ->
             if (creditResponseDTO.cast != null) {
@@ -35,6 +39,14 @@ class MoviesRepositoryImpl @Inject constructor(
             }
         }) {
             remoteDataSource.fetchCredits(id)
+        }
+    }
+
+    override suspend fun fetchReviews(id: Int): Flow<Resource<Reviews>> {
+        return safeApiCall(
+            mapFromModel = reviewsResponseMapper::mapFromModel
+        ) {
+            remoteDataSource.fetchReviews(id)
         }
     }
 }

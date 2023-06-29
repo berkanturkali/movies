@@ -58,7 +58,9 @@ object UrlConstants {
 
     const val CREDITS_ENDPOINT = "$MOVIE_PATH/$MOVIE_ID/credits?api_key=$API_KEY"
 
-    const val REVIEWS_ENDPOINT = "$MOVIE_PATH/$MOVIE_ID/reviews?page=$PAGE&api_key=$API_KEY"
+    const val REVIEWS_ENDPOINT = "$MOVIE_PATH/$MOVIE_ID/reviews?api_key=$API_KEY"
+
+    const val KEYWORDS_FOR_DETAILS_ENDPOINT = "$MOVIE_PATH/$MOVIE_ID/keywords?api_key=$API_KEY"
 
 
     //responses
@@ -98,6 +100,8 @@ object UrlConstants {
     internal val CREDITS_SUCCESS_RESPONSE = getSuccessResponsePath("credits")
 
     internal val REVIEWS_SUCCESS_RESPONSE = getSuccessResponsePath("reviews")
+
+    internal val KEYWORDS_FOR_DETAILS_RESPONSE = getSuccessResponsePath("keywords_for_details")
 
 
     private fun getSuccessResponsePath(name: String): String =

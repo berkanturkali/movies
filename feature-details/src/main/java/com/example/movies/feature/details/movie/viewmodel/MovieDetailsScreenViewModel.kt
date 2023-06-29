@@ -4,6 +4,7 @@ import androidx.lifecycle.*
 import com.example.movies.core.common.Resource
 import com.example.movies.core.model.moviedetails.Cast
 import com.example.movies.core.model.moviedetails.Movie
+import com.example.movies.core.model.moviedetails.Reviews
 import com.example.movies.core.navigation.args.moviedetails.MovieDetailsScreenArgs
 import com.example.movies.feature.details.movie.usecases.MovieDetailsScreenUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,6 +26,10 @@ class MovieDetailsScreenViewModel @Inject constructor(
     private val _cast = MutableLiveData<Resource<List<Cast?>>>()
 
     val cast: LiveData<Resource<List<Cast?>>> get() = _cast
+
+    private val _reviews = MutableLiveData<Resource<Reviews>>()
+
+    val reviews: LiveData<Resource<Reviews>> get() = _reviews
 
     private var id: Int? = null
 
@@ -58,6 +63,14 @@ class MovieDetailsScreenViewModel @Inject constructor(
         }
     }
 
+    fun fetchReviews(id: Int) {
+        viewModelScope.launch(Dispatchers.Main) {
+            movieDetailsScreenUseCases.fetchReviews(id)
+                .onEach {
+                    _reviews.value = it
+                }
 
+        }
+    }
 
 }
