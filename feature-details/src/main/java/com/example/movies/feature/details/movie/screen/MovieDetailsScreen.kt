@@ -17,6 +17,8 @@ import com.examle.movies.core.ui.components.MoviesErrorView
 import com.examle.movies.core.ui.components.MoviesProgressBar
 import com.examle.movies.core.ui.components.MoviesSurface
 import com.example.movies.core.common.Resource
+import com.example.movies.feature.details.movie.components.Cast
+import com.example.movies.feature.details.movie.components.movieDetailsItem
 import com.example.movies.feature.details.movie.viewmodel.MovieDetailsScreenViewModel
 
 @Composable
@@ -27,11 +29,21 @@ fun MovieDetailsScreen(
 
     val context = LocalContext.current
 
-    val resource by viewModel.movie.observeAsState()
+    val movieResource by viewModel.movie.observeAsState()
+
+    val cast by viewModel.cast.observeAsState()
+
+    val reviews by viewModel.reviews.observeAsState()
+
+    val videos by viewModel.videos.observeAsState()
+
+    val recommendations by viewModel.recommendations.observeAsState()
+
+    val keywords by viewModel.keywords.observeAsState()
 
     MoviesSurface(modifier = modifier.fillMaxSize()) {
 
-        resource?.let {
+        movieResource?.let {
             when (it) {
                 is Resource.Error -> {
                     MoviesErrorView(
@@ -67,11 +79,26 @@ fun MovieDetailsScreen(
                                 genres = movie.genres,
                                 languages = movie.languages,
                             )
+
+                            cast?.let { castResource ->
+                                movieDetailsItem(
+                                    context = context,
+                                    resource = castResource,
+                                    onRetryClick = {
+                                        viewModel.fetchCast()
+                                    }) { castList ->
+                                    Cast(cast = castList.filterNotNull())
+                                }
+
+                            }
+
+
                         }
+
                     }
                 }
             }
         }
-
     }
+
 }

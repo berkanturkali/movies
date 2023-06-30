@@ -37,7 +37,11 @@ class MovieDetailsScreenViewModel @Inject constructor(
 
     val videos: LiveData<Resource<List<Video>>> get() = _videos
 
-    private var id: Int? = null
+    private val _recommendations = MutableLiveData<Resource<List<Recommendation>>>()
+
+    val recommendations: LiveData<Resource<List<Recommendation>>> get() = _recommendations
+
+    private var id: Int = 0
 
     init {
         savedStateHandle.get<Int>(MovieDetailsScreenArgs.MOVIE_ID_ARG_KEY)
@@ -53,14 +57,18 @@ class MovieDetailsScreenViewModel @Inject constructor(
             movieDetailsScreenUseCases.fetchMovie(id)
                 .onEach {
                     if (it is Resource.Success && it.data != null) {
-
+                        fetchCast()
+                        fetchReviews()
+                        fetchKeywords()
+                        fetchVideos()
+                        fetchRecommendations()
                     }
                     _movie.value = it
                 }
         }
     }
 
-    fun fetchCast(id: Int) {
+    fun fetchCast() {
         viewModelScope.launch(Dispatchers.Main) {
             movieDetailsScreenUseCases.fetchCast(id)
                 .onEach {
@@ -69,7 +77,7 @@ class MovieDetailsScreenViewModel @Inject constructor(
         }
     }
 
-    fun fetchReviews(id: Int) {
+    fun fetchReviews() {
         viewModelScope.launch(Dispatchers.Main) {
             movieDetailsScreenUseCases.fetchReviews(id)
                 .onEach {
@@ -79,7 +87,7 @@ class MovieDetailsScreenViewModel @Inject constructor(
         }
     }
 
-    fun fetchKeywords(id: Int) {
+    fun fetchKeywords() {
         viewModelScope.launch(Dispatchers.Main) {
             movieDetailsScreenUseCases.fetchKeywords(id)
                 .onEach {
@@ -88,7 +96,7 @@ class MovieDetailsScreenViewModel @Inject constructor(
         }
     }
 
-    fun fetchVideos(id: Int) {
+    fun fetchVideos() {
         viewModelScope.launch(Dispatchers.Main) {
             movieDetailsScreenUseCases.fetchVideos(id)
                 .onEach {
@@ -97,6 +105,14 @@ class MovieDetailsScreenViewModel @Inject constructor(
         }
     }
 
+    fun fetchRecommendations() {
+        viewModelScope.launch(Dispatchers.Main) {
+            movieDetailsScreenUseCases.fetchRecommendations(id)
+                .onEach {
+                    _recommendations.value = it
+                }
+        }
+    }
 
 
 }

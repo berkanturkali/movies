@@ -42,7 +42,7 @@ fun ScoreView(
         alpha = ContentAlpha.disabled
     ),
     foregroundIndicatorColor: Color = Color.Green,
-    strokeWidth: Dp = 10.dp,
+    strokeWidth: Dp = radius / 3,
     animDuration: Int = 1000,
     animDelay: Int = 0,
 ) {
@@ -71,7 +71,7 @@ fun ScoreView(
             Box(
                 modifier = Modifier
                     .size(radius * 2)
-                    .padding(6.dp)
+                    .padding(5.dp)
                     .drawBehind {
                         backgroundIndicator(
                             indicatorColor = backgroundIndicatorColor,

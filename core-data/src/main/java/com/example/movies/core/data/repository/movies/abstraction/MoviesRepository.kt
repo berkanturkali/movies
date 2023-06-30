@@ -15,4 +15,6 @@ interface MoviesRepository {
     suspend fun fetchKeywords(id: Int): Flow<Resource<List<Keyword>>>
 
     suspend fun fetchVideos(id: Int): Flow<Resource<List<Video>>>
+
+    suspend fun fetchRecommendations(id: Int): Flow<Resource<List<Recommendation>>>
 }

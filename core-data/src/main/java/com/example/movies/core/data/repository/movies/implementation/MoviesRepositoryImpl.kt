@@ -16,6 +16,7 @@ class MoviesRepositoryImpl @Inject constructor(
     private val reviewsResponseMapper: ReviewsResponseMapper,
     private val keywordMapper: KeywordMapper,
     private val videoMapper: VideoMapper,
+    private val recommendationMapper: RecommendationMapper,
 ) : MoviesRepository {
 
     override suspend fun fetchMovie(id: Int): Flow<Resource<Movie>> {
@@ -79,6 +80,24 @@ class MoviesRepositoryImpl @Inject constructor(
             }
         }) {
             remoteDataSource.fetchVideos(id)
+        }
+    }
+
+    override suspend fun fetchRecommendations(id: Int): Flow<Resource<List<Recommendation>>> {
+        return safeApiCall(
+            mapFromModel = { response ->
+                if (response.results != null) {
+                    val list = response.results!!.filterNotNull()
+                        .map {
+                            recommendationMapper.mapFromModel(it)
+                        }
+                    list
+                } else {
+                    emptyList()
+                }
+            }
+        ) {
+            remoteDataSource.fetchRecommendations(id)
         }
     }
 }
