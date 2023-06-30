@@ -4,6 +4,7 @@ import com.example.movies.core.network.datasource.abstraction.movies.MoviesRemot
 import com.example.movies.core.network.model.credit.CreditsResponseDTO
 import com.example.movies.core.network.model.moviedetails.KeywordsResponseDTO
 import com.example.movies.core.network.model.moviedetails.MovieDetailsResponseDTO
+import com.example.movies.core.network.model.moviedetails.RecommendationsResponseDTO
 import com.example.movies.core.network.model.moviedetails.VideosResponseDTO
 import com.example.movies.core.network.model.review.ReviewsResponseDTO
 import com.example.movies.core.network.service.movies.MoviesService
@@ -32,5 +33,9 @@ class MoviesRemoteDataSourceImpl @Inject constructor(
 
     override suspend fun fetchVideos(id: Int): Response<VideosResponseDTO> {
         return service.fetchVideos(id)
+    }
+
+    override suspend fun fetchRecommendations(id: Int): Response<RecommendationsResponseDTO> {
+        return service.fetchRecommendations(id)
     }
 }

@@ -10,6 +10,7 @@ import com.example.movies.core.network.factory.responseAdapter
 import com.example.movies.core.network.model.credit.CreditsResponseDTO
 import com.example.movies.core.network.model.moviedetails.KeywordsResponseDTO
 import com.example.movies.core.network.model.moviedetails.MovieDetailsResponseDTO
+import com.example.movies.core.network.model.moviedetails.RecommendationsResponseDTO
 import com.example.movies.core.network.model.moviedetails.VideosResponseDTO
 import com.example.movies.core.network.model.review.ReviewsResponseDTO
 import com.example.movies.core.network.utils.UrlConstants
@@ -110,6 +111,25 @@ class MoviesRemoteDataSourceImplTest :
         Truth.assertThat(expectedResponse)
             .isEqualTo(response.body())
     }
+
+    @Test
+    fun `check that calling fetchRecommendations makes a GET request`() = runBlocking {
+        dataSource.fetchRecommendations(id = MOVIE_ID)
+        Truth.assertThat(mockWebServer.takeRequest().method)
+            .isEqualTo("GET")
+    }
+
+    @Test
+    fun `check that fetchRecommendations returns correct data`() = runBlocking {
+        val response = dataSource.fetchRecommendations(id = MOVIE_ID)
+        val expectedResponse =
+            responseAdapter<RecommendationsResponseDTO, String>().fromJson(
+                getJson(UrlConstants.RECOMMENDATIONS_SUCCESS_RESPONSE)
+            )
+        Truth.assertThat(expectedResponse)
+            .isEqualTo(response.body())
+    }
+
     override fun initializeDataSource(): MoviesRemoteDataSourceImpl {
         return MoviesRemoteDataSourceImpl(makeApiService(mockWebServer))
     }

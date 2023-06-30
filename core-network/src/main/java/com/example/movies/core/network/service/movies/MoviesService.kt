@@ -4,6 +4,7 @@ import com.example.movies.core.network.endpoints.movies.MoviesEndpoints
 import com.example.movies.core.network.model.credit.CreditsResponseDTO
 import com.example.movies.core.network.model.moviedetails.KeywordsResponseDTO
 import com.example.movies.core.network.model.moviedetails.MovieDetailsResponseDTO
+import com.example.movies.core.network.model.moviedetails.RecommendationsResponseDTO
 import com.example.movies.core.network.model.moviedetails.VideosResponseDTO
 import com.example.movies.core.network.model.review.ReviewsResponseDTO
 import com.example.movies.core.network.service.base.BaseService
@@ -32,6 +33,11 @@ interface MoviesService : BaseService {
     suspend fun fetchVideos(
         @Path("movie_id") id: Int,
     ): Response<VideosResponseDTO>
+
+    @GET(MoviesEndpoints.RECOMMENDATIONS_ENDPOINT)
+    suspend fun fetchRecommendations(
+        @Path("movie_id") id: Int,
+    ): Response<RecommendationsResponseDTO>
 
 
 }

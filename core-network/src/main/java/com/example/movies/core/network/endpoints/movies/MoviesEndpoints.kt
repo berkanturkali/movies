@@ -27,4 +27,6 @@ object MoviesEndpoints {
     const val KEYWORDS_ENDPOINT = "$MOVIE_DETAILS_ENDPOINT/keywords"
 
     const val VIDEOS_ENDPOINT = "$MOVIE_DETAILS_ENDPOINT/videos"
+
+    const val RECOMMENDATIONS_ENDPOINT = "$MOVIE_DETAILS_ENDPOINT/recommendations"
 }
