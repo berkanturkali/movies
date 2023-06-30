@@ -17,8 +17,7 @@ import com.examle.movies.core.ui.components.MoviesErrorView
 import com.examle.movies.core.ui.components.MoviesProgressBar
 import com.examle.movies.core.ui.components.MoviesSurface
 import com.example.movies.core.common.Resource
-import com.example.movies.feature.details.movie.components.Cast
-import com.example.movies.feature.details.movie.components.movieDetailsItem
+import com.example.movies.feature.details.movie.components.*
 import com.example.movies.feature.details.movie.viewmodel.MovieDetailsScreenViewModel
 
 @Composable
@@ -92,7 +91,44 @@ fun MovieDetailsScreen(
 
                             }
 
+                            recommendations?.let { recommendationsResource ->
+                                movieDetailsItem(
+                                    context = context, resource = recommendationsResource,
+                                    onRetryClick = viewModel::fetchRecommendations
+                                ) { recommendationsList ->
+                                    Recommendations(recommendations = recommendationsList)
+                                }
+                            }
 
+                            reviews?.let { reviewsResource ->
+                                movieDetailsItem(
+                                    context = context, resource = reviewsResource,
+                                    onRetryClick = viewModel::fetchReviews
+                                ) { reviews ->
+                                    Reviews(
+                                        reviews = reviews
+                                    )
+                                }
+                            }
+                            keywords?.let { keywordsResource ->
+                                movieDetailsItem(
+                                    context = context,
+                                    resource = keywordsResource,
+                                    onRetryClick = viewModel::fetchKeywords,
+                                ) { keywords ->
+                                    Keywords(keywords = keywords)
+                                }
+                            }
+
+                            videos?.let { videosResource ->
+                                movieDetailsItem(
+                                    context = context,
+                                    resource = videosResource,
+                                    onRetryClick = viewModel::fetchVideos
+                                ) { videos ->
+
+                                }
+                            }
                         }
 
                     }
