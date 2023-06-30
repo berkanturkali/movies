@@ -7,4 +7,5 @@ data class MovieDetailsScreenUseCases @Inject constructor(
     val fetchCast: FetchCastUseCase,
     val fetchReviews: FetchReviewsUseCase,
     val fetchKeywords: FetchKeywordsUseCase,
+    val fetchVideos: FetchVideosUseCase,
 )

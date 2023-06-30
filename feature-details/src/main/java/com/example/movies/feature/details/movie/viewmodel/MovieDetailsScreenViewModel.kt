@@ -2,10 +2,7 @@ package com.example.movies.feature.details.movie.viewmodel
 
 import androidx.lifecycle.*
 import com.example.movies.core.common.Resource
-import com.example.movies.core.model.moviedetails.Cast
-import com.example.movies.core.model.moviedetails.Keyword
-import com.example.movies.core.model.moviedetails.Movie
-import com.example.movies.core.model.moviedetails.Reviews
+import com.example.movies.core.model.moviedetails.*
 import com.example.movies.core.navigation.args.moviedetails.MovieDetailsScreenArgs
 import com.example.movies.feature.details.movie.usecases.MovieDetailsScreenUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -35,6 +32,10 @@ class MovieDetailsScreenViewModel @Inject constructor(
     private val _keywords = MutableLiveData<Resource<List<Keyword>>>()
 
     val keywords: LiveData<Resource<List<Keyword>>> get() = _keywords
+
+    private val _videos = MutableLiveData<Resource<List<Video>>>()
+
+    val videos: LiveData<Resource<List<Video>>> get() = _videos
 
     private var id: Int? = null
 
@@ -86,5 +87,16 @@ class MovieDetailsScreenViewModel @Inject constructor(
                 }
         }
     }
+
+    fun fetchVideos(id: Int) {
+        viewModelScope.launch(Dispatchers.Main) {
+            movieDetailsScreenUseCases.fetchVideos(id)
+                .onEach {
+                    _videos.value = it
+                }
+        }
+    }
+
+
 
 }
