@@ -1,10 +1,7 @@
 package com.example.movies.core.network.utils
 
 import com.example.movies.core.network.model.credit.CastDTO
-import com.example.movies.core.network.model.moviedetails.GenreDTO
-import com.example.movies.core.network.model.moviedetails.MovieDetailsResponseDTO
-import com.example.movies.core.network.model.moviedetails.SpokenLanguageDTO
-import com.example.movies.core.network.model.moviedetails.VideoDTO
+import com.example.movies.core.network.model.moviedetails.*
 import com.example.movies.core.network.model.nowplaying.NowPlayingMovieDTO
 import com.example.movies.core.network.model.review.AuthorDetailsDTO
 import com.example.movies.core.network.model.review.ReviewDTO
@@ -197,6 +194,29 @@ object DummyData {
     val videoDTO = VideoDTO(
         site = "Youtube",
         key = "BbXJ3_AQE_o"
+    )
+
+    val recommendationDTO = RecommendationDTO(
+        adult = false,
+        backdropPath = "/gjw5QlQ1WCHzIUFjLea2pSuAq30.jpg",
+        id = 820707,
+        title = "Red Island",
+        originalTitle = "L’île rouge",
+        originalLanguage = "fr",
+        overview = "Madagascar, at the turn of the 1960s and 1970s." +
+                " On an air base of the French army, the soldiers" +
+                " live the last carefree years of colonialism. " +
+                "Influenced by his readings of Fantômette, Thomas," +
+                " a child who is not yet 10 years old," +
+                " gradually forges a look at the world around him.",
+        posterPath = "/hQUdwmFkSLFMvfHHuyDn8IxFyiu.jpg",
+        mediaType = "movie",
+        genreIds = listOf(18),
+        popularity = 5.233,
+        releaseDate = "2023-05-31",
+        video = false,
+        voteAverage = 6.038,
+        voteCount = 13
     )
     //endregion
 }
