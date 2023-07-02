@@ -14,9 +14,10 @@ import com.example.movies_compose.feature.home.R
 fun TopRatedMovies(
     topRatedMoviesState: TopRatedMoviesState,
     onRetryClick: () -> Unit,
+    onTopRatedMovieClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
     title: String = stringResource(id = R.string.top_rated_movies_title),
-    ) {
+) {
 
     val context = LocalContext.current
     MovieSection(title = title, modifier = modifier) {
@@ -30,13 +31,15 @@ fun TopRatedMovies(
             TopRatedMoviesState.Loading -> {
                 TopRatedMoviesList(
                     topRatedMovies = (0..10).map { TopRatedMovie() },
-                    childModifier = Modifier.fadeModifier(true)
+                    childModifier = Modifier.fadeModifier(true),
+                    onTopRatedMovieClick = {}
                 )
             }
             is TopRatedMoviesState.TopRatedMovies -> {
                 TopRatedMoviesList(
                     topRatedMovies = topRatedMoviesState.data,
-                    childModifier = Modifier.fadeModifier(false)
+                    childModifier = Modifier.fadeModifier(false),
+                    onTopRatedMovieClick = onTopRatedMovieClick
                 )
             }
         }

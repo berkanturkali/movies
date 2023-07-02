@@ -14,9 +14,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.examle.movies.core.ui.icon.MoviesIcons
+import com.examle.movies.core.ui.icon.MoviesIcon
 import com.examle.movies.core.ui.theme.MoviesTheme
-import com.example.movies.core.model.search.SearchCategory
 
 @Composable
 fun SearchCategoriesTopBar(
@@ -45,7 +44,7 @@ fun SearchCategoriesTopBar(
         ) {
             IconButton(onClick = onBackButtonClick) {
                 Icon(
-                    painter = painterResource(id = MoviesIcons.BACK),
+                    painter = painterResource(id = MoviesIcon.BACK),
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.onPrimary,
                 )

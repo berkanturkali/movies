@@ -25,4 +25,8 @@ dependencies {
     // TODO : Remove these dependency once we upgrade to Android Studio Dolphin b/228889042
     // These dependencies are currently necessary to render Compose previews
     debugImplementation(Dependencies.AndroidX.ANDROIDX_CUSTOM_VIEW_POOL_CONTAINER)
+
+
+    //palette
+    implementation(Dependencies.Palette.PALETTE)
 }

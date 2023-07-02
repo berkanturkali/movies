@@ -12,6 +12,7 @@ import com.example.movies.core.model.home.TopRatedMovie
 @Composable
 fun TopRatedMoviesList(
     topRatedMovies: List<TopRatedMovie>,
+    onTopRatedMovieClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
     childModifier: Modifier = Modifier,
 ) {
@@ -24,19 +25,26 @@ fun TopRatedMoviesList(
     ) {
         topRatedMovies(
             topRatedMovies = topRatedMovies,
-            childModifier = childModifier
+            childModifier = childModifier,
+            onTopRatedMovieClick = onTopRatedMovieClick
         )
     }
 }
 
 private fun LazyListScope.topRatedMovies(
     topRatedMovies: List<TopRatedMovie>,
+    onTopRatedMovieClick: (Int) -> Unit,
     childModifier: Modifier
 ) {
     items(topRatedMovies) { movie ->
         MoviePoster(
             image = movie.image,
-            childModifier = childModifier
+            childModifier = childModifier,
+            onItemClick = {
+                movie.id?.let {
+                    onTopRatedMovieClick(it)
+                }
+            }
         )
     }
 }

@@ -17,7 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import coil.compose.rememberAsyncImagePainter
 import coil.imageLoader
-import com.examle.movies.core.ui.icon.MoviesIcons
+import com.examle.movies.core.ui.icon.MoviesIcon
 import com.example.movies_compose.feature.home.R
 
 @Composable
@@ -136,7 +136,7 @@ private fun MyListButton(
         verticalArrangement = Arrangement.Center,
     ) {
         Icon(
-            painter = painterResource(id = MoviesIcons.ADD),
+            painter = painterResource(id = MoviesIcon.ADD),
             tint = MaterialTheme.colorScheme.onPrimary,
             contentDescription = null
         )
@@ -165,7 +165,7 @@ private fun PlayButton(
         colors = ButtonDefaults.buttonColors(containerColor = Color.White),
         onClick = {}) {
         Icon(
-            painter = painterResource(id = MoviesIcons.PLAY),
+            painter = painterResource(id = MoviesIcon.PLAY),
             contentDescription = null,
             tint = Color.Black
         )

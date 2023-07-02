@@ -22,13 +22,14 @@ import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.example.movies.core.common.UiText
 import com.example.movies.feature.home.components.*
 import com.example.movies.feature.home.state.*
-import com.example.movies.feature.home.util.rememberDominantColorState
+import com.examle.movies.core.ui.utils.rememberDominantColorState
 import com.example.movies.feature.home.viewmodel.HomeScreenViewModel
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 
 @Composable
 fun HomeScreen(
+    onMovieClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: HomeScreenViewModel = hiltViewModel()
 ) {
@@ -64,7 +65,9 @@ fun HomeScreen(
             upcomingMoviesState = upcomingMoviesState,
             popularMoviesState = popularMoviesState,
             topRatedMoviesState = topRatedMoviesState,
-            onRefresh = viewModel::fetchAllMovies
+            onRefresh = viewModel::fetchAllMovies,
+            onMovieClick = onMovieClick
+
         )
     }
 }
@@ -78,6 +81,7 @@ private fun Home(
     popularMoviesState: PopularMoviesState,
     topRatedMoviesState: TopRatedMoviesState,
     onRefresh: () -> Unit,
+    onMovieClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
     loading: Boolean = false,
 
@@ -131,7 +135,8 @@ private fun Home(
                         }
                         is TopRatedMoviesState.TopRatedMovies -> {
                             if (windowWidthSizeClass == WindowWidthSizeClass.Compact ||
-                                windowWidthSizeClass == WindowWidthSizeClass.Medium) {
+                                windowWidthSizeClass == WindowWidthSizeClass.Medium
+                            ) {
                                 LaunchedEffect(key1 = true) {
                                     dominantColorState.updateColorsFromImageUrl(
                                         topRatedMoviesState.data[0].image ?: ""
@@ -158,7 +163,9 @@ private fun Home(
                 //trending movies
                 item {
                     TrendingMovies(
-                        trendingMoviesState = trendingMoviesState, onRetryClick = onRefresh
+                        trendingMoviesState = trendingMoviesState,
+                        onRetryClick = onRefresh,
+                        onTrendingMovieClick = onMovieClick
                     )
                 }
 
@@ -166,31 +173,35 @@ private fun Home(
                 item {
                     NowPlayingMovies(
                         nowPlayingMoviesState = nowPlayingMoviesState,
-                        onRetryClick = onRefresh
+                        onRetryClick = onRefresh,
+                        onNowPlayingMovieClick = onMovieClick
                     )
                 }
 
-//            //upcoming movies
+                //upcoming movies
                 item {
                     UpcomingMovies(
                         upcomingMoviesState = upcomingMoviesState,
-                        onRetryClick = onRefresh
+                        onRetryClick = onRefresh,
+                        onUpcomingMovieClick = onMovieClick
                     )
                 }
 
-//            //popular movies
+                //popular movies
                 item {
                     PopularMovies(
                         popularMoviesState = popularMoviesState,
-                        onRetryClick = onRefresh
+                        onRetryClick = onRefresh,
+                        onPopularMovieClick = onMovieClick
                     )
                 }
 
-               //top rated movies
+                //top rated movies
                 item {
                     TopRatedMovies(
                         topRatedMoviesState = topRatedMoviesState,
-                        onRetryClick = onRefresh
+                        onRetryClick = onRefresh,
+                        onTopRatedMovieClick = onMovieClick
                     )
                 }
             }

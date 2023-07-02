@@ -13,6 +13,7 @@ import com.example.movies.core.model.home.NowPlayingMovie
 @Composable
 fun NowPlayingMoviesList(
     nowPlayingMovies: List<NowPlayingMovie>,
+    onNowPlayingMovieClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
     childModifier: Modifier = Modifier,
 ) {
@@ -20,12 +21,26 @@ fun NowPlayingMoviesList(
         modifier = modifier,
         horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.dimen_16)),
     ) {
-        nowPlayingMovies(nowPlayingMovies = nowPlayingMovies,childModifier = childModifier)
+        nowPlayingMovies(
+            nowPlayingMovies = nowPlayingMovies,
+            childModifier = childModifier,
+            onNowPlayingMovieClick = onNowPlayingMovieClick
+        )
     }
 }
 
-private fun LazyListScope.nowPlayingMovies(nowPlayingMovies: List<NowPlayingMovie>,childModifier:Modifier) {
+private fun LazyListScope.nowPlayingMovies(
+    nowPlayingMovies: List<NowPlayingMovie>,
+    onNowPlayingMovieClick: (Int) -> Unit,
+    childModifier: Modifier
+) {
     items(nowPlayingMovies) { movie ->
-        MoviePoster(image = movie.image, childModifier = childModifier)
+        MoviePoster(
+            image = movie.image,
+            childModifier = childModifier,
+            onItemClick = {
+                movie.id?.let { onNowPlayingMovieClick(it) }
+            }
+        )
     }
 }

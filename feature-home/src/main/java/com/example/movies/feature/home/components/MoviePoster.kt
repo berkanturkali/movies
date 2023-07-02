@@ -1,6 +1,7 @@
 package com.example.movies.feature.home.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
@@ -16,12 +17,14 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import coil.imageLoader
 import com.examle.movies.core.ui.components.MoviesSurface
+import com.examle.movies.core.ui.components.noRippleModifier
 import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.examle.movies.core.ui.theme.MoviesTheme
 
 @Composable
 fun MoviePoster(
     image: String?,
+    onItemClick: () -> Unit,
     modifier: Modifier = Modifier,
     childModifier: Modifier = Modifier,
 ) {
@@ -46,7 +49,8 @@ fun MoviePoster(
     MoviesSurface(
         modifier = modifier
             .then(widthHeightModifier)
-            .then(childModifier),
+            .then(childModifier)
+            .clickable { onItemClick() },
         color = Color.LightGray,
     ) {
         val painter = rememberAsyncImagePainter(
@@ -58,7 +62,8 @@ fun MoviePoster(
             alignment = Alignment.Center,
             contentScale = ContentScale.FillBounds,
             painter = painter,
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth(),
             contentDescription = null,
         )
     }
@@ -69,7 +74,7 @@ fun MoviePoster(
 @Composable
 fun MoviePosterPrev() {
     MoviesTheme {
-        MoviePoster(image = null)
+        MoviePoster(image = null, onItemClick = {})
     }
 }
 

@@ -14,6 +14,7 @@ import com.example.movies_compose.feature.home.R
 fun UpcomingMovies(
     upcomingMoviesState: UpcomingMoviesState,
     onRetryClick: () -> Unit,
+    onUpcomingMovieClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
     title: String = stringResource(id = R.string.upcoming_movies_title),
 ) {
@@ -23,7 +24,8 @@ fun UpcomingMovies(
             is UpcomingMoviesState.DataLoaded -> {
                 UpcomingMoviesList(
                     upcomingMovies = upcomingMoviesState.data,
-                    childModifier = Modifier.fadeModifier(false)
+                    childModifier = Modifier.fadeModifier(false),
+                    onUpcomingMovieClick = onUpcomingMovieClick
                 )
             }
             is UpcomingMoviesState.Error -> {
@@ -35,7 +37,8 @@ fun UpcomingMovies(
             UpcomingMoviesState.Loading -> {
                 UpcomingMoviesList(
                     upcomingMovies = (0..10).map { UpcomingMovie() },
-                    childModifier = Modifier.fadeModifier(true)
+                    childModifier = Modifier.fadeModifier(true),
+                    onUpcomingMovieClick = {}
                 )
             }
         }

@@ -15,7 +15,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -25,7 +24,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.examle.movies.core.ui.icon.MoviesIcons
+import com.examle.movies.core.ui.icon.MoviesIcon
 import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies_compose.feature.search.R
 import kotlinx.coroutines.flow.distinctUntilChangedBy
@@ -87,7 +86,7 @@ fun SearchInput(
             }),
         leadingIcon = {
             Icon(
-                painter = painterResource(id = MoviesIcons.SEARCH),
+                painter = painterResource(id = MoviesIcon.SEARCH),
                 contentDescription = stringResource(id = R.string.search),
                 tint = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.8f)
             )
@@ -110,7 +109,7 @@ fun SearchInput(
                 }) {
                     Icon(
                         tint = MaterialTheme.colorScheme.onPrimary,
-                        painter = painterResource(id = MoviesIcons.CLEAR),
+                        painter = painterResource(id = MoviesIcon.CLEAR),
                         contentDescription = null, modifier = Modifier.size(16.dp)
                     )
                 }

@@ -13,4 +13,10 @@ dependencies {
 
     //paging-3
     implementation(Dependencies.Paging.PAGING)
+
+    //exoplayer
+    implementAll(
+        Dependencies.ExoPlayer.EXO_PLAYER,
+        Dependencies.ExoPlayer.EXO_PLAYER_UI
+    )
 }

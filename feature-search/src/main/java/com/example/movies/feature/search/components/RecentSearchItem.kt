@@ -14,7 +14,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.examle.movies.core.ui.icon.MoviesIcons
+import com.examle.movies.core.ui.icon.MoviesIcon
 import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies.core.model.search.recentsearch.RecentSearch
 
@@ -58,7 +58,7 @@ fun RecentSearchItem(
                 ) {
                     onRecentSearchInwardArrowIconClick(recentSearch)
                 },
-            painter = painterResource(id = MoviesIcons.ARROW_INWARD),
+            painter = painterResource(id = MoviesIcon.ARROW_INWARD),
             contentDescription = null,
             tint = MaterialTheme.colorScheme.primary
         )

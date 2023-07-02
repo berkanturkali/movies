@@ -8,5 +8,6 @@ data class MovieDetailsScreenUseCases @Inject constructor(
     val fetchReviews: FetchReviewsUseCase,
     val fetchKeywords: FetchKeywordsUseCase,
     val fetchVideos: FetchVideosUseCase,
-    val fetchRecommendations: FetchRecommendationsUseCase
+    val fetchRecommendations: FetchRecommendationsUseCase,
+    val calculateColorCodeFromScore: CalculateColorCodeFromScoreUseCase
 )

@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
 import coil.imageLoader
-import com.examle.movies.core.ui.icon.MoviesIcons
+import com.examle.movies.core.ui.icon.MoviesIcon
 import com.examle.movies.core.ui.theme.MoviesTheme
 
 @Composable
@@ -31,7 +31,7 @@ fun CastItem(
     name: String?,
     character: String?,
     modifier: Modifier = Modifier,
-    @DrawableRes errorImage: Int = MoviesIcons.MALE_PERSON,
+    @DrawableRes errorImage: Int = MoviesIcon.MALE_PERSON,
 ) {
 
     val imageLoader = LocalContext.current.imageLoader
@@ -43,7 +43,9 @@ fun CastItem(
     val state = painter.state
 
     Column(
-        modifier = modifier.padding(horizontal = 8.dp),
+        modifier = modifier
+            .width(IntrinsicSize.Max)
+            .padding(horizontal = 8.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -51,25 +53,30 @@ fun CastItem(
             modifier = Modifier
                 .size(100.dp)
                 .background(color = Color.Black, shape = CircleShape),
+            contentAlignment = Alignment.Center
         ) {
             if (state is AsyncImagePainter.State.Error) {
                 Image(
-                    painter = painterResource(id = errorImage), contentDescription = null,
-                    contentScale = ContentScale.Fit, modifier = Modifier
-                        .padding(32.dp)
-                        .clip(CircleShape), colorFilter = ColorFilter.tint(
+                    painter = painterResource(id = errorImage),
+                    contentDescription = null,
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier
+                        .clip(CircleShape),
+                    colorFilter = ColorFilter.tint(
                         color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.5f)
-                    )
+                    ),
+                    alignment = Alignment.Center
                 )
-                return@Box
             }
 
             Image(
                 painter = painter,
                 alignment = Alignment.Center,
                 contentDescription = null,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.clip(CircleShape)
+                contentScale = ContentScale.FillWidth,
+                modifier = Modifier
+                    .clip(CircleShape)
+                    .fillMaxSize()
             )
         }
         name?.let {
@@ -86,7 +93,8 @@ fun CastItem(
                 style = MaterialTheme.typography.titleSmall,
                 color = MaterialTheme.colorScheme.onSurface,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.padding(horizontal = 4.dp)
+                modifier = Modifier
+                    .padding(horizontal = 4.dp)
             )
 
         }

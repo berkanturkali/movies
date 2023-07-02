@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
 import coil.imageLoader
-import com.examle.movies.core.ui.icon.MoviesIcons
+import com.examle.movies.core.ui.icon.MoviesIcon
 import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.examle.movies.core.ui.theme.MoviesTheme
 
@@ -36,7 +36,7 @@ fun Poster(
     modifier: Modifier = Modifier,
     childModifier: Modifier = Modifier,
     shape: RoundedCornerShape = RoundedCornerShape(4.dp),
-    @DrawableRes errorImage: Int = MoviesIcons.MALE_PERSON,
+    @DrawableRes errorImage: Int = MoviesIcon.MALE_PERSON,
 ) {
 
     val widthHeightModifier: Modifier = if (shape == CircleShape) {

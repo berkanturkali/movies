@@ -4,7 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -22,19 +22,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
 import coil.imageLoader
-import com.examle.movies.core.ui.icon.MoviesIcons
+import com.examle.movies.core.ui.icon.MoviesIcon
 import com.examle.movies.core.ui.theme.MoviesTheme
+import timber.log.Timber
 
 @Composable
 fun ReviewItemUserImage(
     image: String?,
     firstLetter: String?,
     modifier: Modifier = Modifier,
-    @DrawableRes errorImage: Int = MoviesIcons.MALE_PERSON,
+    @DrawableRes errorImage: Int = MoviesIcon.MALE_PERSON,
 ) {
     val imageLoader = LocalContext.current.imageLoader
     val painter = rememberAsyncImagePainter(
@@ -54,16 +54,17 @@ fun ReviewItemUserImage(
             if (!firstLetter.isNullOrBlank()) {
                 Text(
                     modifier = Modifier,
-                    color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.5f),
+                    color = Color.White,
                     text = firstLetter,
-                    style = MaterialTheme.typography.displayMedium.copy(fontSize = 250.sp),
+                    style = MaterialTheme.typography.displayMedium,
                     textAlign = TextAlign.Center,
                 )
             } else {
                 Image(
                     painter = painterResource(id = errorImage),
                     contentDescription = null,
-                    contentScale = ContentScale.Fit, modifier = Modifier
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier
                         .size(250.dp)
                         .padding(32.dp)
                         .clip(CircleShape), colorFilter = ColorFilter.tint(
@@ -71,15 +72,13 @@ fun ReviewItemUserImage(
                     )
                 )
             }
-            return@Box
         }
-
         Image(
             painter = painter,
             alignment = Alignment.Center,
             contentDescription = null,
             contentScale = ContentScale.Crop,
-            modifier = Modifier.clip(CircleShape)
+            modifier = Modifier.clip(CircleShape).fillMaxSize(),
         )
     }
 }

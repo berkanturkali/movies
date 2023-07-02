@@ -4,7 +4,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
 import com.examle.movies.core.ui.R
 
-object MoviesIcons {
+object MoviesIcon {
 
     val ADD = R.drawable.ic_add
 

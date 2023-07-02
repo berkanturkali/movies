@@ -10,6 +10,7 @@ import Dependencies.Compose.Version.COMPOSE_MATERIAL_3_VERSION
 import Dependencies.Compose.Version.COMPOSE_MATERIAL_VERSION
 import Dependencies.Compose.Version.COMPOSE_VERSION
 import Dependencies.DI.Version.HILT_VERSION
+import Dependencies.ExoPlayer.Version.EXO_PLAYER_VERSION
 import Dependencies.Lottie.Version.LOTTIE_VERSION
 import Dependencies.Navigation.Version.NAVIGATION_COMPOSE_VERSION
 import Dependencies.Network.Version.MOSHI_VERSION
@@ -227,6 +228,17 @@ object Dependencies {
     }
 
     //endregion
+
+    //region ExoPlayer
+    object ExoPlayer {
+        object Version {
+            internal const val EXO_PLAYER_VERSION = "1.1.0-rc01"
+        }
+
+        const val EXO_PLAYER = "androidx.media3:media3-exoplayer:$EXO_PLAYER_VERSION"
+        const val EXO_PLAYER_UI = "androidx.media3:media3-ui:$EXO_PLAYER_VERSION"
+
+    }
 
     object Test {
         //region unit-test deps

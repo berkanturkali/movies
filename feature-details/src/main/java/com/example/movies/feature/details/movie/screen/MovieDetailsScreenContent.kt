@@ -10,6 +10,7 @@ import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
@@ -31,9 +32,11 @@ fun LazyListScope.movieDetailsScreenContent(
     score: Float?,
     genres: List<String?>?,
     languages: List<String?>?,
+    dominantColor: Color,
+    scoreColor: Color?,
 ) {
     item {
-        MoviePoster(imageUrl = imageUrl)
+        MoviePoster(imageUrl = imageUrl, dominantColor = dominantColor)
     }
     item {
         Title(title = title)
@@ -63,7 +66,7 @@ fun LazyListScope.movieDetailsScreenContent(
         DetailsSection(
             sectionTitleId = R.string.user_score_title,
             content = {
-                ScoreView(score = score, radius = 36.dp)
+                ScoreView(score = score, radius = 36.dp, foregroundIndicatorColor = scoreColor)
             })
     }
     item {
@@ -102,7 +105,7 @@ fun MovieDetailsScreenContentPrev() {
         CompositionLocalProvider(LocalWindowWidthSizeClass provides WindowWidthSizeClass.Compact) {
             LazyColumn {
                 movieDetailsScreenContent(
-                    title = "Spider-Man: Across the Spider-Verse", date = "2023-05-31",
+                    title = "Extraction 2", date = "2023-05-31",
                     status = "Released".first()
                         .toString(),
                     imageUrl = "",
@@ -119,6 +122,8 @@ fun MovieDetailsScreenContentPrev() {
                     score = 0.8f,
                     genres = listOf("Action", "Adventure", "Animation", "Science Fiction"),
                     languages = listOf("en", "hi", "it", "es"),
+                    dominantColor = Color.Gray,
+                    scoreColor = Color.Green
                 )
             }
         }

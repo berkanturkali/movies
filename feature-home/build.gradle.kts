@@ -14,6 +14,4 @@ dependencies {
     //coil
     implementation(Dependencies.Coil.COIL)
 
-    //palette
-    implementation(Dependencies.Palette.PALETTE)
 }

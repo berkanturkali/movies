@@ -24,7 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.examle.movies.core.ui.components.MoviesSurface
-import com.examle.movies.core.ui.icon.MoviesIcons
+import com.examle.movies.core.ui.icon.MoviesIcon
 import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies_compose.feature.search.R
 
@@ -75,7 +75,7 @@ fun RecentSearchesClearButton(
                 )
             } else {
                 Icon(
-                    painter = painterResource(MoviesIcons.CLEAR),
+                    painter = painterResource(MoviesIcon.CLEAR),
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.onPrimary
                 )

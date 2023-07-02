@@ -13,6 +13,7 @@ import com.example.movies.core.model.home.PopularMovie
 @Composable
 fun PopularMoviesList(
     popularMovies: List<PopularMovie>,
+    onPopularMovieClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
     childModifier: Modifier = Modifier,
 ) {
@@ -20,15 +21,25 @@ fun PopularMoviesList(
         modifier = modifier,
         horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.dimen_16)),
     ) {
-        popularMovies(popularMovies = popularMovies, childModifier = childModifier)
+        popularMovies(
+            popularMovies = popularMovies,
+            childModifier = childModifier,
+            onPopularMovieClick = onPopularMovieClick
+        )
     }
 }
 
 private fun LazyListScope.popularMovies(
     popularMovies: List<PopularMovie>,
+    onPopularMovieClick: (Int) -> Unit,
     childModifier: Modifier = Modifier,
 ) {
     items(popularMovies) { movie ->
-        MoviePoster(image = movie.image, childModifier = childModifier)
+        MoviePoster(
+            image = movie.image,
+            childModifier = childModifier,
+            onItemClick = {
+                movie.id?.let { onPopularMovieClick(it) }
+            })
     }
 }

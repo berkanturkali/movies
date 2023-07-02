@@ -31,7 +31,8 @@ fun Title(
                     fontWeight = FontWeight.SemiBold
                 ),
                 color = MaterialTheme.colorScheme.onSurface,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
             )
         }
     }
@@ -41,6 +42,6 @@ fun Title(
 @Composable
 fun TitlePrev() {
     MoviesTheme {
-        Title(title = "Spider-Man: Across the Spider-Verse")
+        Title(title = "Extraction 2")
     }
 }

@@ -1,5 +1,6 @@
 package com.example.movies.feature.home.components
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -17,9 +18,10 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import coil.imageLoader
-import com.examle.movies.core.ui.icon.MoviesIcons
+import com.examle.movies.core.ui.icon.MoviesIcon
 import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies_compose.feature.home.R
 
@@ -34,37 +36,49 @@ fun HighlightedMovie(
     val imageLoader = LocalContext.current.imageLoader
 
     val painter = rememberAsyncImagePainter(model = image, imageLoader = imageLoader)
-    Column(
-        modifier = modifier.background(
-            brush = Brush.verticalGradient(
-                colors = listOf(
-                    dominantColor.copy(alpha = 0.6f)
-                        .compositeOver(Color.LightGray), dominantColor
-                )
-            )
+
+    OutlinedCard(
+        modifier = modifier.padding(8.dp),
+        border = BorderStroke(
+            0.5.dp,
+            color = MaterialTheme.colorScheme.onSurface
+        ),
+        elevation = CardDefaults.outlinedCardElevation(
+            defaultElevation = 8.dp
         ),
     ) {
-        Box(
-            modifier = Modifier.weight(0.8f)
+        Column(
+            modifier = Modifier.background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(
+                        dominantColor.copy(alpha = 0.6f)
+                            .compositeOver(Color.LightGray), dominantColor
+                    )
+                )
+            ),
         ) {
-            Image(
-                painter = painter, contentDescription = null, modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.FillHeight
-            )
-        }
+            Box(
+                modifier = Modifier.weight(0.8f)
+            ) {
+                Image(
+                    painter = painter, contentDescription = null, modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.FillHeight
+                )
+            }
 
-        Box {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.padding(
+            Box {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(
                         bottom = dimensionResource(
                             id = com.examle.movies.core.ui.R.dimen.dimen_32
                         )
                     ),
-            ) {
-                MyListButton(modifier = Modifier.weight(1f))
-                PlayButton(modifier = Modifier.weight(1.5f))
-                InfoButton(modifier = Modifier.weight(1f))
+                ) {
+                    MyListButton(modifier = Modifier.weight(1f))
+                    PlayButton(modifier = Modifier.weight(1.5f))
+                    InfoButton(modifier = Modifier.weight(1f))
+                }
             }
         }
     }
@@ -80,7 +94,7 @@ private fun MyListButton(
         verticalArrangement = Arrangement.Center,
     ) {
         Icon(
-            painter = painterResource(id = MoviesIcons.ADD),
+            painter = painterResource(id = MoviesIcon.ADD),
             tint = MaterialTheme.colorScheme.onPrimary, contentDescription = null
         )
         Spacer(
@@ -110,7 +124,7 @@ private fun PlayButton(
             ),
         ) {
             Icon(
-                painter = painterResource(id = MoviesIcons.PLAY), contentDescription = null,
+                painter = painterResource(id = MoviesIcon.PLAY), contentDescription = null,
                 tint = Color.Black
             )
             Text(
@@ -131,7 +145,7 @@ private fun InfoButton(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Icon(
-            imageVector = MoviesIcons.INFO,
+            imageVector = MoviesIcon.INFO,
             tint = MaterialTheme.colorScheme.onPrimary,
             contentDescription = null,
         )

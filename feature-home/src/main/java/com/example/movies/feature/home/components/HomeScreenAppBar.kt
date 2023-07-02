@@ -17,7 +17,7 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.examle.movies.core.ui.components.MoviesSurface
-import com.examle.movies.core.ui.icon.MoviesIcons
+import com.examle.movies.core.ui.icon.MoviesIcon
 import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies_compose.feature.home.R
@@ -55,7 +55,7 @@ private fun Logo(
         else -> 30.dp
     }
     Image(
-        painter = painterResource(id = MoviesIcons.LOGO),
+        painter = painterResource(id = MoviesIcon.LOGO),
         contentDescription = null,
         modifier = modifier.size(size)
     )

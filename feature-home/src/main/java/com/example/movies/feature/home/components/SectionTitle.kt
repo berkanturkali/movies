@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import com.examle.movies.core.ui.icon.MoviesIcons
+import com.examle.movies.core.ui.icon.MoviesIcon
 
 @Composable
 fun SectionTitle(
@@ -39,7 +39,7 @@ fun SectionTitle(
         )
 
         Icon(
-            painter = painterResource(id = MoviesIcons.NEXT),
+            painter = painterResource(id = MoviesIcon.NEXT),
             contentDescription = null,
             tint = MaterialTheme.colorScheme.onPrimary
         )

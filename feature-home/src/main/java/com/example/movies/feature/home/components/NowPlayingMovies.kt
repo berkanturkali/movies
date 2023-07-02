@@ -14,6 +14,7 @@ import com.example.movies_compose.feature.home.R
 fun NowPlayingMovies(
     nowPlayingMoviesState: NowPlayingMoviesState,
     onRetryClick: () -> Unit,
+    onNowPlayingMovieClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
     title: String = stringResource(id = R.string.now_playing_movies_title),
 ) {
@@ -24,7 +25,8 @@ fun NowPlayingMovies(
             is NowPlayingMoviesState.DataLoaded -> {
                 NowPlayingMoviesList(
                     childModifier = Modifier.fadeModifier(false),
-                    nowPlayingMovies = nowPlayingMoviesState.data
+                    nowPlayingMovies = nowPlayingMoviesState.data,
+                    onNowPlayingMovieClick = onNowPlayingMovieClick
                 )
             }
             is NowPlayingMoviesState.Error -> {
@@ -36,7 +38,8 @@ fun NowPlayingMovies(
             NowPlayingMoviesState.Loading -> {
                 NowPlayingMoviesList(
                     childModifier = Modifier.fadeModifier(false),
-                    nowPlayingMovies = (0..10).map { NowPlayingMovie() }
+                    nowPlayingMovies = (0..10).map { NowPlayingMovie() },
+                    onNowPlayingMovieClick = {}
                 )
             }
         }

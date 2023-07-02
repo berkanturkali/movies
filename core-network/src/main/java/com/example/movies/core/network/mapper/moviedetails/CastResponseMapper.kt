@@ -13,7 +13,19 @@ class CastResponseMapper @Inject constructor(
         return Cast(
             image = imageMapper.mapPath(model.profilePath),
             name = model.name,
-            characterName = model.character
+            characterName = mapCharacterName(model.character)
         )
+    }
+
+    private fun mapCharacterName(characterName: String?): String? {
+        return characterName?.let { name ->
+            val slashPattern = "\\s*/\\s*".toRegex()
+            val voicePattern = "\\(([^)]+)\\)".toRegex()
+
+            val modifiedName = name.replace(slashPattern, "\n")
+                .replace(voicePattern, "\n$0")
+                .trim()
+            modifiedName
+        }
     }
 }

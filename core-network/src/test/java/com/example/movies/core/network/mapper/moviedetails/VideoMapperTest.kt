@@ -13,5 +13,6 @@ class VideoMapperTest {
         val dto = DummyData.videoDTO
         val model = mapper.mapFromModel(dto)
         Truth.assertThat(model.url).isEqualTo("https://www.youtube.com/watch?v=${dto.key}")
+        Truth.assertThat(model.thumbnail).isEqualTo("http://img.youtube.com/vi/${dto.key}/hqdefault.jpg")
     }
 }

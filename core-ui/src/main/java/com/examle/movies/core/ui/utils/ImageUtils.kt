@@ -1,8 +1,7 @@
-package com.example.movies.feature.home.util
+package com.examle.movies.core.ui.utils
 
 import android.content.Context
 import android.util.LruCache
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext

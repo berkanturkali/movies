@@ -1,7 +1,6 @@
 package com.example.movies.feature.home.navigation
 
 
-
 import androidx.navigation.NavGraphBuilder
 import com.example.movies.core.navigation.MoviesNavigationDestination
 import com.example.movies.feature.home.screen.HomeScreen
@@ -18,9 +17,9 @@ object HomeDestination : MoviesNavigationDestination {
         get() = true
 }
 
-fun NavGraphBuilder.homeGraph() {
+fun NavGraphBuilder.homeGraph(onMovieClick: (Int) -> Unit) {
     composable(route = HomeDestination.route) { navBackStackEntry ->
         //home screen
-        HomeScreen()
+        HomeScreen(onMovieClick = onMovieClick)
     }
 }

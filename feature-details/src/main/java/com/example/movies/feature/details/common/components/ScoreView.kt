@@ -41,8 +41,8 @@ fun ScoreView(
     backgroundIndicatorColor: Color = MaterialTheme.colorScheme.surface.copy(
         alpha = ContentAlpha.disabled
     ),
-    foregroundIndicatorColor: Color = Color.Green,
-    strokeWidth: Dp = radius / 3,
+    foregroundIndicatorColor: Color?,
+    strokeWidth: Dp = radius / 10,
     animDuration: Int = 1000,
     animDelay: Int = 0,
 ) {
@@ -71,7 +71,7 @@ fun ScoreView(
             Box(
                 modifier = Modifier
                     .size(radius * 2)
-                    .padding(5.dp)
+                    .padding(2.dp)
                     .drawBehind {
                         backgroundIndicator(
                             indicatorColor = backgroundIndicatorColor,
@@ -80,7 +80,7 @@ fun ScoreView(
 
                         foregroundIndicator(
                             sweepAngle = 360 * curPercentage.value,
-                            indicatorColor = foregroundIndicatorColor,
+                            indicatorColor = foregroundIndicatorColor!!,
                             indicatorStrokeWidth = strokeWidth,
                         )
                     },
@@ -145,6 +145,6 @@ private fun DrawScope.foregroundIndicator(
 @Composable
 fun ScoreViewPrev() {
     MoviesTheme {
-        ScoreView(score = 0.5f, radius = 25.dp)
+        ScoreView(score = 0.5f, radius = 25.dp, foregroundIndicatorColor = Color.Green)
     }
 }

@@ -1,5 +1,6 @@
 package com.example.movies.feature.details.movie.viewmodel
 
+import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.*
 import com.example.movies.core.common.Resource
 import com.example.movies.core.model.moviedetails.*
@@ -7,8 +8,8 @@ import com.example.movies.core.navigation.args.moviedetails.MovieDetailsScreenAr
 import com.example.movies.feature.details.movie.usecases.MovieDetailsScreenUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
@@ -55,7 +56,7 @@ class MovieDetailsScreenViewModel @Inject constructor(
     fun fetchMovie(id: Int) {
         viewModelScope.launch(Dispatchers.Main) {
             movieDetailsScreenUseCases.fetchMovie(id)
-                .onEach {
+                .collect {
                     if (it is Resource.Success && it.data != null) {
                         fetchCast()
                         fetchReviews()
@@ -71,7 +72,7 @@ class MovieDetailsScreenViewModel @Inject constructor(
     fun fetchCast() {
         viewModelScope.launch(Dispatchers.Main) {
             movieDetailsScreenUseCases.fetchCast(id)
-                .onEach {
+                .collect {
                     _cast.value = it
                 }
         }
@@ -80,7 +81,7 @@ class MovieDetailsScreenViewModel @Inject constructor(
     fun fetchReviews() {
         viewModelScope.launch(Dispatchers.Main) {
             movieDetailsScreenUseCases.fetchReviews(id)
-                .onEach {
+                .collect {
                     _reviews.value = it
                 }
 
@@ -90,7 +91,7 @@ class MovieDetailsScreenViewModel @Inject constructor(
     fun fetchKeywords() {
         viewModelScope.launch(Dispatchers.Main) {
             movieDetailsScreenUseCases.fetchKeywords(id)
-                .onEach {
+                .collect {
                     _keywords.value = it
                 }
         }
@@ -99,7 +100,7 @@ class MovieDetailsScreenViewModel @Inject constructor(
     fun fetchVideos() {
         viewModelScope.launch(Dispatchers.Main) {
             movieDetailsScreenUseCases.fetchVideos(id)
-                .onEach {
+                .collect {
                     _videos.value = it
                 }
         }
@@ -108,11 +109,14 @@ class MovieDetailsScreenViewModel @Inject constructor(
     fun fetchRecommendations() {
         viewModelScope.launch(Dispatchers.Main) {
             movieDetailsScreenUseCases.fetchRecommendations(id)
-                .onEach {
+                .collect {
                     _recommendations.value = it
                 }
         }
     }
+
+    fun calculateColorCodeFromScore(score: Float?): Color? =
+        movieDetailsScreenUseCases.calculateColorCodeFromScore(score)
 
 
 }

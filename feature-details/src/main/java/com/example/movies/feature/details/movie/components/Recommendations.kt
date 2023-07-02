@@ -10,6 +10,7 @@ import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
@@ -20,24 +21,28 @@ import com.example.movies.feature.details.R
 @Composable
 fun Recommendations(
     recommendations: List<Recommendation>,
+    scoreColor: Color?,
     modifier: Modifier = Modifier
 ) {
 
-    Column(modifier = modifier) {
-        SectionTitle(
-            titleId = R.string.recommendations_title,
-            modifier = Modifier.padding(horizontal = 12.dp)
-        )
-        LazyRow(
-            contentPadding = PaddingValues(8.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            items(recommendations) { recommendation ->
-                RecommendationItem(
-                    image = recommendation.image,
-                    score = recommendation.score,
-                    name = recommendation.name
-                )
+    if (recommendations.isNotEmpty()) {
+
+        Column(modifier = modifier) {
+            SectionTitle(
+                titleId = R.string.recommendations_title,
+                modifier = Modifier.padding(horizontal = 12.dp)
+            )
+            LazyRow(
+                contentPadding = PaddingValues(8.dp),
+                horizontalArrangement = Arrangement.spacedBy(24.dp),
+            ) {
+                items(recommendations) { recommendation ->
+                    RecommendationItem(
+                        image = recommendation.image,
+                        score = recommendation.score,
+                        scoreColor = scoreColor
+                    )
+                }
             }
         }
     }
@@ -54,7 +59,8 @@ fun RecommendationsPrev() {
                     Recommendation(name = "Lorem Ipsum", image = "", score = 0.8f),
                     Recommendation(name = "Lorem Ipsum", image = "", score = 0.7f),
                     Recommendation(name = "Lorem Ipsum", image = "", score = 0.1f),
-                )
+                ),
+                scoreColor = Color.Green
             )
         }
     }

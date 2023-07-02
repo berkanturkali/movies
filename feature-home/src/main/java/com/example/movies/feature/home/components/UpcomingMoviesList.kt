@@ -12,6 +12,7 @@ import com.example.movies.core.model.home.UpcomingMovie
 @Composable
 fun UpcomingMoviesList(
     upcomingMovies: List<UpcomingMovie>,
+    onUpcomingMovieClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
     childModifier: Modifier = Modifier,
 ) {
@@ -22,15 +23,22 @@ fun UpcomingMoviesList(
             dimensionResource(id = com.examle.movies.core.ui.R.dimen.dimen_16)
         ),
     ) {
-        upcomingMovies(upcomingMovies = upcomingMovies, childModifier = childModifier)
+        upcomingMovies(
+            upcomingMovies = upcomingMovies,
+            childModifier = childModifier,
+            onUpcomingMovieClick = onUpcomingMovieClick
+        )
     }
 }
 
 private fun LazyListScope.upcomingMovies(
     upcomingMovies: List<UpcomingMovie>,
+    onUpcomingMovieClick: (Int) -> Unit,
     childModifier: Modifier
 ) {
     items(upcomingMovies) { movie ->
-        MoviePoster(image = movie.image, childModifier = childModifier)
+        MoviePoster(image = movie.image, childModifier = childModifier, onItemClick = {
+            movie.id?.let { onUpcomingMovieClick(it) }
+        })
     }
 }

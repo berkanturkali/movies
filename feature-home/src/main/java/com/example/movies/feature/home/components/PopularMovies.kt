@@ -14,6 +14,7 @@ import com.example.movies_compose.feature.home.R
 fun PopularMovies(
     popularMoviesState: PopularMoviesState,
     onRetryClick: () -> Unit,
+    onPopularMovieClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
     title: String = stringResource(id = R.string.popular_movies_title),
 ) {
@@ -25,7 +26,8 @@ fun PopularMovies(
             is PopularMoviesState.DataLoaded -> {
                 PopularMoviesList(
                     popularMovies = popularMoviesState.data,
-                    childModifier = Modifier.fadeModifier(false)
+                    childModifier = Modifier.fadeModifier(false),
+                    onPopularMovieClick = onPopularMovieClick
                 )
             }
             is PopularMoviesState.Error -> {
@@ -37,7 +39,8 @@ fun PopularMovies(
             PopularMoviesState.Loading -> {
                 PopularMoviesList(
                     popularMovies = (0..10).map { PopularMovie() },
-                    childModifier = Modifier.fadeModifier(true)
+                    childModifier = Modifier.fadeModifier(true),
+                    onPopularMovieClick = {}
                 )
             }
         }
