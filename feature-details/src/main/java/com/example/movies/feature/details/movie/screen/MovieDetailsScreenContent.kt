@@ -34,9 +34,16 @@ fun LazyListScope.movieDetailsScreenContent(
     languages: List<String?>?,
     dominantColor: Color,
     scoreColor: Color?,
+    liked: Boolean,
+    onFavButtonClick: (Boolean) -> Unit,
 ) {
     item {
-        MoviePoster(imageUrl = imageUrl, dominantColor = dominantColor)
+        MoviePoster(
+            imageUrl = imageUrl,
+            dominantColor = dominantColor,
+            liked = liked,
+            onFavButtonClick = onFavButtonClick
+        )
     }
     item {
         Title(title = title)
@@ -123,7 +130,9 @@ fun MovieDetailsScreenContentPrev() {
                     genres = listOf("Action", "Adventure", "Animation", "Science Fiction"),
                     languages = listOf("en", "hi", "it", "es"),
                     dominantColor = Color.Gray,
-                    scoreColor = Color.Green
+                    scoreColor = Color.Green,
+                    liked = false,
+                    onFavButtonClick = {}
                 )
             }
         }

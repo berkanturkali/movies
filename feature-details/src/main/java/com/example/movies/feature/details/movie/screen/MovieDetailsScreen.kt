@@ -51,6 +51,8 @@ fun MovieDetailsScreen(
 
     val listState = rememberLazyListState()
 
+    val liked = viewModel.liked
+
     val showStickyTopBar by remember {
         derivedStateOf {
             listState.firstVisibleItemIndex > 0
@@ -113,7 +115,12 @@ fun MovieDetailsScreen(
                                     genres = movie.genres,
                                     languages = movie.languages,
                                     dominantColor = dominantColor,
-                                    scoreColor = viewModel.calculateColorCodeFromScore(movie.score)
+                                    scoreColor = viewModel.calculateColorCodeFromScore(movie.score),
+                                    liked = liked,
+                                    onFavButtonClick = { liked ->
+                                        viewModel.liked = liked
+                                    }
+
 
                                 )
 
@@ -195,7 +202,9 @@ fun MovieDetailsScreen(
                                         coroutineScope.launch {
                                             listState.animateScrollToItem(index = 0)
                                         }
-                                    })
+                                    },
+                                    liked = liked
+                                )
                             }
                         }
                     }

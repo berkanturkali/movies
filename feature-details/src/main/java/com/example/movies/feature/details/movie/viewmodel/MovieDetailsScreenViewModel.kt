@@ -1,5 +1,8 @@
 package com.example.movies.feature.details.movie.viewmodel
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.*
 import com.example.movies.core.common.Resource
@@ -9,7 +12,6 @@ import com.example.movies.feature.details.movie.usecases.MovieDetailsScreenUseCa
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
@@ -41,6 +43,8 @@ class MovieDetailsScreenViewModel @Inject constructor(
     private val _recommendations = MutableLiveData<Resource<List<Recommendation>>>()
 
     val recommendations: LiveData<Resource<List<Recommendation>>> get() = _recommendations
+
+    var liked by mutableStateOf(false)
 
     private var id: Int = 0
 

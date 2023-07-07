@@ -26,6 +26,8 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 fun MoviePoster(
     imageUrl: String?,
     dominantColor: Color,
+    liked: Boolean,
+    onFavButtonClick: (Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
 
@@ -61,7 +63,11 @@ fun MoviePoster(
                 modifier = Modifier.fillMaxSize()
             )
 
-            MovieDetailsTopBar(modifier = Modifier.padding(10.dp))
+            MovieDetailsTopBar(
+                modifier = Modifier.padding(10.dp),
+                liked = liked,
+                onFavButtonClick = onFavButtonClick
+            )
         }
     }
 }
@@ -70,6 +76,6 @@ fun MoviePoster(
 @Composable
 fun MoviePosterPrev() {
     MoviesTheme {
-        MoviePoster(imageUrl = "", dominantColor = Color.Gray)
+        MoviePoster(imageUrl = "", dominantColor = Color.Gray, liked = false, onFavButtonClick = {})
     }
 }

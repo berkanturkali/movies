@@ -1,11 +1,11 @@
 package com.example.movies.feature.details.movie.components
 
-import android.annotation.SuppressLint
 import androidx.compose.animation.animateColor
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.*
+import androidx.compose.material.IconToggleButton
+import androidx.compose.material.Surface
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -20,9 +21,10 @@ import androidx.compose.ui.unit.dp
 import com.examle.movies.core.ui.icon.MoviesIcon
 import com.examle.movies.core.ui.theme.MoviesTheme
 
-@SuppressLint("UnusedTransitionTargetStateParameter")
 @Composable
 fun MovieDetailsTopBar(
+    liked: Boolean,
+    onFavButtonClick: (Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Box(
@@ -44,7 +46,7 @@ fun MovieDetailsTopBar(
                 color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f),
                 contentColor = MaterialTheme.colorScheme.onSurface
             ) {
-                IconButton(onClick = {},modifier = Modifier.padding(4.dp)) {
+                IconButton(onClick = {}, modifier = Modifier.padding(4.dp)) {
                     Icon(
                         painter = painterResource(
                             id = MoviesIcon.BACK
@@ -55,47 +57,48 @@ fun MovieDetailsTopBar(
             }
 
             IconToggleButton(
-                checked = true,
-                onCheckedChange = {
-
-                }
+                checked = liked,
+                onCheckedChange = onFavButtonClick
             ) {
 
-                val transition = updateTransition(true, label = null)
+                val transition = updateTransition(liked, label = null)
 
-                val tint by transition.animateColor(label = "Tint") {
-                    if (it) Color.Yellow else MaterialTheme.colorScheme.onSurface
-                }
-
-                val size by transition.animateDp(
+                val color by transition.animateColor(
                     transitionSpec = {
-                        if (false isTransitioningTo true) {
-                            keyframes {
-                                durationMillis = 250
-                                30.dp at 0 with LinearOutSlowInEasing
-                                35.dp at 15 with FastOutLinearInEasing
-                                40.dp at 75
-                                35.dp at 150
-                            }
+                        if (liked) {
+                            spring(stiffness = Spring.StiffnessMedium)
                         } else {
-                            spring(stiffness = Spring.StiffnessVeryLow)
+                            tween(durationMillis = 200)
                         }
                     },
-                    label = "Size"
-                ) {
-                    30.dp
+                    label = "color"
+                ) { isFavorite ->
+                    if (isFavorite) Color.Yellow else Color.Black
                 }
 
-//                Icon(
-//                    painter = if (true) painterResource(
-//                        id = com.example.jetgames.common.R.drawable.ic_filled_star
-//                    ) else painterResource(
-//                        id = com.example.jetgames.common.R.drawable.ic_star
-//                    ),
-//                    contentDescription = null,
-//                    tint = tint,
-//                    modifier = Modifier.size(size)
-//                )
+                val scale by transition.animateFloat(
+                    transitionSpec = {
+                        keyframes {
+                            durationMillis = 500
+                            0.0f at 0 with LinearEasing
+                            1.2f at 150 with FastOutSlowInEasing
+                            1.8f at 300 with FastOutSlowInEasing
+                            1.0f at 500
+                        }
+                    },
+                    label = "scale"
+                ) {
+                    if (it) 1.0f else 0.9f
+                }
+
+                Icon(
+                    painterResource(id = MoviesIcon.STAR),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .scale(scale)
+                        .size(35.dp),
+                    tint = color
+                )
             }
         }
     }
@@ -105,6 +108,9 @@ fun MovieDetailsTopBar(
 @Composable
 fun MovieDetailsTopBarPrev() {
     MoviesTheme {
-        MovieDetailsTopBar()
+        MovieDetailsTopBar(
+            liked = false,
+            onFavButtonClick = {}
+        )
     }
 }
