@@ -1,5 +1,7 @@
 package com.example.movies.core.data.di
 
+import com.example.movies.core.data.repository.favorites.abstraction.FavoritesRepository
+import com.example.movies.core.data.repository.favorites.implementation.FavoritesRepositoryImpl
 import com.example.movies.core.data.repository.movielist.abstraction.MovieListRepository
 import com.example.movies.core.data.repository.movielist.implementation.MovieListRepositoryImpl
 import com.example.movies.core.data.repository.movies.abstraction.MoviesRepository
@@ -27,4 +29,7 @@ interface RepositoryModule {
 
     @get:Binds
     val MoviesRepositoryImpl.moviesRepository: MoviesRepository
+
+    @get:Binds
+    val FavoritesRepositoryImpl.favoritesRepository: FavoritesRepository
 }

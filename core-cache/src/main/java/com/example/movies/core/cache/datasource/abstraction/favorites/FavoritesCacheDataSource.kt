@@ -9,6 +9,8 @@ interface FavoritesCacheDataSource {
 
     fun favorites(): Flow<List<MovieEntity>>
 
+    suspend fun getMovie(id: Int): MovieEntity?
+
     suspend fun delete(movie: MovieEntity)
 
     suspend fun clear()

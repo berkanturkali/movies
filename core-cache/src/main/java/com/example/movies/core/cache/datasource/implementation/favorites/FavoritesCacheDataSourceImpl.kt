@@ -18,6 +18,10 @@ class FavoritesCacheDataSourceImpl @Inject constructor(
         return favoritesDao.getFavorites()
     }
 
+    override suspend fun getMovie(id: Int): MovieEntity? {
+        return favoritesDao.getMovie(id)
+    }
+
     override suspend fun delete(movie: MovieEntity) {
         return favoritesDao.delete(movie)
     }

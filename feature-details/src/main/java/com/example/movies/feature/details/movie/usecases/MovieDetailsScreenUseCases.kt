@@ -9,5 +9,8 @@ data class MovieDetailsScreenUseCases @Inject constructor(
     val fetchKeywords: FetchKeywordsUseCase,
     val fetchVideos: FetchVideosUseCase,
     val fetchRecommendations: FetchRecommendationsUseCase,
-    val calculateColorCodeFromScore: CalculateColorCodeFromScoreUseCase
+    val calculateColorCodeFromScore: CalculateColorCodeFromScoreUseCase,
+    val addMovieToFavorites: AddToFavoritesUseCase,
+    val removeMovieFromFavorites: RemoveFromFavoritesUseCase,
+    val checkIfTheMovieIsInFavorites: CheckIfTheMovieIsInFavoritesUseCase,
 )

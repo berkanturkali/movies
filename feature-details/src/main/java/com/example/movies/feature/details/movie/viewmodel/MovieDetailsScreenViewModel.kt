@@ -1,8 +1,5 @@
 package com.example.movies.feature.details.movie.viewmodel
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.*
 import com.example.movies.core.common.Resource
@@ -12,6 +9,7 @@ import com.example.movies.feature.details.movie.usecases.MovieDetailsScreenUseCa
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -44,7 +42,9 @@ class MovieDetailsScreenViewModel @Inject constructor(
 
     val recommendations: LiveData<Resource<List<Recommendation>>> get() = _recommendations
 
-    var liked by mutableStateOf(false)
+    private val _liked = MutableLiveData<Boolean>()
+
+    val liked: LiveData<Boolean> get() = _liked
 
     private var id: Int = 0
 
@@ -52,6 +52,7 @@ class MovieDetailsScreenViewModel @Inject constructor(
         savedStateHandle.get<Int>(MovieDetailsScreenArgs.MOVIE_ID_ARG_KEY)
             ?.let { id ->
                 this.id = id
+                checkIfMovieIsInFavorites(id)
                 fetchMovie(id)
             }
     }
@@ -122,5 +123,27 @@ class MovieDetailsScreenViewModel @Inject constructor(
     fun calculateColorCodeFromScore(score: Float?): Color? =
         movieDetailsScreenUseCases.calculateColorCodeFromScore(score)
 
+    fun addMovieToFavorites(movie: Movie) {
+        viewModelScope.launch(Dispatchers.IO) {
+            movieDetailsScreenUseCases.addMovieToFavorites(movie)
+        }
+    }
 
+    fun removeMovieFromFavorites(movie: Movie) {
+        viewModelScope.launch(Dispatchers.IO) {
+            movieDetailsScreenUseCases.removeMovieFromFavorites(movie)
+        }
+    }
+
+    fun setLiked(liked: Boolean) {
+        _liked.value = liked
+    }
+
+    private fun checkIfMovieIsInFavorites(id: Int) {
+        viewModelScope.launch(Dispatchers.Main) {
+            _liked.value = withContext(
+                Dispatchers.IO
+            ) { movieDetailsScreenUseCases.checkIfTheMovieIsInFavorites(id) }
+        }
+    }
 }

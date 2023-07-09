@@ -14,10 +14,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.blur
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -53,7 +51,7 @@ fun MovieDetailsScreen(
 
     val listState = rememberLazyListState()
 
-    val liked = viewModel.liked
+    val liked by viewModel.liked.observeAsState()
 
     val showStickyTopBar by remember {
         derivedStateOf {
@@ -120,12 +118,17 @@ fun MovieDetailsScreen(
                                     languages = movie.languages,
                                     dominantColor = dominantColor,
                                     scoreColor = viewModel.calculateColorCodeFromScore(movie.score),
-                                    liked = liked,
+                                    liked = liked ?: false,
                                     onFavButtonClick = { liked ->
-                                        viewModel.liked = liked
+                                        if (movie.id != null) {
+                                            viewModel.setLiked(liked)
+                                            if (liked) {
+                                                viewModel.addMovieToFavorites(movie)
+                                            } else {
+                                                viewModel.removeMovieFromFavorites(movie)
+                                            }
+                                        }
                                     }
-
-
                                 )
 
                                 cast?.let { castResource ->
@@ -207,7 +210,7 @@ fun MovieDetailsScreen(
                                             listState.animateScrollToItem(index = 0)
                                         }
                                     },
-                                    liked = liked,
+                                    liked = liked ?: false,
                                 )
                             }
                         }

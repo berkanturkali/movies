@@ -11,6 +11,7 @@ import com.example.movies.core.cache.utils.DummyData
 import com.google.common.truth.Truth
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
+import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -106,10 +107,37 @@ class FavoritesCacheDataSourceImplTest {
             )
             dataSource.upsert(entity)
             dataSource.upsert(newEntity)
-            Truth.assertThat(dataSource.favorites().first().size).isEqualTo(2)
+            Truth.assertThat(
+                dataSource.favorites()
+                    .first().size
+            )
+                .isEqualTo(2)
             dataSource.clear()
-            Truth.assertThat(dataSource.favorites().first()).isEmpty()
+            Truth.assertThat(
+                dataSource.favorites()
+                    .first()
+            )
+                .isEmpty()
         }
+    }
+
+    @Test
+    fun favorite_getsData_correctly() {
+        runBlocking {
+            val entity = dataSource.getMovie(1)
+            Truth.assertThat(entity)
+                .isNull()
+            val newEntity = DummyData.movieEntity
+            dataSource.upsert(newEntity)
+            val new = dataSource.getMovie(newEntity.id)
+            Truth.assertThat(new)
+                .isNotNull()
+        }
+    }
+
+    @After
+    fun tearDown() {
+        db.close()
     }
 
 
