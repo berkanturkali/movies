@@ -18,6 +18,7 @@ class MovieDetailsResponseMapper @Inject constructor(
 ) : RemoteResponseModelMapper<MovieDetailsResponseDTO, Movie> {
     override fun mapFromModel(model: MovieDetailsResponseDTO): Movie {
         return Movie(
+            id = model.id,
             title = model.title?.let { mapMovieTitle(title = model.title, model.releaseDate) },
             image = imageMapper.mapPath(model.posterPath),
             releaseDate = model.releaseDate,

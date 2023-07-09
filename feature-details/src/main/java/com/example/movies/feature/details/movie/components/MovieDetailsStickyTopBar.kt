@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -58,9 +59,10 @@ fun MovieDetailsStickyTopBar(
     }
 
     OutlinedCard(
-        modifier = modifier.clickable(interactionSource = interactionSource, indication = null) {
-            onTopBarClick()
-        },
+        modifier = modifier
+            .clickable(interactionSource = interactionSource, indication = null) {
+                onTopBarClick()
+            },
         border = BorderStroke(
             0.5.dp, color = MaterialTheme.colorScheme.onSurface
         ),
@@ -68,7 +70,7 @@ fun MovieDetailsStickyTopBar(
             defaultElevation = 8.dp
         ),
         colors = CardDefaults.outlinedCardColors(
-            containerColor = dominantColor
+            containerColor = dominantColor.copy(alpha = 0.95f)
         )
     ) {
         Row(
@@ -131,7 +133,7 @@ fun MovieDetailsStickyTopBarPrev() {
                 image = "", title = "Title",
                 dominantColor = MaterialTheme.colorScheme.surface,
                 onTopBarClick = {},
-                liked = true
+                liked = true,
             )
         }
     }

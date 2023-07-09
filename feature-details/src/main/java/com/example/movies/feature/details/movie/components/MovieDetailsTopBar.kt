@@ -2,6 +2,7 @@ package com.example.movies.feature.details.movie.components
 
 import androidx.compose.animation.animateColor
 import androidx.compose.animation.core.*
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.IconToggleButton
@@ -11,6 +12,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
@@ -58,7 +60,7 @@ fun MovieDetailsTopBar(
 
             IconToggleButton(
                 checked = liked,
-                onCheckedChange = onFavButtonClick
+                onCheckedChange = onFavButtonClick,
             ) {
 
                 val transition = updateTransition(liked, label = null)
@@ -95,7 +97,7 @@ fun MovieDetailsTopBar(
                     painterResource(id = MoviesIcon.STAR),
                     contentDescription = null,
                     modifier = Modifier
-                        .scale(scale)
+                        .then(if (liked) Modifier.scale(scale) else Modifier)
                         .size(35.dp),
                     tint = color
                 )

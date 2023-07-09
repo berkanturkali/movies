@@ -5,15 +5,16 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
 import com.example.movies.core.cache.dao.RecentSearchesDao
-import com.example.movies.core.cache.datasource.abstraction.RecentSearchesCacheDataSource
+import com.example.movies.core.cache.datasource.abstraction.recentsearches.RecentSearchesCacheDataSource
+import com.example.movies.core.cache.datasource.implementation.recentsearches.RecentSearchesCacheDataSourceImpl
 import com.example.movies.core.cache.db.recentsearches.RecentSearchesDatabase
+import com.example.movies.core.cache.factory.InMemoryDatabaseFactory
 import com.example.movies.core.cache.model.RecentSearchEntity
 import com.google.common.truth.Truth
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Before
@@ -33,12 +34,7 @@ class RecentSearchesCacheDataSourceImplTest {
 
     @Before
     fun setup() {
-        database = Room.inMemoryDatabaseBuilder(
-            ApplicationProvider.getApplicationContext(),
-            RecentSearchesDatabase::class.java
-        )
-            .allowMainThreadQueries()
-            .build()
+        database = InMemoryDatabaseFactory.createInMemoryDatabase()
 
         recentSearchesDao = database.recentSearchesDao
 

@@ -1,4 +1,4 @@
-package com.example.movies.core.cache.datasource.abstraction
+package com.example.movies.core.cache.datasource.abstraction.recentsearches
 
 import com.example.movies.core.cache.model.RecentSearchEntity
 import kotlinx.coroutines.flow.Flow

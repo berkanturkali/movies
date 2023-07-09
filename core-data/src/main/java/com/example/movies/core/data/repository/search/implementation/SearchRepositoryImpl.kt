@@ -4,7 +4,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.map
-import com.example.movies.core.cache.datasource.abstraction.RecentSearchesCacheDataSource
+import com.example.movies.core.cache.datasource.abstraction.recentsearches.RecentSearchesCacheDataSource
 import com.example.movies.core.cache.mapper.recentsearches.RecentSearchEntityMapper
 import com.example.movies.core.cache.model.RecentSearchEntity
 import com.example.movies.core.data.repository.search.abstraction.SearchRepository

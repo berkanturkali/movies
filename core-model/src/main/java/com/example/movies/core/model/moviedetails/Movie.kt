@@ -1,6 +1,7 @@
 package com.example.movies.core.model.moviedetails
 
 data class Movie(
+    val id:Int? = null,
     val title: String? = null,
     val image: String? = null,
     val releaseDate: String? = null,

@@ -14,11 +14,15 @@ android {
 
         buildConfigField("int", "recentSearchesDatabaseVersion", 1.toString())
         buildConfigField("String", "recentSearchesDatabaseName", "\"recent_searches_db\"")
+
+
+        buildConfigField("int", "favoritesDatabaseVersion", 1.toString())
+        buildConfigField("String", "favoritesDatabaseName", "\"favorites_db\"")
     }
 }
 
 dependencies {
-
+    
     //libs
     implementAllProjects(
         ProjectLibs.CORE_MODEL

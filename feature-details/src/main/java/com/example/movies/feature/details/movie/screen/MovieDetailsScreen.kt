@@ -14,8 +14,10 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.blur
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -62,7 +64,8 @@ fun MovieDetailsScreen(
     val coroutineScope = rememberCoroutineScope()
 
     MoviesScaffold(
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier
+            .fillMaxSize()
     ) {
 
         movieResource?.let {
@@ -99,7 +102,8 @@ fun MovieDetailsScreen(
                         Box(modifier = modifier.fillMaxWidth()) {
                             LazyColumn(
                                 state = listState,
-                                modifier = Modifier.fillMaxWidth(),
+                                modifier = Modifier
+                                    .fillMaxWidth(),
                                 verticalArrangement = Arrangement.spacedBy(16.dp),
                                 horizontalAlignment = Alignment.CenterHorizontally
                             ) {
@@ -203,7 +207,7 @@ fun MovieDetailsScreen(
                                             listState.animateScrollToItem(index = 0)
                                         }
                                     },
-                                    liked = liked
+                                    liked = liked,
                                 )
                             }
                         }

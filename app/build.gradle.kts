@@ -13,7 +13,6 @@ hilt {
 }
 
 dependencies {
-
     //project libs
     implementAllProjects(
         ProjectLibs.CORE_UI,

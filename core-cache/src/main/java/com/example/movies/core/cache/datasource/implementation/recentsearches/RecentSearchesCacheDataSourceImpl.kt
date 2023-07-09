@@ -1,7 +1,7 @@
-package com.example.movies.core.cache.datasource.implementation
+package com.example.movies.core.cache.datasource.implementation.recentsearches
 
 import com.example.movies.core.cache.dao.RecentSearchesDao
-import com.example.movies.core.cache.datasource.abstraction.RecentSearchesCacheDataSource
+import com.example.movies.core.cache.datasource.abstraction.recentsearches.RecentSearchesCacheDataSource
 import com.example.movies.core.cache.model.RecentSearchEntity
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
