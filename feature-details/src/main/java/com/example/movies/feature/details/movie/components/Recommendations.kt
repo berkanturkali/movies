@@ -1,9 +1,7 @@
 package com.example.movies.feature.details.movie.components
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
@@ -22,30 +20,29 @@ import com.example.movies.feature.details.R
 fun Recommendations(
     recommendations: List<Recommendation>,
     scoreColor: Color?,
+    onItemClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-
-    if (recommendations.isNotEmpty()) {
-
-        Column(modifier = modifier) {
-            SectionTitle(
-                titleId = R.string.recommendations_title,
-                modifier = Modifier.padding(horizontal = 12.dp)
-            )
+    DetailsListSection(
+        modifier = modifier,
+        sectionTitleId = R.string.recommendations_title,
+        content = {
             LazyRow(
                 contentPadding = PaddingValues(8.dp),
-                horizontalArrangement = Arrangement.spacedBy(24.dp),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 items(recommendations) { recommendation ->
                     RecommendationItem(
                         image = recommendation.image,
                         score = recommendation.score,
-                        scoreColor = scoreColor
+                        scoreColor = scoreColor,
+                        onItemClick = onItemClick,
                     )
                 }
             }
-        }
-    }
+        },
+        showSeeAllContent = false,
+    )
 }
 
 @Preview
@@ -60,7 +57,8 @@ fun RecommendationsPrev() {
                     Recommendation(name = "Lorem Ipsum", image = "", score = 0.7f),
                     Recommendation(name = "Lorem Ipsum", image = "", score = 0.1f),
                 ),
-                scoreColor = Color.Green
+                scoreColor = Color.Green,
+                onItemClick = {}
             )
         }
     }

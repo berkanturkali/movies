@@ -2,11 +2,11 @@ package com.example.movies.feature.details.navigation
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
-import com.google.accompanist.navigation.animation.composable
 import androidx.navigation.navArgument
 import com.example.movies.core.navigation.MoviesNavigationDestination
 import com.example.movies.core.navigation.args.moviedetails.MovieDetailsScreenArgs
 import com.example.movies.feature.details.movie.screen.MovieDetailsScreen
+import com.google.accompanist.navigation.animation.composable
 
 object MovieDetailsDestination : MoviesNavigationDestination {
     override val route: String
@@ -20,11 +20,13 @@ object MovieDetailsDestination : MoviesNavigationDestination {
             navArgument(MovieDetailsScreenArgs.MOVIE_ID_ARG_KEY) { type = NavType.IntType })
 }
 
-fun NavGraphBuilder.movieDetailsGraph() {
+fun NavGraphBuilder.movieDetailsGraph(
+    onBackButtonClick: () -> Unit,
+) {
     composable(
         route = MovieDetailsDestination.destination + "/{${MovieDetailsScreenArgs.MOVIE_ID_ARG_KEY}}",
         arguments = MovieDetailsDestination.arguments
     ) {
-        MovieDetailsScreen()
+        MovieDetailsScreen(onBackButtonClick = onBackButtonClick)
     }
 }

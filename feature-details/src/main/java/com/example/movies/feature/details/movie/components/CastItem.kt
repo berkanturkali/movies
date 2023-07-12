@@ -5,6 +5,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,7 +32,6 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 fun CastItem(
     image: String?,
     name: String?,
-    character: String?,
     modifier: Modifier = Modifier,
     @DrawableRes errorImage: Int = MoviesIcon.MALE_PERSON,
 ) {
@@ -42,61 +44,61 @@ fun CastItem(
 
     val state = painter.state
 
-    Column(
-        modifier = modifier
-            .width(IntrinsicSize.Max)
-            .padding(horizontal = 8.dp),
-        verticalArrangement = Arrangement.spacedBy(4.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+    Card(
+        shape = RoundedCornerShape(8.dp),
+        modifier = modifier,
+        elevation = CardDefaults.cardElevation(8.dp)
     ) {
-        Box(
+
+        Column(
             modifier = Modifier
-                .size(100.dp)
-                .background(color = Color.Black, shape = CircleShape),
-            contentAlignment = Alignment.Center
+                .width(IntrinsicSize.Max)
+                .requiredHeight(200.dp)
+                .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.7f))
+                .padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            if (state is AsyncImagePainter.State.Error) {
+            Box(
+                modifier = Modifier
+                    .size(100.dp)
+                    .background(color = Color.Black, shape = CircleShape),
+                contentAlignment = Alignment.Center
+            ) {
+                if (state is AsyncImagePainter.State.Error) {
+                    Image(
+                        painter = painterResource(id = errorImage),
+                        contentDescription = null,
+                        contentScale = ContentScale.Fit,
+                        modifier = Modifier
+                            .clip(CircleShape),
+                        colorFilter = ColorFilter.tint(
+                            color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.5f)
+                        ),
+                        alignment = Alignment.Center
+                    )
+                }
+
                 Image(
-                    painter = painterResource(id = errorImage),
+                    painter = painter,
+                    alignment = Alignment.Center,
                     contentDescription = null,
-                    contentScale = ContentScale.Fit,
+                    contentScale = ContentScale.FillWidth,
                     modifier = Modifier
-                        .clip(CircleShape),
-                    colorFilter = ColorFilter.tint(
-                        color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.5f)
-                    ),
-                    alignment = Alignment.Center
+                        .clip(CircleShape)
+                        .fillMaxSize()
                 )
             }
-
-            Image(
-                painter = painter,
-                alignment = Alignment.Center,
-                contentDescription = null,
-                contentScale = ContentScale.FillWidth,
-                modifier = Modifier
-                    .clip(CircleShape)
-                    .fillMaxSize()
-            )
-        }
-        name?.let {
-            Text(
-                text = name,
-                style = MaterialTheme.typography.titleSmall,
-                color = MaterialTheme.colorScheme.onSurface,
-                textAlign = TextAlign.Center
-            )
-        }
-        character?.let {
-            Text(
-                text = character,
-                style = MaterialTheme.typography.titleSmall,
-                color = MaterialTheme.colorScheme.onSurface,
-                textAlign = TextAlign.Center,
-                modifier = Modifier
-                    .padding(horizontal = 4.dp)
-            )
-
+            name?.let {
+                Text(
+                    text = name,
+                    style = MaterialTheme.typography.titleSmall,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    textAlign = TextAlign.Center,
+                    maxLines = 2,
+                    modifier = Modifier.width(IntrinsicSize.Min)
+                )
+            }
         }
     }
 }
@@ -105,6 +107,6 @@ fun CastItem(
 @Composable
 fun CastItemPrev() {
     MoviesTheme {
-        CastItem(image = "", name = "Shameik Moore", "Miles Morales / Spider-Man (voice)")
+        CastItem(image = "", name = "Shameik Moore")
     }
 }

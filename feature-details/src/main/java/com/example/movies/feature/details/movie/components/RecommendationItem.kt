@@ -1,6 +1,7 @@
 package com.example.movies.feature.details.movie.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -28,6 +29,7 @@ fun RecommendationItem(
     image: String?,
     score: Float?,
     scoreColor:Color?,
+    onItemClick:() -> Unit,
     modifier: Modifier = Modifier
 ) {
     val imageLoader = LocalContext.current.imageLoader
@@ -47,7 +49,7 @@ fun RecommendationItem(
             .height(220.dp)
     }
 
-    Column(modifier = modifier.width(IntrinsicSize.Min)) {
+    Column(modifier = modifier.width(IntrinsicSize.Min).clickable { onItemClick() }) {
 
         Box(modifier = Modifier.then(widthHeightModifier), contentAlignment = Alignment.TopEnd) {
 
@@ -79,7 +81,7 @@ fun RecommendationItem(
 fun RecommendationItemPrev() {
     MoviesTheme {
         CompositionLocalProvider(LocalWindowWidthSizeClass provides WindowWidthSizeClass.Compact) {
-            RecommendationItem(image = "", score = 0.6f,scoreColor = Color.Green)
+            RecommendationItem(image = "", score = 0.6f,scoreColor = Color.Green, onItemClick = {})
         }
     }
 }

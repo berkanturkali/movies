@@ -1,9 +1,6 @@
 package com.example.movies.feature.details.movie.screen
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
@@ -15,7 +12,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.examle.movies.core.ui.theme.MoviesTheme
-import com.example.movies.core.model.moviedetails.Movie
 import com.example.movies.feature.details.R
 import com.example.movies.feature.details.common.components.Overview
 import com.example.movies.feature.details.common.components.ScoreView
@@ -35,15 +31,12 @@ fun LazyListScope.movieDetailsScreenContent(
     languages: List<String?>?,
     dominantColor: Color,
     scoreColor: Color?,
-    liked: Boolean,
-    onFavButtonClick: (Boolean) -> Unit,
 ) {
+
     item {
         MoviePoster(
             imageUrl = imageUrl,
             dominantColor = dominantColor,
-            liked = liked,
-            onFavButtonClick = onFavButtonClick
         )
     }
     item {
@@ -90,6 +83,7 @@ fun LazyListScope.movieDetailsScreenContent(
                 .fillMaxWidth()
                 .padding(horizontal = 12.dp),
         )
+        Spacer(modifier = Modifier.height(12.dp))
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
             Languages(languages = languages)
         }
@@ -132,8 +126,6 @@ fun MovieDetailsScreenContentPrev() {
                     languages = listOf("en", "hi", "it", "es"),
                     dominantColor = Color.Gray,
                     scoreColor = Color.Green,
-                    liked = false,
-                    onFavButtonClick = {}
                 )
             }
         }

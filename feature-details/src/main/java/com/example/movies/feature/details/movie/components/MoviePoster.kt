@@ -26,8 +26,6 @@ import com.examle.movies.core.ui.theme.MoviesTheme
 fun MoviePoster(
     imageUrl: String?,
     dominantColor: Color,
-    liked: Boolean,
-    onFavButtonClick: (Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
 
@@ -40,7 +38,7 @@ fun MoviePoster(
     )
 
     OutlinedCard(
-        modifier = modifier.padding(8.dp),
+        modifier = modifier.padding(horizontal = 8.dp),
         border = BorderStroke(
             0.5.dp,
             color = MaterialTheme.colorScheme.onSurface
@@ -62,12 +60,6 @@ fun MoviePoster(
                 contentDescription = null,
                 modifier = Modifier.fillMaxSize()
             )
-
-            MovieDetailsTopBar(
-                modifier = Modifier.padding(10.dp),
-                liked = liked,
-                onFavButtonClick = onFavButtonClick
-            )
         }
     }
 }
@@ -76,6 +68,6 @@ fun MoviePoster(
 @Composable
 fun MoviePosterPrev() {
     MoviesTheme {
-        MoviePoster(imageUrl = "", dominantColor = Color.Gray, liked = false, onFavButtonClick = {})
+        MoviePoster(imageUrl = "", dominantColor = Color.Gray)
     }
 }

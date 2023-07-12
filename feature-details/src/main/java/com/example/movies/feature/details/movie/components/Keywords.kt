@@ -1,6 +1,8 @@
 package com.example.movies.feature.details.movie.components
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -15,28 +17,27 @@ fun Keywords(
     keywords: List<Keyword>,
     modifier: Modifier = Modifier
 ) {
-    Column(modifier = modifier) {
-        SectionTitle(
-            titleId = R.string.keywords_title,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 12.dp),
-        )
-        FlowRow(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 12.dp),
-            horizontalArrangement = Arrangement.spacedBy(
-                8.dp, Alignment.CenterHorizontally
-            ),
-        ) {
-            keywords.forEach { keyword ->
-                keyword.name?.let { name ->
-                    KeywordItem(keyword = name)
+    DetailsListSection(
+        modifier = modifier,
+        sectionTitleId = R.string.keywords_title,
+        content = {
+            FlowRow(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                horizontalArrangement =
+                Arrangement.spacedBy(
+                    8.dp,
+                    Alignment.CenterHorizontally
+                ),
+            ) {
+                keywords.forEach { keyword ->
+                    keyword.name?.let { name ->
+                        KeywordItem(keyword = name)
+                    }
                 }
             }
         }
-    }
+    )
 }
 
 @Preview

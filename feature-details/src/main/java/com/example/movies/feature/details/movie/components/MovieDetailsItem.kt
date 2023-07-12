@@ -1,11 +1,14 @@
 package com.example.movies.feature.details.movie.components
 
 import android.content.Context
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import com.examle.movies.core.ui.R
 import com.examle.movies.core.ui.components.MoviesErrorView
 import com.example.movies.core.common.Resource

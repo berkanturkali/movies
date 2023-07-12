@@ -6,10 +6,7 @@ import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.shrinkVertically
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.*
@@ -28,9 +25,11 @@ import com.example.movies.core.common.Resource
 import com.example.movies.feature.details.movie.components.*
 import com.example.movies.feature.details.movie.viewmodel.MovieDetailsScreenViewModel
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @Composable
 fun MovieDetailsScreen(
+    onBackButtonClick: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: MovieDetailsScreenViewModel = hiltViewModel()
 ) {
@@ -63,7 +62,7 @@ fun MovieDetailsScreen(
 
     MoviesScaffold(
         modifier = modifier
-            .fillMaxSize()
+            .fillMaxSize(),
     ) {
 
         movieResource?.let {
@@ -80,7 +79,7 @@ fun MovieDetailsScreen(
                     )
                 }
                 is Resource.Loading -> {
-                    MoviesProgressBar()
+                    MoviesProgressBar(modifier = Modifier.fillMaxSize())
                 }
                 is Resource.Success -> {
                     val movie = it.data
@@ -97,28 +96,11 @@ fun MovieDetailsScreen(
                                 it.image ?: ""
                             )
                         }
-                        Box(modifier = modifier.fillMaxWidth()) {
-                            LazyColumn(
-                                state = listState,
-                                modifier = Modifier
-                                    .fillMaxWidth(),
-                                verticalArrangement = Arrangement.spacedBy(16.dp),
-                                horizontalAlignment = Alignment.CenterHorizontally
-                            ) {
-                                movieDetailsScreenContent(
-                                    title = movie.title,
-                                    date = movie.releaseDate,
-                                    status = movie.status,
-                                    imageUrl = movie.image,
-                                    tagline = movie.tagLine,
-                                    revenue = movie.revenue,
-                                    overview = movie.overview,
-                                    score = movie.score,
-                                    genres = movie.genres,
-                                    languages = movie.languages,
-                                    dominantColor = dominantColor,
-                                    scoreColor = viewModel.calculateColorCodeFromScore(movie.score),
+                        Box(modifier = modifier.fillMaxSize()) {
+                            Column {
+                                MovieDetailsTopBar(
                                     liked = liked ?: false,
+                                    onBackButtonClick = onBackButtonClick,
                                     onFavButtonClick = { liked ->
                                         if (movie.id != null) {
                                             viewModel.setLiked(liked)
@@ -131,67 +113,96 @@ fun MovieDetailsScreen(
                                     }
                                 )
 
-                                cast?.let { castResource ->
-                                    movieDetailsItem(
-                                        context = context,
-                                        resource = castResource,
-                                        onRetryClick = {
-                                            viewModel.fetchCast()
-                                        }) { castList ->
-                                        Cast(
-                                            cast = castList.filterNotNull()
-                                                .take(10)
-                                        )
-                                    }
+                                LazyColumn(
+                                    state = listState,
+                                    modifier = Modifier
+                                        .fillMaxWidth(),
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                                ) {
+                                    movieDetailsScreenContent(
+                                        title = movie.title,
+                                        date = movie.releaseDate,
+                                        status = movie.status,
+                                        imageUrl = movie.image,
+                                        tagline = movie.tagLine,
+                                        revenue = movie.revenue,
+                                        overview = movie.overview,
+                                        score = movie.score,
+                                        genres = movie.genres,
+                                        languages = movie.languages,
+                                        dominantColor = dominantColor,
+                                        scoreColor = viewModel.calculateColorCodeFromScore(
+                                            movie.score
+                                        ),
+                                    )
 
-                                }
-
-                                recommendations?.let { recommendationsResource ->
-                                    movieDetailsItem(
-                                        context = context, resource = recommendationsResource,
-                                        onRetryClick = viewModel::fetchRecommendations
-                                    ) { recommendationsList ->
-                                        Recommendations(
-                                            recommendations = recommendationsList.take(10),
-                                            scoreColor = viewModel.calculateColorCodeFromScore(
-                                                movie.score
+                                    cast?.let { castResource ->
+                                        movieDetailsItem(
+                                            context = context,
+                                            resource = castResource,
+                                            onRetryClick = {
+                                                viewModel.fetchCast()
+                                            }) { castList ->
+                                            Cast(
+                                                cast = castList.filterNotNull()
                                             )
-                                        )
+                                        }
+
                                     }
-                                }
 
-                                reviews?.let { reviewsResource ->
-                                    movieDetailsItem(
-                                        context = context, resource = reviewsResource,
-                                        onRetryClick = viewModel::fetchReviews
-                                    ) { reviews ->
-                                        Reviews(
-                                            reviews = reviews
-                                        )
+                                    recommendations?.let { recommendationsResource ->
+                                        movieDetailsItem(
+                                            context = context, resource = recommendationsResource,
+                                            onRetryClick = viewModel::fetchRecommendations
+                                        ) { recommendationsList ->
+                                            if (recommendationsList.isNotEmpty()) {
+                                                Recommendations(
+                                                    recommendations = recommendationsList.take(10),
+                                                    scoreColor = viewModel.calculateColorCodeFromScore(
+                                                        movie.score
+                                                    ),
+                                                    onItemClick = {
+
+                                                    }
+                                                )
+                                            }
+                                        }
                                     }
-                                }
 
-                                videos?.let { videosResource ->
-                                    movieDetailsItem(
-                                        context = context,
-                                        resource = videosResource,
-                                        onRetryClick = viewModel::fetchVideos
-                                    ) { videos ->
-                                        Videos(
-                                            videos = videos,
-                                            onVideoClick = { url ->
-
-                                            })
+                                    reviews?.let { reviewsResource ->
+                                        movieDetailsItem(
+                                            context = context, resource = reviewsResource,
+                                            onRetryClick = viewModel::fetchReviews
+                                        ) { reviews ->
+                                            Reviews(
+                                                reviews = reviews
+                                            )
+                                        }
                                     }
-                                }
 
-                                keywords?.let { keywordsResource ->
-                                    movieDetailsItem(
-                                        context = context,
-                                        resource = keywordsResource,
-                                        onRetryClick = viewModel::fetchKeywords,
-                                    ) { keywords ->
-                                        Keywords(keywords = keywords)
+                                    videos?.let { videosResource ->
+                                        movieDetailsItem(
+                                            context = context,
+                                            resource = videosResource,
+                                            onRetryClick = viewModel::fetchVideos
+                                        ) { videos ->
+                                            Videos(
+                                                videos = videos,
+                                                onVideoClick = { url ->
+
+                                                })
+                                        }
+                                    }
+
+                                    keywords?.let { keywordsResource ->
+                                        movieDetailsItem(
+                                            context = context,
+                                            resource = keywordsResource,
+                                            onRetryClick = viewModel::fetchKeywords,
+                                        ) { keywords ->
+                                            Keywords(keywords = keywords)
+                                        }
                                     }
                                 }
                             }

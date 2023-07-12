@@ -40,6 +40,8 @@ fun MoviesNavHost(
             })
 
         //movie details
-        movieDetailsGraph()
+        movieDetailsGraph(onBackButtonClick = {
+            navController.navigateUp()
+        })
     }
 }

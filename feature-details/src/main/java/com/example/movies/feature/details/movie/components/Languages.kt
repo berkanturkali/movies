@@ -1,16 +1,13 @@
 package com.example.movies.feature.details.movie.components
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.Immutable
-import androidx.compose.runtime.Stable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -33,43 +30,56 @@ fun Languages(
 
     val widthHeightModifier: Modifier = when (LocalWindowWidthSizeClass.current) {
         WindowWidthSizeClass.Compact -> Modifier
-            .width(40.dp)
+            .width(32.dp)
             .height(30.dp)
         WindowWidthSizeClass.Medium -> Modifier
-            .width(60.dp)
+            .width(52.dp)
             .height(50.dp)
         WindowWidthSizeClass.Compact -> Modifier
-            .width(80.dp)
+            .width(72.dp)
             .height(70.dp)
         else -> Modifier
-            .width(40.dp)
+            .width(32.dp)
             .height(30.dp)
     }
 
-    languages?.forEach { language ->
-        if(!language.isNullOrEmpty()) {
-            Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
-                MoviesSurface(
-                    modifier = Modifier.then(widthHeightModifier), color = Color.Transparent
-                ) {
-                    val painter = rememberAsyncImagePainter(
-                        model = "https://flagsapi.com/${language.uppercase()}/flat/64.png",
-                        imageLoader = imageLoader
-                    )
-                    Image(
-                        alignment = Alignment.Center,
-                        contentScale = ContentScale.FillBounds,
-                        painter = painter,
-                        modifier = Modifier.fillMaxWidth(),
-                        contentDescription = null,
-                    )
-                }
+    languages?.let { languages ->
+        LazyRow(horizontalArrangement = Arrangement.spacedBy(4.dp), userScrollEnabled = false) {
+            items(languages) { language ->
+                language?.let {
+                    Column(
+                        modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        MoviesSurface(
+                            modifier = Modifier.then(widthHeightModifier), color = Color.Transparent
+                        ) {
+                            val newLanguage = if (language.equals("en", true)) {
+                                "us"
+                            } else if (language.equals("hi", true)) {
+                                "in"
+                            } else {
+                                language
+                            }
+                            val painter = rememberAsyncImagePainter(
+                                model = "https://flagsapi.com/${newLanguage.uppercase()}/flat/64.png",
+                                imageLoader = imageLoader
+                            )
+                            Image(
+                                alignment = Alignment.Center,
+                                contentScale = ContentScale.FillBounds,
+                                painter = painter,
+                                modifier = Modifier.fillMaxWidth(),
+                                contentDescription = null,
+                            )
+                        }
 
-                Text(
-                    text = language.uppercase(),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurface
-                )
+                        Text(
+                            text = language.uppercase(),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                    }
+                }
             }
         }
     }

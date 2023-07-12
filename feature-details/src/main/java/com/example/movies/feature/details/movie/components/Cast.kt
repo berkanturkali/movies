@@ -1,6 +1,7 @@
 package com.example.movies.feature.details.movie.components
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
@@ -16,31 +17,28 @@ fun Cast(
     cast: List<Cast>,
     modifier: Modifier = Modifier,
 ) {
-    Column(modifier = modifier) {
-        Row(
-            horizontalArrangement = Arrangement.SpaceBetween,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 12.dp)
-        ) {
-            SectionTitle(
-                titleId = R.string.cast_title,
-            )
-            SeeAllButton(onItemClick = {})
-        }
-
-        LazyRow(
-            contentPadding = PaddingValues(8.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
-            items(cast) {
-                CastItem(
-                    image = it.image,
-                    name = it.name,
-                    character = it.characterName
-                )
-            }
-        }
+    if (cast.isNotEmpty()) {
+        val topTen = cast.take(10)
+        DetailsListSection(
+            modifier = modifier,
+            sectionTitleId = R.string.cast_title,
+            content = {
+                LazyRow(
+                    modifier = Modifier,
+                    contentPadding = PaddingValues(8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
+                    items(topTen) {
+                        CastItem(
+                            image = it.image,
+                            name = it.name,
+                        )
+                    }
+                }
+            },
+            showSeeAllContent = cast.size > topTen.size,
+            count = cast.size
+        )
     }
 }
 
