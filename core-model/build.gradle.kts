@@ -1,5 +1,6 @@
 plugins {
     moviesAndroidLibrary
+    parcelize
 }
 
 dependencies {}

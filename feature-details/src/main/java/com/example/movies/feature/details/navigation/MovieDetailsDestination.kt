@@ -3,8 +3,9 @@ package com.example.movies.feature.details.navigation
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
+import com.example.movies.core.model.moviedetails.Cast
 import com.example.movies.core.navigation.MoviesNavigationDestination
-import com.example.movies.core.navigation.args.moviedetails.MovieDetailsScreenArgs
+import com.example.movies.core.navigation.args.moviedetails.MovieDetailsScreenArgConstants
 import com.example.movies.feature.details.movie.screen.MovieDetailsScreen
 import com.google.accompanist.navigation.animation.composable
 
@@ -17,16 +18,20 @@ object MovieDetailsDestination : MoviesNavigationDestination {
         get() = true
     val arguments
         get() = listOf(
-            navArgument(MovieDetailsScreenArgs.MOVIE_ID_ARG_KEY) { type = NavType.IntType })
+            navArgument(MovieDetailsScreenArgConstants.MOVIE_ID_ARG_KEY) { type = NavType.IntType })
 }
 
 fun NavGraphBuilder.movieDetailsGraph(
     onBackButtonClick: () -> Unit,
+    onSeeAllButtonClickForCast: (List<Cast>) -> Unit,
 ) {
     composable(
-        route = MovieDetailsDestination.destination + "/{${MovieDetailsScreenArgs.MOVIE_ID_ARG_KEY}}",
+        route = MovieDetailsDestination.destination + "/{${MovieDetailsScreenArgConstants.MOVIE_ID_ARG_KEY}}",
         arguments = MovieDetailsDestination.arguments
     ) {
-        MovieDetailsScreen(onBackButtonClick = onBackButtonClick)
+        MovieDetailsScreen(
+            onBackButtonClick = onBackButtonClick,
+            onSeeAllButtonClickForCast = onSeeAllButtonClickForCast
+        )
     }
 }

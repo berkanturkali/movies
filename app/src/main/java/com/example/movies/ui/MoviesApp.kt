@@ -15,6 +15,7 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.examle.movies.core.ui.components.MoviesBackground
+import com.examle.movies.core.ui.components.MoviesDivider
 import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.examle.movies.core.ui.theme.MoviesTheme
 import com.example.movies.navigation.MoviesNavHost
@@ -22,11 +23,13 @@ import com.example.movies.navigation.MoviesTopLevelNavigation
 import com.example.movies.navigation.TOP_LEVEL_DESTINATIONS
 import com.example.movies.navigation.TopLevelDestination
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import com.squareup.moshi.Moshi
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun MoviesApp(
+    moshi: Moshi,
     modifier: Modifier = Modifier
 ) {
     val windowWidthSizeClass = LocalWindowWidthSizeClass.current
@@ -50,13 +53,16 @@ fun MoviesApp(
                 bottomBar = {
                     if (windowWidthSizeClass == WindowWidthSizeClass.Compact) {
                         if (isNavbarVisible) {
-                            MoviesBottomBar(
-                                onNavigateToTopLevelDestination = moviesTopLevelNavigation::navigateTo,
-                                scrollToTopForCurrentDestination = {
+                            Column {
+                                MoviesDivider()
+                                MoviesBottomBar(
+                                    onNavigateToTopLevelDestination = moviesTopLevelNavigation::navigateTo,
+                                    scrollToTopForCurrentDestination = {
 
-                                },
-                                currentDestination = currentDestination
-                            )
+                                    },
+                                    currentDestination = currentDestination
+                                )
+                            }
                         }
                     }
                 }
@@ -79,6 +85,7 @@ fun MoviesApp(
                         )
                     }
                     MoviesNavHost(
+                        moshi = moshi,
                         navController = navController,
                         modifier = Modifier
                             .padding(padding)
@@ -124,7 +131,6 @@ private fun MoviesBottomBar(
 ) {
     Surface(color = MaterialTheme.colorScheme.surface) {
         NavigationBar(
-
             modifier = Modifier.windowInsetsPadding(
                 WindowInsets.safeDrawing.only(
                     WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom

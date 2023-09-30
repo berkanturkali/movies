@@ -52,7 +52,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
 
                 // TODO : Remove this dependency once we upgrade to Android Studio Dolphin b/228889042
                 // These dependencies are currently necessary to render Compose previews
-                debugImplementation(Dependencies.AndroidX.ANDROIDX_CUSTOM_VIEW_POOL_CONTAINER)
+//                debugImplementation(Dependencies.AndroidX.ANDROIDX_CUSTOM_VIEW_POOL_CONTAINER)
 
                 detektPlugins(Dependencies.TwitterComposeRules.TWITTER_COMPOSE_RULES)
             }

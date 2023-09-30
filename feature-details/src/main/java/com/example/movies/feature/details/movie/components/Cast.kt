@@ -15,6 +15,7 @@ import com.example.movies.feature.details.R
 @Composable
 fun Cast(
     cast: List<Cast>,
+    onSeeAllClick: (List<Cast>) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     if (cast.isNotEmpty()) {
@@ -22,6 +23,9 @@ fun Cast(
         DetailsListSection(
             modifier = modifier,
             sectionTitleId = R.string.cast_title,
+            onSeeAllClick = {
+                onSeeAllClick(cast)
+            },
             content = {
                 LazyRow(
                     modifier = Modifier,
@@ -46,6 +50,7 @@ fun Cast(
 @Composable
 fun CastPrev() {
     MoviesTheme {
-        Cast()
+        Cast(
+            cast = listOf(), onSeeAllClick = {})
     }
 }

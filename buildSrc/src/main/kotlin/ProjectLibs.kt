@@ -16,5 +16,6 @@ object ProjectLibs {
     const val FEATURE_HOME: String = ":feature-home"
     const val FEATURE_SEARCH: String = ":feature-search"
     const val FEATURE_DETAILS: String = ":feature-details"
+    const val FEATURE_CAST: String = ":feature-cast"
     //endregion
 }

@@ -4,7 +4,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.*
 import com.example.movies.core.common.Resource
 import com.example.movies.core.model.moviedetails.*
-import com.example.movies.core.navigation.args.moviedetails.MovieDetailsScreenArgs
+import com.example.movies.core.navigation.args.moviedetails.MovieDetailsScreenArgConstants
 import com.example.movies.feature.details.movie.usecases.MovieDetailsScreenUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -49,7 +49,7 @@ class MovieDetailsScreenViewModel @Inject constructor(
     private var id: Int = 0
 
     init {
-        savedStateHandle.get<Int>(MovieDetailsScreenArgs.MOVIE_ID_ARG_KEY)
+        savedStateHandle.get<Int>(MovieDetailsScreenArgConstants.MOVIE_ID_ARG_KEY)
             ?.let { id ->
                 this.id = id
                 checkIfMovieIsInFavorites(id)

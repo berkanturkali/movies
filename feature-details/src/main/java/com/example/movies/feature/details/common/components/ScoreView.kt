@@ -145,6 +145,6 @@ private fun DrawScope.foregroundIndicator(
 @Composable
 fun ScoreViewPrev() {
     MoviesTheme {
-        ScoreView(score = 0.5f, radius = 25.dp, foregroundIndicatorColor = Color.Green)
+        ScoreView(score = 0.2f, radius = 25.dp, foregroundIndicatorColor = Color.Green)
     }
 }

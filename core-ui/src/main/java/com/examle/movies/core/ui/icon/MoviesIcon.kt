@@ -35,4 +35,6 @@ object MoviesIcon {
     val STAR = R.drawable.ic_star
 
     val EMPTY_STAR = R.drawable.ic_empty_star
+
+    val UP = R.drawable.ic_up
 }

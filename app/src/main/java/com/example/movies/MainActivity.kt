@@ -8,10 +8,15 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.core.view.WindowCompat
 import com.examle.movies.core.ui.providers.LocalWindowWidthSizeClass
 import com.example.movies.ui.MoviesApp
+import com.squareup.moshi.Moshi
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var moshi: Moshi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,9 +29,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             val windowSizeClass = calculateWindowSizeClass(activity = this)
             CompositionLocalProvider(
-                LocalWindowWidthSizeClass provides windowSizeClass.widthSizeClass
+                LocalWindowWidthSizeClass provides windowSizeClass.widthSizeClass,
+
             ) {
-                MoviesApp()
+                MoviesApp(moshi)
             }
         }
     }

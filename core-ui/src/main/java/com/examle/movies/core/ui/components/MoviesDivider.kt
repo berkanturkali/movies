@@ -12,7 +12,7 @@ import com.examle.movies.core.ui.theme.Divider
 fun MoviesDivider(
     modifier: Modifier = Modifier,
     color: Color = Divider,
-    thickness: Dp = 1.dp
+    thickness: Dp = 0.5.dp
 ) {
 
     Divider(

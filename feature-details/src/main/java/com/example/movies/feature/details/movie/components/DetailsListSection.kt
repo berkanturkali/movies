@@ -15,6 +15,7 @@ fun DetailsListSection(
     modifier: Modifier = Modifier,
     count: Int? = null,
     showSeeAllContent: Boolean = false,
+    onSeeAllClick:() -> Unit = {},
 ) {
     Column(
         modifier = modifier,
@@ -31,7 +32,7 @@ fun DetailsListSection(
             )
             if (showSeeAllContent) {
                 Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-                    SeeAllButton(onItemClick = {})
+                    SeeAllButton(onItemClick = onSeeAllClick)
                     count?.let {
                         Text(
                             text = "($count)",

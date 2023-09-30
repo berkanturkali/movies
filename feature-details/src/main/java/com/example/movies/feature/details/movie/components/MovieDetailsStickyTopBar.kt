@@ -58,9 +58,6 @@ fun MovieDetailsStickyTopBar(
             .height(95.dp)
     }
 
-
-
-
     OutlinedCard(
         modifier = modifier
             .clickable(interactionSource = interactionSource, indication = null) {

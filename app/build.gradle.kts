@@ -25,5 +25,8 @@ dependencies {
         ProjectLibs.FEATURE_SEARCH,
         ProjectLibs.FEATURE_HOME,
         ProjectLibs.FEATURE_DETAILS,
+        ProjectLibs.FEATURE_CAST,
     )
+
+    implementation(Dependencies.Network.MOSHI)
 }

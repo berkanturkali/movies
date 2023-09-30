@@ -2,4 +2,5 @@
 <resources>
     <string name="cast_name_title">Name:</string>
     <string name="character_name_title">Character:</string>
+    <string name="cast_screen_title">Cast (%1$s)</string>
 </resources>

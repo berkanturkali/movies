@@ -6,30 +6,49 @@ import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.shrinkVertically
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.examle.movies.core.ui.components.MoviesDivider
 import com.examle.movies.core.ui.components.MoviesErrorView
 import com.examle.movies.core.ui.components.MoviesProgressBar
 import com.examle.movies.core.ui.components.MoviesScaffold
 import com.examle.movies.core.ui.utils.rememberDominantColorState
 import com.example.movies.core.common.Resource
-import com.example.movies.feature.details.movie.components.*
+import com.example.movies.core.model.moviedetails.Cast
+import com.example.movies.feature.details.movie.components.Cast
+import com.example.movies.feature.details.movie.components.Keywords
+import com.example.movies.feature.details.movie.components.MovieDetailsStickyTopBar
+import com.example.movies.feature.details.movie.components.MovieDetailsTopBar
+import com.example.movies.feature.details.movie.components.Recommendations
+import com.example.movies.feature.details.movie.components.Reviews
+import com.example.movies.feature.details.movie.components.Videos
+import com.example.movies.feature.details.movie.components.movieDetailsItem
 import com.example.movies.feature.details.movie.viewmodel.MovieDetailsScreenViewModel
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 @Composable
 fun MovieDetailsScreen(
     onBackButtonClick: () -> Unit,
+    onSeeAllButtonClickForCast: (List<Cast>) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: MovieDetailsScreenViewModel = hiltViewModel()
 ) {
@@ -78,9 +97,11 @@ fun MovieDetailsScreen(
                         }
                     )
                 }
+
                 is Resource.Loading -> {
                     MoviesProgressBar(modifier = Modifier.fillMaxSize())
                 }
+
                 is Resource.Success -> {
                     val movie = it.data
                     movie?.let {
@@ -88,7 +109,7 @@ fun MovieDetailsScreen(
 
                         val dominantColor by animateColorAsState(
                             targetValue = dominantColorState.color,
-                            spring(stiffness = Spring.StiffnessLow)
+                            spring(stiffness = Spring.StiffnessLow), label = ""
                         )
 
                         LaunchedEffect(key1 = true) {
@@ -112,13 +133,15 @@ fun MovieDetailsScreen(
                                         }
                                     }
                                 )
+                                MoviesDivider()
 
                                 LazyColumn(
                                     state = listState,
                                     modifier = Modifier
                                         .fillMaxWidth(),
                                     horizontalAlignment = Alignment.CenterHorizontally,
-                                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                                    verticalArrangement = Arrangement.spacedBy(12.dp),
+                                    contentPadding = PaddingValues(top = 8.dp)
                                 ) {
                                     movieDetailsScreenContent(
                                         title = movie.title,
@@ -145,7 +168,9 @@ fun MovieDetailsScreen(
                                                 viewModel.fetchCast()
                                             }) { castList ->
                                             Cast(
-                                                cast = castList.filterNotNull()
+                                                cast = castList.filterNotNull(),
+                                                onSeeAllClick = onSeeAllButtonClickForCast
+
                                             )
                                         }
 
