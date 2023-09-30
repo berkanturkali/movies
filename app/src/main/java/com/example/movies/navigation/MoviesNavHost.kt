@@ -44,9 +44,13 @@ fun MoviesNavHost(
             })
 
         //movie details
-        movieDetailsGraph(onBackButtonClick = {
-            navController.navigateUp()
-        },
+        movieDetailsGraph(
+            onBackButtonClick = {
+                navController.navigateUp()
+            },
+            onRecommendationItemClick = { id ->
+                navController.navigate(MovieDetailsDestination.destination + "/$id")
+            },
             onSeeAllButtonClickForCast = { cast ->
                 val args = CastScreenArgs(castList = cast)
                 val adapter = moshi.adapter(CastScreenArgs::class.java)
@@ -61,7 +65,7 @@ fun MoviesNavHost(
 
         castGraph(
             onBackButtonClick = {
-            navController.navigateUp()
-        })
+                navController.navigateUp()
+            })
     }
 }

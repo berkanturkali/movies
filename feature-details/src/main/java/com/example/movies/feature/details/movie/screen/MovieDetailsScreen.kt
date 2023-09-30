@@ -48,6 +48,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun MovieDetailsScreen(
     onBackButtonClick: () -> Unit,
+    onRecommendationItemClick: (Int) -> Unit,
     onSeeAllButtonClickForCast: (List<Cast>) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: MovieDetailsScreenViewModel = hiltViewModel()
@@ -187,8 +188,8 @@ fun MovieDetailsScreen(
                                                     scoreColor = viewModel.calculateColorCodeFromScore(
                                                         movie.score
                                                     ),
-                                                    onItemClick = {
-
+                                                    onItemClick = { id ->
+                                                        onRecommendationItemClick(id)
                                                     }
                                                 )
                                             }

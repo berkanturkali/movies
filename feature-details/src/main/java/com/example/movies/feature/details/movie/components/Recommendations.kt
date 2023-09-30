@@ -20,7 +20,7 @@ import com.example.movies.feature.details.R
 fun Recommendations(
     recommendations: List<Recommendation>,
     scoreColor: Color?,
-    onItemClick: () -> Unit,
+    onItemClick: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
     DetailsListSection(
@@ -36,7 +36,11 @@ fun Recommendations(
                         image = recommendation.image,
                         score = recommendation.score,
                         scoreColor = scoreColor,
-                        onItemClick = onItemClick,
+                        onItemClick = {
+                            recommendation.id?.let {
+                                onItemClick(recommendation.id!!)
+                            }
+                        }
                     )
                 }
             }

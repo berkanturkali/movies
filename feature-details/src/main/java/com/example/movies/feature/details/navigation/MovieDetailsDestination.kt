@@ -23,6 +23,7 @@ object MovieDetailsDestination : MoviesNavigationDestination {
 
 fun NavGraphBuilder.movieDetailsGraph(
     onBackButtonClick: () -> Unit,
+    onRecommendationItemClick: (Int) -> Unit,
     onSeeAllButtonClickForCast: (List<Cast>) -> Unit,
 ) {
     composable(
@@ -31,7 +32,8 @@ fun NavGraphBuilder.movieDetailsGraph(
     ) {
         MovieDetailsScreen(
             onBackButtonClick = onBackButtonClick,
-            onSeeAllButtonClickForCast = onSeeAllButtonClickForCast
+            onSeeAllButtonClickForCast = onSeeAllButtonClickForCast,
+            onRecommendationItemClick = onRecommendationItemClick
         )
     }
 }
